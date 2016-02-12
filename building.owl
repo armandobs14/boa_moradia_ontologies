@@ -1,0 +1,1458 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY swrl "http://www.w3.org/2003/11/swrl#" >
+    <!ENTITY swrlb "http://www.w3.org/2003/11/swrlb#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY building "http://nees.com.br/linkn/onto/building/" >
+    <!ENTITY locality "http://nees.com.br/linkn/onto/locality/" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:locality="http://nees.com.br/linkn/onto/locality/"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:building="http://nees.com.br/linkn/onto/building/">
+    <Ontology rdf:about="http://nees.com.br/linkn/onto/building/">
+        <imports rdf:resource="http://nees.com.br/linkn/onto/locality/"/>
+        <imports rdf:resource="http://nees.com.br/linkn/onto/osm/0.1"/>
+        <imports rdf:resource="http://nees.com.br/linkn/onto/user/"/>
+    </Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/building/hasAunt -->
+
+    <AnnotationProperty rdf:about="&building;hasAunt"/>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/building/hasBrother -->
+
+    <AnnotationProperty rdf:about="&building;hasBrother"/>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/building/synonymous -->
+
+    <AnnotationProperty rdf:about="&building;synonymous"/>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/locality/contains -->
+
+    <AnnotationProperty rdf:about="&locality;contains"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/building/belongsToLocality -->
+
+    <ObjectProperty rdf:about="&building;belongsToLocality">
+        <rdfs:comment xml:lang="en">Uma construção civil pertence a uma localização, por exemplo: Este apartamento pertence a rua A.</rdfs:comment>
+        <rdfs:comment xml:lang="pt">A building belongs to a location, for example: This flat belongs to a A street. </rdfs:comment>
+        <inverseOf rdf:resource="&building;containsBuilding"/>
+        <rdfs:range rdf:resource="&locality;Locality"/>
+        <rdfs:domain>
+            <Class>
+                <unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&building;RealEstate"/>
+                    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Hospital"/>
+                    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Police"/>
+                    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/School"/>
+                </unionOf>
+            </Class>
+        </rdfs:domain>
+    </ObjectProperty>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/building/containsBuilding -->
+
+    <ObjectProperty rdf:about="&building;containsBuilding">
+        <rdfs:comment xml:lang="en">A locality has establishments. For example: All the b neighborhood establishments.</rdfs:comment>
+        <rdfs:comment xml:lang="pt">Uma localidade contém estabelecimentos. Por exemplo: Todos os estabelecimentos do bairro b</rdfs:comment>
+        <rdfs:domain rdf:resource="&locality;Locality"/>
+        <rdfs:range>
+            <Class>
+                <unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&building;RealEstate"/>
+                    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/PrimaryFeatures"/>
+                </unionOf>
+            </Class>
+        </rdfs:range>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="&locality;composesAddress"/>
+            <rdf:Description rdf:about="&building;isAddressOf"/>
+        </propertyChainAxiom>
+    </ObjectProperty>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/building/isAddressOf -->
+
+    <ObjectProperty rdf:about="&building;isAddressOf">
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+        <rdfs:comment xml:lang="en">An address refers the building&apos;s location.</rdfs:comment>
+        <rdfs:comment xml:lang="pt">Um endereço refere-se a localização de uma construção civil.</rdfs:comment>
+        <rdfs:domain rdf:resource="&locality;Address"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/building/isNearbyTo -->
+
+    <ObjectProperty rdf:about="&building;isNearbyTo">
+        <rdf:type rdf:resource="&owl;IrreflexiveProperty"/>
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+        <rdfs:comment xml:lang="en">A residence is nearby to a some place.</rdfs:comment>
+        <rdfs:comment xml:lang="pt">Uma residência é próxima a algum lugar.</rdfs:comment>
+        <rdfs:domain rdf:resource="&building;RealEstate"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/building/isOwnerOf -->
+
+    <ObjectProperty rdf:about="&building;isOwnerOf">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdf:type rdf:resource="&owl;IrreflexiveProperty"/>
+        <rdfs:comment xml:lang="en">A person owns a building. For example: Person A owns a home. Person B owns a school.</rdfs:comment>
+        <rdfs:comment xml:lang="pt">Uma pessoa é proprietária de uma construção civil. Por exemplo: A pessoa A é proprietária de uma casa. A pessoa B é proprietária de uma escola.</rdfs:comment>
+        <rdfs:range rdf:resource="&building;RealEstate"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+    </ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/building/hasArea -->
+
+    <DatatypeProperty rdf:about="&building;hasArea">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:comment xml:lang="en">A residence has a size.</rdfs:comment>
+        <rdfs:comment xml:lang="pt">Uma residência tem um tamanho.</rdfs:comment>
+        <rdfs:domain rdf:resource="&building;RealEstate"/>
+        <rdfs:subPropertyOf rdf:resource="&building;realEstateCharacteristcs"/>
+        <rdfs:range rdf:resource="&xsd;double"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/building/hasBeachDistance -->
+
+    <DatatypeProperty rdf:about="&building;hasBeachDistance">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:comment xml:lang="en">A beach house has a sufficiently good (or not) distance the beach</rdfs:comment>
+        <rdfs:comment xml:lang="pt">Uma casa de praia tem um a distância suficientemente boa ou não da praia</rdfs:comment>
+        <rdfs:domain rdf:resource="&building;HouseBeach"/>
+        <rdfs:subPropertyOf rdf:resource="&building;realEstateCharacteristcs"/>
+        <rdfs:range rdf:resource="&xsd;double"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/building/hasCharacteristics -->
+
+    <DatatypeProperty rdf:about="&building;hasCharacteristics">
+        <rdfs:domain rdf:resource="&building;RealEstate"/>
+        <rdfs:subPropertyOf rdf:resource="&building;realEstateCharacteristcs"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/building/hasCondominiumValue -->
+
+    <DatatypeProperty rdf:about="&building;hasCondominiumValue">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&building;realEstateCharacteristcs"/>
+        <rdfs:range rdf:resource="&xsd;double"/>
+        <rdfs:domain>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&building;RealEstate"/>
+                    <Class>
+                        <complementOf rdf:resource="&building;Home"/>
+                    </Class>
+                    <Class>
+                        <complementOf rdf:resource="&building;RuralProperty"/>
+                    </Class>
+                </intersectionOf>
+            </Class>
+        </rdfs:domain>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/building/hasDescription -->
+
+    <DatatypeProperty rdf:about="&building;hasDescription">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&building;RealEstate"/>
+        <rdfs:subPropertyOf rdf:resource="&building;realEstateCharacteristcs"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/building/hasDetails -->
+
+    <DatatypeProperty rdf:about="&building;hasDetails">
+        <rdfs:domain rdf:resource="&building;RealEstate"/>
+        <rdfs:subPropertyOf rdf:resource="&building;realEstateCharacteristcs"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/building/hasNumberBathrooms -->
+
+    <DatatypeProperty rdf:about="&building;hasNumberBathrooms">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:comment xml:lang="en">A residence has a number of bathrooms</rdfs:comment>
+        <rdfs:comment xml:lang="pt">Uma residência tem um número de banheiros</rdfs:comment>
+        <rdfs:domain rdf:resource="&building;RealEstate"/>
+        <rdfs:subPropertyOf rdf:resource="&building;realEstateCharacteristcs"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/building/hasNumberBedrooms -->
+
+    <DatatypeProperty rdf:about="&building;hasNumberBedrooms">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:comment xml:lang="en">A residence has a number of bedrooms</rdfs:comment>
+        <rdfs:comment xml:lang="pt">Uma residência tem um número de quartos</rdfs:comment>
+        <rdfs:domain rdf:resource="&building;RealEstate"/>
+        <rdfs:subPropertyOf rdf:resource="&building;realEstateCharacteristcs"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+        <equivalentProperty rdf:resource="https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_rooms"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/building/hasNumberFloors -->
+
+    <DatatypeProperty rdf:about="&building;hasNumberFloors">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:comment xml:lang="en">A residence has a number of floors</rdfs:comment>
+        <rdfs:comment xml:lang="pt">Uma residência tem um número de andares.</rdfs:comment>
+        <rdfs:domain rdf:resource="&building;RealEstate"/>
+        <rdfs:subPropertyOf rdf:resource="&building;realEstateCharacteristcs"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/building/hasPhoto -->
+
+    <DatatypeProperty rdf:about="&building;hasPhoto">
+        <rdfs:comment xml:lang="en">A person and building have images</rdfs:comment>
+        <rdfs:comment xml:lang="pt">Uma pessoa e uma construção civil tem fotos.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&building;realEstateCharacteristcs"/>
+        <rdfs:range rdf:resource="&xsd;anyURI"/>
+        <rdfs:domain>
+            <Class>
+                <unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&building;RealEstate"/>
+                    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person"/>
+                </unionOf>
+            </Class>
+        </rdfs:domain>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/building/realEstateCharacteristcs -->
+
+    <DatatypeProperty rdf:about="&building;realEstateCharacteristcs"/>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/locality/hasNumber -->
+
+    <rdf:Description rdf:about="&locality;hasNumber">
+        <rdfs:domain rdf:resource="&building;RealEstate"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <equivalentProperty rdf:resource="https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_addr:housenumber"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/locality/hasZipCode -->
+
+    <rdf:Description rdf:about="&locality;hasZipCode">
+        <rdfs:domain rdf:resource="&building;RealEstate"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <equivalentProperty rdf:resource="https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_addr:postcode"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_rooms -->
+
+    <DatatypeProperty rdf:about="https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_rooms">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&building;RealEstate"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_addr:housenumber -->
+
+    <DatatypeProperty rdf:about="https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_addr:housenumber">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&building;RealEstate"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_addr:postcode -->
+
+    <DatatypeProperty rdf:about="https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_addr:postcode">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&building;RealEstate"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/building/Apartment -->
+
+    <Class rdf:about="&building;Apartment">
+        <equivalentClass rdf:resource="http://nees.com.br/linkn/onto/osm/Apartment"/>
+        <rdfs:subClassOf rdf:resource="&building;RealEstate"/>
+        <rdfs:comment xml:lang="en">Apartment in a general concept. A domicile in a building.</rdfs:comment>
+        <rdfs:comment xml:lang="pt">Apartamento no conceito geral. Um domicílo dentro de um prédio.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/building/Bedroom -->
+
+    <Class rdf:about="&building;Bedroom">
+        <rdfs:label xml:lang="pt">Quartos</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&building;RealEstate"/>
+        <rdfs:comment xml:lang="pt">Um quarto para aluguel</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/building/Commercial -->
+
+    <Class rdf:about="&building;Commercial">
+        <rdfs:subClassOf rdf:resource="&building;RealEstate"/>
+    </Class>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/building/Farm -->
+
+    <Class rdf:about="&building;Farm">
+        <rdfs:label xml:lang="pt">Fazendas</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&building;RuralProperty"/>
+        <rdfs:comment xml:lang="en">Farm is a rural property with more 100 hectares</rdfs:comment>
+        <rdfs:comment xml:lang="pt">Fazenda é uma propriedade rural com mais de 100 hectares.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/building/Farmstead -->
+
+    <Class rdf:about="&building;Farmstead">
+        <rdfs:label xml:lang="pt">Chácaras</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&building;RuralProperty"/>
+        <rdfs:comment xml:lang="en">Farmstead is a small rural property that has until 10 hectares</rdfs:comment>
+        <rdfs:comment xml:lang="pt">Chácara é uma propriedade rural pequena que tem até 10 hectares</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/building/Flat -->
+
+    <Class rdf:about="&building;Flat">
+        <rdfs:label xml:lang="en">flat</rdfs:label>
+        <rdfs:label xml:lang="pt">Apartamentos</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&building;Apartment"/>
+        <rdfs:comment xml:lang="en">Common apartment</rdfs:comment>
+        <rdfs:comment xml:lang="pt">Apartamento comum</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/building/FlatDuplex -->
+
+    <Class rdf:about="&building;FlatDuplex">
+        <rdfs:label xml:lang="en">duplex</rdfs:label>
+        <rdfs:label xml:lang="pt">Duplex</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&building;Apartment"/>
+        <rdfs:comment xml:lang="en">A flat that has two floors</rdfs:comment>
+        <rdfs:comment xml:lang="pt">Um apartamento que possui dois andares.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/building/FlatLoft -->
+
+    <Class rdf:about="&building;FlatLoft">
+        <rdfs:label xml:lang="en">loft</rdfs:label>
+        <rdfs:label xml:lang="pt">Loft</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&building;Apartment"/>
+        <rdfs:comment xml:lang="en">Flat Loft is an apartament that refers to garret, attic or similar space (usually used for storage) without breakdowns converted to residential use. Has more 50 square meter.</rdfs:comment>
+        <rdfs:comment xml:lang="pt">Apartamento Loft é um apartamento que se refere a água furtada, mansarda, sótão ou espaço semelhante (geralmente usado para armazenagem) sem repartições convertidos para uso residencial. Tem mais de 50 metros quadrados</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/building/FlatTriplex -->
+
+    <Class rdf:about="&building;FlatTriplex">
+        <rdfs:label xml:lang="en">triplex</rdfs:label>
+        <rdfs:label xml:lang="pt">Triplex</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&building;Apartment"/>
+        <rdfs:comment xml:lang="en">A flat triplex is a apartment with three floors.</rdfs:comment>
+        <rdfs:comment xml:lang="pt">Um apartamento triplex é um apartamento com três andares.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/building/Ground -->
+
+    <Class rdf:about="&building;Ground">
+        <rdfs:subClassOf rdf:resource="&building;RealEstate"/>
+        <rdfs:comment xml:lang="en">Land is an area of land suitable to build a house.</rdfs:comment>
+        <rdfs:comment xml:lang="pt">Um terreno é uma área de terra propício a construção de um imóvel.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/building/Hall -->
+
+    <Class rdf:about="&building;Hall">
+        <rdfs:label xml:lang="pt">Salão</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&building;Commercial"/>
+    </Class>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/building/Hangar -->
+
+    <Class rdf:about="&building;Hangar">
+        <rdfs:label xml:lang="pt">Galpão</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&building;Commercial"/>
+    </Class>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/building/Home -->
+
+    <Class rdf:about="&building;Home">
+        <equivalentClass rdf:resource="http://nees.com.br/linkn/onto/osm/House"/>
+        <rdfs:subClassOf rdf:resource="&building;RealEstate"/>
+        <rdfs:comment xml:lang="en">Home in a general concept</rdfs:comment>
+        <rdfs:comment xml:lang="pt">Casa em um conceito geral.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/building/House -->
+
+    <Class rdf:about="&building;House">
+        <rdfs:label xml:lang="en">house</rdfs:label>
+        <rdfs:label xml:lang="pt">Casas</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&building;Home"/>
+        <rdfs:comment xml:lang="en">Common house</rdfs:comment>
+        <rdfs:comment xml:lang="pt">Casa comum</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/building/HouseBeach -->
+
+    <Class rdf:about="&building;HouseBeach">
+        <rdfs:subClassOf rdf:resource="&building;Home"/>
+        <rdfs:comment xml:lang="en">Home Beach is a house away from the city near to beach.</rdfs:comment>
+        <rdfs:comment xml:lang="pt">Casa de praia é uma casa afastada da cidade próxima a praia</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/building/HouseDuplex -->
+
+    <Class rdf:about="&building;HouseDuplex">
+        <rdfs:subClassOf rdf:resource="&building;Home"/>
+        <rdfs:comment xml:lang="pt">A home duplex is a house with two floors.</rdfs:comment>
+        <rdfs:comment xml:lang="pt">Uma casa duplex é uma casa com dois andares.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/building/HouseLoft -->
+
+    <Class rdf:about="&building;HouseLoft">
+        <rdfs:subClassOf rdf:resource="&building;Home"/>
+        <rdfs:comment xml:lang="en">House Loft is an house that refers to garret, attic or similar space (usually used for storage) without breakdowns converted to residential use. Has more 50 square meter.</rdfs:comment>
+        <rdfs:comment xml:lang="pt">Casa Loft é uma casa que se refere a água furtada, mansarda, sótão ou espaço semelhante (geralmente usado para armazenagem) sem repartições convertidos para uso residencial. Tem mais de 50 metros quadrados</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/building/HouseTriplex -->
+
+    <Class rdf:about="&building;HouseTriplex">
+        <rdfs:subClassOf rdf:resource="&building;Home"/>
+        <rdfs:comment xml:lang="en">A home triplex is a house with three floors.</rdfs:comment>
+        <rdfs:comment xml:lang="pt">Uma casa triplex é uma casa com três andares.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/building/Kitnet -->
+
+    <Class rdf:about="&building;Kitnet">
+        <rdfs:label xml:lang="en">kitnet</rdfs:label>
+        <rdfs:label xml:lang="pt">Kitnet</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&building;Apartment"/>
+        <rdfs:comment xml:lang="en">A kitnet is very small apartment. Generally has a bedroom, hall and kitchen in the same room. Has in max 35 square meter</rdfs:comment>
+        <rdfs:comment xml:lang="pt">Um kitnet é um apartamento muito pequeno. Geralmente tem um banheiro, sala e cozinha no mesmo cômodo. Tem até no máximo 35 metros quadrados.</rdfs:comment>
+        <building:synonymous xml:lang="pt">kitchenet</building:synonymous>
+        <building:synonymous xml:lang="pt">kitchennet</building:synonymous>
+        <building:synonymous xml:lang="pt">quitinete</building:synonymous>
+    </Class>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/building/Land -->
+
+    <Class rdf:about="&building;Land">
+        <rdfs:label xml:lang="pt">Terrenos</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&building;Ground"/>
+    </Class>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/building/LotOfLand -->
+
+    <Class rdf:about="&building;LotOfLand">
+        <rdfs:label xml:lang="pt">Lotes</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&building;Ground"/>
+    </Class>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/building/RealEstate -->
+
+    <Class rdf:about="&building;RealEstate">
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&locality;hasAddress"/>
+                <onClass rdf:resource="&locality;Address"/>
+                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&building;hasPhoto"/>
+                <allValuesFrom rdf:resource="&xsd;anyURI"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&building;hasDescription"/>
+                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                <onDataRange rdf:resource="&xsd;string"/>
+            </Restriction>
+        </rdfs:subClassOf>
+    </Class>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/building/Room -->
+
+    <Class rdf:about="&building;Room">
+        <rdfs:label xml:lang="pt">Salas</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&building;Commercial"/>
+    </Class>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/building/RuralProperty -->
+
+    <Class rdf:about="&building;RuralProperty">
+        <equivalentClass rdf:resource="http://nees.com.br/linkn/onto/osm/Farm"/>
+        <equivalentClass rdf:resource="http://nees.com.br/linkn/onto/osm/FarmAuxiliary"/>
+        <equivalentClass rdf:resource="http://nees.com.br/linkn/onto/osm/Farmland"/>
+        <equivalentClass rdf:resource="http://nees.com.br/linkn/onto/osm/Farmyard"/>
+        <rdfs:subClassOf rdf:resource="&building;RealEstate"/>
+        <rdfs:comment xml:lang="en">Rural property in a general concept</rdfs:comment>
+        <rdfs:comment xml:lang="pt">Propriedade rural no conceito geral</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/building/Site -->
+
+    <Class rdf:about="&building;Site">
+        <rdfs:label xml:lang="pt">Sítios</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&building;RuralProperty"/>
+        <rdfs:comment xml:lang="en">Site is a medium rural property that has between 10 and 100 hectares</rdfs:comment>
+        <rdfs:comment xml:lang="pt">Sítio é uma propriedade rural média que tem entre 10 e 100 hectares.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/building/Store -->
+
+    <Class rdf:about="&building;Store">
+        <rdfs:label xml:lang="pt">Lojas</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&building;Commercial"/>
+    </Class>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/building/Studio -->
+
+    <Class rdf:about="&building;Studio">
+        <rdfs:label xml:lang="pt">Studio</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&building;Apartment"/>
+        <rdfs:comment xml:lang="en">Apartment Studio is an apartment that looks like an apartment loft, but has divisions</rdfs:comment>
+        <building:synonymous xml:lang="en">studio</building:synonymous>
+        <rdfs:comment xml:lang="pt">Apartamento Studio é um apartamento semelhante a um loft, mas tem divisões.</rdfs:comment>
+        <building:synonymous xml:lang="pt">estudio</building:synonymous>
+        <building:synonymous xml:lang="pt">studio</building:synonymous>
+    </Class>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/locality/City -->
+
+    <rdf:Description rdf:about="&locality;City">
+        <equivalentClass rdf:resource="http://nees.com.br/linkn/onto/osm/City"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/locality/Continent -->
+
+    <rdf:Description rdf:about="&locality;Continent">
+        <equivalentClass rdf:resource="http://nees.com.br/linkn/onto/osm/Continent"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/locality/Country -->
+
+    <rdf:Description rdf:about="&locality;Country">
+        <equivalentClass rdf:resource="http://nees.com.br/linkn/onto/osm/Country"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/locality/District -->
+
+    <rdf:Description rdf:about="&locality;District">
+        <equivalentClass rdf:resource="http://nees.com.br/linkn/onto/osm/District"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/locality/Neighborhood -->
+
+    <rdf:Description rdf:about="&locality;Neighborhood">
+        <equivalentClass rdf:resource="http://nees.com.br/linkn/onto/osm/Neighbourhood"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/locality/State -->
+
+    <rdf:Description rdf:about="&locality;State">
+        <equivalentClass rdf:resource="http://nees.com.br/linkn/onto/osm/State"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/osm/Apartment -->
+
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Apartment"/>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/osm/City -->
+
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/City"/>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/osm/Continent -->
+
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Continent"/>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/osm/Country -->
+
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Country"/>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/osm/District -->
+
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/District"/>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/osm/Farm -->
+
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Farm"/>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/osm/FarmAuxiliary -->
+
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/FarmAuxiliary"/>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/osm/Farmland -->
+
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Farmland"/>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/osm/Farmyard -->
+
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Farmyard"/>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/osm/Hospital -->
+
+    <Class rdf:about="http://nees.com.br/linkn/onto/osm/Hospital"/>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/osm/House -->
+
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/House"/>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/osm/Neighbourhood -->
+
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Neighbourhood"/>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/osm/Police -->
+
+    <Class rdf:about="http://nees.com.br/linkn/onto/osm/Police"/>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/osm/PrimaryFeatures -->
+
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/PrimaryFeatures">
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&locality;hasAddress"/>
+                <onClass rdf:resource="&locality;Address"/>
+                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/osm/School -->
+
+    <Class rdf:about="http://nees.com.br/linkn/onto/osm/School"/>
+    
+
+
+    <!-- http://nees.com.br/linkn/onto/osm/State -->
+
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/State"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="urn:swrl#a">
+        <rdf:type rdf:resource="&swrl;Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#rp">
+        <rdf:type rdf:resource="&swrl;Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#area">
+        <rdf:type rdf:resource="&swrl;Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#h">
+        <rdf:type rdf:resource="&swrl;Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&swrl;Imp"/>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:rest rdf:resource="&rdf;nil"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="&building;Farm"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#rp"/>
+                    </rdf:Description>
+                </rdf:first>
+            </rdf:Description>
+        </swrl:head>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="&building;RuralProperty"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#rp"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#rp"/>
+                                <swrl:classPredicate>
+                                    <Class>
+                                        <complementOf rdf:resource="&building;Farm"/>
+                                    </Class>
+                                </swrl:classPredicate>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&swrl;AtomList"/>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                                        <rdf:rest rdf:resource="&rdf;nil"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="&swrl;BuiltinAtom"/>
+                                                <swrl:builtin rdf:resource="&swrlb;greaterThan"/>
+                                                <swrl:arguments>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&rdf;List"/>
+                                                        <rdf:first rdf:resource="urn:swrl#area"/>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="&rdf;List"/>
+                                                                <rdf:first rdf:datatype="&xsd;integer">1000000</rdf:first>
+                                                                <rdf:rest rdf:resource="&rdf;nil"/>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </swrl:arguments>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                    </rdf:Description>
+                                </rdf:rest>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&swrl;DatavaluedPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="&building;hasArea"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl#area"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl#rp"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&swrl;Imp"/>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:rest rdf:resource="&rdf;nil"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="&building;FlatTriplex"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#a"/>
+                    </rdf:Description>
+                </rdf:first>
+            </rdf:Description>
+        </swrl:head>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#a"/>
+                                <swrl:classPredicate>
+                                    <Class>
+                                        <complementOf rdf:resource="&building;FlatTriplex"/>
+                                    </Class>
+                                </swrl:classPredicate>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&swrl;AtomList"/>
+                                <rdf:rest rdf:resource="&rdf;nil"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&swrl;DatavaluedPropertyAtom"/>
+                                        <swrl:argument2 rdf:datatype="&xsd;integer">3</swrl:argument2>
+                                        <swrl:propertyPredicate rdf:resource="&building;hasNumberFloors"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl#a"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="&building;Apartment"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#a"/>
+                    </rdf:Description>
+                </rdf:first>
+            </rdf:Description>
+        </swrl:body>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&swrl;Imp"/>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:rest rdf:resource="&rdf;nil"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="&building;HouseDuplex"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#h"/>
+                    </rdf:Description>
+                </rdf:first>
+            </rdf:Description>
+        </swrl:head>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="&building;Home"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#h"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#h"/>
+                                <swrl:classPredicate>
+                                    <Class>
+                                        <complementOf rdf:resource="&building;HouseDuplex"/>
+                                    </Class>
+                                </swrl:classPredicate>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&swrl;AtomList"/>
+                                <rdf:rest rdf:resource="&rdf;nil"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&swrl;DatavaluedPropertyAtom"/>
+                                        <swrl:argument2 rdf:datatype="&xsd;integer">2</swrl:argument2>
+                                        <swrl:propertyPredicate rdf:resource="&building;hasNumberFloors"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl#h"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&swrl;Imp"/>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:rest rdf:resource="&rdf;nil"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="&building;Site"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#rp"/>
+                    </rdf:Description>
+                </rdf:first>
+            </rdf:Description>
+        </swrl:head>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#rp"/>
+                                <swrl:classPredicate>
+                                    <Class>
+                                        <complementOf rdf:resource="&building;Site"/>
+                                    </Class>
+                                </swrl:classPredicate>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&swrl;AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&swrl;DatavaluedPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="&building;hasArea"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl#area"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl#rp"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="&swrl;AtomList"/>
+                                                <rdf:rest rdf:resource="&rdf;nil"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&swrl;BuiltinAtom"/>
+                                                        <swrl:builtin rdf:resource="&swrlb;lessThanOrEqual"/>
+                                                        <swrl:arguments>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="&rdf;List"/>
+                                                                <rdf:first rdf:resource="urn:swrl#area"/>
+                                                                <rdf:rest>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="&rdf;List"/>
+                                                                        <rdf:first rdf:datatype="&xsd;integer">1000000</rdf:first>
+                                                                        <rdf:rest rdf:resource="&rdf;nil"/>
+                                                                    </rdf:Description>
+                                                                </rdf:rest>
+                                                            </rdf:Description>
+                                                        </swrl:arguments>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="&swrl;BuiltinAtom"/>
+                                                <swrl:builtin rdf:resource="&swrlb;greaterThan"/>
+                                                <swrl:arguments>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&rdf;List"/>
+                                                        <rdf:first rdf:resource="urn:swrl#area"/>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="&rdf;List"/>
+                                                                <rdf:first rdf:datatype="&xsd;integer">100000</rdf:first>
+                                                                <rdf:rest rdf:resource="&rdf;nil"/>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </swrl:arguments>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="&building;RuralProperty"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#rp"/>
+                    </rdf:Description>
+                </rdf:first>
+            </rdf:Description>
+        </swrl:body>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&swrl;Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#h"/>
+                                <swrl:classPredicate>
+                                    <Class>
+                                        <complementOf rdf:resource="&building;HouseLoft"/>
+                                    </Class>
+                                </swrl:classPredicate>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&swrl;AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&swrl;DatavaluedPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="&building;hasArea"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl#area"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl#h"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="&swrl;AtomList"/>
+                                                <rdf:rest rdf:resource="&rdf;nil"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&swrl;BuiltinAtom"/>
+                                                        <swrl:builtin rdf:resource="&swrlb;greaterThan"/>
+                                                        <swrl:arguments>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="&rdf;List"/>
+                                                                <rdf:first rdf:resource="urn:swrl#area"/>
+                                                                <rdf:rest>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="&rdf;List"/>
+                                                                        <rdf:first rdf:datatype="&xsd;integer">50</rdf:first>
+                                                                        <rdf:rest rdf:resource="&rdf;nil"/>
+                                                                    </rdf:Description>
+                                                                </rdf:rest>
+                                                            </rdf:Description>
+                                                        </swrl:arguments>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="&swrl;DatavaluedPropertyAtom"/>
+                                                <swrl:argument2 rdf:datatype="&xsd;integer">1</swrl:argument2>
+                                                <swrl:propertyPredicate rdf:resource="&building;hasNumberFloors"/>
+                                                <swrl:argument1 rdf:resource="urn:swrl#h"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="&building;Home"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#h"/>
+                    </rdf:Description>
+                </rdf:first>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:rest rdf:resource="&rdf;nil"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="&building;HouseLoft"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#h"/>
+                    </rdf:Description>
+                </rdf:first>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&swrl;Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#a"/>
+                                <swrl:classPredicate>
+                                    <Class>
+                                        <complementOf rdf:resource="&building;FlatDuplex"/>
+                                    </Class>
+                                </swrl:classPredicate>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&swrl;AtomList"/>
+                                <rdf:rest rdf:resource="&rdf;nil"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&swrl;DatavaluedPropertyAtom"/>
+                                        <swrl:argument2 rdf:datatype="&xsd;integer">2</swrl:argument2>
+                                        <swrl:propertyPredicate rdf:resource="&building;hasNumberFloors"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl#a"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="&building;Apartment"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#a"/>
+                    </rdf:Description>
+                </rdf:first>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:rest rdf:resource="&rdf;nil"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="&building;FlatDuplex"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#a"/>
+                    </rdf:Description>
+                </rdf:first>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&swrl;Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="&building;RuralProperty"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#rp"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#rp"/>
+                                <swrl:classPredicate>
+                                    <Class>
+                                        <complementOf rdf:resource="&building;Farmstead"/>
+                                    </Class>
+                                </swrl:classPredicate>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&swrl;AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&swrl;DatavaluedPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="&building;hasArea"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl#area"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl#rp"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                                        <rdf:rest rdf:resource="&rdf;nil"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="&swrl;BuiltinAtom"/>
+                                                <swrl:builtin rdf:resource="&swrlb;lessThanOrEqual"/>
+                                                <swrl:arguments>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&rdf;List"/>
+                                                        <rdf:first rdf:resource="urn:swrl#area"/>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="&rdf;List"/>
+                                                                <rdf:first rdf:datatype="&xsd;integer">100000</rdf:first>
+                                                                <rdf:rest rdf:resource="&rdf;nil"/>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </swrl:arguments>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:rest rdf:resource="&rdf;nil"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="&building;Farmstead"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#rp"/>
+                    </rdf:Description>
+                </rdf:first>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&swrl;Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="&building;Home"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#h"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#h"/>
+                                <swrl:classPredicate>
+                                    <Class>
+                                        <complementOf rdf:resource="&building;HouseTriplex"/>
+                                    </Class>
+                                </swrl:classPredicate>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&swrl;AtomList"/>
+                                <rdf:rest rdf:resource="&rdf;nil"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&swrl;DatavaluedPropertyAtom"/>
+                                        <swrl:argument2 rdf:datatype="&xsd;integer">3</swrl:argument2>
+                                        <swrl:propertyPredicate rdf:resource="&building;hasNumberFloors"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl#h"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:rest rdf:resource="&rdf;nil"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="&building;HouseTriplex"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#h"/>
+                    </rdf:Description>
+                </rdf:first>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
+
