@@ -144,7 +144,6 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
-        <rdfs:domain rdf:resource="http://nees.com.br/linkn/onto/boa_moradia/Announcement"/>
         <rdfs:range rdf:resource="http://nees.com.br/linkn/onto/boa_moradia/Offer"/>
     </ObjectProperty>
     
@@ -669,6 +668,12 @@
     <!-- http://nees.com.br/linkn/onto/boa_moradia/Announcement -->
 
     <Class rdf:about="http://nees.com.br/linkn/onto/boa_moradia/Announcement">
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://nees.com.br/linkn/onto/boa_moradia/hasOffer"/>
+                <allValuesFrom rdf:resource="http://nees.com.br/linkn/onto/boa_moradia/Offer"/>
+            </Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <Restriction>
                 <onProperty rdf:resource="http://nees.com.br/linkn/onto/boa_moradia/hasPrice"/>

@@ -283,6 +283,12 @@
     <Class rdf:about="http://nees.com.br/linkn/onto/robot/PropertyType">
         <rdfs:subClassOf>
             <Restriction>
+                <onProperty rdf:resource="http://nees.com.br/linkn/onto/boa_moradia/hasOffer"/>
+                <allValuesFrom rdf:resource="http://nees.com.br/linkn/onto/boa_moradia/Offer"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
                 <onProperty rdf:resource="http://nees.com.br/linkn/onto/boa_moradia/hasTitle"/>
                 <qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</qualifiedCardinality>
                 <onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
