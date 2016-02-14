@@ -1,29 +1,24 @@
 <?xml version="1.0"?>
-
-
-<!DOCTYPE rdf:RDF [
-    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
-    <!ENTITY swrl "http://www.w3.org/2003/11/swrl#" >
-    <!ENTITY swrlb "http://www.w3.org/2003/11/swrlb#" >
-    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
-    <!ENTITY boa_moradia "http://nees.com.br/linkn/onto/boa_moradia/" >
-    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-]>
-
-
 <rdf:RDF xmlns="http://www.w3.org/2002/07/owl#"
      xml:base="http://www.w3.org/2002/07/owl"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:ns="http://www.w3.org/2003/06/sw-vocab-status/ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:boa_moradia="http://nees.com.br/linkn/onto/boa_moradia/"
+     xmlns:osm="http://nees.com.br/linkn/onto/osm/"
      xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:locality="http://nees.com.br/linkn/onto/locality/"
      xmlns:swrl="http://www.w3.org/2003/11/swrl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:building="http://nees.com.br/linkn/onto/building/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:wot="http://xmlns.com/wot/0.1/"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
     <Ontology rdf:about="http://nees.com.br/linkn/onto/boa_moradia/">
-        <imports rdf:resource="http://nees.com.br/linkn/onto/building/"/>
         <imports rdf:resource="http://nees.com.br/linkn/onto/osm/"/>
+        <imports rdf:resource="http://nees.com.br/linkn/onto/building/"/>
     </Ontology>
     
 
@@ -41,25 +36,25 @@
 
     <!-- http://nees.com.br/linkn/onto/boa_moradia/hasPhone -->
 
-    <AnnotationProperty rdf:about="&boa_moradia;hasPhone"/>
+    <AnnotationProperty rdf:about="http://nees.com.br/linkn/onto/boa_moradia/hasPhone"/>
     
 
 
     <!-- http://nees.com.br/linkn/onto/boa_moradia/isRelevant -->
 
-    <AnnotationProperty rdf:about="&boa_moradia;isRelevant"/>
+    <AnnotationProperty rdf:about="http://nees.com.br/linkn/onto/boa_moradia/isRelevant"/>
     
 
 
     <!-- http://nees.com.br/linkn/onto/boa_moradia/onDataRange -->
 
-    <AnnotationProperty rdf:about="&boa_moradia;onDataRange"/>
+    <AnnotationProperty rdf:about="http://nees.com.br/linkn/onto/boa_moradia/onDataRange"/>
     
 
 
     <!-- http://nees.com.br/linkn/onto/boa_moradia/synonymous -->
 
-    <AnnotationProperty rdf:about="&boa_moradia;synonymous"/>
+    <AnnotationProperty rdf:about="http://nees.com.br/linkn/onto/boa_moradia/synonymous"/>
     
 
 
@@ -76,105 +71,107 @@
 
     <!-- http://nees.com.br/linkn/onto/boa_moradia/happenedIn -->
 
-    <ObjectProperty rdf:about="&boa_moradia;happenedIn">
-        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdf:type rdf:resource="&owl;IrreflexiveProperty"/>
+    <ObjectProperty rdf:about="http://nees.com.br/linkn/onto/boa_moradia/happenedIn">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://nees.com.br/linkn/onto/boa_moradia/Alert"/>
+        <rdfs:range rdf:resource="http://nees.com.br/linkn/onto/locality/Neighborhood"/>
         <rdfs:comment xml:lang="en">An alert is about something that happened in some neighborhood</rdfs:comment>
         <rdfs:comment xml:lang="pt">Um alerta é sobre algo que aconteceu em algum bairro</rdfs:comment>
-        <rdfs:domain rdf:resource="&boa_moradia;Alert"/>
-        <rdfs:range rdf:resource="http://nees.com.br/linkn/onto/locality/Neighborhood"/>
     </ObjectProperty>
     
 
 
     <!-- http://nees.com.br/linkn/onto/boa_moradia/hasAlert -->
 
-    <ObjectProperty rdf:about="&boa_moradia;hasAlert">
-        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
-        <rdfs:range rdf:resource="&boa_moradia;Alert"/>
-        <rdfs:domain rdf:resource="&boa_moradia;BMAccount"/>
-        <inverseOf rdf:resource="&boa_moradia;isAlertOf"/>
+    <ObjectProperty rdf:about="http://nees.com.br/linkn/onto/boa_moradia/hasAlert">
+        <inverseOf rdf:resource="http://nees.com.br/linkn/onto/boa_moradia/isAlertOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://nees.com.br/linkn/onto/boa_moradia/BMAccount"/>
+        <rdfs:range rdf:resource="http://nees.com.br/linkn/onto/boa_moradia/Alert"/>
     </ObjectProperty>
     
 
 
     <!-- http://nees.com.br/linkn/onto/boa_moradia/hasAnnouncement -->
 
-    <ObjectProperty rdf:about="&boa_moradia;hasAnnouncement">
-        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
-        <rdf:type rdf:resource="&owl;IrreflexiveProperty"/>
+    <ObjectProperty rdf:about="http://nees.com.br/linkn/onto/boa_moradia/hasAnnouncement">
+        <inverseOf rdf:resource="http://nees.com.br/linkn/onto/boa_moradia/isAnnouncementOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://nees.com.br/linkn/onto/building/RealEstate"/>
+        <rdfs:range rdf:resource="http://nees.com.br/linkn/onto/boa_moradia/Announcement"/>
         <rdfs:comment xml:lang="en">An account of boa moradia has announcements</rdfs:comment>
         <rdfs:comment xml:lang="pt">Uma conta do boa moradia tem anúncios</rdfs:comment>
-        <rdfs:range rdf:resource="&boa_moradia;Announcement"/>
-        <inverseOf rdf:resource="&boa_moradia;isAnnouncementOf"/>
-        <rdfs:domain rdf:resource="http://nees.com.br/linkn/onto/building/RealEstate"/>
     </ObjectProperty>
     
 
 
     <!-- http://nees.com.br/linkn/onto/boa_moradia/hasBMAccount -->
 
-    <ObjectProperty rdf:about="&boa_moradia;hasBMAccount">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+    <ObjectProperty rdf:about="http://nees.com.br/linkn/onto/boa_moradia/hasBMAccount">
+        <inverseOf rdf:resource="http://nees.com.br/linkn/onto/boa_moradia/isBMAccountOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://nees.com.br/linkn/onto/boa_moradia/BMAccount"/>
         <rdfs:comment xml:lang="en">A person has a boa moradia account</rdfs:comment>
         <rdfs:comment xml:lang="pt">Uma pessoa tem uma conta do sistema boa moradia</rdfs:comment>
-        <rdfs:range rdf:resource="&boa_moradia;BMAccount"/>
-        <inverseOf rdf:resource="&boa_moradia;isBMAccountOf"/>
-        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
     </ObjectProperty>
     
 
 
     <!-- http://nees.com.br/linkn/onto/boa_moradia/hasComment -->
 
-    <ObjectProperty rdf:about="&boa_moradia;hasComment">
-        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
-        <rdf:type rdf:resource="&owl;IrreflexiveProperty"/>
+    <ObjectProperty rdf:about="http://nees.com.br/linkn/onto/boa_moradia/hasComment">
+        <inverseOf rdf:resource="http://nees.com.br/linkn/onto/boa_moradia/isCommentOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://nees.com.br/linkn/onto/boa_moradia/BMAccount"/>
+        <rdfs:range rdf:resource="http://nees.com.br/linkn/onto/boa_moradia/Comment"/>
         <rdfs:comment xml:lang="en">A person creates comments about a neighborhood</rdfs:comment>
         <rdfs:comment xml:lang="pt">Uma pessoa cria comentários sobre um bairro</rdfs:comment>
-        <rdfs:domain rdf:resource="&boa_moradia;BMAccount"/>
-        <rdfs:range rdf:resource="&boa_moradia;Comment"/>
     </ObjectProperty>
     
 
 
     <!-- http://nees.com.br/linkn/onto/boa_moradia/hasOffer -->
 
-    <ObjectProperty rdf:about="&boa_moradia;hasOffer">
-        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdf:type rdf:resource="&owl;IrreflexiveProperty"/>
-        <rdfs:domain rdf:resource="&boa_moradia;Announcement"/>
-        <rdfs:range rdf:resource="&boa_moradia;Offer"/>
-        <inverseOf rdf:resource="&boa_moradia;isOfferOf"/>
+    <ObjectProperty rdf:about="http://nees.com.br/linkn/onto/boa_moradia/hasOffer">
+        <inverseOf rdf:resource="http://nees.com.br/linkn/onto/boa_moradia/isOfferOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://nees.com.br/linkn/onto/boa_moradia/Announcement"/>
+        <rdfs:range rdf:resource="http://nees.com.br/linkn/onto/boa_moradia/Offer"/>
     </ObjectProperty>
     
 
 
     <!-- http://nees.com.br/linkn/onto/boa_moradia/hasPaymentPlan -->
 
-    <ObjectProperty rdf:about="&boa_moradia;hasPaymentPlan">
-        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdf:type rdf:resource="&owl;IrreflexiveProperty"/>
+    <ObjectProperty rdf:about="http://nees.com.br/linkn/onto/boa_moradia/hasPaymentPlan">
+        <inverseOf rdf:resource="http://nees.com.br/linkn/onto/boa_moradia/isPaymentPlanOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://nees.com.br/linkn/onto/boa_moradia/Announcement"/>
+        <rdfs:range rdf:resource="http://nees.com.br/linkn/onto/boa_moradia/PaymentPlan"/>
         <rdfs:comment xml:lang="en">A person pays for an announcement and choose a payment plan.</rdfs:comment>
         <rdfs:comment xml:lang="pt">Uma pessoa paga por um anúncio e escolhe um plano de pagamento.</rdfs:comment>
-        <rdfs:domain rdf:resource="&boa_moradia;Announcement"/>
-        <rdfs:range rdf:resource="&boa_moradia;PaymentPlan"/>
     </ObjectProperty>
     
 
 
     <!-- http://nees.com.br/linkn/onto/boa_moradia/hasQualityIndex -->
 
-    <ObjectProperty rdf:about="&boa_moradia;hasQualityIndex">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+    <ObjectProperty rdf:about="http://nees.com.br/linkn/onto/boa_moradia/hasQualityIndex">
         <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/building/educationCharacteristics"/>
         <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/building/healthCharacteristics"/>
         <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/building/safetyCharacteristics"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain>
             <Class>
                 <unionOf rdf:parseType="Collection">
@@ -191,13 +188,13 @@
 
     <!-- http://nees.com.br/linkn/onto/boa_moradia/isAlertOf -->
 
-    <ObjectProperty rdf:about="&boa_moradia;isAlertOf">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:domain rdf:resource="&boa_moradia;Alert"/>
+    <ObjectProperty rdf:about="http://nees.com.br/linkn/onto/boa_moradia/isAlertOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://nees.com.br/linkn/onto/boa_moradia/Alert"/>
         <rdfs:range>
             <Class>
                 <unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&boa_moradia;BMAccount"/>
+                    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/boa_moradia/BMAccount"/>
                     <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person"/>
                 </unionOf>
             </Class>
@@ -208,105 +205,103 @@
 
     <!-- http://nees.com.br/linkn/onto/boa_moradia/isAnnouncementOf -->
 
-    <ObjectProperty rdf:about="&boa_moradia;isAnnouncementOf">
-        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
-        <rdf:type rdf:resource="&owl;IrreflexiveProperty"/>
+    <ObjectProperty rdf:about="http://nees.com.br/linkn/onto/boa_moradia/isAnnouncementOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://nees.com.br/linkn/onto/boa_moradia/Announcement"/>
+        <rdfs:range rdf:resource="http://nees.com.br/linkn/onto/building/RealEstate"/>
         <rdfs:comment xml:lang="en">A announcement is announcement of a boa moradia account</rdfs:comment>
         <rdfs:comment xml:lang="pt">Um anúncio é anúncio de uma conta do boa moradia</rdfs:comment>
-        <rdfs:domain rdf:resource="&boa_moradia;Announcement"/>
-        <rdfs:range rdf:resource="http://nees.com.br/linkn/onto/building/RealEstate"/>
     </ObjectProperty>
     
 
 
     <!-- http://nees.com.br/linkn/onto/boa_moradia/isAssociatedTo -->
 
-    <ObjectProperty rdf:about="&boa_moradia;isAssociatedTo">
-        <rdf:type rdf:resource="&owl;IrreflexiveProperty"/>
-        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
-        <rdfs:comment xml:lang="en">A real estate is associated to a announcement</rdfs:comment>
-        <rdfs:comment xml:lang="pt">Um imóvel está associado a um anúncio</rdfs:comment>
+    <ObjectProperty rdf:about="http://nees.com.br/linkn/onto/boa_moradia/isAssociatedTo">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain>
             <Class>
                 <unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&boa_moradia;Announcement"/>
-                    <rdf:Description rdf:about="&boa_moradia;BMAccount"/>
+                    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/boa_moradia/Announcement"/>
+                    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/boa_moradia/BMAccount"/>
                 </unionOf>
             </Class>
         </rdfs:domain>
         <rdfs:range>
             <Class>
                 <unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&boa_moradia;Announcement"/>
-                    <rdf:Description rdf:about="&boa_moradia;BMAccount"/>
+                    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/boa_moradia/Announcement"/>
+                    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/boa_moradia/BMAccount"/>
                 </unionOf>
             </Class>
         </rdfs:range>
+        <rdfs:comment xml:lang="en">A real estate is associated to a announcement</rdfs:comment>
+        <rdfs:comment xml:lang="pt">Um imóvel está associado a um anúncio</rdfs:comment>
     </ObjectProperty>
     
 
 
     <!-- http://nees.com.br/linkn/onto/boa_moradia/isBMAccountOf -->
 
-    <ObjectProperty rdf:about="&boa_moradia;isBMAccountOf">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+    <ObjectProperty rdf:about="http://nees.com.br/linkn/onto/boa_moradia/isBMAccountOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://nees.com.br/linkn/onto/boa_moradia/BMAccount"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:comment xml:lang="en">A boa moradia account is account of a person</rdfs:comment>
         <rdfs:comment xml:lang="pt">Uma conta boa moradia é de uma pessoa.</rdfs:comment>
-        <rdfs:domain rdf:resource="&boa_moradia;BMAccount"/>
-        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
     </ObjectProperty>
     
 
 
     <!-- http://nees.com.br/linkn/onto/boa_moradia/isCommentOf -->
 
-    <ObjectProperty rdf:about="&boa_moradia;isCommentOf">
-        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdf:type rdf:resource="&owl;IrreflexiveProperty"/>
+    <ObjectProperty rdf:about="http://nees.com.br/linkn/onto/boa_moradia/isCommentOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://nees.com.br/linkn/onto/boa_moradia/Comment"/>
+        <rdfs:range rdf:resource="http://nees.com.br/linkn/onto/boa_moradia/BMAccount"/>
         <rdfs:comment xml:lang="en">A comment is a neighborhood comment created by a boa moradia account. </rdfs:comment>
         <rdfs:comment xml:lang="pt">Um comentário é um comentário de um bairro feito por uma conta do boa moradia</rdfs:comment>
-        <rdfs:range rdf:resource="&boa_moradia;BMAccount"/>
-        <rdfs:domain rdf:resource="&boa_moradia;Comment"/>
-        <inverseOf rdf:resource="&boa_moradia;hasComment"/>
     </ObjectProperty>
     
 
 
     <!-- http://nees.com.br/linkn/onto/boa_moradia/isOfferOf -->
 
-    <ObjectProperty rdf:about="&boa_moradia;isOfferOf">
-        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
-        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
-        <rdf:type rdf:resource="&owl;IrreflexiveProperty"/>
-        <rdfs:range rdf:resource="&boa_moradia;Announcement"/>
-        <rdfs:domain rdf:resource="&boa_moradia;Offer"/>
+    <ObjectProperty rdf:about="http://nees.com.br/linkn/onto/boa_moradia/isOfferOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://nees.com.br/linkn/onto/boa_moradia/Offer"/>
+        <rdfs:range rdf:resource="http://nees.com.br/linkn/onto/boa_moradia/Announcement"/>
     </ObjectProperty>
     
 
 
     <!-- http://nees.com.br/linkn/onto/boa_moradia/isPaymentPlanOf -->
 
-    <ObjectProperty rdf:about="&boa_moradia;isPaymentPlanOf">
-        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
-        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
-        <rdf:type rdf:resource="&owl;IrreflexiveProperty"/>
+    <ObjectProperty rdf:about="http://nees.com.br/linkn/onto/boa_moradia/isPaymentPlanOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://nees.com.br/linkn/onto/boa_moradia/PaymentPlan"/>
+        <rdfs:range rdf:resource="http://nees.com.br/linkn/onto/boa_moradia/Announcement"/>
         <rdfs:comment xml:lang="en">A payment plan is a plan of some announcement</rdfs:comment>
         <rdfs:comment xml:lang="pt">Um plano de pagamento é um plano de algum anúncio.</rdfs:comment>
-        <rdfs:range rdf:resource="&boa_moradia;Announcement"/>
-        <rdfs:domain rdf:resource="&boa_moradia;PaymentPlan"/>
-        <inverseOf rdf:resource="&boa_moradia;hasPaymentPlan"/>
     </ObjectProperty>
     
 
 
     <!-- http://nees.com.br/linkn/onto/boa_moradia/near -->
 
-    <ObjectProperty rdf:about="&boa_moradia;near">
-        <rdfs:range rdf:resource="&boa_moradia;Near"/>
+    <ObjectProperty rdf:about="http://nees.com.br/linkn/onto/boa_moradia/near">
         <rdfs:domain rdf:resource="http://nees.com.br/linkn/onto/building/RealEstate"/>
+        <rdfs:range rdf:resource="http://nees.com.br/linkn/onto/boa_moradia/Near"/>
     </ObjectProperty>
     
 
@@ -342,63 +337,63 @@
 
     <!-- http://nees.com.br/linkn/onto/boa_moradia/hasAlertType -->
 
-    <DatatypeProperty rdf:about="&boa_moradia;hasAlertType">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+    <DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/boa_moradia/hasAlertType">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://nees.com.br/linkn/onto/boa_moradia/Alert"/>
         <rdfs:comment xml:lang="en">An alert has a type. Can be an accident, a fire, a theft and more other types</rdfs:comment>
         <rdfs:comment xml:lang="pt">Um alerta tem um tipo. Pode ser um acidente, um incêndio, um roubo e mais outros tipos.</rdfs:comment>
-        <rdfs:domain rdf:resource="&boa_moradia;Alert"/>
     </DatatypeProperty>
     
 
 
     <!-- http://nees.com.br/linkn/onto/boa_moradia/hasCategoryName -->
 
-    <DatatypeProperty rdf:about="&boa_moradia;hasCategoryName">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+    <DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/boa_moradia/hasCategoryName">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     </DatatypeProperty>
     
 
 
     <!-- http://nees.com.br/linkn/onto/boa_moradia/hasDatePublished -->
 
-    <DatatypeProperty rdf:about="&boa_moradia;hasDatePublished">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    <DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/boa_moradia/hasDatePublished">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain>
             <Class>
                 <unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&boa_moradia;Announcement"/>
-                    <rdf:Description rdf:about="&boa_moradia;Comment"/>
+                    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/boa_moradia/Announcement"/>
+                    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/boa_moradia/Comment"/>
                 </unionOf>
             </Class>
         </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     </DatatypeProperty>
     
 
 
     <!-- http://nees.com.br/linkn/onto/boa_moradia/hasEducationQualityIndex -->
 
-    <DatatypeProperty rdf:about="&boa_moradia;hasEducationQualityIndex">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+    <DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/boa_moradia/hasEducationQualityIndex">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://nees.com.br/linkn/onto/locality/Neighborhood"/>
-        <rdfs:range rdf:resource="&xsd;float"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
     </DatatypeProperty>
     
 
 
     <!-- http://nees.com.br/linkn/onto/boa_moradia/hasEducationQuantityIndex -->
 
-    <DatatypeProperty rdf:about="&boa_moradia;hasEducationQuantityIndex">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+    <DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/boa_moradia/hasEducationQuantityIndex">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://nees.com.br/linkn/onto/locality/Neighborhood"/>
-        <rdfs:range rdf:resource="&xsd;float"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
     </DatatypeProperty>
     
 
 
     <!-- http://nees.com.br/linkn/onto/boa_moradia/hasEmail -->
 
-    <DatatypeProperty rdf:about="&boa_moradia;hasEmail">
+    <DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/boa_moradia/hasEmail">
         <equivalentProperty rdf:resource="http://nees.com.br/linkn/onto/user/hasEmail"/>
     </DatatypeProperty>
     
@@ -406,28 +401,28 @@
 
     <!-- http://nees.com.br/linkn/onto/boa_moradia/hasHealthQualityIndex -->
 
-    <DatatypeProperty rdf:about="&boa_moradia;hasHealthQualityIndex">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+    <DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/boa_moradia/hasHealthQualityIndex">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://nees.com.br/linkn/onto/locality/Neighborhood"/>
-        <rdfs:range rdf:resource="&xsd;float"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
     </DatatypeProperty>
     
 
 
     <!-- http://nees.com.br/linkn/onto/boa_moradia/hasHealthQuantityIndex -->
 
-    <DatatypeProperty rdf:about="&boa_moradia;hasHealthQuantityIndex">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+    <DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/boa_moradia/hasHealthQuantityIndex">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://nees.com.br/linkn/onto/locality/Neighborhood"/>
-        <rdfs:range rdf:resource="&xsd;float"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
     </DatatypeProperty>
     
 
 
     <!-- http://nees.com.br/linkn/onto/boa_moradia/hasLabel -->
 
-    <DatatypeProperty rdf:about="&boa_moradia;hasLabel">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+    <DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/boa_moradia/hasLabel">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:comment xml:lang="en">A comment has a label</rdfs:comment>
         <rdfs:comment xml:lang="pt">Um comentário tem um texto</rdfs:comment>
     </DatatypeProperty>
@@ -436,54 +431,54 @@
 
     <!-- http://nees.com.br/linkn/onto/boa_moradia/hasLikes -->
 
-    <DatatypeProperty rdf:about="&boa_moradia;hasLikes">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+    <DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/boa_moradia/hasLikes">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://nees.com.br/linkn/onto/boa_moradia/Comment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
         <rdfs:comment xml:lang="en">A comment has a number of likes</rdfs:comment>
         <rdfs:comment xml:lang="pt">Um comentário tem um número de curtidas.</rdfs:comment>
-        <rdfs:domain rdf:resource="&boa_moradia;Comment"/>
-        <rdfs:range rdf:resource="&xsd;int"/>
     </DatatypeProperty>
     
 
 
     <!-- http://nees.com.br/linkn/onto/boa_moradia/hasLogin -->
 
-    <DatatypeProperty rdf:about="&boa_moradia;hasLogin">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:domain rdf:resource="&boa_moradia;BMAccount"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
+    <DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/boa_moradia/hasLogin">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://nees.com.br/linkn/onto/boa_moradia/BMAccount"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </DatatypeProperty>
     
 
 
     <!-- http://nees.com.br/linkn/onto/boa_moradia/hasName -->
 
-    <DatatypeProperty rdf:about="&boa_moradia;hasName">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+    <DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/boa_moradia/hasName">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     </DatatypeProperty>
     
 
 
     <!-- http://nees.com.br/linkn/onto/boa_moradia/hasNameOfOfferType -->
 
-    <DatatypeProperty rdf:about="&boa_moradia;hasNameOfOfferType"/>
+    <DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/boa_moradia/hasNameOfOfferType"/>
     
 
 
     <!-- http://nees.com.br/linkn/onto/boa_moradia/hasPassword -->
 
-    <DatatypeProperty rdf:about="&boa_moradia;hasPassword">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:domain rdf:resource="&boa_moradia;BMAccount"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
+    <DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/boa_moradia/hasPassword">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://nees.com.br/linkn/onto/boa_moradia/BMAccount"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </DatatypeProperty>
     
 
 
     <!-- http://nees.com.br/linkn/onto/boa_moradia/hasPaymentMethod -->
 
-    <DatatypeProperty rdf:about="&boa_moradia;hasPaymentMethod">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+    <DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/boa_moradia/hasPaymentMethod">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:comment xml:lang="en">A person can pay a plan in several ways. You can pay by debit, billet, or companies that facilitate transactions.</rdfs:comment>
         <rdfs:comment xml:lang="pt">Uma pessoa pode pagar de diversas formas um plano. Pode pagar em débito, boleto, ou por empresas que facilitam transações.</rdfs:comment>
     </DatatypeProperty>
@@ -492,63 +487,62 @@
 
     <!-- http://nees.com.br/linkn/onto/boa_moradia/hasPhone -->
 
-    <DatatypeProperty rdf:about="&boa_moradia;hasPhone"/>
+    <DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/boa_moradia/hasPhone"/>
     
 
 
     <!-- http://nees.com.br/linkn/onto/boa_moradia/hasPrice -->
 
-    <DatatypeProperty rdf:about="&boa_moradia;hasPrice">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:comment xml:lang="en">A price</rdfs:comment>
-        <rdfs:comment xml:lang="pt">Um preço.</rdfs:comment>
-        <rdfs:range rdf:resource="&xsd;float"/>
+    <DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/boa_moradia/hasPrice">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain>
             <Class>
                 <unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&boa_moradia;Announcement"/>
-                    <rdf:Description rdf:about="&boa_moradia;PaymentPlan"/>
+                    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/boa_moradia/Announcement"/>
+                    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/boa_moradia/PaymentPlan"/>
                 </unionOf>
             </Class>
         </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="en">A price</rdfs:comment>
+        <rdfs:comment xml:lang="pt">Um preço.</rdfs:comment>
     </DatatypeProperty>
     
 
 
     <!-- http://nees.com.br/linkn/onto/boa_moradia/hasQualityIndex -->
 
-    <DatatypeProperty rdf:about="&boa_moradia;hasQualityIndex">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:range rdf:resource="&xsd;float"/>
+    <DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/boa_moradia/hasQualityIndex">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
     </DatatypeProperty>
     
 
 
     <!-- http://nees.com.br/linkn/onto/boa_moradia/hasSafetyQualityIndex -->
 
-    <DatatypeProperty rdf:about="&boa_moradia;hasSafetyQualityIndex">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+    <DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/boa_moradia/hasSafetyQualityIndex">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://nees.com.br/linkn/onto/locality/Neighborhood"/>
-        <rdfs:range rdf:resource="&xsd;float"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
     </DatatypeProperty>
     
 
 
     <!-- http://nees.com.br/linkn/onto/boa_moradia/hasSafetyQuantityIndex -->
 
-    <DatatypeProperty rdf:about="&boa_moradia;hasSafetyQuantityIndex">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+    <DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/boa_moradia/hasSafetyQuantityIndex">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://nees.com.br/linkn/onto/locality/Neighborhood"/>
-        <rdfs:range rdf:resource="&xsd;float"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
     </DatatypeProperty>
     
 
 
     <!-- http://nees.com.br/linkn/onto/boa_moradia/hasSquareMeterPrice -->
 
-    <DatatypeProperty rdf:about="&boa_moradia;hasSquareMeterPrice">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:range rdf:resource="&xsd;float"/>
+    <DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/boa_moradia/hasSquareMeterPrice">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain>
             <Class>
                 <unionOf rdf:parseType="Collection">
@@ -557,78 +551,79 @@
                 </unionOf>
             </Class>
         </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
     </DatatypeProperty>
     
 
 
     <!-- http://nees.com.br/linkn/onto/boa_moradia/hasTitle -->
 
-    <DatatypeProperty rdf:about="&boa_moradia;hasTitle">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
+    <DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/boa_moradia/hasTitle">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </DatatypeProperty>
     
 
 
     <!-- http://nees.com.br/linkn/onto/boa_moradia/hasURL -->
 
-    <DatatypeProperty rdf:about="&boa_moradia;hasURL">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+    <DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/boa_moradia/hasURL">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://nees.com.br/linkn/onto/boa_moradia/Announcement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment xml:lang="en">A residence has an URI. Property got from crawler.</rdfs:comment>
         <rdfs:comment xml:lang="pt">Uma residência tem uma URI. Propriedade setada do crawler.</rdfs:comment>
-        <rdfs:domain rdf:resource="&boa_moradia;Announcement"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
     </DatatypeProperty>
     
 
 
     <!-- http://nees.com.br/linkn/onto/boa_moradia/hasValidAccount -->
 
-    <DatatypeProperty rdf:about="&boa_moradia;hasValidAccount">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:domain rdf:resource="&boa_moradia;BMAccount"/>
-        <rdfs:range rdf:resource="&xsd;boolean"/>
+    <DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/boa_moradia/hasValidAccount">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://nees.com.br/linkn/onto/boa_moradia/BMAccount"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     </DatatypeProperty>
     
 
 
     <!-- http://nees.com.br/linkn/onto/boa_moradia/hasValidationHash -->
 
-    <DatatypeProperty rdf:about="&boa_moradia;hasValidationHash">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:domain rdf:resource="&boa_moradia;BMAccount"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    <DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/boa_moradia/hasValidationHash">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://nees.com.br/linkn/onto/boa_moradia/BMAccount"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </DatatypeProperty>
     
 
 
     <!-- http://nees.com.br/linkn/onto/boa_moradia/preference -->
 
-    <DatatypeProperty rdf:about="&boa_moradia;preference">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:domain rdf:resource="&boa_moradia;Near"/>
-        <rdfs:range rdf:resource="&xsd;anyURI"/>
+    <DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/boa_moradia/preference">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://nees.com.br/linkn/onto/boa_moradia/Near"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
     </DatatypeProperty>
     
 
 
     <!-- http://nees.com.br/linkn/onto/boa_moradia/quantity -->
 
-    <DatatypeProperty rdf:about="&boa_moradia;quantity">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:domain rdf:resource="&boa_moradia;Near"/>
-        <rdfs:range rdf:resource="&xsd;int"/>
+    <DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/boa_moradia/quantity">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://nees.com.br/linkn/onto/boa_moradia/Near"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
     </DatatypeProperty>
     
 
 
     <!-- http://nees.com.br/linkn/onto/boa_moradia/radius -->
 
-    <DatatypeProperty rdf:about="&boa_moradia;radius">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:domain rdf:resource="&boa_moradia;Near"/>
-        <rdfs:range rdf:resource="&xsd;float"/>
+    <DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/boa_moradia/radius">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://nees.com.br/linkn/onto/boa_moradia/Near"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
     </DatatypeProperty>
     
 
@@ -658,11 +653,11 @@
 
     <!-- http://nees.com.br/linkn/onto/boa_moradia/Alert -->
 
-    <Class rdf:about="&boa_moradia;Alert">
+    <Class rdf:about="http://nees.com.br/linkn/onto/boa_moradia/Alert">
         <rdfs:subClassOf>
             <Restriction>
-                <onProperty rdf:resource="&boa_moradia;hasBMAccount"/>
-                <allValuesFrom rdf:resource="&boa_moradia;BMAccount"/>
+                <onProperty rdf:resource="http://nees.com.br/linkn/onto/boa_moradia/hasBMAccount"/>
+                <allValuesFrom rdf:resource="http://nees.com.br/linkn/onto/boa_moradia/BMAccount"/>
             </Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">In boa moradia system, a person can create an alert about something that happened in a neighborhood. For example: An traffic accident, potholes in the streets, fire etc.</rdfs:comment>
@@ -673,66 +668,66 @@
 
     <!-- http://nees.com.br/linkn/onto/boa_moradia/Announcement -->
 
-    <Class rdf:about="&boa_moradia;Announcement">
-        <rdfs:label xml:lang="en">Announcement</rdfs:label>
-        <rdfs:label xml:lang="pt">Anúncio</rdfs:label>
+    <Class rdf:about="http://nees.com.br/linkn/onto/boa_moradia/Announcement">
         <rdfs:subClassOf>
             <Restriction>
-                <onProperty rdf:resource="http://nees.com.br/linkn/onto/building/hasPhoto"/>
-                <maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</maxQualifiedCardinality>
-                <onDataRange rdf:resource="&xsd;anyURI"/>
+                <onProperty rdf:resource="http://nees.com.br/linkn/onto/boa_moradia/hasPrice"/>
+                <qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</qualifiedCardinality>
+                <onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
             </Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <Restriction>
-                <onProperty rdf:resource="&boa_moradia;hasPrice"/>
-                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
-                <onDataRange rdf:resource="&xsd;float"/>
+                <onProperty rdf:resource="http://nees.com.br/linkn/onto/boa_moradia/hasTitle"/>
+                <qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</qualifiedCardinality>
+                <onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <Restriction>
                 <onProperty rdf:resource="http://nees.com.br/linkn/onto/locality/hasID"/>
-                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
-                <onDataRange rdf:resource="&xsd;string"/>
+                <qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</qualifiedCardinality>
+                <onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <Restriction>
-                <onProperty rdf:resource="&boa_moradia;hasTitle"/>
-                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
-                <onDataRange rdf:resource="&xsd;string"/>
+                <onProperty rdf:resource="http://nees.com.br/linkn/onto/building/hasPhoto"/>
+                <maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</maxQualifiedCardinality>
+                <onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
             </Restriction>
         </rdfs:subClassOf>
-        <disjointWith rdf:resource="&boa_moradia;Offer"/>
+        <disjointWith rdf:resource="http://nees.com.br/linkn/onto/boa_moradia/Offer"/>
         <rdfs:comment xml:lang="en">An user of boa moradia can to create announcements of real estates in your profile fo rent or sale</rdfs:comment>
         <rdfs:comment xml:lang="pt">Um usuário do boa moradia pode criar anúncios de imóveis em seu perfil para que possa vender ou alugar.</rdfs:comment>
+        <rdfs:label xml:lang="en">Announcement</rdfs:label>
+        <rdfs:label xml:lang="pt">Anúncio</rdfs:label>
     </Class>
     
 
 
     <!-- http://nees.com.br/linkn/onto/boa_moradia/BMAccount -->
 
-    <Class rdf:about="&boa_moradia;BMAccount">
+    <Class rdf:about="http://nees.com.br/linkn/onto/boa_moradia/BMAccount">
         <equivalentClass rdf:resource="http://xmlns.com/foaf/0.1/OnlineAccount"/>
         <rdfs:subClassOf>
             <Restriction>
-                <onProperty rdf:resource="http://nees.com.br/linkn/onto/locality/hasID"/>
-                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
-                <onDataRange rdf:resource="&xsd;string"/>
-            </Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <Restriction>
-                <onProperty rdf:resource="&boa_moradia;isAssociatedTo"/>
-                <allValuesFrom rdf:resource="&boa_moradia;Announcement"/>
+                <onProperty rdf:resource="http://nees.com.br/linkn/onto/boa_moradia/isAssociatedTo"/>
+                <allValuesFrom rdf:resource="http://nees.com.br/linkn/onto/boa_moradia/Announcement"/>
             </Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <Restriction>
                 <onProperty rdf:resource="http://nees.com.br/linkn/onto/building/hasPhoto"/>
-                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
-                <onDataRange rdf:resource="&xsd;anyURI"/>
+                <qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</qualifiedCardinality>
+                <onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://nees.com.br/linkn/onto/locality/hasID"/>
+                <qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</qualifiedCardinality>
+                <onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">In boa moradia system, a person can to create an account</rdfs:comment>
@@ -743,7 +738,7 @@
 
     <!-- http://nees.com.br/linkn/onto/boa_moradia/Comment -->
 
-    <Class rdf:about="&boa_moradia;Comment">
+    <Class rdf:about="http://nees.com.br/linkn/onto/boa_moradia/Comment">
         <rdfs:comment xml:lang="en">In boa moradia system, a person can comment about a neighborhood for other person to see. A person can also likes a comment</rdfs:comment>
         <rdfs:comment xml:lang="pt">No sistema boa moradia, uma pessoa pode comentar sobre um bairro para que outras pessoas possam ver. É possível também curtir comentários.</rdfs:comment>
     </Class>
@@ -752,19 +747,19 @@
 
     <!-- http://nees.com.br/linkn/onto/boa_moradia/Near -->
 
-    <Class rdf:about="&boa_moradia;Near"/>
+    <Class rdf:about="http://nees.com.br/linkn/onto/boa_moradia/Near"/>
     
 
 
     <!-- http://nees.com.br/linkn/onto/boa_moradia/Offer -->
 
-    <Class rdf:about="&boa_moradia;Offer"/>
+    <Class rdf:about="http://nees.com.br/linkn/onto/boa_moradia/Offer"/>
     
 
 
     <!-- http://nees.com.br/linkn/onto/boa_moradia/PaymentPlan -->
 
-    <Class rdf:about="&boa_moradia;PaymentPlan">
+    <Class rdf:about="http://nees.com.br/linkn/onto/boa_moradia/PaymentPlan">
         <rdfs:comment xml:lang="en">In boa moradia system, a person pays for real estate&apos;s announcement. There are several plans and payment methods</rdfs:comment>
         <rdfs:comment xml:lang="pt">No sistema boa moradia, uma pessoa paga por anúncios de imóveis. Existem diversos planos e métodos de pagamento.</rdfs:comment>
     </Class>
@@ -806,29 +801,29 @@
 
     <!-- http://nees.com.br/linkn/onto/boa_moradia/Rent -->
 
-    <NamedIndividual rdf:about="&boa_moradia;Rent">
-        <rdf:type rdf:resource="&boa_moradia;Offer"/>
-        <rdfs:label xml:lang="pt">Alugar</rdfs:label>
+    <NamedIndividual rdf:about="http://nees.com.br/linkn/onto/boa_moradia/Rent">
+        <rdf:type rdf:resource="http://nees.com.br/linkn/onto/boa_moradia/Offer"/>
         <boa_moradia:synonymous xml:lang="pt">aluga</boa_moradia:synonymous>
         <boa_moradia:synonymous xml:lang="pt">aluga-se</boa_moradia:synonymous>
         <boa_moradia:synonymous xml:lang="pt">alugo</boa_moradia:synonymous>
         <boa_moradia:synonymous xml:lang="pt">aluguel</boa_moradia:synonymous>
         <boa_moradia:synonymous xml:lang="pt">temporada</boa_moradia:synonymous>
+        <rdfs:label xml:lang="pt">Alugar</rdfs:label>
     </NamedIndividual>
     
 
 
     <!-- http://nees.com.br/linkn/onto/boa_moradia/Sale -->
 
-    <NamedIndividual rdf:about="&boa_moradia;Sale">
-        <rdf:type rdf:resource="&boa_moradia;Offer"/>
-        <rdfs:label xml:lang="pt">Vender</rdfs:label>
+    <NamedIndividual rdf:about="http://nees.com.br/linkn/onto/boa_moradia/Sale">
+        <rdf:type rdf:resource="http://nees.com.br/linkn/onto/boa_moradia/Offer"/>
         <boa_moradia:synonymous xml:lang="pt">comprar</boa_moradia:synonymous>
         <boa_moradia:synonymous xml:lang="pt">lançamentos</boa_moradia:synonymous>
         <boa_moradia:synonymous xml:lang="pt">venda</boa_moradia:synonymous>
         <boa_moradia:synonymous xml:lang="pt">vende</boa_moradia:synonymous>
         <boa_moradia:synonymous xml:lang="pt">vende-se</boa_moradia:synonymous>
         <boa_moradia:synonymous xml:lang="pt">vendo</boa_moradia:synonymous>
+        <rdfs:label xml:lang="pt">Vender</rdfs:label>
     </NamedIndividual>
     
 
@@ -841,322 +836,343 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Library">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Church">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Mosque">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Carpenter">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Handicraft">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Subway">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/TreeRow">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Seafood">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Beach">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Garden">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Veterinary">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/HealthCenter">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Cafe">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Motel">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Barbecue">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Skiing">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/FastFood">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Track">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Taekwondo">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/AmericanFootball">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Policlinic">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Swimming">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Clinic">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Architect">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Music">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Atm">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Fuel">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Soccer">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Stadium">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Cinema">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Beauty">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Basketball">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Telephone">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Warehouse">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Art">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Karting">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Books">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Beverages">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/It">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Gymnastics">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Doctors">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Athletics">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/CanadianFootball">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/ArtsCentre">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/FireStation">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Park">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Boxing">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Museum">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Bakery">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/College">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/TableTennis">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Rowing">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Theatre">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Orthopedics">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/BusStation">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Chess">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/BusStop">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Jewelry">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Mall">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/CarRepair">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Footway">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Judo">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Delegacy">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Sailing">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Tennis">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Table">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Pub">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Handball">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Optician">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Pastry">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/TableSoccer">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Bowls">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Pasta">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Marketplace">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Taxi">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Ski">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Coastline">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Football">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Bar">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Rugby">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Hostel">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Winery">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Dentist">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/AmusementArcade">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/CarWash">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Bank">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Gambling">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/ThemePark">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Darts">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Supermarket">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Accountant">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Silo">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Restaurant">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Coffee">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/SportsCentre">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Nightclub">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Hairdresser">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/StopArea">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Beachvolleyball">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/HospitalDayIsolated">
         <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Aikido">
         <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
     </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Brewery">
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/AmericanFootball">
         <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
     </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Sports">
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/AmusementArcade">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Architect">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Art">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/ArtsCentre">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Athletics">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Atm">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Bakery">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Bank">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Bar">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Barbecue">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Baseball">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Basketball">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Beach">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Beachvolleyball">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Beauty">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Beverages">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Books">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Boutique">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Bowls">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Boxing">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Brewery">
         <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Brothel">
         <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
     </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/BusStation">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/BusStop">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Cafe">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/CanadianFootball">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/CarRepair">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/CarWash">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Carpenter">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Cathedral">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Chess">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Church">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Cinema">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Clinic">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Coastline">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Coffee">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/College">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Darts">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Delegacy">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Dentist">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Doctors">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/FastFood">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/FireStation">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Football">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Footway">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Fuel">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Gallery">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Gambling">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Games">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Garden">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Greengrocer">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Gym">
         <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
     </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Boutique">
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Gymnastics">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Hackerspace">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Hairdresser">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Handball">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Handicraft">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/HealthCenter">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/HospitalDayIsolated">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Hostel">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Hotel">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/It">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Jewelry">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Judo">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Karting">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Kindergarten">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Library">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Mall">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Marketplace">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Mosque">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Motel">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Museum">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Music">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Nightclub">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Optician">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Orthopedics">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Park">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Pasta">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Pastry">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Pharmacy">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Policlinic">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Pub">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Restaurant">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Rowing">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Rugby">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Sailing">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Seafood">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Silo">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Ski">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Skiing">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Soccer">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Sports">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/SportsCentre">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Stadium">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/StopArea">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Subway">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Supermarket">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Surfing">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Swimming">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Table">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/TableSoccer">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/TableTennis">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Taekwondo">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Taxi">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Telephone">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Tennis">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Theatre">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/ThemePark">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Track">
+        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/TreeRow">
         <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/University">
@@ -1165,42 +1181,21 @@
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/UniversityCenter">
         <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
     </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Pharmacy">
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Veterinary">
         <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
     </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Surfing">
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Warehouse">
         <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
     </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Hotel">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Cathedral">
+    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Winery">
         <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Zoo">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Hackerspace">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Baseball">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Greengrocer">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Games">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Gallery">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Kindergarten">
         <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
     </rdf:Description>
 </rdf:RDF>
 
 
 
-<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
+<!-- Generated by the OWL API (version 4.1.3.20151118-2017) https://github.com/owlcs/owlapi -->
 

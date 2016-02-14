@@ -1,26 +1,17 @@
 <?xml version="1.0"?>
-
-
-<!DOCTYPE rdf:RDF [
-    <!ENTITY foaf "http://xmlns.com/foaf/0.1/" >
-    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
-    <!ENTITY swrl "http://www.w3.org/2003/11/swrl#" >
-    <!ENTITY swrlb "http://www.w3.org/2003/11/swrlb#" >
-    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
-    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-]>
-
-
 <rdf:RDF xmlns="http://nees.com.br/linkn/onto/user/"
      xml:base="http://nees.com.br/linkn/onto/user/"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:ns="http://www.w3.org/2003/06/sw-vocab-status/ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
      xmlns:swrl="http://www.w3.org/2003/11/swrl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:foaf="http://xmlns.com/foaf/0.1/">
+     xmlns:wot="http://xmlns.com/wot/0.1/"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
     <owl:Ontology rdf:about="http://nees.com.br/linkn/onto/user/">
         <owl:imports rdf:resource="http://xmlns.com/foaf/0.1/"/>
     </owl:Ontology>
@@ -42,23 +33,23 @@
 
     <owl:ObjectProperty rdf:about="http://nees.com.br/linkn/onto/user/hasAunt">
         <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronizedPeople"/>
-        <rdfs:range rdf:resource="&foaf;Person"/>
-        <rdfs:domain rdf:resource="&foaf;Person"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasBrother"/>
             <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasAunt"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasFather"/>
             <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasSister"/>
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasAunt"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasMother"/>
             <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasSister"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasFather"/>
             <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasSister"/>
+            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasAunt"/>
         </owl:propertyChainAxiom>
     </owl:ObjectProperty>
     
@@ -67,16 +58,16 @@
     <!-- http://nees.com.br/linkn/onto/user/hasBrother -->
 
     <owl:ObjectProperty rdf:about="http://nees.com.br/linkn/onto/user/hasBrother">
-        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
         <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronizedPeople"/>
-        <rdfs:range rdf:resource="&foaf;Person"/>
-        <rdfs:domain rdf:resource="&foaf;Person"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasMother"/>
+            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasFather"/>
             <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasSon"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasFather"/>
+            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasMother"/>
             <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasSon"/>
         </owl:propertyChainAxiom>
     </owl:ObjectProperty>
@@ -87,8 +78,8 @@
 
     <owl:ObjectProperty rdf:about="http://nees.com.br/linkn/onto/user/hasBrotherInLaw">
         <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronizedPeople"/>
-        <rdfs:domain rdf:resource="&foaf;Person"/>
-        <rdfs:range rdf:resource="&foaf;Person"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
     </owl:ObjectProperty>
     
 
@@ -96,37 +87,29 @@
     <!-- http://nees.com.br/linkn/onto/user/hasCousin -->
 
     <owl:ObjectProperty rdf:about="http://nees.com.br/linkn/onto/user/hasCousin">
-        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
         <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronizedPeople"/>
-        <rdfs:domain rdf:resource="&foaf;Person"/>
-        <rdfs:range rdf:resource="&foaf;Person"/>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasFather"/>
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasNice"/>
-        </owl:propertyChainAxiom>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasAunt"/>
             <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasDaughter"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasSister"/>
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasCousin"/>
+            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasAunt"/>
+            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasSon"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasBrother"/>
             <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasCousin"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasAunt"/>
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasSon"/>
-        </owl:propertyChainAxiom>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasFather"/>
             <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasNephew"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasUncle"/>
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasSon"/>
+            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasFather"/>
+            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasNice"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasMother"/>
@@ -137,8 +120,16 @@
             <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasNice"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasSister"/>
+            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasCousin"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasUncle"/>
             <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasDaughter"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasUncle"/>
+            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasSon"/>
         </owl:propertyChainAxiom>
     </owl:ObjectProperty>
     
@@ -148,8 +139,8 @@
 
     <owl:ObjectProperty rdf:about="http://nees.com.br/linkn/onto/user/hasDaughter">
         <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronizedPeople"/>
-        <rdfs:range rdf:resource="&foaf;Person"/>
-        <rdfs:domain rdf:resource="&foaf;Person"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
     </owl:ObjectProperty>
     
 
@@ -158,8 +149,8 @@
 
     <owl:ObjectProperty rdf:about="http://nees.com.br/linkn/onto/user/hasDaughterInLaw">
         <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronizedPeople"/>
-        <rdfs:domain rdf:resource="&foaf;Person"/>
-        <rdfs:range rdf:resource="&foaf;Person"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
     </owl:ObjectProperty>
     
 
@@ -173,10 +164,10 @@
     <!-- http://nees.com.br/linkn/onto/user/hasFather -->
 
     <owl:ObjectProperty rdf:about="http://nees.com.br/linkn/onto/user/hasFather">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronizedPeople"/>
-        <rdfs:range rdf:resource="&foaf;Person"/>
-        <rdfs:domain rdf:resource="&foaf;Person"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
     </owl:ObjectProperty>
     
 
@@ -184,10 +175,10 @@
     <!-- http://nees.com.br/linkn/onto/user/hasFatherInLaw -->
 
     <owl:ObjectProperty rdf:about="http://nees.com.br/linkn/onto/user/hasFatherInLaw">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronizedPeople"/>
-        <rdfs:range rdf:resource="&foaf;Person"/>
-        <rdfs:domain rdf:resource="&foaf;Person"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
     </owl:ObjectProperty>
     
 
@@ -196,8 +187,8 @@
 
     <owl:ObjectProperty rdf:about="http://nees.com.br/linkn/onto/user/hasGrandDaughter">
         <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronizedPeople"/>
-        <rdfs:range rdf:resource="&foaf;Person"/>
-        <rdfs:domain rdf:resource="&foaf;Person"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasDaughter"/>
             <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasDaughter"/>
@@ -214,14 +205,10 @@
 
     <owl:ObjectProperty rdf:about="http://nees.com.br/linkn/onto/user/hasGrandFather">
         <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronizedPeople"/>
-        <rdfs:domain rdf:resource="&foaf;Person"/>
-        <rdfs:range rdf:resource="&foaf;Person"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasAunt"/>
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasFather"/>
-        </owl:propertyChainAxiom>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasMother"/>
             <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasFather"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
@@ -229,12 +216,16 @@
             <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasGrandFather"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasSister"/>
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasGrandFather"/>
+            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasFather"/>
+            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasFather"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasMother"/>
             <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasFather"/>
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasFather"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasSister"/>
+            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasGrandFather"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasUncle"/>
@@ -248,10 +239,14 @@
 
     <owl:ObjectProperty rdf:about="http://nees.com.br/linkn/onto/user/hasGrandMother">
         <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronizedPeople"/>
-        <rdfs:range rdf:resource="&foaf;Person"/>
-        <rdfs:domain rdf:resource="&foaf;Person"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasSister"/>
+            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasAunt"/>
+            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasMother"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasBrother"/>
             <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasGrandMother"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
@@ -259,20 +254,16 @@
             <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasMother"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasAunt"/>
+            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasMother"/>
             <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasMother"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasMother"/>
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasMother"/>
+            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasSister"/>
+            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasGrandMother"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasUncle"/>
             <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasMother"/>
-        </owl:propertyChainAxiom>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasBrother"/>
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasGrandMother"/>
         </owl:propertyChainAxiom>
     </owl:ObjectProperty>
     
@@ -282,14 +273,14 @@
 
     <owl:ObjectProperty rdf:about="http://nees.com.br/linkn/onto/user/hasGrandSon">
         <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronizedPeople"/>
-        <rdfs:range rdf:resource="&foaf;Person"/>
-        <rdfs:domain rdf:resource="&foaf;Person"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasSon"/>
+            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasDaughter"/>
             <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasSon"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasDaughter"/>
+            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasSon"/>
             <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasSon"/>
         </owl:propertyChainAxiom>
     </owl:ObjectProperty>
@@ -299,10 +290,10 @@
     <!-- http://nees.com.br/linkn/onto/user/hasMother -->
 
     <owl:ObjectProperty rdf:about="http://nees.com.br/linkn/onto/user/hasMother">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronizedPeople"/>
-        <rdfs:domain rdf:resource="&foaf;Person"/>
-        <rdfs:range rdf:resource="&foaf;Person"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
     </owl:ObjectProperty>
     
 
@@ -310,10 +301,10 @@
     <!-- http://nees.com.br/linkn/onto/user/hasMotherInLaw -->
 
     <owl:ObjectProperty rdf:about="http://nees.com.br/linkn/onto/user/hasMotherInLaw">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronizedPeople"/>
-        <rdfs:range rdf:resource="&foaf;Person"/>
-        <rdfs:domain rdf:resource="&foaf;Person"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
     </owl:ObjectProperty>
     
 
@@ -322,8 +313,8 @@
 
     <owl:ObjectProperty rdf:about="http://nees.com.br/linkn/onto/user/hasNephew">
         <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronizedPeople"/>
-        <rdfs:range rdf:resource="&foaf;Person"/>
-        <rdfs:domain rdf:resource="&foaf;Person"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasBrother"/>
             <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasSon"/>
@@ -348,15 +339,15 @@
 
     <owl:ObjectProperty rdf:about="http://nees.com.br/linkn/onto/user/hasNice">
         <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronizedPeople"/>
-        <rdfs:domain rdf:resource="&foaf;Person"/>
-        <rdfs:range rdf:resource="&foaf;Person"/>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasNice"/>
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasBrother"/>
-        </owl:propertyChainAxiom>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasBrother"/>
             <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasDaughter"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasNice"/>
+            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasBrother"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasNice"/>
@@ -373,17 +364,17 @@
     <!-- http://nees.com.br/linkn/onto/user/hasSister -->
 
     <owl:ObjectProperty rdf:about="http://nees.com.br/linkn/onto/user/hasSister">
-        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
         <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronizedPeople"/>
-        <rdfs:range rdf:resource="&foaf;Person"/>
-        <rdfs:domain rdf:resource="&foaf;Person"/>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasFather"/>
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasDaughter"/>
-        </owl:propertyChainAxiom>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasBrother"/>
             <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasSister"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasFather"/>
+            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasDaughter"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasMother"/>
@@ -397,8 +388,8 @@
 
     <owl:ObjectProperty rdf:about="http://nees.com.br/linkn/onto/user/hasSisterInLaw">
         <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronizedPeople"/>
-        <rdfs:domain rdf:resource="&foaf;Person"/>
-        <rdfs:range rdf:resource="&foaf;Person"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
     </owl:ObjectProperty>
     
 
@@ -407,8 +398,8 @@
 
     <owl:ObjectProperty rdf:about="http://nees.com.br/linkn/onto/user/hasSon">
         <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronizedPeople"/>
-        <rdfs:domain rdf:resource="&foaf;Person"/>
-        <rdfs:range rdf:resource="&foaf;Person"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
     </owl:ObjectProperty>
     
 
@@ -417,8 +408,8 @@
 
     <owl:ObjectProperty rdf:about="http://nees.com.br/linkn/onto/user/hasSonInLaw">
         <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronizedPeople"/>
-        <rdfs:range rdf:resource="&foaf;Person"/>
-        <rdfs:domain rdf:resource="&foaf;Person"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
     </owl:ObjectProperty>
     
 
@@ -426,10 +417,10 @@
     <!-- http://nees.com.br/linkn/onto/user/hasStepFather -->
 
     <owl:ObjectProperty rdf:about="http://nees.com.br/linkn/onto/user/hasStepFather">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronizedPeople"/>
-        <rdfs:domain rdf:resource="&foaf;Person"/>
-        <rdfs:range rdf:resource="&foaf;Person"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
     </owl:ObjectProperty>
     
 
@@ -437,10 +428,10 @@
     <!-- http://nees.com.br/linkn/onto/user/hasStepMother -->
 
     <owl:ObjectProperty rdf:about="http://nees.com.br/linkn/onto/user/hasStepMother">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronizedPeople"/>
-        <rdfs:range rdf:resource="&foaf;Person"/>
-        <rdfs:domain rdf:resource="&foaf;Person"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
     </owl:ObjectProperty>
     
 
@@ -449,12 +440,8 @@
 
     <owl:ObjectProperty rdf:about="http://nees.com.br/linkn/onto/user/hasUncle">
         <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronizedPeople"/>
-        <rdfs:range rdf:resource="&foaf;Person"/>
-        <rdfs:domain rdf:resource="&foaf;Person"/>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasSister"/>
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasUncle"/>
-        </owl:propertyChainAxiom>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasBrother"/>
             <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasUncle"/>
@@ -466,6 +453,10 @@
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasMother"/>
             <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasBrother"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasSister"/>
+            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasUncle"/>
         </owl:propertyChainAxiom>
     </owl:ObjectProperty>
     
@@ -486,8 +477,8 @@
 
     <owl:DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/user/hasActivities">
         <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronized"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-        <rdfs:domain rdf:resource="&foaf;Person"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
@@ -496,8 +487,8 @@
 
     <owl:DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/user/hasAdAccounts">
         <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronized"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-        <rdfs:domain rdf:resource="&foaf;Person"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
@@ -506,8 +497,8 @@
 
     <owl:DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/user/hasCheckins">
         <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFoursquareSynchronized"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-        <rdfs:domain rdf:resource="&foaf;Person"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
@@ -515,10 +506,10 @@
     <!-- http://nees.com.br/linkn/onto/user/hasDateOfBirth -->
 
     <owl:DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/user/hasDateOfBirth">
+        <owl:equivalentProperty rdf:resource="http://xmlns.com/foaf/0.1/birthday"/>
         <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasLinkedInSynchronized"/>
-        <rdfs:range rdf:resource="&xsd;dateTime"/>
-        <rdfs:domain rdf:resource="&foaf;Person"/>
-        <owl:equivalentProperty rdf:resource="&foaf;birthday"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     </owl:DatatypeProperty>
     
 
@@ -526,10 +517,10 @@
     <!-- http://nees.com.br/linkn/onto/user/hasEmail -->
 
     <owl:DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/user/hasEmail">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasLinkedInSynchronized"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-        <rdfs:domain rdf:resource="&foaf;Person"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
@@ -538,8 +529,8 @@
 
     <owl:DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/user/hasFacebookFriends">
         <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronized"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-        <rdfs:domain rdf:resource="&foaf;Person"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
@@ -548,7 +539,7 @@
 
     <owl:DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/user/hasFacebookSynchronized">
         <rdfs:domain rdf:resource="http://schema.org/Person"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
@@ -556,11 +547,11 @@
     <!-- http://nees.com.br/linkn/onto/user/hasFirstName -->
 
     <owl:DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/user/hasFirstName">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <owl:equivalentProperty rdf:resource="http://xmlns.com/foaf/0.1/firstName"/>
         <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasLinkedInSynchronized"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-        <rdfs:domain rdf:resource="&foaf;Person"/>
-        <owl:equivalentProperty rdf:resource="&foaf;firstName"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
@@ -569,8 +560,8 @@
 
     <owl:DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/user/hasFoursquareFriends">
         <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFoursquareSynchronized"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-        <rdfs:domain rdf:resource="&foaf;Person"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
@@ -579,7 +570,7 @@
 
     <owl:DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/user/hasFoursquareSynchronized">
         <rdfs:domain rdf:resource="http://schema.org/Person"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
@@ -588,8 +579,8 @@
 
     <owl:DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/user/hasHeadline">
         <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasLinkedInSynchronized"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-        <rdfs:domain rdf:resource="&foaf;Person"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
@@ -598,8 +589,8 @@
 
     <owl:DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/user/hasInterests">
         <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronized"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-        <rdfs:domain rdf:resource="&foaf;Person"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
@@ -608,8 +599,8 @@
 
     <owl:DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/user/hasLanguages">
         <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasLinkedInSynchronized"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-        <rdfs:domain rdf:resource="&foaf;Person"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
@@ -617,12 +608,12 @@
     <!-- http://nees.com.br/linkn/onto/user/hasLastName -->
 
     <owl:DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/user/hasLastName">
+        <owl:equivalentProperty rdf:resource="http://xmlns.com/foaf/0.1/familyName"/>
+        <owl:equivalentProperty rdf:resource="http://xmlns.com/foaf/0.1/family_name"/>
+        <owl:equivalentProperty rdf:resource="http://xmlns.com/foaf/0.1/surname"/>
         <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasLinkedInSynchronized"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-        <rdfs:domain rdf:resource="&foaf;Person"/>
-        <owl:equivalentProperty rdf:resource="&foaf;familyName"/>
-        <owl:equivalentProperty rdf:resource="&foaf;family_name"/>
-        <owl:equivalentProperty rdf:resource="&foaf;surname"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
@@ -631,8 +622,8 @@
 
     <owl:DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/user/hasLikes">
         <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronized"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-        <rdfs:domain rdf:resource="&foaf;Person"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
@@ -641,7 +632,7 @@
 
     <owl:DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/user/hasLinkedInSynchronized">
         <rdfs:domain rdf:resource="http://schema.org/Person"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
@@ -650,8 +641,8 @@
 
     <owl:DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/user/hasLocationCountryCode">
         <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasLinkedInSynchronized"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-        <rdfs:domain rdf:resource="&foaf;Person"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
@@ -660,8 +651,8 @@
 
     <owl:DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/user/hasLocationName">
         <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasLinkedInSynchronized"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-        <rdfs:domain rdf:resource="&foaf;Person"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
@@ -670,8 +661,8 @@
 
     <owl:DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/user/hasMaidenName">
         <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasLinkedInSynchronized"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-        <rdfs:domain rdf:resource="&foaf;Person"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
@@ -680,8 +671,8 @@
 
     <owl:DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/user/hasMayorships">
         <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFoursquareSynchronized"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-        <rdfs:domain rdf:resource="&foaf;Person"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
@@ -689,9 +680,9 @@
     <!-- http://nees.com.br/linkn/onto/user/hasPassword -->
 
     <owl:DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/user/hasPassword">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-        <rdfs:domain rdf:resource="&foaf;Person"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
@@ -700,8 +691,8 @@
 
     <owl:DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/user/hasPermissions">
         <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronized"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-        <rdfs:domain rdf:resource="&foaf;Person"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
@@ -710,8 +701,8 @@
 
     <owl:DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/user/hasPicture">
         <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronized"/>
-        <rdfs:range rdf:resource="&xsd;anyURI"/>
-        <rdfs:domain rdf:resource="&foaf;Person"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
     </owl:DatatypeProperty>
     
 
@@ -720,8 +711,8 @@
 
     <owl:DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/user/hasTaggableFriends">
         <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronized"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-        <rdfs:domain rdf:resource="&foaf;Person"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
@@ -730,8 +721,8 @@
 
     <owl:DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/user/hasTaggedPlaces">
         <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronized"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-        <rdfs:domain rdf:resource="&foaf;Person"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
@@ -740,8 +731,8 @@
 
     <owl:DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/user/hasTips">
         <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFoursquareSynchronized"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-        <rdfs:domain rdf:resource="&foaf;Person"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
@@ -750,8 +741,8 @@
 
     <owl:DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/user/hasVenuesHistory">
         <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFoursquareSynchronized"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-        <rdfs:domain rdf:resource="&foaf;Person"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
@@ -760,80 +751,80 @@
 
     <owl:DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/user/hasVenuesLikes">
         <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFoursquareSynchronized"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-        <rdfs:domain rdf:resource="&foaf;Person"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
     <!-- http://xmlns.com/foaf/0.1/birthday -->
 
-    <rdf:Description rdf:about="&foaf;birthday"/>
+    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/birthday"/>
     
 
 
     <!-- http://xmlns.com/foaf/0.1/familyName -->
 
-    <rdf:Description rdf:about="&foaf;familyName">
-        <owl:equivalentProperty rdf:resource="&foaf;family_name"/>
+    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/familyName">
+        <owl:equivalentProperty rdf:resource="http://xmlns.com/foaf/0.1/family_name"/>
     </rdf:Description>
     
 
 
     <!-- http://xmlns.com/foaf/0.1/family_name -->
 
-    <rdf:Description rdf:about="&foaf;family_name">
-        <owl:equivalentProperty rdf:resource="&foaf;surname"/>
+    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/family_name">
+        <owl:equivalentProperty rdf:resource="http://xmlns.com/foaf/0.1/surname"/>
     </rdf:Description>
     
 
 
     <!-- http://xmlns.com/foaf/0.1/firstName -->
 
-    <rdf:Description rdf:about="&foaf;firstName">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <owl:equivalentProperty rdf:resource="&foaf;givenName"/>
-        <owl:equivalentProperty rdf:resource="&foaf;givenname"/>
+    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/firstName">
+        <owl:equivalentProperty rdf:resource="http://xmlns.com/foaf/0.1/givenName"/>
+        <owl:equivalentProperty rdf:resource="http://xmlns.com/foaf/0.1/givenname"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     </rdf:Description>
     
 
 
     <!-- http://xmlns.com/foaf/0.1/givenName -->
 
-    <rdf:Description rdf:about="&foaf;givenName">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/givenName">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     </rdf:Description>
     
 
 
     <!-- http://xmlns.com/foaf/0.1/givenname -->
 
-    <rdf:Description rdf:about="&foaf;givenname"/>
+    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/givenname"/>
     
 
 
     <!-- http://xmlns.com/foaf/0.1/nick -->
 
-    <rdf:Description rdf:about="&foaf;nick">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-        <rdfs:domain rdf:resource="&foaf;Person"/>
+    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/nick">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </rdf:Description>
     
 
 
     <!-- http://xmlns.com/foaf/0.1/surname -->
 
-    <rdf:Description rdf:about="&foaf;surname"/>
+    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/surname"/>
     
 
 
     <!-- http://xmlns.com/foaf/0.1/title -->
 
-    <rdf:Description rdf:about="&foaf;title">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/title">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://schema.org/Person"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </rdf:Description>
     
 
@@ -852,7 +843,7 @@
     <!-- http://nees.com.br/linkn/onto/user/Arnaldo -->
 
     <owl:NamedIndividual rdf:about="http://nees.com.br/linkn/onto/user/Arnaldo">
-        <rdf:type rdf:resource="&foaf;Person"/>
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <hasDaughter rdf:resource="http://nees.com.br/linkn/onto/user/Celia"/>
         <hasSon rdf:resource="http://nees.com.br/linkn/onto/user/Dermeval"/>
         <hasSon rdf:resource="http://nees.com.br/linkn/onto/user/Matheus"/>
@@ -863,7 +854,7 @@
     <!-- http://nees.com.br/linkn/onto/user/Celia -->
 
     <owl:NamedIndividual rdf:about="http://nees.com.br/linkn/onto/user/Celia">
-        <rdf:type rdf:resource="&foaf;Person"/>
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <hasBrother rdf:resource="http://nees.com.br/linkn/onto/user/Dermeval"/>
         <hasDaughter rdf:resource="http://nees.com.br/linkn/onto/user/Gabriela"/>
     </owl:NamedIndividual>
@@ -873,7 +864,7 @@
     <!-- http://nees.com.br/linkn/onto/user/Dermeval -->
 
     <owl:NamedIndividual rdf:about="http://nees.com.br/linkn/onto/user/Dermeval">
-        <rdf:type rdf:resource="&foaf;Person"/>
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <hasBrother rdf:resource="http://nees.com.br/linkn/onto/user/Matheus"/>
         <hasSon rdf:resource="http://nees.com.br/linkn/onto/user/Paulo"/>
     </owl:NamedIndividual>
@@ -883,7 +874,7 @@
     <!-- http://nees.com.br/linkn/onto/user/Gabriela -->
 
     <owl:NamedIndividual rdf:about="http://nees.com.br/linkn/onto/user/Gabriela">
-        <rdf:type rdf:resource="&foaf;Person"/>
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
     </owl:NamedIndividual>
     
 
@@ -891,7 +882,7 @@
     <!-- http://nees.com.br/linkn/onto/user/Maria -->
 
     <owl:NamedIndividual rdf:about="http://nees.com.br/linkn/onto/user/Maria">
-        <rdf:type rdf:resource="&foaf;Person"/>
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <hasMother rdf:resource="http://nees.com.br/linkn/onto/user/Celia"/>
     </owl:NamedIndividual>
     
@@ -900,7 +891,7 @@
     <!-- http://nees.com.br/linkn/onto/user/Mariana -->
 
     <owl:NamedIndividual rdf:about="http://nees.com.br/linkn/onto/user/Mariana">
-        <rdf:type rdf:resource="&foaf;Person"/>
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <hasFather rdf:resource="http://nees.com.br/linkn/onto/user/Dermeval"/>
         <hasSister rdf:resource="http://nees.com.br/linkn/onto/user/Paula"/>
     </owl:NamedIndividual>
@@ -910,7 +901,7 @@
     <!-- http://nees.com.br/linkn/onto/user/Matheus -->
 
     <owl:NamedIndividual rdf:about="http://nees.com.br/linkn/onto/user/Matheus">
-        <rdf:type rdf:resource="&foaf;Person"/>
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <hasSon rdf:resource="http://nees.com.br/linkn/onto/user/William"/>
     </owl:NamedIndividual>
     
@@ -919,7 +910,7 @@
     <!-- http://nees.com.br/linkn/onto/user/Paula -->
 
     <owl:NamedIndividual rdf:about="http://nees.com.br/linkn/onto/user/Paula">
-        <rdf:type rdf:resource="&foaf;Person"/>
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
     </owl:NamedIndividual>
     
 
@@ -927,7 +918,7 @@
     <!-- http://nees.com.br/linkn/onto/user/Paulo -->
 
     <owl:NamedIndividual rdf:about="http://nees.com.br/linkn/onto/user/Paulo">
-        <rdf:type rdf:resource="&foaf;Person"/>
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
     </owl:NamedIndividual>
     
 
@@ -935,7 +926,7 @@
     <!-- http://nees.com.br/linkn/onto/user/Pedro -->
 
     <owl:NamedIndividual rdf:about="http://nees.com.br/linkn/onto/user/Pedro">
-        <rdf:type rdf:resource="&foaf;Person"/>
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
     </owl:NamedIndividual>
     
 
@@ -943,7 +934,7 @@
     <!-- http://nees.com.br/linkn/onto/user/William -->
 
     <owl:NamedIndividual rdf:about="http://nees.com.br/linkn/onto/user/William">
-        <rdf:type rdf:resource="&foaf;Person"/>
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <hasSon rdf:resource="http://nees.com.br/linkn/onto/user/Pedro"/>
     </owl:NamedIndividual>
     
@@ -958,121 +949,39 @@
      -->
 
     <rdf:Description rdf:about="urn:swrl#a">
-        <rdf:type rdf:resource="&swrl;Variable"/>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
     </rdf:Description>
     <rdf:Description rdf:about="urn:swrl#b">
-        <rdf:type rdf:resource="&swrl;Variable"/>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
     </rdf:Description>
     <rdf:Description>
-        <rdf:type rdf:resource="&swrl;Imp"/>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
         <swrl:body>
             <rdf:Description>
-                <rdf:type rdf:resource="&swrl;AtomList"/>
-                <rdf:rest>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="&swrl;AtomList"/>
-                        <rdf:rest>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="&swrl;AtomList"/>
-                                <rdf:first>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
-                                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasGrandSon"/>
-                                        <swrl:argument2 rdf:resource="urn:swrl#a"/>
-                                        <swrl:argument1 rdf:resource="urn:swrl#b"/>
-                                    </rdf:Description>
-                                </rdf:first>
-                                <rdf:rest>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="&swrl;AtomList"/>
-                                        <rdf:rest rdf:resource="&rdf;nil"/>
-                                        <rdf:first>
-                                            <rdf:Description>
-                                                <rdf:type rdf:resource="&swrl;DatavaluedPropertyAtom"/>
-                                                <swrl:argument2>M</swrl:argument2>
-                                                <swrl:propertyPredicate rdf:resource="&foaf;gender"/>
-                                                <swrl:argument1 rdf:resource="urn:swrl#b"/>
-                                            </rdf:Description>
-                                        </rdf:first>
-                                    </rdf:Description>
-                                </rdf:rest>
-                            </rdf:Description>
-                        </rdf:rest>
-                        <rdf:first>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="&swrl;ClassAtom"/>
-                                <swrl:classPredicate rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
-                                <swrl:argument1 rdf:resource="urn:swrl#b"/>
-                            </rdf:Description>
-                        </rdf:first>
-                    </rdf:Description>
-                </rdf:rest>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
                 <rdf:first>
                     <rdf:Description>
-                        <rdf:type rdf:resource="&swrl;ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
-                        <swrl:argument1 rdf:resource="urn:swrl#a"/>
-                    </rdf:Description>
-                </rdf:first>
-            </rdf:Description>
-        </swrl:body>
-        <swrl:head>
-            <rdf:Description>
-                <rdf:type rdf:resource="&swrl;AtomList"/>
-                <rdf:rest rdf:resource="&rdf;nil"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasGrandFather"/>
-                        <swrl:argument1 rdf:resource="urn:swrl#a"/>
-                        <swrl:argument2 rdf:resource="urn:swrl#b"/>
-                    </rdf:Description>
-                </rdf:first>
-            </rdf:Description>
-        </swrl:head>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="&swrl;Imp"/>
-        <swrl:head>
-            <rdf:Description>
-                <rdf:type rdf:resource="&swrl;AtomList"/>
-                <rdf:rest rdf:resource="&rdf;nil"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasNephew"/>
-                        <swrl:argument2 rdf:resource="urn:swrl#a"/>
-                        <swrl:argument1 rdf:resource="urn:swrl#b"/>
-                    </rdf:Description>
-                </rdf:first>
-            </rdf:Description>
-        </swrl:head>
-        <swrl:body>
-            <rdf:Description>
-                <rdf:type rdf:resource="&swrl;AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
                         <swrl:classPredicate rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
                         <swrl:argument1 rdf:resource="urn:swrl#a"/>
                     </rdf:Description>
                 </rdf:first>
                 <rdf:rest>
                     <rdf:Description>
-                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
                         <rdf:first>
                             <rdf:Description>
-                                <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
                                 <swrl:classPredicate rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
                                 <swrl:argument1 rdf:resource="urn:swrl#b"/>
                             </rdf:Description>
                         </rdf:first>
                         <rdf:rest>
                             <rdf:Description>
-                                <rdf:type rdf:resource="&swrl;AtomList"/>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
                                 <rdf:first>
                                     <rdf:Description>
-                                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
                                         <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasAunt"/>
                                         <swrl:argument1 rdf:resource="urn:swrl#a"/>
                                         <swrl:argument2 rdf:resource="urn:swrl#b"/>
@@ -1080,16 +989,16 @@
                                 </rdf:first>
                                 <rdf:rest>
                                     <rdf:Description>
-                                        <rdf:type rdf:resource="&swrl;AtomList"/>
-                                        <rdf:rest rdf:resource="&rdf;nil"/>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
                                         <rdf:first>
                                             <rdf:Description>
-                                                <rdf:type rdf:resource="&swrl;DatavaluedPropertyAtom"/>
-                                                <swrl:argument2>M</swrl:argument2>
-                                                <swrl:propertyPredicate rdf:resource="&foaf;gender"/>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://xmlns.com/foaf/0.1/gender"/>
                                                 <swrl:argument1 rdf:resource="urn:swrl#a"/>
+                                                <swrl:argument2>M</swrl:argument2>
                                             </rdf:Description>
                                         </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
                                     </rdf:Description>
                                 </rdf:rest>
                             </rdf:Description>
@@ -1098,171 +1007,321 @@
                 </rdf:rest>
             </rdf:Description>
         </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasNephew"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#b"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#a"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <rdf:type rdf:resource="&swrl;Imp"/>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
         <swrl:body>
             <rdf:Description>
-                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#a"/>
+                    </rdf:Description>
+                </rdf:first>
                 <rdf:rest>
                     <rdf:Description>
-                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
                         <rdf:first>
                             <rdf:Description>
-                                <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
                                 <swrl:classPredicate rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
                                 <swrl:argument1 rdf:resource="urn:swrl#b"/>
                             </rdf:Description>
                         </rdf:first>
                         <rdf:rest>
                             <rdf:Description>
-                                <rdf:type rdf:resource="&swrl;AtomList"/>
-                                <rdf:rest>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="&swrl;AtomList"/>
-                                        <rdf:rest rdf:resource="&rdf;nil"/>
-                                        <rdf:first>
-                                            <rdf:Description>
-                                                <rdf:type rdf:resource="&swrl;DatavaluedPropertyAtom"/>
-                                                <swrl:argument2>F</swrl:argument2>
-                                                <swrl:propertyPredicate rdf:resource="&foaf;gender"/>
-                                                <swrl:argument1 rdf:resource="urn:swrl#a"/>
-                                            </rdf:Description>
-                                        </rdf:first>
-                                    </rdf:Description>
-                                </rdf:rest>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
                                 <rdf:first>
                                     <rdf:Description>
-                                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasGrandDaughter"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl#b"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl#a"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://xmlns.com/foaf/0.1/gender"/>
+                                                <swrl:argument1 rdf:resource="urn:swrl#b"/>
+                                                <swrl:argument2>F</swrl:argument2>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasGrandMother"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#a"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#b"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#a"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#b"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasGrandDaughter"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl#b"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl#a"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://xmlns.com/foaf/0.1/gender"/>
+                                                <swrl:argument1 rdf:resource="urn:swrl#b"/>
+                                                <swrl:argument2>M</swrl:argument2>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasGrandFather"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#a"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#b"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#a"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#b"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
                                         <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasGrandFather"/>
                                         <swrl:argument1 rdf:resource="urn:swrl#a"/>
                                         <swrl:argument2 rdf:resource="urn:swrl#b"/>
                                     </rdf:Description>
                                 </rdf:first>
-                            </rdf:Description>
-                        </rdf:rest>
-                    </rdf:Description>
-                </rdf:rest>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="&swrl;ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
-                        <swrl:argument1 rdf:resource="urn:swrl#a"/>
-                    </rdf:Description>
-                </rdf:first>
-            </rdf:Description>
-        </swrl:body>
-        <swrl:head>
-            <rdf:Description>
-                <rdf:type rdf:resource="&swrl;AtomList"/>
-                <rdf:rest rdf:resource="&rdf;nil"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasGrandDaughter"/>
-                        <swrl:argument2 rdf:resource="urn:swrl#a"/>
-                        <swrl:argument1 rdf:resource="urn:swrl#b"/>
-                    </rdf:Description>
-                </rdf:first>
-            </rdf:Description>
-        </swrl:head>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="&swrl;Imp"/>
-        <swrl:head>
-            <rdf:Description>
-                <rdf:type rdf:resource="&swrl;AtomList"/>
-                <rdf:rest rdf:resource="&rdf;nil"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasUncle"/>
-                        <swrl:argument1 rdf:resource="urn:swrl#a"/>
-                        <swrl:argument2 rdf:resource="urn:swrl#b"/>
-                    </rdf:Description>
-                </rdf:first>
-            </rdf:Description>
-        </swrl:head>
-        <swrl:body>
-            <rdf:Description>
-                <rdf:type rdf:resource="&swrl;AtomList"/>
-                <rdf:rest>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="&swrl;AtomList"/>
-                        <rdf:rest>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="&swrl;AtomList"/>
                                 <rdf:rest>
                                     <rdf:Description>
-                                        <rdf:type rdf:resource="&swrl;AtomList"/>
-                                        <rdf:rest rdf:resource="&rdf;nil"/>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
                                         <rdf:first>
                                             <rdf:Description>
-                                                <rdf:type rdf:resource="&swrl;DatavaluedPropertyAtom"/>
-                                                <swrl:argument2>M</swrl:argument2>
-                                                <swrl:propertyPredicate rdf:resource="&foaf;gender"/>
-                                                <swrl:argument1 rdf:resource="urn:swrl#b"/>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://xmlns.com/foaf/0.1/gender"/>
+                                                <swrl:argument1 rdf:resource="urn:swrl#a"/>
+                                                <swrl:argument2>F</swrl:argument2>
                                             </rdf:Description>
                                         </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
                                     </rdf:Description>
                                 </rdf:rest>
-                                <rdf:first>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
-                                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasNephew"/>
-                                        <swrl:argument2 rdf:resource="urn:swrl#a"/>
-                                        <swrl:argument1 rdf:resource="urn:swrl#b"/>
-                                    </rdf:Description>
-                                </rdf:first>
                             </rdf:Description>
                         </rdf:rest>
-                        <rdf:first>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="&swrl;ClassAtom"/>
-                                <swrl:classPredicate rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
-                                <swrl:argument1 rdf:resource="urn:swrl#b"/>
-                            </rdf:Description>
-                        </rdf:first>
                     </rdf:Description>
                 </rdf:rest>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="&swrl;ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
-                        <swrl:argument1 rdf:resource="urn:swrl#a"/>
-                    </rdf:Description>
-                </rdf:first>
             </rdf:Description>
         </swrl:body>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="&swrl;Imp"/>
-        <swrl:body>
+        <swrl:head>
             <rdf:Description>
-                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
                 <rdf:first>
                     <rdf:Description>
-                        <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasGrandDaughter"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#b"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#a"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
                         <swrl:classPredicate rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
                         <swrl:argument1 rdf:resource="urn:swrl#a"/>
                     </rdf:Description>
                 </rdf:first>
                 <rdf:rest>
                     <rdf:Description>
-                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
                         <rdf:first>
                             <rdf:Description>
-                                <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
                                 <swrl:classPredicate rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
                                 <swrl:argument1 rdf:resource="urn:swrl#b"/>
                             </rdf:Description>
                         </rdf:first>
                         <rdf:rest>
                             <rdf:Description>
-                                <rdf:type rdf:resource="&swrl;AtomList"/>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
                                 <rdf:first>
                                     <rdf:Description>
-                                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasGrandFather"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl#a"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl#b"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://xmlns.com/foaf/0.1/gender"/>
+                                                <swrl:argument1 rdf:resource="urn:swrl#a"/>
+                                                <swrl:argument2>M</swrl:argument2>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasGrandSon"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#b"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#a"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#a"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#b"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
                                         <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasGrandMother"/>
                                         <swrl:argument1 rdf:resource="urn:swrl#a"/>
                                         <swrl:argument2 rdf:resource="urn:swrl#b"/>
@@ -1270,16 +1329,16 @@
                                 </rdf:first>
                                 <rdf:rest>
                                     <rdf:Description>
-                                        <rdf:type rdf:resource="&swrl;AtomList"/>
-                                        <rdf:rest rdf:resource="&rdf;nil"/>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
                                         <rdf:first>
                                             <rdf:Description>
-                                                <rdf:type rdf:resource="&swrl;DatavaluedPropertyAtom"/>
-                                                <swrl:argument2>F</swrl:argument2>
-                                                <swrl:propertyPredicate rdf:resource="&foaf;gender"/>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://xmlns.com/foaf/0.1/gender"/>
                                                 <swrl:argument1 rdf:resource="urn:swrl#a"/>
+                                                <swrl:argument2>F</swrl:argument2>
                                             </rdf:Description>
                                         </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
                                     </rdf:Description>
                                 </rdf:rest>
                             </rdf:Description>
@@ -1290,54 +1349,523 @@
         </swrl:body>
         <swrl:head>
             <rdf:Description>
-                <rdf:type rdf:resource="&swrl;AtomList"/>
-                <rdf:rest rdf:resource="&rdf;nil"/>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
                 <rdf:first>
                     <rdf:Description>
-                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
                         <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasGrandDaughter"/>
-                        <swrl:argument2 rdf:resource="urn:swrl#a"/>
                         <swrl:argument1 rdf:resource="urn:swrl#b"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#a"/>
                     </rdf:Description>
                 </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
             </rdf:Description>
         </swrl:head>
     </rdf:Description>
     <rdf:Description>
-        <rdf:type rdf:resource="&swrl;Imp"/>
-        <swrl:head>
-            <rdf:Description>
-                <rdf:type rdf:resource="&swrl;AtomList"/>
-                <rdf:rest rdf:resource="&rdf;nil"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasNice"/>
-                        <swrl:argument2 rdf:resource="urn:swrl#a"/>
-                        <swrl:argument1 rdf:resource="urn:swrl#b"/>
-                    </rdf:Description>
-                </rdf:first>
-            </rdf:Description>
-        </swrl:head>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
         <swrl:body>
             <rdf:Description>
-                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#a"/>
+                    </rdf:Description>
+                </rdf:first>
                 <rdf:rest>
                     <rdf:Description>
-                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
                         <rdf:first>
                             <rdf:Description>
-                                <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
                                 <swrl:classPredicate rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
                                 <swrl:argument1 rdf:resource="urn:swrl#b"/>
                             </rdf:Description>
                         </rdf:first>
                         <rdf:rest>
                             <rdf:Description>
-                                <rdf:type rdf:resource="&swrl;AtomList"/>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
                                 <rdf:first>
                                     <rdf:Description>
-                                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasGrandMother"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl#a"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl#b"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://xmlns.com/foaf/0.1/gender"/>
+                                                <swrl:argument1 rdf:resource="urn:swrl#a"/>
+                                                <swrl:argument2>M</swrl:argument2>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasGrandSon"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#b"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#a"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#a"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#b"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasGrandSon"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl#b"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl#a"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://xmlns.com/foaf/0.1/gender"/>
+                                                <swrl:argument1 rdf:resource="urn:swrl#b"/>
+                                                <swrl:argument2>F</swrl:argument2>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasGrandMother"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#a"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#b"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#a"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#b"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasGrandSon"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl#b"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl#a"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://xmlns.com/foaf/0.1/gender"/>
+                                                <swrl:argument1 rdf:resource="urn:swrl#b"/>
+                                                <swrl:argument2>M</swrl:argument2>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasGrandFather"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#a"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#b"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#a"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#b"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasNephew"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl#b"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl#a"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://xmlns.com/foaf/0.1/gender"/>
+                                                <swrl:argument1 rdf:resource="urn:swrl#b"/>
+                                                <swrl:argument2>F</swrl:argument2>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasAunt"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#a"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#b"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#a"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#b"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasNephew"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl#b"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl#a"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://xmlns.com/foaf/0.1/gender"/>
+                                                <swrl:argument1 rdf:resource="urn:swrl#b"/>
+                                                <swrl:argument2>M</swrl:argument2>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasUncle"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#a"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#b"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#a"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#b"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasNice"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl#b"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl#a"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://xmlns.com/foaf/0.1/gender"/>
+                                                <swrl:argument1 rdf:resource="urn:swrl#b"/>
+                                                <swrl:argument2>F</swrl:argument2>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasAunt"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#a"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#b"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#a"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#b"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasNice"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl#b"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl#a"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://xmlns.com/foaf/0.1/gender"/>
+                                                <swrl:argument1 rdf:resource="urn:swrl#b"/>
+                                                <swrl:argument2>M</swrl:argument2>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasUncle"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#a"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#b"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#a"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#b"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
                                         <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasUncle"/>
                                         <swrl:argument1 rdf:resource="urn:swrl#a"/>
                                         <swrl:argument2 rdf:resource="urn:swrl#b"/>
@@ -1345,60 +1873,67 @@
                                 </rdf:first>
                                 <rdf:rest>
                                     <rdf:Description>
-                                        <rdf:type rdf:resource="&swrl;AtomList"/>
-                                        <rdf:rest rdf:resource="&rdf;nil"/>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
                                         <rdf:first>
                                             <rdf:Description>
-                                                <rdf:type rdf:resource="&swrl;DatavaluedPropertyAtom"/>
-                                                <swrl:argument2>F</swrl:argument2>
-                                                <swrl:propertyPredicate rdf:resource="&foaf;gender"/>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://xmlns.com/foaf/0.1/gender"/>
                                                 <swrl:argument1 rdf:resource="urn:swrl#a"/>
+                                                <swrl:argument2>F</swrl:argument2>
                                             </rdf:Description>
                                         </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
                                     </rdf:Description>
                                 </rdf:rest>
                             </rdf:Description>
                         </rdf:rest>
                     </rdf:Description>
                 </rdf:rest>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="&swrl;ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
-                        <swrl:argument1 rdf:resource="urn:swrl#a"/>
-                    </rdf:Description>
-                </rdf:first>
             </rdf:Description>
         </swrl:body>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="&swrl;Imp"/>
-        <swrl:body>
+        <swrl:head>
             <rdf:Description>
-                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
                 <rdf:first>
                     <rdf:Description>
-                        <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasNice"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#b"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#a"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
                         <swrl:classPredicate rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
                         <swrl:argument1 rdf:resource="urn:swrl#a"/>
                     </rdf:Description>
                 </rdf:first>
                 <rdf:rest>
                     <rdf:Description>
-                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
                         <rdf:first>
                             <rdf:Description>
-                                <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
                                 <swrl:classPredicate rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
                                 <swrl:argument1 rdf:resource="urn:swrl#b"/>
                             </rdf:Description>
                         </rdf:first>
                         <rdf:rest>
                             <rdf:Description>
-                                <rdf:type rdf:resource="&swrl;AtomList"/>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
                                 <rdf:first>
                                     <rdf:Description>
-                                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
                                         <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasAunt"/>
                                         <swrl:argument1 rdf:resource="urn:swrl#a"/>
                                         <swrl:argument2 rdf:resource="urn:swrl#b"/>
@@ -1406,16 +1941,16 @@
                                 </rdf:first>
                                 <rdf:rest>
                                     <rdf:Description>
-                                        <rdf:type rdf:resource="&swrl;AtomList"/>
-                                        <rdf:rest rdf:resource="&rdf;nil"/>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
                                         <rdf:first>
                                             <rdf:Description>
-                                                <rdf:type rdf:resource="&swrl;DatavaluedPropertyAtom"/>
-                                                <swrl:argument2>F</swrl:argument2>
-                                                <swrl:propertyPredicate rdf:resource="&foaf;gender"/>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://xmlns.com/foaf/0.1/gender"/>
                                                 <swrl:argument1 rdf:resource="urn:swrl#a"/>
+                                                <swrl:argument2>F</swrl:argument2>
                                             </rdf:Description>
                                         </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
                                     </rdf:Description>
                                 </rdf:rest>
                             </rdf:Description>
@@ -1426,566 +1961,22 @@
         </swrl:body>
         <swrl:head>
             <rdf:Description>
-                <rdf:type rdf:resource="&swrl;AtomList"/>
-                <rdf:rest rdf:resource="&rdf;nil"/>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
                 <rdf:first>
                     <rdf:Description>
-                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
                         <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasNice"/>
-                        <swrl:argument2 rdf:resource="urn:swrl#a"/>
                         <swrl:argument1 rdf:resource="urn:swrl#b"/>
-                    </rdf:Description>
-                </rdf:first>
-            </rdf:Description>
-        </swrl:head>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="&swrl;Imp"/>
-        <swrl:head>
-            <rdf:Description>
-                <rdf:type rdf:resource="&swrl;AtomList"/>
-                <rdf:rest rdf:resource="&rdf;nil"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasUncle"/>
-                        <swrl:argument1 rdf:resource="urn:swrl#a"/>
-                        <swrl:argument2 rdf:resource="urn:swrl#b"/>
-                    </rdf:Description>
-                </rdf:first>
-            </rdf:Description>
-        </swrl:head>
-        <swrl:body>
-            <rdf:Description>
-                <rdf:type rdf:resource="&swrl;AtomList"/>
-                <rdf:rest>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="&swrl;AtomList"/>
-                        <rdf:rest>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="&swrl;AtomList"/>
-                                <rdf:rest>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="&swrl;AtomList"/>
-                                        <rdf:rest rdf:resource="&rdf;nil"/>
-                                        <rdf:first>
-                                            <rdf:Description>
-                                                <rdf:type rdf:resource="&swrl;DatavaluedPropertyAtom"/>
-                                                <swrl:argument2>M</swrl:argument2>
-                                                <swrl:propertyPredicate rdf:resource="&foaf;gender"/>
-                                                <swrl:argument1 rdf:resource="urn:swrl#b"/>
-                                            </rdf:Description>
-                                        </rdf:first>
-                                    </rdf:Description>
-                                </rdf:rest>
-                                <rdf:first>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
-                                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasNice"/>
-                                        <swrl:argument2 rdf:resource="urn:swrl#a"/>
-                                        <swrl:argument1 rdf:resource="urn:swrl#b"/>
-                                    </rdf:Description>
-                                </rdf:first>
-                            </rdf:Description>
-                        </rdf:rest>
-                        <rdf:first>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="&swrl;ClassAtom"/>
-                                <swrl:classPredicate rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
-                                <swrl:argument1 rdf:resource="urn:swrl#b"/>
-                            </rdf:Description>
-                        </rdf:first>
-                    </rdf:Description>
-                </rdf:rest>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="&swrl;ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
-                        <swrl:argument1 rdf:resource="urn:swrl#a"/>
-                    </rdf:Description>
-                </rdf:first>
-            </rdf:Description>
-        </swrl:body>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="&swrl;Imp"/>
-        <swrl:head>
-            <rdf:Description>
-                <rdf:type rdf:resource="&swrl;AtomList"/>
-                <rdf:rest rdf:resource="&rdf;nil"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasGrandSon"/>
                         <swrl:argument2 rdf:resource="urn:swrl#a"/>
-                        <swrl:argument1 rdf:resource="urn:swrl#b"/>
                     </rdf:Description>
                 </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
             </rdf:Description>
         </swrl:head>
-        <swrl:body>
-            <rdf:Description>
-                <rdf:type rdf:resource="&swrl;AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="&swrl;ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
-                        <swrl:argument1 rdf:resource="urn:swrl#a"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="&swrl;AtomList"/>
-                        <rdf:first>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="&swrl;ClassAtom"/>
-                                <swrl:classPredicate rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
-                                <swrl:argument1 rdf:resource="urn:swrl#b"/>
-                            </rdf:Description>
-                        </rdf:first>
-                        <rdf:rest>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="&swrl;AtomList"/>
-                                <rdf:first>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
-                                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasGrandFather"/>
-                                        <swrl:argument1 rdf:resource="urn:swrl#a"/>
-                                        <swrl:argument2 rdf:resource="urn:swrl#b"/>
-                                    </rdf:Description>
-                                </rdf:first>
-                                <rdf:rest>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="&swrl;AtomList"/>
-                                        <rdf:rest rdf:resource="&rdf;nil"/>
-                                        <rdf:first>
-                                            <rdf:Description>
-                                                <rdf:type rdf:resource="&swrl;DatavaluedPropertyAtom"/>
-                                                <swrl:argument2>M</swrl:argument2>
-                                                <swrl:propertyPredicate rdf:resource="&foaf;gender"/>
-                                                <swrl:argument1 rdf:resource="urn:swrl#a"/>
-                                            </rdf:Description>
-                                        </rdf:first>
-                                    </rdf:Description>
-                                </rdf:rest>
-                            </rdf:Description>
-                        </rdf:rest>
-                    </rdf:Description>
-                </rdf:rest>
-            </rdf:Description>
-        </swrl:body>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="&swrl;Imp"/>
-        <swrl:head>
-            <rdf:Description>
-                <rdf:type rdf:resource="&swrl;AtomList"/>
-                <rdf:rest rdf:resource="&rdf;nil"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasAunt"/>
-                        <swrl:argument1 rdf:resource="urn:swrl#a"/>
-                        <swrl:argument2 rdf:resource="urn:swrl#b"/>
-                    </rdf:Description>
-                </rdf:first>
-            </rdf:Description>
-        </swrl:head>
-        <swrl:body>
-            <rdf:Description>
-                <rdf:type rdf:resource="&swrl;AtomList"/>
-                <rdf:rest>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="&swrl;AtomList"/>
-                        <rdf:rest>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="&swrl;AtomList"/>
-                                <rdf:first>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
-                                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasNephew"/>
-                                        <swrl:argument2 rdf:resource="urn:swrl#a"/>
-                                        <swrl:argument1 rdf:resource="urn:swrl#b"/>
-                                    </rdf:Description>
-                                </rdf:first>
-                                <rdf:rest>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="&swrl;AtomList"/>
-                                        <rdf:rest rdf:resource="&rdf;nil"/>
-                                        <rdf:first>
-                                            <rdf:Description>
-                                                <rdf:type rdf:resource="&swrl;DatavaluedPropertyAtom"/>
-                                                <swrl:argument2>F</swrl:argument2>
-                                                <swrl:propertyPredicate rdf:resource="&foaf;gender"/>
-                                                <swrl:argument1 rdf:resource="urn:swrl#b"/>
-                                            </rdf:Description>
-                                        </rdf:first>
-                                    </rdf:Description>
-                                </rdf:rest>
-                            </rdf:Description>
-                        </rdf:rest>
-                        <rdf:first>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="&swrl;ClassAtom"/>
-                                <swrl:classPredicate rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
-                                <swrl:argument1 rdf:resource="urn:swrl#b"/>
-                            </rdf:Description>
-                        </rdf:first>
-                    </rdf:Description>
-                </rdf:rest>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="&swrl;ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
-                        <swrl:argument1 rdf:resource="urn:swrl#a"/>
-                    </rdf:Description>
-                </rdf:first>
-            </rdf:Description>
-        </swrl:body>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="&swrl;Imp"/>
-        <swrl:body>
-            <rdf:Description>
-                <rdf:type rdf:resource="&swrl;AtomList"/>
-                <rdf:rest>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="&swrl;AtomList"/>
-                        <rdf:first>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="&swrl;ClassAtom"/>
-                                <swrl:classPredicate rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
-                                <swrl:argument1 rdf:resource="urn:swrl#b"/>
-                            </rdf:Description>
-                        </rdf:first>
-                        <rdf:rest>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="&swrl;AtomList"/>
-                                <rdf:rest>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="&swrl;AtomList"/>
-                                        <rdf:rest rdf:resource="&rdf;nil"/>
-                                        <rdf:first>
-                                            <rdf:Description>
-                                                <rdf:type rdf:resource="&swrl;DatavaluedPropertyAtom"/>
-                                                <swrl:argument2>F</swrl:argument2>
-                                                <swrl:propertyPredicate rdf:resource="&foaf;gender"/>
-                                                <swrl:argument1 rdf:resource="urn:swrl#b"/>
-                                            </rdf:Description>
-                                        </rdf:first>
-                                    </rdf:Description>
-                                </rdf:rest>
-                                <rdf:first>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
-                                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasGrandSon"/>
-                                        <swrl:argument2 rdf:resource="urn:swrl#a"/>
-                                        <swrl:argument1 rdf:resource="urn:swrl#b"/>
-                                    </rdf:Description>
-                                </rdf:first>
-                            </rdf:Description>
-                        </rdf:rest>
-                    </rdf:Description>
-                </rdf:rest>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="&swrl;ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
-                        <swrl:argument1 rdf:resource="urn:swrl#a"/>
-                    </rdf:Description>
-                </rdf:first>
-            </rdf:Description>
-        </swrl:body>
-        <swrl:head>
-            <rdf:Description>
-                <rdf:type rdf:resource="&swrl;AtomList"/>
-                <rdf:rest rdf:resource="&rdf;nil"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasGrandMother"/>
-                        <swrl:argument1 rdf:resource="urn:swrl#a"/>
-                        <swrl:argument2 rdf:resource="urn:swrl#b"/>
-                    </rdf:Description>
-                </rdf:first>
-            </rdf:Description>
-        </swrl:head>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="&swrl;Imp"/>
-        <swrl:body>
-            <rdf:Description>
-                <rdf:type rdf:resource="&swrl;AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="&swrl;ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
-                        <swrl:argument1 rdf:resource="urn:swrl#a"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="&swrl;AtomList"/>
-                        <rdf:rest>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="&swrl;AtomList"/>
-                                <rdf:first>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
-                                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasGrandDaughter"/>
-                                        <swrl:argument2 rdf:resource="urn:swrl#a"/>
-                                        <swrl:argument1 rdf:resource="urn:swrl#b"/>
-                                    </rdf:Description>
-                                </rdf:first>
-                                <rdf:rest>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="&swrl;AtomList"/>
-                                        <rdf:rest rdf:resource="&rdf;nil"/>
-                                        <rdf:first>
-                                            <rdf:Description>
-                                                <rdf:type rdf:resource="&swrl;DatavaluedPropertyAtom"/>
-                                                <swrl:argument2>F</swrl:argument2>
-                                                <swrl:propertyPredicate rdf:resource="&foaf;gender"/>
-                                                <swrl:argument1 rdf:resource="urn:swrl#b"/>
-                                            </rdf:Description>
-                                        </rdf:first>
-                                    </rdf:Description>
-                                </rdf:rest>
-                            </rdf:Description>
-                        </rdf:rest>
-                        <rdf:first>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="&swrl;ClassAtom"/>
-                                <swrl:classPredicate rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
-                                <swrl:argument1 rdf:resource="urn:swrl#b"/>
-                            </rdf:Description>
-                        </rdf:first>
-                    </rdf:Description>
-                </rdf:rest>
-            </rdf:Description>
-        </swrl:body>
-        <swrl:head>
-            <rdf:Description>
-                <rdf:type rdf:resource="&swrl;AtomList"/>
-                <rdf:rest rdf:resource="&rdf;nil"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasGrandMother"/>
-                        <swrl:argument1 rdf:resource="urn:swrl#a"/>
-                        <swrl:argument2 rdf:resource="urn:swrl#b"/>
-                    </rdf:Description>
-                </rdf:first>
-            </rdf:Description>
-        </swrl:head>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="&swrl;Imp"/>
-        <swrl:body>
-            <rdf:Description>
-                <rdf:type rdf:resource="&swrl;AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="&swrl;ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
-                        <swrl:argument1 rdf:resource="urn:swrl#a"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="&swrl;AtomList"/>
-                        <rdf:first>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="&swrl;ClassAtom"/>
-                                <swrl:classPredicate rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
-                                <swrl:argument1 rdf:resource="urn:swrl#b"/>
-                            </rdf:Description>
-                        </rdf:first>
-                        <rdf:rest>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="&swrl;AtomList"/>
-                                <rdf:rest>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="&swrl;AtomList"/>
-                                        <rdf:rest rdf:resource="&rdf;nil"/>
-                                        <rdf:first>
-                                            <rdf:Description>
-                                                <rdf:type rdf:resource="&swrl;DatavaluedPropertyAtom"/>
-                                                <swrl:argument2>F</swrl:argument2>
-                                                <swrl:propertyPredicate rdf:resource="&foaf;gender"/>
-                                                <swrl:argument1 rdf:resource="urn:swrl#b"/>
-                                            </rdf:Description>
-                                        </rdf:first>
-                                    </rdf:Description>
-                                </rdf:rest>
-                                <rdf:first>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
-                                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasNice"/>
-                                        <swrl:argument2 rdf:resource="urn:swrl#a"/>
-                                        <swrl:argument1 rdf:resource="urn:swrl#b"/>
-                                    </rdf:Description>
-                                </rdf:first>
-                            </rdf:Description>
-                        </rdf:rest>
-                    </rdf:Description>
-                </rdf:rest>
-            </rdf:Description>
-        </swrl:body>
-        <swrl:head>
-            <rdf:Description>
-                <rdf:type rdf:resource="&swrl;AtomList"/>
-                <rdf:rest rdf:resource="&rdf;nil"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasAunt"/>
-                        <swrl:argument1 rdf:resource="urn:swrl#a"/>
-                        <swrl:argument2 rdf:resource="urn:swrl#b"/>
-                    </rdf:Description>
-                </rdf:first>
-            </rdf:Description>
-        </swrl:head>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="&swrl;Imp"/>
-        <swrl:body>
-            <rdf:Description>
-                <rdf:type rdf:resource="&swrl;AtomList"/>
-                <rdf:rest>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="&swrl;AtomList"/>
-                        <rdf:rest>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="&swrl;AtomList"/>
-                                <rdf:first>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
-                                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasGrandMother"/>
-                                        <swrl:argument1 rdf:resource="urn:swrl#a"/>
-                                        <swrl:argument2 rdf:resource="urn:swrl#b"/>
-                                    </rdf:Description>
-                                </rdf:first>
-                                <rdf:rest>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="&swrl;AtomList"/>
-                                        <rdf:rest rdf:resource="&rdf;nil"/>
-                                        <rdf:first>
-                                            <rdf:Description>
-                                                <rdf:type rdf:resource="&swrl;DatavaluedPropertyAtom"/>
-                                                <swrl:argument2>M</swrl:argument2>
-                                                <swrl:propertyPredicate rdf:resource="&foaf;gender"/>
-                                                <swrl:argument1 rdf:resource="urn:swrl#a"/>
-                                            </rdf:Description>
-                                        </rdf:first>
-                                    </rdf:Description>
-                                </rdf:rest>
-                            </rdf:Description>
-                        </rdf:rest>
-                        <rdf:first>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="&swrl;ClassAtom"/>
-                                <swrl:classPredicate rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
-                                <swrl:argument1 rdf:resource="urn:swrl#b"/>
-                            </rdf:Description>
-                        </rdf:first>
-                    </rdf:Description>
-                </rdf:rest>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="&swrl;ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
-                        <swrl:argument1 rdf:resource="urn:swrl#a"/>
-                    </rdf:Description>
-                </rdf:first>
-            </rdf:Description>
-        </swrl:body>
-        <swrl:head>
-            <rdf:Description>
-                <rdf:type rdf:resource="&swrl;AtomList"/>
-                <rdf:rest rdf:resource="&rdf;nil"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasGrandSon"/>
-                        <swrl:argument2 rdf:resource="urn:swrl#a"/>
-                        <swrl:argument1 rdf:resource="urn:swrl#b"/>
-                    </rdf:Description>
-                </rdf:first>
-            </rdf:Description>
-        </swrl:head>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="&swrl;Imp"/>
-        <swrl:head>
-            <rdf:Description>
-                <rdf:type rdf:resource="&swrl;AtomList"/>
-                <rdf:rest rdf:resource="&rdf;nil"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasGrandFather"/>
-                        <swrl:argument1 rdf:resource="urn:swrl#a"/>
-                        <swrl:argument2 rdf:resource="urn:swrl#b"/>
-                    </rdf:Description>
-                </rdf:first>
-            </rdf:Description>
-        </swrl:head>
-        <swrl:body>
-            <rdf:Description>
-                <rdf:type rdf:resource="&swrl;AtomList"/>
-                <rdf:rest>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="&swrl;AtomList"/>
-                        <rdf:first>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="&swrl;ClassAtom"/>
-                                <swrl:classPredicate rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
-                                <swrl:argument1 rdf:resource="urn:swrl#b"/>
-                            </rdf:Description>
-                        </rdf:first>
-                        <rdf:rest>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="&swrl;AtomList"/>
-                                <rdf:first>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
-                                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasGrandDaughter"/>
-                                        <swrl:argument2 rdf:resource="urn:swrl#a"/>
-                                        <swrl:argument1 rdf:resource="urn:swrl#b"/>
-                                    </rdf:Description>
-                                </rdf:first>
-                                <rdf:rest>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="&swrl;AtomList"/>
-                                        <rdf:rest rdf:resource="&rdf;nil"/>
-                                        <rdf:first>
-                                            <rdf:Description>
-                                                <rdf:type rdf:resource="&swrl;DatavaluedPropertyAtom"/>
-                                                <swrl:argument2>M</swrl:argument2>
-                                                <swrl:propertyPredicate rdf:resource="&foaf;gender"/>
-                                                <swrl:argument1 rdf:resource="urn:swrl#b"/>
-                                            </rdf:Description>
-                                        </rdf:first>
-                                    </rdf:Description>
-                                </rdf:rest>
-                            </rdf:Description>
-                        </rdf:rest>
-                    </rdf:Description>
-                </rdf:rest>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="&swrl;ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
-                        <swrl:argument1 rdf:resource="urn:swrl#a"/>
-                    </rdf:Description>
-                </rdf:first>
-            </rdf:Description>
-        </swrl:body>
     </rdf:Description>
 </rdf:RDF>
 
 
 
-<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
+<!-- Generated by the OWL API (version 4.1.3.20151118-2017) https://github.com/owlcs/owlapi -->
 

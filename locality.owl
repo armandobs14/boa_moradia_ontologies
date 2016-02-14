@@ -1,21 +1,9 @@
 <?xml version="1.0"?>
-
-
-<!DOCTYPE rdf:RDF [
-    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
-    <!ENTITY swrl "http://www.w3.org/2003/11/swrl#" >
-    <!ENTITY swrlb "http://www.w3.org/2003/11/swrlb#" >
-    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
-    <!ENTITY locality "http://nees.com.br/linkn/onto/locality/" >
-    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-]>
-
-
 <rdf:RDF xmlns="http://www.w3.org/2002/07/owl#"
      xml:base="http://www.w3.org/2002/07/owl"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
      xmlns:swrl="http://www.w3.org/2003/11/swrl#"
      xmlns:locality="http://nees.com.br/linkn/onto/locality/"
@@ -38,74 +26,74 @@
 
     <!-- http://nees.com.br/linkn/onto/locality/composesAddress -->
 
-    <ObjectProperty rdf:about="&locality;composesAddress">
-        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
-        <rdf:type rdf:resource="&owl;IrreflexiveProperty"/>
+    <ObjectProperty rdf:about="http://nees.com.br/linkn/onto/locality/composesAddress">
+        <inverseOf rdf:resource="http://nees.com.br/linkn/onto/locality/isComposedOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://nees.com.br/linkn/onto/locality/Locality"/>
+        <rdfs:range rdf:resource="http://nees.com.br/linkn/onto/locality/Address"/>
         <rdfs:comment xml:lang="en">A locality composes the party of address, for example: A street composes party of a address, as well as neighborhood, city etc.</rdfs:comment>
         <rdfs:comment xml:lang="pt">Uma localização compõe parte de um endereço, por exemplo: Uma rua compõe parte de um endereço, assim como bairro, cidade etc.</rdfs:comment>
-        <rdfs:range rdf:resource="&locality;Address"/>
-        <rdfs:domain rdf:resource="&locality;Locality"/>
     </ObjectProperty>
     
 
 
     <!-- http://nees.com.br/linkn/onto/locality/hasAddress -->
 
-    <ObjectProperty rdf:about="&locality;hasAddress">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:range rdf:resource="&locality;Address"/>
+    <ObjectProperty rdf:about="http://nees.com.br/linkn/onto/locality/hasAddress">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://nees.com.br/linkn/onto/locality/Address"/>
     </ObjectProperty>
     
 
 
     <!-- http://nees.com.br/linkn/onto/locality/hasLocation -->
 
-    <ObjectProperty rdf:about="&locality;hasLocation">
-        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+    <ObjectProperty rdf:about="http://nees.com.br/linkn/onto/locality/hasLocation">
+        <inverseOf rdf:resource="http://nees.com.br/linkn/onto/locality/isLocatedIn"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://nees.com.br/linkn/onto/locality/Locality"/>
+        <rdfs:range rdf:resource="http://nees.com.br/linkn/onto/locality/Locality"/>
         <rdfs:comment xml:lang="en">A locality has other locality, for example: A city has neighborhoods, a country has states.</rdfs:comment>
         <rdfs:comment xml:lang="pt">Uma localidade tem outras localidades, por exemplo: Uma cidade tem bairros, um país tem estados.</rdfs:comment>
-        <rdfs:domain rdf:resource="&locality;Locality"/>
-        <rdfs:range rdf:resource="&locality;Locality"/>
     </ObjectProperty>
     
 
 
     <!-- http://nees.com.br/linkn/onto/locality/isComposedOf -->
 
-    <ObjectProperty rdf:about="&locality;isComposedOf">
-        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
-        <rdf:type rdf:resource="&owl;IrreflexiveProperty"/>
+    <ObjectProperty rdf:about="http://nees.com.br/linkn/onto/locality/isComposedOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://nees.com.br/linkn/onto/locality/Address"/>
+        <rdfs:range rdf:resource="http://nees.com.br/linkn/onto/locality/Locality"/>
         <rdfs:comment xml:lang="en">An address is composed of street, neighborhood, city, state, country and continent.</rdfs:comment>
         <rdfs:comment xml:lang="pt">Um endereço é composto por rua, bairro, cidade, estado, país e continente.</rdfs:comment>
-        <rdfs:domain rdf:resource="&locality;Address"/>
-        <rdfs:range rdf:resource="&locality;Locality"/>
-        <inverseOf rdf:resource="&locality;composesAddress"/>
     </ObjectProperty>
     
 
 
     <!-- http://nees.com.br/linkn/onto/locality/isLocatedIn -->
 
-    <ObjectProperty rdf:about="&locality;isLocatedIn">
-        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+    <ObjectProperty rdf:about="http://nees.com.br/linkn/onto/locality/isLocatedIn">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://nees.com.br/linkn/onto/locality/Locality"/>
+        <rdfs:range rdf:resource="http://nees.com.br/linkn/onto/locality/Locality"/>
         <rdfs:comment xml:lang="en">A locality is located in other locality, for example: A city is located in a state, A country is located in a continent.</rdfs:comment>
         <rdfs:comment xml:lang="pt">Uma localidade está localizada em outra localidade, por exemplo: Uma cidade está localizada em um estado, um país está localizado em um continente.</rdfs:comment>
-        <rdfs:range rdf:resource="&locality;Locality"/>
-        <rdfs:domain rdf:resource="&locality;Locality"/>
-        <inverseOf rdf:resource="&locality;hasLocation"/>
     </ObjectProperty>
     
 
 
     <!-- http://nees.com.br/linkn/onto/locality/neighboring -->
 
-    <ObjectProperty rdf:about="&locality;neighboring">
-        <rdf:type rdf:resource="&owl;IrreflexiveProperty"/>
-        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+    <ObjectProperty rdf:about="http://nees.com.br/linkn/onto/locality/neighboring">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://nees.com.br/linkn/onto/locality/Locality"/>
+        <rdfs:range rdf:resource="http://nees.com.br/linkn/onto/locality/Locality"/>
         <rdfs:comment xml:lang="en">A locality has a same locality neighboring, for example: A state is neighboring the other state, A city is neighboring the other city.</rdfs:comment>
         <rdfs:comment xml:lang="pt">Uma localidade tem uma mesma localidade vizinha, por exemplo: Um estado é vizinho a outro estado, uma cidade é vizinha a outra cidade.</rdfs:comment>
-        <rdfs:range rdf:resource="&locality;Locality"/>
-        <rdfs:domain rdf:resource="&locality;Locality"/>
     </ObjectProperty>
     
 
@@ -123,186 +111,186 @@
 
     <!-- http://nees.com.br/linkn/onto/locality/boundingbox -->
 
-    <DatatypeProperty rdf:about="&locality;boundingbox">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:domain rdf:resource="&locality;Locality"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
+    <DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/locality/boundingbox">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://nees.com.br/linkn/onto/locality/Locality"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </DatatypeProperty>
     
 
 
     <!-- http://nees.com.br/linkn/onto/locality/displayName -->
 
-    <DatatypeProperty rdf:about="&locality;displayName">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
+    <DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/locality/displayName">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain>
             <Class>
                 <unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&locality;Address"/>
-                    <rdf:Description rdf:about="&locality;Locality"/>
+                    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/Address"/>
+                    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/Locality"/>
                 </unionOf>
             </Class>
         </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </DatatypeProperty>
     
 
 
     <!-- http://nees.com.br/linkn/onto/locality/hasCentroidLatitude -->
 
-    <DatatypeProperty rdf:about="&locality;hasCentroidLatitude">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:domain rdf:resource="&locality;Locality"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
+    <DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/locality/hasCentroidLatitude">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://nees.com.br/linkn/onto/locality/Locality"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </DatatypeProperty>
     
 
 
     <!-- http://nees.com.br/linkn/onto/locality/hasCentroidLongitude -->
 
-    <DatatypeProperty rdf:about="&locality;hasCentroidLongitude">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:domain rdf:resource="&locality;Locality"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
+    <DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/locality/hasCentroidLongitude">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://nees.com.br/linkn/onto/locality/Locality"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </DatatypeProperty>
     
 
 
     <!-- http://nees.com.br/linkn/onto/locality/hasDemographicDensity -->
 
-    <DatatypeProperty rdf:about="&locality;hasDemographicDensity">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+    <DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/locality/hasDemographicDensity">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://nees.com.br/linkn/onto/locality/Locality"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:comment xml:lang="en">A locality has demographic density</rdfs:comment>
         <rdfs:comment xml:lang="pt">Uma localidade tem uma densidade demográfica</rdfs:comment>
-        <rdfs:domain rdf:resource="&locality;Locality"/>
-        <rdfs:range rdf:resource="&xsd;float"/>
     </DatatypeProperty>
     
 
 
     <!-- http://nees.com.br/linkn/onto/locality/hasID -->
 
-    <DatatypeProperty rdf:about="&locality;hasID">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:domain rdf:resource="&locality;Locality"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
+    <DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/locality/hasID">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://nees.com.br/linkn/onto/locality/Locality"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </DatatypeProperty>
     
 
 
     <!-- http://nees.com.br/linkn/onto/locality/hasLatitude -->
 
-    <DatatypeProperty rdf:about="&locality;hasLatitude">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
+    <DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/locality/hasLatitude">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </DatatypeProperty>
     
 
 
     <!-- http://nees.com.br/linkn/onto/locality/hasLocalityAcronym -->
 
-    <DatatypeProperty rdf:about="&locality;hasLocalityAcronym">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:domain rdf:resource="&locality;Locality"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
+    <DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/locality/hasLocalityAcronym">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://nees.com.br/linkn/onto/locality/Locality"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </DatatypeProperty>
     
 
 
     <!-- http://nees.com.br/linkn/onto/locality/hasLocalityCode -->
 
-    <DatatypeProperty rdf:about="&locality;hasLocalityCode">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:domain rdf:resource="&locality;Locality"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
+    <DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/locality/hasLocalityCode">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://nees.com.br/linkn/onto/locality/Locality"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </DatatypeProperty>
     
 
 
     <!-- http://nees.com.br/linkn/onto/locality/hasLocalityName -->
 
-    <DatatypeProperty rdf:about="&locality;hasLocalityName">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:domain rdf:resource="&locality;Locality"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
+    <DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/locality/hasLocalityName">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://nees.com.br/linkn/onto/locality/Locality"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </DatatypeProperty>
     
 
 
     <!-- http://nees.com.br/linkn/onto/locality/hasLongitude -->
 
-    <DatatypeProperty rdf:about="&locality;hasLongitude">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
+    <DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/locality/hasLongitude">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </DatatypeProperty>
     
 
 
     <!-- http://nees.com.br/linkn/onto/locality/hasNumber -->
 
-    <DatatypeProperty rdf:about="&locality;hasNumber">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:domain rdf:resource="&locality;Address"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
+    <DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/locality/hasNumber">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://nees.com.br/linkn/onto/locality/Address"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </DatatypeProperty>
     
 
 
     <!-- http://nees.com.br/linkn/onto/locality/hasPerimeter -->
 
-    <DatatypeProperty rdf:about="&locality;hasPerimeter">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:domain rdf:resource="&locality;Locality"/>
-        <rdfs:range rdf:resource="&xsd;float"/>
+    <DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/locality/hasPerimeter">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://nees.com.br/linkn/onto/locality/Locality"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
     </DatatypeProperty>
     
 
 
     <!-- http://nees.com.br/linkn/onto/locality/hasPolygon -->
 
-    <DatatypeProperty rdf:about="&locality;hasPolygon">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:domain rdf:resource="&locality;Locality"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
+    <DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/locality/hasPolygon">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://nees.com.br/linkn/onto/locality/Locality"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </DatatypeProperty>
     
 
 
     <!-- http://nees.com.br/linkn/onto/locality/hasPolygonArea -->
 
-    <DatatypeProperty rdf:about="&locality;hasPolygonArea">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+    <DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/locality/hasPolygonArea">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://nees.com.br/linkn/onto/locality/Locality"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:comment xml:lang="en">A location has a polygon area</rdfs:comment>
         <rdfs:comment xml:lang="pt">Uma localização tem a área do polígono</rdfs:comment>
-        <rdfs:domain rdf:resource="&locality;Locality"/>
-        <rdfs:range rdf:resource="&xsd;float"/>
     </DatatypeProperty>
     
 
 
     <!-- http://nees.com.br/linkn/onto/locality/hasPopulation -->
 
-    <DatatypeProperty rdf:about="&locality;hasPopulation">
+    <DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/locality/hasPopulation">
+        <rdfs:domain rdf:resource="http://nees.com.br/linkn/onto/locality/Locality"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
         <rdfs:comment xml:lang="en">A locality has a number of population</rdfs:comment>
         <rdfs:comment xml:lang="pt">Uma localidade tem um número de população</rdfs:comment>
-        <rdfs:domain rdf:resource="&locality;Locality"/>
-        <rdfs:range rdf:resource="&xsd;integer"/>
     </DatatypeProperty>
     
 
 
     <!-- http://nees.com.br/linkn/onto/locality/hasZipCode -->
 
-    <DatatypeProperty rdf:about="&locality;hasZipCode">
-        <rdfs:range rdf:resource="&xsd;string"/>
+    <DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/locality/hasZipCode">
         <rdfs:domain>
             <Class>
                 <unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&locality;Address"/>
-                    <rdf:Description rdf:about="&locality;Locality"/>
+                    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/Address"/>
+                    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/Locality"/>
                 </unionOf>
             </Class>
         </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </DatatypeProperty>
     
 
@@ -320,61 +308,59 @@
 
     <!-- http://nees.com.br/linkn/onto/locality/Address -->
 
-    <Class rdf:about="&locality;Address">
+    <Class rdf:about="http://nees.com.br/linkn/onto/locality/Address">
         <rdfs:subClassOf>
             <Restriction>
-                <onProperty rdf:resource="&locality;hasLongitude"/>
-                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
-                <onDataRange rdf:resource="&xsd;string"/>
+                <onProperty rdf:resource="http://nees.com.br/linkn/onto/locality/hasID"/>
+                <qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</qualifiedCardinality>
+                <onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <Restriction>
-                <onProperty rdf:resource="&locality;hasID"/>
-                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
-                <onDataRange rdf:resource="&xsd;string"/>
+                <onProperty rdf:resource="http://nees.com.br/linkn/onto/locality/hasLatitude"/>
+                <qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</qualifiedCardinality>
+                <onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <Restriction>
-                <onProperty rdf:resource="&locality;hasZipCode"/>
-                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
-                <onDataRange rdf:resource="&xsd;string"/>
+                <onProperty rdf:resource="http://nees.com.br/linkn/onto/locality/hasLongitude"/>
+                <qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</qualifiedCardinality>
+                <onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <Restriction>
-                <onProperty rdf:resource="&locality;hasLatitude"/>
-                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
-                <onDataRange rdf:resource="&xsd;string"/>
+                <onProperty rdf:resource="http://nees.com.br/linkn/onto/locality/hasZipCode"/>
+                <qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</qualifiedCardinality>
+                <onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </Restriction>
         </rdfs:subClassOf>
-        <disjointWith rdf:resource="&locality;Locality"/>
-        <rdfs:comment xml:lang="en">The postal address is the full location (a point) to a mail recipient.. An address is composed by Street, Neighborhood, City, State, Country and Continent, beyond a number and zipcode.</rdfs:comment>
+        <disjointWith rdf:resource="http://nees.com.br/linkn/onto/locality/Locality"/>
         <rdfs:comment xml:lang="pt">O Endereço postal é uma localização completa (um ponto) de um destinatário de correio. Um endereço é composto por Rua , Bairro, Cidade, Estado, País e Continente , além de um número e CEP.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The postal address is the full location (a point) to a mail recipient.. An address is composed by Street, Neighborhood, City, State, Country and Continent, beyond a number and zipcode.</rdfs:comment>
     </Class>
     
 
 
     <!-- http://nees.com.br/linkn/onto/locality/City -->
 
-    <Class rdf:about="&locality;City">
-        <rdfs:label xml:lang="pt">Cidade</rdfs:label>
-        <rdfs:label xml:lang="pt">Municipio</rdfs:label>
+    <Class rdf:about="http://nees.com.br/linkn/onto/locality/City">
         <rdfs:subClassOf>
             <Class>
                 <intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&locality;Locality"/>
+                    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/Locality"/>
                     <Restriction>
-                        <onProperty rdf:resource="&locality;hasLocation"/>
+                        <onProperty rdf:resource="http://nees.com.br/linkn/onto/locality/hasLocation"/>
                         <allValuesFrom>
                             <Class>
                                 <complementOf>
                                     <Class>
                                         <unionOf rdf:parseType="Collection">
-                                            <rdf:Description rdf:about="&locality;Continent"/>
-                                            <rdf:Description rdf:about="&locality;Country"/>
-                                            <rdf:Description rdf:about="&locality;State"/>
+                                            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/Continent"/>
+                                            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/Country"/>
+                                            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/State"/>
                                         </unionOf>
                                     </Class>
                                 </complementOf>
@@ -382,62 +368,64 @@
                         </allValuesFrom>
                     </Restriction>
                     <Restriction>
-                        <onProperty rdf:resource="&locality;isLocatedIn"/>
+                        <onProperty rdf:resource="http://nees.com.br/linkn/onto/locality/isLocatedIn"/>
                         <allValuesFrom>
                             <Class>
                                 <unionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="&locality;Continent"/>
-                                    <rdf:Description rdf:about="&locality;Country"/>
-                                    <rdf:Description rdf:about="&locality;State"/>
+                                    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/Continent"/>
+                                    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/Country"/>
+                                    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/State"/>
                                 </unionOf>
                             </Class>
                         </allValuesFrom>
                     </Restriction>
                     <Restriction>
-                        <onProperty rdf:resource="&locality;neighboring"/>
-                        <allValuesFrom rdf:resource="&locality;City"/>
+                        <onProperty rdf:resource="http://nees.com.br/linkn/onto/locality/neighboring"/>
+                        <allValuesFrom rdf:resource="http://nees.com.br/linkn/onto/locality/City"/>
                     </Restriction>
                 </intersectionOf>
             </Class>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">A city is an urban area that is differentiated from villages and other urban entities by various criteria, which include population, population density, or legal status. A city has neighborhoods and streets; and is located in a state, a country and a continent</rdfs:comment>
         <rdfs:comment xml:lang="pt">Uma cidade é uma área urbanizada, que se diferencia de vilas e outras entidades urbanas através de vários critérios, os quais incluem população, densidade populacional ou estatuto legal. Uma cidade tem bairros e ruas; e está localizado em um estado, um país e um continente.</rdfs:comment>
+        <rdfs:label xml:lang="pt">Cidade</rdfs:label>
+        <rdfs:label xml:lang="pt">Municipio</rdfs:label>
     </Class>
     
 
 
     <!-- http://nees.com.br/linkn/onto/locality/Continent -->
 
-    <Class rdf:about="&locality;Continent">
+    <Class rdf:about="http://nees.com.br/linkn/onto/locality/Continent">
         <rdfs:subClassOf>
             <Class>
                 <intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&locality;Locality"/>
+                    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/Locality"/>
                     <Restriction>
-                        <onProperty rdf:resource="&locality;hasLocation"/>
+                        <onProperty rdf:resource="http://nees.com.br/linkn/onto/locality/hasLocation"/>
                         <allValuesFrom>
                             <Class>
-                                <complementOf rdf:resource="&locality;Continent"/>
+                                <complementOf rdf:resource="http://nees.com.br/linkn/onto/locality/Continent"/>
                             </Class>
                         </allValuesFrom>
                     </Restriction>
                     <Restriction>
-                        <onProperty rdf:resource="&locality;isLocatedIn"/>
+                        <onProperty rdf:resource="http://nees.com.br/linkn/onto/locality/isLocatedIn"/>
                         <allValuesFrom>
                             <Class>
                                 <complementOf>
                                     <Class>
                                         <unionOf rdf:parseType="Collection">
-                                            <rdf:Description rdf:about="&locality;City"/>
-                                            <rdf:Description rdf:about="&locality;Continent"/>
-                                            <rdf:Description rdf:about="&locality;Country"/>
-                                            <rdf:Description rdf:about="&locality;District"/>
-                                            <rdf:Description rdf:about="&locality;MetropolitanRegion"/>
-                                            <rdf:Description rdf:about="&locality;Neighborhood"/>
-                                            <rdf:Description rdf:about="&locality;Sector"/>
-                                            <rdf:Description rdf:about="&locality;State"/>
-                                            <rdf:Description rdf:about="&locality;Street"/>
-                                            <rdf:Description rdf:about="&locality;Subdistrict"/>
+                                            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/City"/>
+                                            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/Continent"/>
+                                            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/Country"/>
+                                            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/District"/>
+                                            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/MetropolitanRegion"/>
+                                            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/Neighborhood"/>
+                                            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/Sector"/>
+                                            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/State"/>
+                                            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/Street"/>
+                                            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/Subdistrict"/>
                                         </unionOf>
                                     </Class>
                                 </complementOf>
@@ -445,8 +433,8 @@
                         </allValuesFrom>
                     </Restriction>
                     <Restriction>
-                        <onProperty rdf:resource="&locality;neighboring"/>
-                        <allValuesFrom rdf:resource="&locality;Continent"/>
+                        <onProperty rdf:resource="http://nees.com.br/linkn/onto/locality/neighboring"/>
+                        <allValuesFrom rdf:resource="http://nees.com.br/linkn/onto/locality/Continent"/>
                     </Restriction>
                 </intersectionOf>
             </Class>
@@ -459,66 +447,66 @@
 
     <!-- http://nees.com.br/linkn/onto/locality/Country -->
 
-    <Class rdf:about="&locality;Country">
-        <rdfs:label xml:lang="pt">Pais</rdfs:label>
+    <Class rdf:about="http://nees.com.br/linkn/onto/locality/Country">
         <rdfs:subClassOf>
             <Class>
                 <intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&locality;Locality"/>
+                    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/Locality"/>
                     <Restriction>
-                        <onProperty rdf:resource="&locality;hasLocation"/>
+                        <onProperty rdf:resource="http://nees.com.br/linkn/onto/locality/hasLocation"/>
                         <allValuesFrom>
                             <Class>
-                                <complementOf rdf:resource="&locality;Continent"/>
+                                <complementOf rdf:resource="http://nees.com.br/linkn/onto/locality/Continent"/>
                             </Class>
                         </allValuesFrom>
                     </Restriction>
                     <Restriction>
-                        <onProperty rdf:resource="&locality;isLocatedIn"/>
-                        <allValuesFrom rdf:resource="&locality;Continent"/>
+                        <onProperty rdf:resource="http://nees.com.br/linkn/onto/locality/isLocatedIn"/>
+                        <allValuesFrom rdf:resource="http://nees.com.br/linkn/onto/locality/Continent"/>
                     </Restriction>
                     <Restriction>
-                        <onProperty rdf:resource="&locality;neighboring"/>
-                        <allValuesFrom rdf:resource="&locality;Country"/>
+                        <onProperty rdf:resource="http://nees.com.br/linkn/onto/locality/neighboring"/>
+                        <allValuesFrom rdf:resource="http://nees.com.br/linkn/onto/locality/Country"/>
                     </Restriction>
                 </intersectionOf>
             </Class>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">A country is a geographical region considered the physical territory of a sovereign state, or a minor or former political division within a geographical region. A country has states, cities, neighborhoods and streets; and is located in a continent.</rdfs:comment>
         <rdfs:comment xml:lang="pt">Um país é uma região geográfica considerada o território físico de um Estado soberano, ou uma divisão política menor ou antiga dentro de uma região geográfica. Um país tem estados, cidades, bairros e ruas; e está localizado em um continente.</rdfs:comment>
+        <rdfs:label xml:lang="pt">Pais</rdfs:label>
     </Class>
     
 
 
     <!-- http://nees.com.br/linkn/onto/locality/District -->
 
-    <Class rdf:about="&locality;District">
+    <Class rdf:about="http://nees.com.br/linkn/onto/locality/District">
         <rdfs:subClassOf>
             <Class>
                 <intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&locality;Locality"/>
+                    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/Locality"/>
                     <Restriction>
-                        <onProperty rdf:resource="&locality;hasLocation"/>
+                        <onProperty rdf:resource="http://nees.com.br/linkn/onto/locality/hasLocation"/>
                         <allValuesFrom>
                             <Class>
                                 <unionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="&locality;Neighborhood"/>
-                                    <rdf:Description rdf:about="&locality;Sector"/>
-                                    <rdf:Description rdf:about="&locality;Street"/>
-                                    <rdf:Description rdf:about="&locality;Subdistrict"/>
+                                    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/Neighborhood"/>
+                                    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/Sector"/>
+                                    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/Street"/>
+                                    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/Subdistrict"/>
                                 </unionOf>
                             </Class>
                         </allValuesFrom>
                     </Restriction>
                     <Restriction>
-                        <onProperty rdf:resource="&locality;isLocatedIn"/>
+                        <onProperty rdf:resource="http://nees.com.br/linkn/onto/locality/isLocatedIn"/>
                         <allValuesFrom>
                             <Class>
                                 <unionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="&locality;City"/>
-                                    <rdf:Description rdf:about="&locality;Continent"/>
-                                    <rdf:Description rdf:about="&locality;Country"/>
-                                    <rdf:Description rdf:about="&locality;State"/>
+                                    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/City"/>
+                                    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/Continent"/>
+                                    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/Country"/>
+                                    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/State"/>
                                 </unionOf>
                             </Class>
                         </allValuesFrom>
@@ -532,7 +520,7 @@
 
     <!-- http://nees.com.br/linkn/onto/locality/Locality -->
 
-    <Class rdf:about="&locality;Locality">
+    <Class rdf:about="http://nees.com.br/linkn/onto/locality/Locality">
         <rdfs:comment xml:lang="en">A Locality is a place that has a population, in territorial terms of geography.</rdfs:comment>
         <rdfs:comment xml:lang="pt">Uma Localidade é um lugar que tem uma civilização, em termos territoriais da geografia.</rdfs:comment>
     </Class>
@@ -541,20 +529,20 @@
 
     <!-- http://nees.com.br/linkn/onto/locality/MetropolitanRegion -->
 
-    <Class rdf:about="&locality;MetropolitanRegion">
+    <Class rdf:about="http://nees.com.br/linkn/onto/locality/MetropolitanRegion">
         <rdfs:subClassOf>
             <Class>
                 <intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&locality;Locality"/>
+                    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/Locality"/>
                     <Restriction>
-                        <onProperty rdf:resource="&locality;hasLocation"/>
+                        <onProperty rdf:resource="http://nees.com.br/linkn/onto/locality/hasLocation"/>
                         <allValuesFrom>
                             <Class>
                                 <complementOf>
                                     <Class>
                                         <unionOf rdf:parseType="Collection">
-                                            <rdf:Description rdf:about="&locality;Continent"/>
-                                            <rdf:Description rdf:about="&locality;Country"/>
+                                            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/Continent"/>
+                                            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/Country"/>
                                         </unionOf>
                                     </Class>
                                 </complementOf>
@@ -562,12 +550,12 @@
                         </allValuesFrom>
                     </Restriction>
                     <Restriction>
-                        <onProperty rdf:resource="&locality;isLocatedIn"/>
+                        <onProperty rdf:resource="http://nees.com.br/linkn/onto/locality/isLocatedIn"/>
                         <allValuesFrom>
                             <Class>
                                 <unionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="&locality;Continent"/>
-                                    <rdf:Description rdf:about="&locality;Country"/>
+                                    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/Continent"/>
+                                    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/Country"/>
                                 </unionOf>
                             </Class>
                         </allValuesFrom>
@@ -575,41 +563,40 @@
                 </intersectionOf>
             </Class>
         </rdfs:subClassOf>
-        <rdfs:isDefinedBy>wikipedia</rdfs:isDefinedBy>
         <rdfs:comment xml:lang="en">A metropolitan area, sometimes referred to as a metropolitan region, metro area or just metro, is a region consisting of a densely populated urban core and its less-populated surrounding territories, sharing industry, infrastructure, and housing.</rdfs:comment>
         <rdfs:comment xml:lang="pt">Uma região metropolitana ou área metropolitana consiste em uma área composta por um núcleo urbano densamente povoado e por suas áreas vizinhas menos povoadas. Este aglomerado urbano partilha indústrias, infraestruturas e habitações.</rdfs:comment>
+        <rdfs:isDefinedBy>wikipedia</rdfs:isDefinedBy>
     </Class>
     
 
 
     <!-- http://nees.com.br/linkn/onto/locality/Neighborhood -->
 
-    <Class rdf:about="&locality;Neighborhood">
-        <rdfs:label xml:lang="pt">Bairro</rdfs:label>
+    <Class rdf:about="http://nees.com.br/linkn/onto/locality/Neighborhood">
         <rdfs:subClassOf>
             <Class>
                 <intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&locality;Locality"/>
+                    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/Locality"/>
                     <Restriction>
-                        <onProperty rdf:resource="&locality;hasLocation"/>
+                        <onProperty rdf:resource="http://nees.com.br/linkn/onto/locality/hasLocation"/>
                         <allValuesFrom>
                             <Class>
                                 <intersectionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="&locality;Sector"/>
-                                    <rdf:Description rdf:about="&locality;Street"/>
+                                    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/Sector"/>
+                                    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/Street"/>
                                 </intersectionOf>
                             </Class>
                         </allValuesFrom>
                     </Restriction>
                     <Restriction>
-                        <onProperty rdf:resource="&locality;isLocatedIn"/>
+                        <onProperty rdf:resource="http://nees.com.br/linkn/onto/locality/isLocatedIn"/>
                         <allValuesFrom>
                             <Class>
                                 <complementOf>
                                     <Class>
                                         <intersectionOf rdf:parseType="Collection">
-                                            <rdf:Description rdf:about="&locality;Sector"/>
-                                            <rdf:Description rdf:about="&locality;Street"/>
+                                            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/Sector"/>
+                                            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/Street"/>
                                         </intersectionOf>
                                     </Class>
                                 </complementOf>
@@ -617,67 +604,67 @@
                         </allValuesFrom>
                     </Restriction>
                     <Restriction>
-                        <onProperty rdf:resource="&locality;neighboring"/>
-                        <allValuesFrom rdf:resource="&locality;Neighborhood"/>
+                        <onProperty rdf:resource="http://nees.com.br/linkn/onto/locality/neighboring"/>
+                        <allValuesFrom rdf:resource="http://nees.com.br/linkn/onto/locality/Neighborhood"/>
                     </Restriction>
                 </intersectionOf>
             </Class>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">A Neighborhood is a community or region within a city or country, being the minimum unit of existing urbanization in most cities of the world. A neighborhood has streets; and is located in a city, a state, a country and a continent.</rdfs:comment>
         <rdfs:comment xml:lang="pt">Um Bairro é uma comunidade ou região dentro de uma cidade ou município, sendo a unidade mínima de urbanização existente na maioria das cidades do mundo. Um bairro tem ruas; e está localizado em uma cidade, um estado, um país e um continente.</rdfs:comment>
+        <rdfs:label xml:lang="pt">Bairro</rdfs:label>
     </Class>
     
 
 
     <!-- http://nees.com.br/linkn/onto/locality/Sector -->
 
-    <Class rdf:about="&locality;Sector">
+    <Class rdf:about="http://nees.com.br/linkn/onto/locality/Sector">
         <rdfs:subClassOf>
             <Class>
                 <intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&locality;Locality"/>
+                    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/Locality"/>
                     <Restriction>
-                        <onProperty rdf:resource="&locality;hasLocation"/>
-                        <allValuesFrom rdf:resource="&locality;Street"/>
+                        <onProperty rdf:resource="http://nees.com.br/linkn/onto/locality/hasLocation"/>
+                        <allValuesFrom rdf:resource="http://nees.com.br/linkn/onto/locality/Street"/>
                     </Restriction>
                     <Restriction>
-                        <onProperty rdf:resource="&locality;isLocatedIn"/>
+                        <onProperty rdf:resource="http://nees.com.br/linkn/onto/locality/isLocatedIn"/>
                         <allValuesFrom>
                             <Class>
-                                <complementOf rdf:resource="&locality;Street"/>
+                                <complementOf rdf:resource="http://nees.com.br/linkn/onto/locality/Street"/>
                             </Class>
                         </allValuesFrom>
                     </Restriction>
                     <Restriction>
-                        <onProperty rdf:resource="&locality;neighboring"/>
-                        <allValuesFrom rdf:resource="&locality;Sector"/>
+                        <onProperty rdf:resource="http://nees.com.br/linkn/onto/locality/neighboring"/>
+                        <allValuesFrom rdf:resource="http://nees.com.br/linkn/onto/locality/Sector"/>
                     </Restriction>
                 </intersectionOf>
             </Class>
         </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">The district is the smallest administrative unit, formed by continuous area, fully contained in an urban or rural area, with a size suitable to carry out the data collection by a researcher who goes into the field at the time of the census. (http://gestaocompartilhada.pbh.gov.br/estrutura-territorial/setores-censitarios-e-areas-de-ponderacao)</rdfs:comment>
         <rdfs:comment xml:lang="pt">O setor é a menor unidade territorial, formada por área contínua, integralmente contida em área urbana ou rural, com dimensão adequada à realização da coleta de dados por um pesquisador que vai a campo por ocasião do censo. (http://gestaocompartilhada.pbh.gov.br/estrutura-territorial/setores-censitarios-e-areas-de-ponderacao)</rdfs:comment>
+        <rdfs:comment xml:lang="en">The district is the smallest administrative unit, formed by continuous area, fully contained in an urban or rural area, with a size suitable to carry out the data collection by a researcher who goes into the field at the time of the census. (http://gestaocompartilhada.pbh.gov.br/estrutura-territorial/setores-censitarios-e-areas-de-ponderacao)</rdfs:comment>
     </Class>
     
 
 
     <!-- http://nees.com.br/linkn/onto/locality/State -->
 
-    <Class rdf:about="&locality;State">
-        <rdfs:label xml:lang="pt">Estado</rdfs:label>
+    <Class rdf:about="http://nees.com.br/linkn/onto/locality/State">
         <rdfs:subClassOf>
             <Class>
                 <intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&locality;Locality"/>
+                    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/Locality"/>
                     <Restriction>
-                        <onProperty rdf:resource="&locality;hasLocation"/>
+                        <onProperty rdf:resource="http://nees.com.br/linkn/onto/locality/hasLocation"/>
                         <allValuesFrom>
                             <Class>
                                 <complementOf>
                                     <Class>
                                         <unionOf rdf:parseType="Collection">
-                                            <rdf:Description rdf:about="&locality;Continent"/>
-                                            <rdf:Description rdf:about="&locality;Country"/>
+                                            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/Continent"/>
+                                            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/Country"/>
                                         </unionOf>
                                     </Class>
                                 </complementOf>
@@ -685,107 +672,108 @@
                         </allValuesFrom>
                     </Restriction>
                     <Restriction>
-                        <onProperty rdf:resource="&locality;isLocatedIn"/>
+                        <onProperty rdf:resource="http://nees.com.br/linkn/onto/locality/isLocatedIn"/>
                         <allValuesFrom>
                             <Class>
                                 <unionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="&locality;Continent"/>
-                                    <rdf:Description rdf:about="&locality;Country"/>
+                                    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/Continent"/>
+                                    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/Country"/>
                                 </unionOf>
                             </Class>
                         </allValuesFrom>
                     </Restriction>
                     <Restriction>
-                        <onProperty rdf:resource="&locality;neighboring"/>
-                        <allValuesFrom rdf:resource="&locality;State"/>
+                        <onProperty rdf:resource="http://nees.com.br/linkn/onto/locality/neighboring"/>
+                        <allValuesFrom rdf:resource="http://nees.com.br/linkn/onto/locality/State"/>
                     </Restriction>
                 </intersectionOf>
             </Class>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">A state is an organized political community occupying a defined territory, usually under the Constitution, and directed by a government; having also recognized internally and by other countries. A state has cities, neighborhoods and streets; and is located in a country and a continent.</rdfs:comment>
         <rdfs:comment xml:lang="pt">Um Estado é uma comunidade organizada politicamente, ocupando um território definido, normalmente sob Constituição) e dirigida por um governo; também possuindo soberania reconhecida internamente e por outros países. Um estado tem cidades, bairros e ruas; e está localizado em um país e um continente.</rdfs:comment>
+        <rdfs:label xml:lang="pt">Estado</rdfs:label>
     </Class>
     
 
 
     <!-- http://nees.com.br/linkn/onto/locality/Street -->
 
-    <Class rdf:about="&locality;Street">
-        <rdfs:label xml:lang="pt">Rua</rdfs:label>
+    <Class rdf:about="http://nees.com.br/linkn/onto/locality/Street">
         <rdfs:subClassOf>
             <Class>
                 <intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&locality;Locality"/>
+                    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/Locality"/>
                     <Restriction>
-                        <onProperty rdf:resource="&locality;hasLocation"/>
+                        <onProperty rdf:resource="http://nees.com.br/linkn/onto/locality/hasLocation"/>
                         <allValuesFrom>
                             <Class>
                                 <unionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="&locality;City"/>
-                                    <rdf:Description rdf:about="&locality;Continent"/>
-                                    <rdf:Description rdf:about="&locality;Country"/>
-                                    <rdf:Description rdf:about="&locality;District"/>
-                                    <rdf:Description rdf:about="&locality;MetropolitanRegion"/>
-                                    <rdf:Description rdf:about="&locality;Sector"/>
-                                    <rdf:Description rdf:about="&locality;State"/>
-                                    <rdf:Description rdf:about="&locality;Subdistrict"/>
+                                    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/City"/>
+                                    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/Continent"/>
+                                    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/Country"/>
+                                    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/District"/>
+                                    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/MetropolitanRegion"/>
+                                    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/Sector"/>
+                                    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/State"/>
+                                    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/Subdistrict"/>
                                     <Class>
-                                        <complementOf rdf:resource="&locality;Neighborhood"/>
+                                        <complementOf rdf:resource="http://nees.com.br/linkn/onto/locality/Neighborhood"/>
                                     </Class>
                                 </unionOf>
                             </Class>
                         </allValuesFrom>
                     </Restriction>
                     <Restriction>
-                        <onProperty rdf:resource="&locality;isLocatedIn"/>
+                        <onProperty rdf:resource="http://nees.com.br/linkn/onto/locality/isLocatedIn"/>
                         <allValuesFrom>
                             <Class>
-                                <complementOf rdf:resource="&locality;Street"/>
+                                <complementOf rdf:resource="http://nees.com.br/linkn/onto/locality/Street"/>
                             </Class>
                         </allValuesFrom>
                     </Restriction>
                     <Restriction>
-                        <onProperty rdf:resource="&locality;neighboring"/>
-                        <allValuesFrom rdf:resource="&locality;Street"/>
+                        <onProperty rdf:resource="http://nees.com.br/linkn/onto/locality/neighboring"/>
+                        <allValuesFrom rdf:resource="http://nees.com.br/linkn/onto/locality/Street"/>
                     </Restriction>
                 </intersectionOf>
             </Class>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">A street is usually understood as a public space in which the right to come and go is fully realized. A street is located in a neighborhood, a city, a state, a country and a continent.</rdfs:comment>
         <rdfs:comment xml:lang="pt">Uma rua é normalmente entendida como um espaço público no qual o direito de ir e vir é plenamente realizado. Uma rua está localizada em um bairro, uma cidade, um estado, um país e um continente.</rdfs:comment>
+        <rdfs:label xml:lang="pt">Rua</rdfs:label>
     </Class>
     
 
 
     <!-- http://nees.com.br/linkn/onto/locality/Subdistrict -->
 
-    <Class rdf:about="&locality;Subdistrict">
+    <Class rdf:about="http://nees.com.br/linkn/onto/locality/Subdistrict">
         <rdfs:subClassOf>
             <Class>
                 <intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&locality;Locality"/>
+                    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/Locality"/>
                     <Restriction>
-                        <onProperty rdf:resource="&locality;hasLocation"/>
+                        <onProperty rdf:resource="http://nees.com.br/linkn/onto/locality/hasLocation"/>
                         <allValuesFrom>
                             <Class>
                                 <unionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="&locality;Neighborhood"/>
-                                    <rdf:Description rdf:about="&locality;Sector"/>
-                                    <rdf:Description rdf:about="&locality;Street"/>
+                                    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/Neighborhood"/>
+                                    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/Sector"/>
+                                    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/Street"/>
                                 </unionOf>
                             </Class>
                         </allValuesFrom>
                     </Restriction>
                     <Restriction>
-                        <onProperty rdf:resource="&locality;isLocatedIn"/>
+                        <onProperty rdf:resource="http://nees.com.br/linkn/onto/locality/isLocatedIn"/>
                         <allValuesFrom>
                             <Class>
                                 <complementOf>
                                     <Class>
                                         <unionOf rdf:parseType="Collection">
-                                            <rdf:Description rdf:about="&locality;Neighborhood"/>
-                                            <rdf:Description rdf:about="&locality;Sector"/>
-                                            <rdf:Description rdf:about="&locality;Street"/>
+                                            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/Neighborhood"/>
+                                            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/Sector"/>
+                                            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/Street"/>
                                         </unionOf>
                                     </Class>
                                 </complementOf>
@@ -808,14 +796,14 @@
      -->
 
     <rdf:Description>
-        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <members rdf:parseType="Collection">
-            <rdf:Description rdf:about="&locality;City"/>
-            <rdf:Description rdf:about="&locality;Continent"/>
-            <rdf:Description rdf:about="&locality;Country"/>
-            <rdf:Description rdf:about="&locality;Neighborhood"/>
-            <rdf:Description rdf:about="&locality;State"/>
-            <rdf:Description rdf:about="&locality;Street"/>
+            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/City"/>
+            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/Continent"/>
+            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/Country"/>
+            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/Neighborhood"/>
+            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/State"/>
+            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/locality/Street"/>
         </members>
     </rdf:Description>
     
@@ -830,62 +818,69 @@
      -->
 
     <rdf:Description rdf:about="urn:swrl#a">
-        <rdf:type rdf:resource="&swrl;Variable"/>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
     </rdf:Description>
     <rdf:Description rdf:about="urn:swrl#loc1">
-        <rdf:type rdf:resource="&swrl;Variable"/>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
     </rdf:Description>
     <rdf:Description rdf:about="urn:swrl#loc2">
-        <rdf:type rdf:resource="&swrl;Variable"/>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
     </rdf:Description>
     <rdf:Description>
-        <rdf:type rdf:resource="&swrl;Imp"/>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
         <swrl:body>
             <rdf:Description>
-                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://nees.com.br/linkn/onto/locality/Address"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#a"/>
+                    </rdf:Description>
+                </rdf:first>
                 <rdf:rest>
                     <rdf:Description>
-                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
                         <rdf:first>
                             <rdf:Description>
-                                <rdf:type rdf:resource="&swrl;ClassAtom"/>
-                                <swrl:classPredicate rdf:resource="&locality;Locality"/>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://nees.com.br/linkn/onto/locality/Locality"/>
                                 <swrl:argument1 rdf:resource="urn:swrl#loc1"/>
                             </rdf:Description>
                         </rdf:first>
                         <rdf:rest>
                             <rdf:Description>
-                                <rdf:type rdf:resource="&swrl;AtomList"/>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
                                 <rdf:first>
                                     <rdf:Description>
-                                        <rdf:type rdf:resource="&swrl;ClassAtom"/>
-                                        <swrl:classPredicate rdf:resource="&locality;Locality"/>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://nees.com.br/linkn/onto/locality/Locality"/>
                                         <swrl:argument1 rdf:resource="urn:swrl#loc2"/>
                                     </rdf:Description>
                                 </rdf:first>
                                 <rdf:rest>
                                     <rdf:Description>
-                                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
                                         <rdf:first>
                                             <rdf:Description>
-                                                <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
-                                                <swrl:propertyPredicate rdf:resource="&locality;isComposedOf"/>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/locality/isComposedOf"/>
                                                 <swrl:argument1 rdf:resource="urn:swrl#a"/>
                                                 <swrl:argument2 rdf:resource="urn:swrl#loc1"/>
                                             </rdf:Description>
                                         </rdf:first>
                                         <rdf:rest>
                                             <rdf:Description>
-                                                <rdf:type rdf:resource="&swrl;AtomList"/>
-                                                <rdf:rest rdf:resource="&rdf;nil"/>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
                                                 <rdf:first>
                                                     <rdf:Description>
-                                                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
-                                                        <swrl:propertyPredicate rdf:resource="&locality;isLocatedIn"/>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/locality/isLocatedIn"/>
                                                         <swrl:argument1 rdf:resource="urn:swrl#loc1"/>
                                                         <swrl:argument2 rdf:resource="urn:swrl#loc2"/>
                                                     </rdf:Description>
                                                 </rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
                                             </rdf:Description>
                                         </rdf:rest>
                                     </rdf:Description>
@@ -894,27 +889,20 @@
                         </rdf:rest>
                     </rdf:Description>
                 </rdf:rest>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="&swrl;ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="&locality;Address"/>
-                        <swrl:argument1 rdf:resource="urn:swrl#a"/>
-                    </rdf:Description>
-                </rdf:first>
             </rdf:Description>
         </swrl:body>
         <swrl:head>
             <rdf:Description>
-                <rdf:type rdf:resource="&swrl;AtomList"/>
-                <rdf:rest rdf:resource="&rdf;nil"/>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
                 <rdf:first>
                     <rdf:Description>
-                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="&locality;isComposedOf"/>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/locality/isComposedOf"/>
                         <swrl:argument1 rdf:resource="urn:swrl#a"/>
                         <swrl:argument2 rdf:resource="urn:swrl#loc2"/>
                     </rdf:Description>
                 </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
             </rdf:Description>
         </swrl:head>
     </rdf:Description>
@@ -922,5 +910,5 @@
 
 
 
-<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
+<!-- Generated by the OWL API (version 4.1.3.20151118-2017) https://github.com/owlcs/owlapi -->
 
