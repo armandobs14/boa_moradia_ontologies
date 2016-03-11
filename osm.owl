@@ -46,26 +46,6 @@
 
     <AnnotationProperty rdf:about="http://nees.com.br/linkn/onto/osm/type"/>
     
-
-
-    <!-- http://www.w3.org/2002/07/owl#isRelatedTo -->
-
-    <AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#isRelatedTo"/>
-    
-
-
-    <!-- http://www.w3.org/2002/07/owl#osmLabel -->
-
-    <AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#osmLabel"/>
-    
-
-
-    <!-- http://www.w3.org/2002/07/owl#relevantCountry -->
-
-    <AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#relevantCountry"/>
-    
-
-
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
