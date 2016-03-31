@@ -55,6 +55,11 @@
     <!-- http://nees.com.br/linkn/onto/boa_moradia/synonymous -->
 
     <AnnotationProperty rdf:about="http://nees.com.br/linkn/onto/boa_moradia/synonymous"/>
+
+
+    <!-- http://nees.com.br/linkn/onto/boa_moradia/relevantCountry -->
+
+    <AnnotationProperty rdf:about="http://nees.com.br/linkn/onto/boa_moradia/relevantCountry"/>
     
 
 
@@ -779,7 +784,7 @@
     <!-- http://nees.com.br/linkn/onto/osm/Hospital -->
 
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Hospital">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     
 
@@ -787,7 +792,7 @@
     <!-- http://nees.com.br/linkn/onto/osm/School -->
 
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/School">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     
 
@@ -847,361 +852,361 @@
      -->
 
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Accountant">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Aikido">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/AmericanFootball">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/AmusementArcade">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Architect">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Art">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/ArtsCentre">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Athletics">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Atm">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Bakery">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Bank">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Bar">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Barbecue">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Baseball">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Basketball">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Beach">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Beachvolleyball">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Beauty">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Beverages">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Books">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Boutique">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Bowls">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Boxing">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Brewery">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Brothel">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/BusStation">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/BusStop">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Cafe">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/CanadianFootball">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/CarRepair">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/CarWash">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Carpenter">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Cathedral">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Chess">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Church">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Cinema">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Clinic">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Coastline">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Coffee">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/College">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Darts">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Delegacy">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Dentist">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Doctors">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/FastFood">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/FireStation">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Football">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Footway">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Fuel">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Gallery">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Gambling">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Games">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Garden">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Greengrocer">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Gym">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Gymnastics">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Hackerspace">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Hairdresser">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Handball">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Handicraft">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/HealthCenter">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/HospitalDayIsolated">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Hostel">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Hotel">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/It">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Jewelry">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Judo">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Karting">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Kindergarten">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Library">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Mall">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Marketplace">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Mosque">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Motel">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Museum">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Music">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Nightclub">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Optician">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Orthopedics">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Park">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Pasta">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Pastry">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Pharmacy">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Policlinic">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Pub">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Restaurant">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Rowing">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Rugby">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Sailing">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Seafood">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Silo">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Ski">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Skiing">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Soccer">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Sports">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/SportsCentre">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Stadium">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/StopArea">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Subway">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Supermarket">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Surfing">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Swimming">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Table">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/TableSoccer">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/TableTennis">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Taekwondo">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Taxi">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Telephone">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Tennis">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Theatre">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/ThemePark">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Track">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/TreeRow">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/University">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/UniversityCenter">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Veterinary">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Warehouse">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Winery">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="http://nees.com.br/linkn/onto/osm/Zoo">
-        <boa_moradia:isRelevant>true</boa_moradia:isRelevant>
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
 </rdf:RDF>
 

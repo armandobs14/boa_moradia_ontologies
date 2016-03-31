@@ -32,14 +32,7 @@
 
     <!-- http://nees.com.br/linkn/onto/osm/osmLabel -->
 
-    <AnnotationProperty rdf:about="http://nees.com.br/linkn/onto/osm/osmLabel"/>
-    
-
-
-    <!-- http://nees.com.br/linkn/onto/osm/relevantCountry -->
-
-    <AnnotationProperty rdf:about="http://nees.com.br/linkn/onto/osm/relevantCountry"/>
-    
+    <AnnotationProperty rdf:about="http://nees.com.br/linkn/onto/osm/osmLabel"/>    
 
 
     <!-- http://nees.com.br/linkn/onto/osm/type -->
@@ -201,7 +194,6 @@
         <rdfs:label xml:lang="en">Accountant</rdfs:label>
         <rdfs:label xml:lang="pt">Contador</rdfs:label>
         <osm:osmLabel>accountant</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -317,7 +309,6 @@
         <rdfs:label xml:lang="en">Aikido</rdfs:label>
         <rdfs:label xml:lang="pt">Aikidô</rdfs:label>
         <osm:osmLabel>aikido</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -415,7 +406,6 @@
         <rdfs:label xml:lang="en">American football</rdfs:label>
         <rdfs:label xml:lang="pt">Futebol americano</rdfs:label>
         <osm:osmLabel>american_football</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -427,7 +417,6 @@
         <rdfs:label xml:lang="en">Amusement arcade</rdfs:label>
         <rdfs:label xml:lang="pt">Salão de jogos</rdfs:label>
         <osm:osmLabel>amusement_arcade</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -548,7 +537,6 @@
         <rdfs:label xml:lang="en">Architect</rdfs:label>
         <rdfs:label xml:lang="pt">Arquiteto</rdfs:label>
         <osm:osmLabel>architect</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -581,7 +569,6 @@
         <rdfs:label xml:lang="en">Art</rdfs:label>
         <rdfs:label xml:lang="pt">Arte</rdfs:label>
         <osm:osmLabel>art</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -603,7 +590,6 @@
         <rdfs:label xml:lang="en">Arts centre</rdfs:label>
         <rdfs:label xml:lang="pt">Centro de artes</rdfs:label>
         <osm:osmLabel>arts_centre</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -648,7 +634,6 @@
         <rdfs:label xml:lang="en">Athletics</rdfs:label>
         <rdfs:label xml:lang="pt">Atletismo</rdfs:label>
         <osm:osmLabel>athletics</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -660,7 +645,6 @@
         <rdfs:label xml:lang="en">Atm</rdfs:label>
         <rdfs:label xml:lang="pt">Caixa eletrônico</rdfs:label>
         <osm:osmLabel>atm</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -760,7 +744,6 @@
         <rdfs:label xml:lang="en">Bakery</rdfs:label>
         <rdfs:label xml:lang="pt">Padaria</rdfs:label>
         <osm:osmLabel>bakery</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -795,7 +778,6 @@
         <rdfs:label xml:lang="pt">Banco</rdfs:label>
         <rdfs:label xml:lang="en">Bank</rdfs:label>
         <osm:osmLabel>bank</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -810,7 +792,6 @@
         <rdfs:label xml:lang="pt">Boteco</rdfs:label>
         <rdfs:label xml:lang="pt">Botequim</rdfs:label>
         <osm:osmLabel>bar</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -822,7 +803,6 @@
         <rdfs:label xml:lang="en">Barbecue</rdfs:label>
         <rdfs:label xml:lang="pt">Churrascaria</rdfs:label>
         <osm:osmLabel>barbecue</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -899,7 +879,6 @@
         <rdfs:label xml:lang="en">Baseball</rdfs:label>
         <rdfs:label xml:lang="pt">Beisebol</rdfs:label>
         <osm:osmLabel>baseball</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -949,7 +928,6 @@
         <rdfs:label xml:lang="en">Basketball</rdfs:label>
         <rdfs:label xml:lang="pt">Basquetebol</rdfs:label>
         <osm:osmLabel>basketball</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -995,7 +973,6 @@
         <rdfs:label xml:lang="en">Beach</rdfs:label>
         <rdfs:label xml:lang="pt">Praia</rdfs:label>
         <osm:osmLabel>beach</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -1018,7 +995,6 @@
         <rdfs:label xml:lang="en">Beachvolleyball</rdfs:label>
         <rdfs:label xml:lang="pt">Vôlei de praia</rdfs:label>
         <osm:osmLabel>beachvolleyball</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -1041,7 +1017,6 @@
         <rdfs:label xml:lang="en">Beauty</rdfs:label>
         <rdfs:label xml:lang="pt">Salão de beleza (bronzeamento, spa)</rdfs:label>
         <osm:osmLabel>beauty</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -1087,7 +1062,6 @@
         <rdfs:label xml:lang="pt">Bebidas</rdfs:label>
         <rdfs:label xml:lang="en">Beverages</rdfs:label>
         <osm:osmLabel>beverages</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -1277,7 +1251,6 @@
         <rdfs:label xml:lang="pt">Livraria</rdfs:label>
         <rdfs:label xml:lang="pt">Loja de livros</rdfs:label>
         <osm:osmLabel>books</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -1340,7 +1313,6 @@
         <rdfs:label xml:lang="en">Boutique</rdfs:label>
         <rdfs:label xml:lang="pt">Boutique</rdfs:label>
         <osm:osmLabel>boutique</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -1363,7 +1335,6 @@
         <rdfs:label xml:lang="pt">Boliche</rdfs:label>
         <rdfs:label xml:lang="en">Bowl</rdfs:label>
         <osm:osmLabel>bowls</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -1375,7 +1346,6 @@
         <rdfs:label xml:lang="pt">Boxe</rdfs:label>
         <rdfs:label xml:lang="en">Boxing</rdfs:label>
         <osm:osmLabel>boxing</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -1398,7 +1368,6 @@
         <rdfs:label xml:lang="en">Brewery</rdfs:label>
         <rdfs:label xml:lang="pt">Cervejaria</rdfs:label>
         <osm:osmLabel>brewery</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -1433,7 +1402,6 @@
         <rdfs:label xml:lang="pt">Bordel</rdfs:label>
         <rdfs:label xml:lang="en">Brothel</rdfs:label>
         <osm:osmLabel>brothel</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -1556,7 +1524,6 @@
         <rdfs:label xml:lang="pt">Estação de ônibus</rdfs:label>
         <rdfs:label xml:lang="pt">Terminal de ônibus</rdfs:label>
         <osm:osmLabel>bus_station</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -1569,7 +1536,6 @@
         <rdfs:label xml:lang="pt">Parada de ônibus</rdfs:label>
         <rdfs:label xml:lang="pt">Ponto de ônibus</rdfs:label>
         <osm:osmLabel>bus_stop</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -1661,7 +1627,6 @@
         <rdfs:label xml:lang="pt">Cafe</rdfs:label>
         <rdfs:label xml:lang="pt">Cafeteria</rdfs:label>
         <osm:osmLabel>cafe</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -1704,7 +1669,6 @@
         <rdfs:label xml:lang="en">Canadian football</rdfs:label>
         <rdfs:label xml:lang="pt">Futebol canadense</rdfs:label>
         <osm:osmLabel>canadian_football</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -1795,7 +1759,6 @@
         <rdfs:label xml:lang="en">Car repair</rdfs:label>
         <rdfs:label xml:lang="pt">Oficina de carro</rdfs:label>
         <osm:osmLabel>car_repair</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -1818,7 +1781,6 @@
         <rdfs:label xml:lang="en">Car wash</rdfs:label>
         <rdfs:label xml:lang="pt">Lava jato</rdfs:label>
         <osm:osmLabel>car_wash</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -1843,7 +1805,6 @@
         <rdfs:label xml:lang="en">Carpenter</rdfs:label>
         <rdfs:label xml:lang="pt">Carpinteiro</rdfs:label>
         <osm:osmLabel>carpenter</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -1909,7 +1870,6 @@
         <rdfs:label xml:lang="pt">Catedral</rdfs:label>
         <rdfs:label xml:lang="en">Cathedral</rdfs:label>
         <osm:osmLabel>cathedral</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -2122,7 +2082,6 @@
         <rdfs:label xml:lang="en">Chess</rdfs:label>
         <rdfs:label xml:lang="pt">Xadrez</rdfs:label>
         <osm:osmLabel>chess</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -2189,7 +2148,6 @@
         <rdfs:label xml:lang="en">Church</rdfs:label>
         <rdfs:label xml:lang="pt">Igreja</rdfs:label>
         <osm:osmLabel>church</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -2201,7 +2159,6 @@
         <rdfs:label xml:lang="en">Cinema</rdfs:label>
         <rdfs:label xml:lang="pt">Cinema</rdfs:label>
         <osm:osmLabel>cinema</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -2328,7 +2285,6 @@
         <rdfs:label xml:lang="en">Clinic</rdfs:label>
         <rdfs:label xml:lang="pt">Clínica</rdfs:label>
         <osm:osmLabel>clinic</osm:osmLabel>
-        <osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -2400,7 +2356,6 @@
         <rdfs:label xml:lang="en">Coastline</rdfs:label>
         <rdfs:label xml:lang="pt">Litoral</rdfs:label>
         <osm:osmLabel>coastline</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -2423,7 +2378,6 @@
         <rdfs:label xml:lang="pt">Café</rdfs:label>
         <rdfs:label xml:lang="en">Coffee</rdfs:label>
         <osm:osmLabel>coffee</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -2435,7 +2389,6 @@
         <rdfs:label xml:lang="en">College</rdfs:label>
         <rdfs:label xml:lang="pt">Faculdade</rdfs:label>
         <osm:osmLabel>college</osm:osmLabel>
-        <osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -2886,7 +2839,6 @@
         <rdfs:label xml:lang="pt">Dardos</rdfs:label>
         <rdfs:label xml:lang="en">Darts</rdfs:label>
         <osm:osmLabel>darts</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -2919,7 +2871,6 @@
         <rdfs:subClassOf rdf:resource="http://nees.com.br/linkn/onto/osm/OtherAmanities"/>
         <rdfs:label xml:lang="pt">Delegacia</rdfs:label>
         <rdfs:label xml:lang="en">Delegacy</rdfs:label>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -2943,7 +2894,6 @@
         <rdfs:label xml:lang="pt">Dentista</rdfs:label>
         <rdfs:label xml:lang="pt">Odontólogo</rdfs:label>
         <osm:osmLabel>dentist</osm:osmLabel>
-        <osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -3092,7 +3042,6 @@
         <rdfs:label xml:lang="pt">Doutores</rdfs:label>
         <rdfs:label xml:lang="pt">Médicos</rdfs:label>
         <osm:osmLabel>doctors</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -3236,7 +3185,6 @@
         <rdfs:label xml:lang="en">Educational institution</rdfs:label>
         <rdfs:label xml:lang="pt">Instituição educacional</rdfs:label>
         <osm:osmLabel>educational_institution</osm:osmLabel>
-        <osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -3494,7 +3442,6 @@
         <rdfs:label xml:lang="en">Fast food</rdfs:label>
         <rdfs:label xml:lang="pt">Fast food</rdfs:label>
         <osm:osmLabel>fast_food</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -3638,7 +3585,6 @@
         <rdfs:label xml:lang="pt">Corpo de Bombeiros</rdfs:label>
         <rdfs:label xml:lang="en">Fire Station</rdfs:label>
         <osm:osmLabel>fire_station</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -3749,7 +3695,6 @@
         <rdfs:label xml:lang="en">Football</rdfs:label>
         <rdfs:label xml:lang="pt">Futebol</rdfs:label>
         <osm:osmLabel>football</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -3761,7 +3706,6 @@
         <rdfs:label xml:lang="pt">Caminhada</rdfs:label>
         <rdfs:label xml:lang="en">Footway</rdfs:label>
         <osm:osmLabel>footway</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -3852,7 +3796,6 @@
         <rdfs:label xml:lang="pt">Posto de combustível</rdfs:label>
         <rdfs:label xml:lang="pt">Posto de gasolina</rdfs:label>
         <osm:osmLabel>fuel</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -3939,7 +3882,6 @@
         <rdfs:label xml:lang="pt">Galeria</rdfs:label>
         <rdfs:label xml:lang="en">Gallery</rdfs:label>
         <osm:osmLabel>gallery</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -3951,7 +3893,6 @@
         <rdfs:label xml:lang="en">Gambling</rdfs:label>
         <rdfs:label xml:lang="pt">Jogos de azar</rdfs:label>
         <osm:osmLabel>gambling</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -3963,7 +3904,6 @@
         <rdfs:label xml:lang="pt">Alimentação a caça</rdfs:label>
         <rdfs:label xml:lang="en">Game feeding</rdfs:label>
         <osm:osmLabel>game_feeding</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -3975,7 +3915,6 @@
         <rdfs:label xml:lang="en">Games</rdfs:label>
         <rdfs:label xml:lang="pt">Jogos</rdfs:label>
         <osm:osmLabel>games</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -4010,7 +3949,6 @@
         <rdfs:label xml:lang="en">Garden</rdfs:label>
         <rdfs:label xml:lang="pt">Jardim</rdfs:label>
         <osm:osmLabel>garden</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -4100,7 +4038,6 @@
         <rdfs:subClassOf rdf:resource="http://nees.com.br/linkn/onto/osm/Healthcare"/>
         <rdfs:label xml:lang="en">General Ready Help</rdfs:label>
         <rdfs:label xml:lang="pt">Pronto socorro geral</rdfs:label>
-        <osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -4287,7 +4224,6 @@
         <rdfs:label xml:lang="pt">Quitanda</rdfs:label>
         <rdfs:label xml:lang="pt">Verdura</rdfs:label>
         <osm:osmLabel>greengrocer</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -4378,7 +4314,6 @@
         <rdfs:label xml:lang="en">Gym</rdfs:label>
         <rdfs:label xml:lang="pt">Musculação</rdfs:label>
         <osm:osmLabel>gym</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -4390,7 +4325,6 @@
         <rdfs:label xml:lang="pt">Ginástica</rdfs:label>
         <rdfs:label xml:lang="en">Gymnastics</rdfs:label>
         <osm:osmLabel>gymnastics</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -4403,7 +4337,6 @@
         <rdfs:label xml:lang="en">Hacker space</rdfs:label>
         <rdfs:label xml:lang="pt">Tecnologia</rdfs:label>
         <osm:osmLabel>hackerspace</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -4415,7 +4348,6 @@
         <rdfs:label xml:lang="pt">Cabeleireiro</rdfs:label>
         <rdfs:label xml:lang="en">Hairdresser</rdfs:label>
         <osm:osmLabel>hairdresser</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -4458,7 +4390,6 @@
         <rdfs:label xml:lang="pt">Handball</rdfs:label>
         <rdfs:label xml:lang="en">handball</rdfs:label>
         <osm:osmLabel>handball</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -4470,7 +4401,6 @@
         <rdfs:label xml:lang="pt">Artesanato</rdfs:label>
         <rdfs:label xml:lang="en">Handicraft</rdfs:label>
         <osm:osmLabel>handicraft</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -4545,8 +4475,6 @@
         <rdfs:subClassOf rdf:resource="http://nees.com.br/linkn/onto/osm/Healthcare"/>
         <rdfs:label xml:lang="en">Health Center</rdfs:label>
         <rdfs:label xml:lang="pt">Posto de saúde</rdfs:label>
-        <osm:relevantCountry>br</osm:relevantCountry>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -4784,7 +4712,6 @@
         <rdfs:label xml:lang="en">Hospital</rdfs:label>
         <rdfs:label xml:lang="pt">Hospital</rdfs:label>
         <osm:osmLabel>hospital</osm:osmLabel>
-        <osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -4795,7 +4722,6 @@
         <rdfs:subClassOf rdf:resource="http://nees.com.br/linkn/onto/osm/Healthcare"/>
         <rdfs:label xml:lang="en">Hospital day isolated</rdfs:label>
         <rdfs:label xml:lang="pt">Hospital/dia - isolado</rdfs:label>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -4811,7 +4737,6 @@
         <rdfs:label xml:lang="pt">Pensionato</rdfs:label>
         <rdfs:label xml:lang="pt">Pensão</rdfs:label>
         <osm:osmLabel>hostel</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -4823,7 +4748,6 @@
         <rdfs:label xml:lang="en">Hotel</rdfs:label>
         <rdfs:label xml:lang="pt">Hotel</rdfs:label>
         <osm:osmLabel>hotel</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -5068,7 +4992,6 @@
         <rdfs:subClassOf rdf:resource="http://nees.com.br/linkn/onto/osm/Healthcare"/>
         <rdfs:label xml:lang="pt">Consultório isolado</rdfs:label>
         <rdfs:label xml:lang="en">Isolated consultory</rdfs:label>
-        <osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -5089,7 +5012,6 @@
         <rdfs:label xml:lang="en">Information technology</rdfs:label>
         <rdfs:label xml:lang="pt">Tecnologia da informação</rdfs:label>
         <osm:osmLabel>it</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -5134,7 +5056,6 @@
         <rdfs:label xml:lang="en">Jewelry</rdfs:label>
         <rdfs:label xml:lang="pt">Joalheria</rdfs:label>
         <osm:osmLabel>jewelry</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -5146,7 +5067,6 @@
         <rdfs:label xml:lang="en">Judo</rdfs:label>
         <rdfs:label xml:lang="pt">Judô</rdfs:label>
         <osm:osmLabel>judo</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -5158,7 +5078,6 @@
         <rdfs:label xml:lang="pt">Kart</rdfs:label>
         <rdfs:label xml:lang="en">Karting</rdfs:label>
         <osm:osmLabel>karting</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -5215,7 +5134,6 @@
         <rdfs:label xml:lang="en">Kindergarten</rdfs:label>
         <rdfs:label xml:lang="pt">Pré-escola</rdfs:label>
         <osm:osmLabel>kindergarten</osm:osmLabel>
-        <osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -5364,7 +5282,6 @@
         <rdfs:label xml:lang="pt">Biblioteca</rdfs:label>
         <rdfs:label xml:lang="en">Library</rdfs:label>
         <osm:osmLabel>library</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -5502,7 +5419,6 @@
         <rdfs:label xml:lang="en">Mall</rdfs:label>
         <rdfs:label xml:lang="pt">Shopping center</rdfs:label>
         <osm:osmLabel>mall</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -5567,7 +5483,6 @@
         <rdfs:label xml:lang="pt">Mercado</rdfs:label>
         <rdfs:label xml:lang="pt">Supermercado</rdfs:label>
         <osm:osmLabel>marketplace</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -5848,7 +5763,6 @@
         <rdfs:label xml:lang="pt">Mesquita</rdfs:label>
         <rdfs:label xml:lang="en">Mosque</rdfs:label>
         <osm:osmLabel>mosque</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -5860,7 +5774,6 @@
         <rdfs:label xml:lang="en">Motel</rdfs:label>
         <rdfs:label xml:lang="pt">Motel</rdfs:label>
         <osm:osmLabel>motel</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -5991,7 +5904,6 @@
         <rdfs:label xml:lang="pt">Museu</rdfs:label>
         <rdfs:label xml:lang="en">Museum</rdfs:label>
         <osm:osmLabel>museum</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -6003,7 +5915,6 @@
         <rdfs:label xml:lang="en">Music</rdfs:label>
         <rdfs:label xml:lang="pt">Música</rdfs:label>
         <osm:osmLabel>music</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -6143,7 +6054,6 @@
         <rdfs:label xml:lang="pt">Balada</rdfs:label>
         <rdfs:label xml:lang="pt">Boate</rdfs:label>
         <rdfs:label xml:lang="en">Nichtclub</rdfs:label>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -6245,7 +6155,6 @@
         <rdfs:label xml:lang="pt">Oftalmologista</rdfs:label>
         <rdfs:label xml:lang="en">Optician</rdfs:label>
         <osm:osmLabel>optician</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -6289,8 +6198,6 @@
         <rdfs:subClassOf rdf:resource="http://nees.com.br/linkn/onto/osm/Healthcare"/>
         <rdfs:label xml:lang="en">Orthopedics</rdfs:label>
         <rdfs:label xml:lang="pt">Ortopedia</rdfs:label>
-        <osm:relevantCountry>br</osm:relevantCountry>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -6451,7 +6358,6 @@
         <rdfs:label xml:lang="en">Park</rdfs:label>
         <rdfs:label xml:lang="pt">Parque</rdfs:label>
         <osm:osmLabel>park</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -6518,7 +6424,6 @@
         <rdfs:label xml:lang="pt">Macarrão</rdfs:label>
         <rdfs:label xml:lang="en">Pasta</rdfs:label>
         <osm:osmLabel>pasta</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -6530,7 +6435,6 @@
         <rdfs:label xml:lang="pt">Pastelaria</rdfs:label>
         <rdfs:label xml:lang="en">Pastry</rdfs:label>
         <osm:osmLabel>pastry</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -6651,7 +6555,6 @@
         <rdfs:label xml:lang="pt">Farmácia</rdfs:label>
         <rdfs:label xml:lang="en">Pharmacy</rdfs:label>
         <osm:osmLabel>pharmacy</osm:osmLabel>
-        <osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -6906,7 +6809,6 @@
         <rdfs:label xml:lang="pt">Polícia</rdfs:label>
         <rdfs:label xml:lang="pt">Posto policial</rdfs:label>
         <osm:osmLabel>police</osm:osmLabel>
-        <osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -6917,7 +6819,6 @@
         <rdfs:subClassOf rdf:resource="http://nees.com.br/linkn/onto/osm/Clínicas"/>
         <rdfs:label xml:lang="en">Policlinic</rdfs:label>
         <rdfs:label xml:lang="pt">Policlínica</rdfs:label>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -7137,7 +7038,6 @@
         <rdfs:label xml:lang="en">Pub</rdfs:label>
         <rdfs:label xml:lang="pt">Pub</rdfs:label>
         <osm:osmLabel>pub</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -7149,7 +7049,6 @@
         <rdfs:label xml:lang="pt">Estabelecimento público</rdfs:label>
         <rdfs:label xml:lang="en">Public building</rdfs:label>
         <osm:osmLabel>public</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -7173,7 +7072,6 @@
         <rdfs:label xml:lang="en">Public Building</rdfs:label>
         <rdfs:label xml:lang="pt">Órgão Público</rdfs:label>
         <osm:osmLabel>public_building</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -7483,7 +7381,6 @@
         <rdfs:label xml:lang="pt">Local religioso</rdfs:label>
         <rdfs:label xml:lang="en">Religious</rdfs:label>
         <osm:osmLabel>religious</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -7517,7 +7414,6 @@
         <rdfs:label xml:lang="pt">Pesquisa</rdfs:label>
         <rdfs:label xml:lang="en">Research</rdfs:label>
         <osm:osmLabel>research</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -7576,7 +7472,6 @@
         <rdfs:label xml:lang="en">Restaurant</rdfs:label>
         <rdfs:label xml:lang="pt">Restaurante</rdfs:label>
         <osm:osmLabel>restaurant</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -7774,7 +7669,6 @@
         <rdfs:label xml:lang="pt">Remo</rdfs:label>
         <rdfs:label xml:lang="en">Rowing</rdfs:label>
         <osm:osmLabel>rowing</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -7786,7 +7680,6 @@
         <rdfs:label xml:lang="en">Rugby</rdfs:label>
         <rdfs:label xml:lang="pt">Rugby</rdfs:label>
         <osm:osmLabel>rugby</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -7911,7 +7804,6 @@
         <rdfs:label xml:lang="en">Sailing</rdfs:label>
         <rdfs:label xml:lang="pt">Vela (esporte)</rdfs:label>
         <osm:osmLabel>sailing</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -8004,7 +7896,6 @@
         <rdfs:label xml:lang="pt">Escola</rdfs:label>
         <rdfs:label xml:lang="en">School</rdfs:label>
         <osm:osmLabel>school</osm:osmLabel>
-        <osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -8061,7 +7952,6 @@
         <rdfs:label xml:lang="pt">Frutos-do-mar</rdfs:label>
         <rdfs:label xml:lang="en">Seafood</rdfs:label>
         <osm:osmLabel>seafood</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -8238,7 +8128,6 @@
         <rdfs:label xml:lang="en">Silo</rdfs:label>
         <rdfs:label xml:lang="pt">Silo</rdfs:label>
         <osm:osmLabel>silo</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -8295,7 +8184,6 @@
         <rdfs:label xml:lang="en">Ski</rdfs:label>
         <rdfs:label xml:lang="pt">Ski</rdfs:label>
         <osm:osmLabel>ski</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -8307,7 +8195,6 @@
         <rdfs:label xml:lang="pt">Ski</rdfs:label>
         <rdfs:label xml:lang="en">Skiing</rdfs:label>
         <osm:osmLabel>skiing</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -8341,7 +8228,6 @@
         <rdfs:label xml:lang="pt">Futebol</rdfs:label>
         <rdfs:label xml:lang="en">Soccer</rdfs:label>
         <osm:osmLabel>soccer</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -8438,7 +8324,6 @@
         <rdfs:label xml:lang="pt">Esportes</rdfs:label>
         <rdfs:label xml:lang="en">Sports</rdfs:label>
         <osm:osmLabel>sports</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -8449,7 +8334,6 @@
         <rdfs:subClassOf rdf:resource="http://nees.com.br/linkn/onto/osm/Leisure"/>
         <rdfs:label xml:lang="pt">Centro de esportes</rdfs:label>
         <osm:osmLabel>sports_centre</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -8484,7 +8368,6 @@
         <rdfs:label xml:lang="pt">Estádio</rdfs:label>
         <rdfs:label xml:lang="en">Stadium</rdfs:label>
         <osm:osmLabel>stadium</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -8624,7 +8507,6 @@
         <rdfs:label xml:lang="pt">Parada (ônibus, metrô, trem)</rdfs:label>
         <rdfs:label xml:lang="en">Stop area</rdfs:label>
         <osm:osmLabel>stop_area</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -8758,7 +8640,6 @@
         <rdfs:label xml:lang="pt">Metrô</rdfs:label>
         <rdfs:label xml:lang="en">Subway</rdfs:label>
         <osm:osmLabel>subway</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -8814,7 +8695,6 @@
         <rdfs:label xml:lang="en">Supermarket</rdfs:label>
         <rdfs:label xml:lang="pt">Supermercado</rdfs:label>
         <osm:osmLabel>supermarket</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -8826,7 +8706,6 @@
         <rdfs:label xml:lang="pt">Surfe</rdfs:label>
         <rdfs:label xml:lang="en">Surfing</rdfs:label>
         <osm:osmLabel>surfing</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -8871,7 +8750,6 @@
         <rdfs:label xml:lang="pt">Natação</rdfs:label>
         <rdfs:label xml:lang="en">Swimming</rdfs:label>
         <osm:osmLabel>swimming</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -8883,7 +8761,6 @@
         <rdfs:label xml:lang="pt">Piscina</rdfs:label>
         <rdfs:label xml:lang="en">Swimming pool</rdfs:label>
         <osm:osmLabel>swimming_pool</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -8942,7 +8819,6 @@
         <rdfs:label xml:lang="pt">Sinuca</rdfs:label>
         <rdfs:label xml:lang="en">Table</rdfs:label>
         <osm:osmLabel>table</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -8955,7 +8831,6 @@
         <rdfs:label xml:lang="en">Table soccer</rdfs:label>
         <rdfs:label xml:lang="pt">Tótó</rdfs:label>
         <osm:osmLabel>table_soccer</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -8968,7 +8843,6 @@
         <rdfs:label xml:lang="en">Table tennis</rdfs:label>
         <rdfs:label xml:lang="pt">Tênis de mesa</rdfs:label>
         <osm:osmLabel>table_tennis</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -8980,7 +8854,6 @@
         <rdfs:label xml:lang="en">Taekwondo</rdfs:label>
         <rdfs:label xml:lang="pt">Taekwondo</rdfs:label>
         <osm:osmLabel>taekwondo</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -9038,7 +8911,6 @@
         <rdfs:label xml:lang="en">Taxi</rdfs:label>
         <rdfs:label xml:lang="pt">Táxi</rdfs:label>
         <osm:osmLabel>taxi</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -9105,7 +8977,6 @@
         <rdfs:label xml:lang="pt">Telefone</rdfs:label>
         <rdfs:label xml:lang="en">Telephone</rdfs:label>
         <osm:osmLabel>telephone</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -9128,7 +8999,6 @@
         <rdfs:label xml:lang="en">Tennis</rdfs:label>
         <rdfs:label xml:lang="pt">Tênis (esporte)</rdfs:label>
         <osm:osmLabel>tennis</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -9193,7 +9063,6 @@
         <rdfs:label xml:lang="pt">Teatro</rdfs:label>
         <rdfs:label xml:lang="en">Theatre</rdfs:label>
         <osm:osmLabel>theatre</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -9205,7 +9074,6 @@
         <rdfs:label xml:lang="pt">Parque temático</rdfs:label>
         <rdfs:label xml:lang="en">Theme park</rdfs:label>
         <osm:osmLabel>theme_park</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -9363,7 +9231,6 @@
         <rdfs:label xml:lang="pt">Pista de atletismo</rdfs:label>
         <rdfs:label xml:lang="en">Track</rdfs:label>
         <osm:osmLabel>track</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -9539,7 +9406,6 @@
         <rdfs:label xml:lang="pt">Lugar arborizado</rdfs:label>
         <rdfs:label xml:lang="en">Tree row</rdfs:label>
         <osm:osmLabel>tree_row</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -9657,7 +9523,6 @@
         <rdfs:label xml:lang="pt">Universidade</rdfs:label>
         <rdfs:label xml:lang="en">University</rdfs:label>
         <osm:osmLabel>university</osm:osmLabel>
-        <osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -9669,7 +9534,6 @@
         <rdfs:label xml:lang="pt">Centro universitário</rdfs:label>
         <rdfs:label xml:lang="en">University center</rdfs:label>
         <osm:osmLabel>university_center</osm:osmLabel>
-        <osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -9745,7 +9609,6 @@
         <rdfs:label xml:lang="en">Veterinary</rdfs:label>
         <rdfs:label xml:lang="pt">Veterinária</rdfs:label>
         <osm:osmLabel>veterinary</osm:osmLabel>
-        <osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -9867,7 +9730,6 @@
         <rdfs:label xml:lang="pt">Armazém</rdfs:label>
         <rdfs:label xml:lang="en">Warehouse</rdfs:label>
         <osm:osmLabel>warehouse</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -10260,7 +10122,6 @@
         <rdfs:label xml:lang="pt">Vinícola</rdfs:label>
         <rdfs:label xml:lang="en">Winery</rdfs:label>
         <osm:osmLabel>winery</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
@@ -10337,7 +10198,6 @@
         <rdfs:label xml:lang="en">Zoo</rdfs:label>
         <rdfs:label xml:lang="pt">Zoológico</rdfs:label>
         <osm:osmLabel>zoo</osm:osmLabel>
-		<osm:relevantCountry>br</osm:relevantCountry>
     </Class>
     
 
