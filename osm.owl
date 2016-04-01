@@ -2037,7 +2037,6 @@
     <Class rdf:about="&osm;ChargingStation">
         <rdfs:label xml:lang="en">Charging station</rdfs:label>
         <rdfs:label xml:lang="pt">Carregador de carro elétrico</rdfs:label>
-        <equivalentClass rdf:resource="&osm;EvCharging"/>
         <rdfs:subClassOf rdf:resource="&osm;Transportation"/>
         <osm:osmLabel>charging_station</osm:osmLabel>
     </Class>
@@ -3352,18 +3351,6 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/osm/EvCharging -->
-
-    <Class rdf:about="&osm;EvCharging">
-        <rdfs:label>deprecated</rdfs:label>
-        <rdfs:label xml:lang="en">EV charging</rdfs:label>
-        <rdfs:label xml:lang="pt">Carregador de carro elétrico</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Transportation"/>
-        <osm:osmLabel>ev_charging</osm:osmLabel>
-    </Class>
-    
-
-
     <!-- http://nees.com.br/linkn/onto/osm/Fabric -->
 
     <Class rdf:about="&osm;Fabric">
@@ -3598,19 +3585,6 @@
         <rdfs:label xml:lang="pt">Corpo de Bombeiros</rdfs:label>
         <rdfs:subClassOf rdf:resource="&osm;OtherAmanities"/>
         <osm:osmLabel>fire_station</osm:osmLabel>
-    </Class>
-    
-
-
-    <!-- http://nees.com.br/linkn/onto/osm/Firepit -->
-
-    <Class rdf:about="&osm;Firepit">
-        <rdfs:label xml:lang="en">Fire pit</rdfs:label>
-        <rdfs:label xml:lang="pt">Lugar para fazer fogueira</rdfs:label>
-        <rdfs:label>deprecated</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Leisure"/>
-        <rdfs:subClassOf rdf:resource="&osm;OtherAmanities"/>
-        <osm:osmLabel>firepit</osm:osmLabel>
     </Class>
     
 
@@ -7078,17 +7052,6 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/osm/PublicBuilding -->
-
-    <Class rdf:about="&osm;PublicBuilding">
-        <rdfs:label xml:lang="en">Public Building</rdfs:label>
-        <rdfs:label xml:lang="pt">Órgão Público</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;OtherAmanities"/>
-        <osm:osmLabel>public_building</osm:osmLabel>
-    </Class>
-    
-
-
     <!-- http://nees.com.br/linkn/onto/osm/PublicCentralHealthLaboratory -->
 
     <Class rdf:about="&osm;PublicCentralHealthLaboratory">
@@ -8197,17 +8160,6 @@
         <rdfs:label xml:lang="pt">Ski</rdfs:label>
         <rdfs:subClassOf rdf:resource="&osm;Route"/>
         <osm:osmLabel>ski</osm:osmLabel>
-    </Class>
-    
-
-
-    <!-- http://nees.com.br/linkn/onto/osm/Skiing -->
-
-    <Class rdf:about="&osm;Skiing">
-        <rdfs:label xml:lang="en">Skiing</rdfs:label>
-        <rdfs:label xml:lang="pt">Ski</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
-        <osm:osmLabel>skiing</osm:osmLabel>
     </Class>
     
 
@@ -9423,17 +9375,6 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/osm/TreeShrine -->
-
-    <Class rdf:about="&osm;TreeShrine">
-        <rdfs:label xml:lang="en">Tree shrine</rdfs:label>
-        <rdfs:label xml:lang="pt">Árvore santuário</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Historic"/>
-        <osm:osmLabel>tree_shrine</osm:osmLabel>
-    </Class>
-    
-
-
     <!-- http://nees.com.br/linkn/onto/osm/Trunk -->
 
     <Class rdf:about="&osm;Trunk">
@@ -10179,16 +10120,6 @@
         <rdfs:label xml:lang="pt">Wrestling</rdfs:label>
         <rdfs:subClassOf rdf:resource="&osm;Sport"/>
         <osm:osmLabel>wrestling</osm:osmLabel>
-    </Class>
-    
-
-
-    <!-- http://nees.com.br/linkn/onto/osm/Yes -->
-
-    <Class rdf:about="&osm;Yes">
-        <rdfs:subClassOf rdf:resource="&osm;AccessControlOnHighways"/>
-        <rdfs:subClassOf rdf:resource="&osm;Tourism"/>
-        <osm:osmLabel>yes</osm:osmLabel>
     </Class>
     
 
