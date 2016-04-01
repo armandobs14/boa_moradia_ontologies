@@ -5466,8 +5466,7 @@
 
     <Class rdf:about="&osm;Marketplace">
         <rdfs:label xml:lang="en">Marketplace</rdfs:label>
-        <rdfs:label xml:lang="pt">Mercado</rdfs:label>
-        <rdfs:label xml:lang="pt">Supermercado</rdfs:label>
+        <rdfs:label xml:lang="pt">Feira livre</rdfs:label>
         <rdfs:subClassOf rdf:resource="&osm;OtherAmanities"/>
         <osm:osmLabel>marketplace</osm:osmLabel>
     </Class>
