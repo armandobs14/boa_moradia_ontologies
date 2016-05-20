@@ -7,7 +7,7 @@
     <!ENTITY swrlb "http://www.w3.org/2003/11/swrlb#" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
-    <!ENTITY locality "http://nees.com.br/linkn/onto/locality/" >
+    <!ENTITY locality "http://linkn.com.br/onto/locality/" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
 ]>
 
@@ -20,8 +20,8 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:locality="http://nees.com.br/linkn/onto/locality/">
-    <Ontology rdf:about="http://nees.com.br/linkn/onto/locality/"/>
+     xmlns:locality="http://linkn.com.br/onto/locality/">
+    <Ontology rdf:about="http://linkn.com.br/onto/locality/"/>
     
 
 
@@ -36,7 +36,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/locality/composesAddress -->
+    <!-- http://linkn.com.br/onto/locality/composesAddress -->
 
     <ObjectProperty rdf:about="&locality;composesAddress">
         <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
@@ -50,7 +50,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/locality/hasAddress -->
+    <!-- http://linkn.com.br/onto/locality/hasAddress -->
 
     <ObjectProperty rdf:about="&locality;hasAddress">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -59,7 +59,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/locality/hasLocation -->
+    <!-- http://linkn.com.br/onto/locality/hasLocation -->
 
     <ObjectProperty rdf:about="&locality;hasLocation">
         <rdf:type rdf:resource="&owl;TransitiveProperty"/>
@@ -72,7 +72,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/locality/isComposedOf -->
+    <!-- http://linkn.com.br/onto/locality/isComposedOf -->
 
     <ObjectProperty rdf:about="&locality;isComposedOf">
         <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
@@ -85,7 +85,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/locality/isLocatedIn -->
+    <!-- http://linkn.com.br/onto/locality/isLocatedIn -->
 
     <ObjectProperty rdf:about="&locality;isLocatedIn">
         <rdf:type rdf:resource="&owl;TransitiveProperty"/>
@@ -97,7 +97,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/locality/neighboring -->
+    <!-- http://linkn.com.br/onto/locality/neighboring -->
 
     <ObjectProperty rdf:about="&locality;neighboring">
         <rdf:type rdf:resource="&owl;IrreflexiveProperty"/>
@@ -121,7 +121,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/locality/boundingbox -->
+    <!-- http://linkn.com.br/onto/locality/boundingbox -->
 
     <DatatypeProperty rdf:about="&locality;boundingbox">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -131,7 +131,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/locality/displayName -->
+    <!-- http://linkn.com.br/onto/locality/displayName -->
 
     <DatatypeProperty rdf:about="&locality;displayName">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -148,7 +148,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/locality/hasCentroidLatitude -->
+    <!-- http://linkn.com.br/onto/locality/hasCentroidLatitude -->
 
     <DatatypeProperty rdf:about="&locality;hasCentroidLatitude">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -158,7 +158,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/locality/hasCentroidLongitude -->
+    <!-- http://linkn.com.br/onto/locality/hasCentroidLongitude -->
 
     <DatatypeProperty rdf:about="&locality;hasCentroidLongitude">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -168,7 +168,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/locality/hasDemographicDensity -->
+    <!-- http://linkn.com.br/onto/locality/hasDemographicDensity -->
 
     <DatatypeProperty rdf:about="&locality;hasDemographicDensity">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -180,7 +180,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/locality/hasID -->
+    <!-- http://linkn.com.br/onto/locality/hasID -->
 
     <DatatypeProperty rdf:about="&locality;hasID">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -190,7 +190,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/locality/hasLatitude -->
+    <!-- http://linkn.com.br/onto/locality/hasLatitude -->
 
     <DatatypeProperty rdf:about="&locality;hasLatitude">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -199,7 +199,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/locality/hasLocalityAcronym -->
+    <!-- http://linkn.com.br/onto/locality/hasLocalityAcronym -->
 
     <DatatypeProperty rdf:about="&locality;hasLocalityAcronym">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -209,7 +209,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/locality/hasLocalityAcronym3 -->
+    <!-- http://linkn.com.br/onto/locality/hasLocalityAcronym3 -->
 
     <DatatypeProperty rdf:about="&locality;hasLocalityAcronym3">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -219,7 +219,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/locality/hasLocalityCode -->
+    <!-- http://linkn.com.br/onto/locality/hasLocalityCode -->
 
     <DatatypeProperty rdf:about="&locality;hasLocalityCode">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -229,7 +229,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/locality/hasLocalityName -->
+    <!-- http://linkn.com.br/onto/locality/hasLocalityName -->
 
     <DatatypeProperty rdf:about="&locality;hasLocalityName">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -239,7 +239,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/locality/hasLongitude -->
+    <!-- http://linkn.com.br/onto/locality/hasLongitude -->
 
     <DatatypeProperty rdf:about="&locality;hasLongitude">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -248,7 +248,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/locality/hasNumber -->
+    <!-- http://linkn.com.br/onto/locality/hasNumber -->
 
     <DatatypeProperty rdf:about="&locality;hasNumber">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -258,7 +258,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/locality/hasPerimeter -->
+    <!-- http://linkn.com.br/onto/locality/hasPerimeter -->
 
     <DatatypeProperty rdf:about="&locality;hasPerimeter">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -268,7 +268,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/locality/hasPolygon -->
+    <!-- http://linkn.com.br/onto/locality/hasPolygon -->
 
     <DatatypeProperty rdf:about="&locality;hasPolygon">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -278,7 +278,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/locality/hasPolygonArea -->
+    <!-- http://linkn.com.br/onto/locality/hasPolygonArea -->
 
     <DatatypeProperty rdf:about="&locality;hasPolygonArea">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -290,7 +290,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/locality/hasPopulation -->
+    <!-- http://linkn.com.br/onto/locality/hasPopulation -->
 
     <DatatypeProperty rdf:about="&locality;hasPopulation">
         <rdfs:comment xml:lang="en">A locality has a number of population</rdfs:comment>
@@ -301,7 +301,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/locality/hasZipCode -->
+    <!-- http://linkn.com.br/onto/locality/hasZipCode -->
 
     <DatatypeProperty rdf:about="&locality;hasZipCode">
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -328,7 +328,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/locality/Address -->
+    <!-- http://linkn.com.br/onto/locality/Address -->
 
     <Class rdf:about="&locality;Address">
         <rdfs:subClassOf>
@@ -366,7 +366,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/locality/City -->
+    <!-- http://linkn.com.br/onto/locality/City -->
 
     <Class rdf:about="&locality;City">
         <rdfs:label xml:lang="pt">Cidade</rdfs:label>
@@ -416,7 +416,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/locality/Continent -->
+    <!-- http://linkn.com.br/onto/locality/Continent -->
 
     <Class rdf:about="&locality;Continent">
         <rdfs:subClassOf>
@@ -467,7 +467,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/locality/Country -->
+    <!-- http://linkn.com.br/onto/locality/Country -->
 
     <Class rdf:about="&locality;Country">
         <rdfs:label xml:lang="pt">Pais</rdfs:label>
@@ -500,7 +500,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/locality/District -->
+    <!-- http://linkn.com.br/onto/locality/District -->
 
     <Class rdf:about="&locality;District">
         <rdfs:subClassOf>
@@ -540,7 +540,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/locality/Locality -->
+    <!-- http://linkn.com.br/onto/locality/Locality -->
 
     <Class rdf:about="&locality;Locality">
         <rdfs:comment xml:lang="en">A Locality is a place that has a population, in territorial terms of geography.</rdfs:comment>
@@ -549,7 +549,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/locality/MetropolitanRegion -->
+    <!-- http://linkn.com.br/onto/locality/MetropolitanRegion -->
 
     <Class rdf:about="&locality;MetropolitanRegion">
         <rdfs:subClassOf>
@@ -592,7 +592,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/locality/Neighborhood -->
+    <!-- http://linkn.com.br/onto/locality/Neighborhood -->
 
     <Class rdf:about="&locality;Neighborhood">
         <rdfs:label xml:lang="pt">Bairro</rdfs:label>
@@ -639,7 +639,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/locality/Sector -->
+    <!-- http://linkn.com.br/onto/locality/Sector -->
 
     <Class rdf:about="&locality;Sector">
         <rdfs:subClassOf>
@@ -671,7 +671,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/locality/State -->
+    <!-- http://linkn.com.br/onto/locality/State -->
 
     <Class rdf:about="&locality;State">
         <rdfs:label xml:lang="pt">Estado</rdfs:label>
@@ -718,7 +718,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/locality/Street -->
+    <!-- http://linkn.com.br/onto/locality/Street -->
 
     <Class rdf:about="&locality;Street">
         <rdfs:label xml:lang="pt">Rua</rdfs:label>
@@ -767,7 +767,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/locality/Subdistrict -->
+    <!-- http://linkn.com.br/onto/locality/Subdistrict -->
 
     <Class rdf:about="&locality;Subdistrict">
         <rdfs:subClassOf>

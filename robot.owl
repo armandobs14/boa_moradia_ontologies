@@ -7,12 +7,12 @@
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
     <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY osm "http://nees.com.br/linkn/onto/osm/" >
-    <!ENTITY robot "http://nees.com.br/linkn/onto/robot/" >
+    <!ENTITY osm "http://linkn.com.br/onto/osm/" >
+    <!ENTITY robot "http://linkn.com.br/onto/robot/" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
-    <!ENTITY building "http://nees.com.br/linkn/onto/building/" >
-    <!ENTITY locality "http://nees.com.br/linkn/onto/locality/" >
-    <!ENTITY boa_moradia "http://nees.com.br/linkn/onto/boa_moradia/" >
+    <!ENTITY building "http://linkn.com.br/onto/building/" >
+    <!ENTITY locality "http://linkn.com.br/onto/locality/" >
+    <!ENTITY boa_moradia "http://linkn.com.br/onto/boa_moradia/" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
     <!ENTITY ns "http://www.w3.org/2003/06/sw-vocab-status/ns#" >
 ]>
@@ -22,19 +22,19 @@
      xml:base="http://www.w3.org/2002/07/owl"
      xmlns:ns="http://www.w3.org/2003/06/sw-vocab-status/ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:boa_moradia="http://nees.com.br/linkn/onto/boa_moradia/"
-     xmlns:osm="http://nees.com.br/linkn/onto/osm/"
-     xmlns:locality="http://nees.com.br/linkn/onto/locality/"
+     xmlns:boa_moradia="http://linkn.com.br/onto/boa_moradia/"
+     xmlns:osm="http://linkn.com.br/onto/osm/"
+     xmlns:locality="http://linkn.com.br/onto/locality/"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:building="http://nees.com.br/linkn/onto/building/"
-     xmlns:robot="http://nees.com.br/linkn/onto/robot/"
+     xmlns:building="http://linkn.com.br/onto/building/"
+     xmlns:robot="http://linkn.com.br/onto/robot/"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:wot="http://xmlns.com/wot/0.1/"
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:dc="http://purl.org/dc/elements/1.1/">
-    <Ontology rdf:about="http://nees.com.br/linkn/onto/robot/">
-        <imports rdf:resource="http://nees.com.br/linkn/onto/boa_moradia/"/>
+    <Ontology rdf:about="http://linkn.com.br/onto/robot/">
+        <imports rdf:resource="http://linkn.com.br/onto/boa_moradia/"/>
     </Ontology>
     
 
@@ -50,7 +50,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/building/hasImage -->
+    <!-- http://linkn.com.br/onto/building/hasImage -->
 
     <AnnotationProperty rdf:about="&building;hasImage">
         <rdfs:domain rdf:resource="&robot;Properties"/>
@@ -58,19 +58,19 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/robot/characteristics -->
+    <!-- http://linkn.com.br/onto/robot/characteristics -->
 
     <AnnotationProperty rdf:about="&robot;characteristics"/>
     
 
 
-    <!-- http://nees.com.br/linkn/onto/robot/synonymous -->
+    <!-- http://linkn.com.br/onto/robot/synonymous -->
 
     <AnnotationProperty rdf:about="&robot;synonymous"/>
     
 
 
-    <!-- http://nees.com.br/linkn/onto/robot/translation -->
+    <!-- http://linkn.com.br/onto/robot/translation -->
 
     <AnnotationProperty rdf:about="&robot;translation"/>
     
@@ -87,7 +87,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/robot/hasAnnouncement -->
+    <!-- http://linkn.com.br/onto/robot/hasAnnouncement -->
 
     <ObjectProperty rdf:about="&robot;hasAnnouncement">
         <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
@@ -99,7 +99,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/robot/hasCategory -->
+    <!-- http://linkn.com.br/onto/robot/hasCategory -->
 
     <ObjectProperty rdf:about="&robot;hasCategory">
         <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
@@ -111,7 +111,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/robot/hasPropertyType -->
+    <!-- http://linkn.com.br/onto/robot/hasPropertyType -->
 
     <ObjectProperty rdf:about="&robot;hasPropertyType">
         <rdfs:domain rdf:resource="&robot;Category"/>
@@ -121,7 +121,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/robot/hasStateLocation -->
+    <!-- http://linkn.com.br/onto/robot/hasStateLocation -->
 
     <ObjectProperty rdf:about="&robot;hasStateLocation">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -131,7 +131,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/robot/isAnnouncementOf -->
+    <!-- http://linkn.com.br/onto/robot/isAnnouncementOf -->
 
     <ObjectProperty rdf:about="&robot;isAnnouncementOf">
         <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
@@ -142,7 +142,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/robot/isCategoryOf -->
+    <!-- http://linkn.com.br/onto/robot/isCategoryOf -->
 
     <ObjectProperty rdf:about="&robot;isCategoryOf">
         <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
@@ -154,7 +154,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/robot/isPropertyTypeOf -->
+    <!-- http://linkn.com.br/onto/robot/isPropertyTypeOf -->
 
     <ObjectProperty rdf:about="&robot;isPropertyTypeOf">
         <rdfs:range rdf:resource="&robot;Category"/>
@@ -163,7 +163,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/robot/isQualityOf -->
+    <!-- http://linkn.com.br/onto/robot/isQualityOf -->
 
     <ObjectProperty rdf:about="&robot;isQualityOf">
         <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
@@ -184,7 +184,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/robot/hasAmountProperties -->
+    <!-- http://linkn.com.br/onto/robot/hasAmountProperties -->
 
     <DatatypeProperty rdf:about="&robot;hasAmountProperties">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -194,7 +194,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/robot/hasCountryName -->
+    <!-- http://linkn.com.br/onto/robot/hasCountryName -->
 
     <DatatypeProperty rdf:about="&robot;hasCountryName">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -204,7 +204,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/robot/hasQuality -->
+    <!-- http://linkn.com.br/onto/robot/hasQuality -->
 
     <DatatypeProperty rdf:about="&robot;hasQuality">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -214,7 +214,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/robot/isAssociatedTo -->
+    <!-- http://linkn.com.br/onto/robot/isAssociatedTo -->
 
     <DatatypeProperty rdf:about="&robot;isAssociatedTo">
         <rdfs:domain rdf:resource="&robot;PropertyType"/>
@@ -223,7 +223,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/robot/lastScraping -->
+    <!-- http://linkn.com.br/onto/robot/lastScraping -->
 
     <DatatypeProperty rdf:about="&robot;lastScraping">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -240,7 +240,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/robot/status -->
+    <!-- http://linkn.com.br/onto/robot/status -->
 
     <DatatypeProperty rdf:about="&robot;status">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -269,7 +269,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/robot/Category -->
+    <!-- http://linkn.com.br/onto/robot/Category -->
 
     <Class rdf:about="&robot;Category">
         <rdfs:subClassOf>
@@ -290,7 +290,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/robot/PropertyType -->
+    <!-- http://linkn.com.br/onto/robot/PropertyType -->
 
     <Class rdf:about="&robot;PropertyType">
         <rdfs:label xml:lang="en">Properties type</rdfs:label>
@@ -319,7 +319,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/robot/Scraping -->
+    <!-- http://linkn.com.br/onto/robot/Scraping -->
 
     <Class rdf:about="&robot;Scraping">
         <rdfs:comment xml:lang="pt">Controla cada raspagem feita pelo robô, indexando os tipos de imóveis e as datas em que foram raspados.</rdfs:comment>
@@ -327,7 +327,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/robot/Source -->
+    <!-- http://linkn.com.br/onto/robot/Source -->
 
     <Class rdf:about="&robot;Source">
         <rdfs:label xml:lang="en">Source</rdfs:label>

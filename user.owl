@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://nees.com.br/linkn/onto/user/"
-     xml:base="http://nees.com.br/linkn/onto/user/"
+<rdf:RDF xmlns="http://linkn.com.br/onto/user/"
+     xml:base="http://linkn.com.br/onto/user/"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:ns="http://www.w3.org/2003/06/sw-vocab-status/ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
@@ -12,7 +12,7 @@
      xmlns:wot="http://xmlns.com/wot/0.1/"
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:dc="http://purl.org/dc/elements/1.1/">
-    <owl:Ontology rdf:about="http://nees.com.br/linkn/onto/user/">
+    <owl:Ontology rdf:about="http://linkn.com.br/onto/user/">
         <owl:imports rdf:resource="http://xmlns.com/foaf/0.1/"/>
     </owl:Ontology>
     
@@ -29,142 +29,142 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/user/hasAunt -->
+    <!-- http://linkn.com.br/onto/user/hasAunt -->
 
-    <owl:ObjectProperty rdf:about="http://nees.com.br/linkn/onto/user/hasAunt">
-        <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronizedPeople"/>
+    <owl:ObjectProperty rdf:about="http://linkn.com.br/onto/user/hasAunt">
+        <rdfs:subPropertyOf rdf:resource="http://linkn.com.br/onto/user/hasFacebookSynchronizedPeople"/>
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasBrother"/>
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasAunt"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasBrother"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasAunt"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasFather"/>
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasSister"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasFather"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasSister"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasMother"/>
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasSister"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasMother"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasSister"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasSister"/>
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasAunt"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasSister"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasAunt"/>
         </owl:propertyChainAxiom>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://nees.com.br/linkn/onto/user/hasBrother -->
+    <!-- http://linkn.com.br/onto/user/hasBrother -->
 
-    <owl:ObjectProperty rdf:about="http://nees.com.br/linkn/onto/user/hasBrother">
-        <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronizedPeople"/>
+    <owl:ObjectProperty rdf:about="http://linkn.com.br/onto/user/hasBrother">
+        <rdfs:subPropertyOf rdf:resource="http://linkn.com.br/onto/user/hasFacebookSynchronizedPeople"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasFather"/>
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasSon"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasFather"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasSon"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasMother"/>
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasSon"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasMother"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasSon"/>
         </owl:propertyChainAxiom>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://nees.com.br/linkn/onto/user/hasBrotherInLaw -->
+    <!-- http://linkn.com.br/onto/user/hasBrotherInLaw -->
 
-    <owl:ObjectProperty rdf:about="http://nees.com.br/linkn/onto/user/hasBrotherInLaw">
-        <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronizedPeople"/>
+    <owl:ObjectProperty rdf:about="http://linkn.com.br/onto/user/hasBrotherInLaw">
+        <rdfs:subPropertyOf rdf:resource="http://linkn.com.br/onto/user/hasFacebookSynchronizedPeople"/>
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://nees.com.br/linkn/onto/user/hasCousin -->
+    <!-- http://linkn.com.br/onto/user/hasCousin -->
 
-    <owl:ObjectProperty rdf:about="http://nees.com.br/linkn/onto/user/hasCousin">
-        <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronizedPeople"/>
+    <owl:ObjectProperty rdf:about="http://linkn.com.br/onto/user/hasCousin">
+        <rdfs:subPropertyOf rdf:resource="http://linkn.com.br/onto/user/hasFacebookSynchronizedPeople"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasAunt"/>
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasDaughter"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasAunt"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasDaughter"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasAunt"/>
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasSon"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasAunt"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasSon"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasBrother"/>
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasCousin"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasBrother"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasCousin"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasFather"/>
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasNephew"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasFather"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasNephew"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasFather"/>
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasNice"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasFather"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasNice"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasMother"/>
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasNephew"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasMother"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasNephew"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasMother"/>
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasNice"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasMother"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasNice"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasSister"/>
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasCousin"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasSister"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasCousin"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasUncle"/>
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasDaughter"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasUncle"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasDaughter"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasUncle"/>
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasSon"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasUncle"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasSon"/>
         </owl:propertyChainAxiom>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://nees.com.br/linkn/onto/user/hasDaughter -->
+    <!-- http://linkn.com.br/onto/user/hasDaughter -->
 
-    <owl:ObjectProperty rdf:about="http://nees.com.br/linkn/onto/user/hasDaughter">
-        <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronizedPeople"/>
+    <owl:ObjectProperty rdf:about="http://linkn.com.br/onto/user/hasDaughter">
+        <rdfs:subPropertyOf rdf:resource="http://linkn.com.br/onto/user/hasFacebookSynchronizedPeople"/>
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://nees.com.br/linkn/onto/user/hasDaughterInLaw -->
+    <!-- http://linkn.com.br/onto/user/hasDaughterInLaw -->
 
-    <owl:ObjectProperty rdf:about="http://nees.com.br/linkn/onto/user/hasDaughterInLaw">
-        <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronizedPeople"/>
+    <owl:ObjectProperty rdf:about="http://linkn.com.br/onto/user/hasDaughterInLaw">
+        <rdfs:subPropertyOf rdf:resource="http://linkn.com.br/onto/user/hasFacebookSynchronizedPeople"/>
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://nees.com.br/linkn/onto/user/hasFacebookSynchronizedPeople -->
+    <!-- http://linkn.com.br/onto/user/hasFacebookSynchronizedPeople -->
 
-    <owl:ObjectProperty rdf:about="http://nees.com.br/linkn/onto/user/hasFacebookSynchronizedPeople"/>
+    <owl:ObjectProperty rdf:about="http://linkn.com.br/onto/user/hasFacebookSynchronizedPeople"/>
     
 
 
-    <!-- http://nees.com.br/linkn/onto/user/hasFather -->
+    <!-- http://linkn.com.br/onto/user/hasFather -->
 
-    <owl:ObjectProperty rdf:about="http://nees.com.br/linkn/onto/user/hasFather">
-        <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronizedPeople"/>
+    <owl:ObjectProperty rdf:about="http://linkn.com.br/onto/user/hasFather">
+        <rdfs:subPropertyOf rdf:resource="http://linkn.com.br/onto/user/hasFacebookSynchronizedPeople"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
@@ -172,10 +172,10 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/user/hasFatherInLaw -->
+    <!-- http://linkn.com.br/onto/user/hasFatherInLaw -->
 
-    <owl:ObjectProperty rdf:about="http://nees.com.br/linkn/onto/user/hasFatherInLaw">
-        <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronizedPeople"/>
+    <owl:ObjectProperty rdf:about="http://linkn.com.br/onto/user/hasFatherInLaw">
+        <rdfs:subPropertyOf rdf:resource="http://linkn.com.br/onto/user/hasFacebookSynchronizedPeople"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
@@ -183,114 +183,114 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/user/hasGrandDaughter -->
+    <!-- http://linkn.com.br/onto/user/hasGrandDaughter -->
 
-    <owl:ObjectProperty rdf:about="http://nees.com.br/linkn/onto/user/hasGrandDaughter">
-        <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronizedPeople"/>
+    <owl:ObjectProperty rdf:about="http://linkn.com.br/onto/user/hasGrandDaughter">
+        <rdfs:subPropertyOf rdf:resource="http://linkn.com.br/onto/user/hasFacebookSynchronizedPeople"/>
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasDaughter"/>
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasDaughter"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasDaughter"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasDaughter"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasSon"/>
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasDaughter"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasSon"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasDaughter"/>
         </owl:propertyChainAxiom>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://nees.com.br/linkn/onto/user/hasGrandFather -->
+    <!-- http://linkn.com.br/onto/user/hasGrandFather -->
 
-    <owl:ObjectProperty rdf:about="http://nees.com.br/linkn/onto/user/hasGrandFather">
-        <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronizedPeople"/>
+    <owl:ObjectProperty rdf:about="http://linkn.com.br/onto/user/hasGrandFather">
+        <rdfs:subPropertyOf rdf:resource="http://linkn.com.br/onto/user/hasFacebookSynchronizedPeople"/>
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasAunt"/>
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasFather"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasAunt"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasFather"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasBrother"/>
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasGrandFather"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasBrother"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasGrandFather"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasFather"/>
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasFather"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasFather"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasFather"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasMother"/>
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasFather"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasMother"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasFather"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasSister"/>
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasGrandFather"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasSister"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasGrandFather"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasUncle"/>
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasFather"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasUncle"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasFather"/>
         </owl:propertyChainAxiom>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://nees.com.br/linkn/onto/user/hasGrandMother -->
+    <!-- http://linkn.com.br/onto/user/hasGrandMother -->
 
-    <owl:ObjectProperty rdf:about="http://nees.com.br/linkn/onto/user/hasGrandMother">
-        <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronizedPeople"/>
+    <owl:ObjectProperty rdf:about="http://linkn.com.br/onto/user/hasGrandMother">
+        <rdfs:subPropertyOf rdf:resource="http://linkn.com.br/onto/user/hasFacebookSynchronizedPeople"/>
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasAunt"/>
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasMother"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasAunt"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasMother"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasBrother"/>
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasGrandMother"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasBrother"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasGrandMother"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasFather"/>
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasMother"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasFather"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasMother"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasMother"/>
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasMother"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasMother"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasMother"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasSister"/>
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasGrandMother"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasSister"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasGrandMother"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasUncle"/>
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasMother"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasUncle"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasMother"/>
         </owl:propertyChainAxiom>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://nees.com.br/linkn/onto/user/hasGrandSon -->
+    <!-- http://linkn.com.br/onto/user/hasGrandSon -->
 
-    <owl:ObjectProperty rdf:about="http://nees.com.br/linkn/onto/user/hasGrandSon">
-        <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronizedPeople"/>
+    <owl:ObjectProperty rdf:about="http://linkn.com.br/onto/user/hasGrandSon">
+        <rdfs:subPropertyOf rdf:resource="http://linkn.com.br/onto/user/hasFacebookSynchronizedPeople"/>
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasDaughter"/>
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasSon"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasDaughter"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasSon"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasSon"/>
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasSon"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasSon"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasSon"/>
         </owl:propertyChainAxiom>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://nees.com.br/linkn/onto/user/hasMother -->
+    <!-- http://linkn.com.br/onto/user/hasMother -->
 
-    <owl:ObjectProperty rdf:about="http://nees.com.br/linkn/onto/user/hasMother">
-        <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronizedPeople"/>
+    <owl:ObjectProperty rdf:about="http://linkn.com.br/onto/user/hasMother">
+        <rdfs:subPropertyOf rdf:resource="http://linkn.com.br/onto/user/hasFacebookSynchronizedPeople"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
@@ -298,10 +298,10 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/user/hasMotherInLaw -->
+    <!-- http://linkn.com.br/onto/user/hasMotherInLaw -->
 
-    <owl:ObjectProperty rdf:about="http://nees.com.br/linkn/onto/user/hasMotherInLaw">
-        <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronizedPeople"/>
+    <owl:ObjectProperty rdf:about="http://linkn.com.br/onto/user/hasMotherInLaw">
+        <rdfs:subPropertyOf rdf:resource="http://linkn.com.br/onto/user/hasFacebookSynchronizedPeople"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
@@ -309,115 +309,115 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/user/hasNephew -->
+    <!-- http://linkn.com.br/onto/user/hasNephew -->
 
-    <owl:ObjectProperty rdf:about="http://nees.com.br/linkn/onto/user/hasNephew">
-        <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronizedPeople"/>
+    <owl:ObjectProperty rdf:about="http://linkn.com.br/onto/user/hasNephew">
+        <rdfs:subPropertyOf rdf:resource="http://linkn.com.br/onto/user/hasFacebookSynchronizedPeople"/>
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasBrother"/>
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasSon"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasBrother"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasSon"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasNephew"/>
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasBrother"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasNephew"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasBrother"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasNice"/>
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasBrother"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasNice"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasBrother"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasSister"/>
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasSon"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasSister"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasSon"/>
         </owl:propertyChainAxiom>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://nees.com.br/linkn/onto/user/hasNice -->
+    <!-- http://linkn.com.br/onto/user/hasNice -->
 
-    <owl:ObjectProperty rdf:about="http://nees.com.br/linkn/onto/user/hasNice">
-        <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronizedPeople"/>
+    <owl:ObjectProperty rdf:about="http://linkn.com.br/onto/user/hasNice">
+        <rdfs:subPropertyOf rdf:resource="http://linkn.com.br/onto/user/hasFacebookSynchronizedPeople"/>
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasBrother"/>
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasDaughter"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasBrother"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasDaughter"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasNice"/>
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasBrother"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasNice"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasBrother"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasNice"/>
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasSister"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasNice"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasSister"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasSister"/>
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasDaughter"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasSister"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasDaughter"/>
         </owl:propertyChainAxiom>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://nees.com.br/linkn/onto/user/hasSister -->
+    <!-- http://linkn.com.br/onto/user/hasSister -->
 
-    <owl:ObjectProperty rdf:about="http://nees.com.br/linkn/onto/user/hasSister">
-        <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronizedPeople"/>
+    <owl:ObjectProperty rdf:about="http://linkn.com.br/onto/user/hasSister">
+        <rdfs:subPropertyOf rdf:resource="http://linkn.com.br/onto/user/hasFacebookSynchronizedPeople"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasBrother"/>
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasSister"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasBrother"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasSister"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasFather"/>
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasDaughter"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasFather"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasDaughter"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasMother"/>
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasDaughter"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasMother"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasDaughter"/>
         </owl:propertyChainAxiom>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://nees.com.br/linkn/onto/user/hasSisterInLaw -->
+    <!-- http://linkn.com.br/onto/user/hasSisterInLaw -->
 
-    <owl:ObjectProperty rdf:about="http://nees.com.br/linkn/onto/user/hasSisterInLaw">
-        <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronizedPeople"/>
+    <owl:ObjectProperty rdf:about="http://linkn.com.br/onto/user/hasSisterInLaw">
+        <rdfs:subPropertyOf rdf:resource="http://linkn.com.br/onto/user/hasFacebookSynchronizedPeople"/>
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://nees.com.br/linkn/onto/user/hasSon -->
+    <!-- http://linkn.com.br/onto/user/hasSon -->
 
-    <owl:ObjectProperty rdf:about="http://nees.com.br/linkn/onto/user/hasSon">
-        <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronizedPeople"/>
+    <owl:ObjectProperty rdf:about="http://linkn.com.br/onto/user/hasSon">
+        <rdfs:subPropertyOf rdf:resource="http://linkn.com.br/onto/user/hasFacebookSynchronizedPeople"/>
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://nees.com.br/linkn/onto/user/hasSonInLaw -->
+    <!-- http://linkn.com.br/onto/user/hasSonInLaw -->
 
-    <owl:ObjectProperty rdf:about="http://nees.com.br/linkn/onto/user/hasSonInLaw">
-        <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronizedPeople"/>
+    <owl:ObjectProperty rdf:about="http://linkn.com.br/onto/user/hasSonInLaw">
+        <rdfs:subPropertyOf rdf:resource="http://linkn.com.br/onto/user/hasFacebookSynchronizedPeople"/>
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://nees.com.br/linkn/onto/user/hasStepFather -->
+    <!-- http://linkn.com.br/onto/user/hasStepFather -->
 
-    <owl:ObjectProperty rdf:about="http://nees.com.br/linkn/onto/user/hasStepFather">
-        <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronizedPeople"/>
+    <owl:ObjectProperty rdf:about="http://linkn.com.br/onto/user/hasStepFather">
+        <rdfs:subPropertyOf rdf:resource="http://linkn.com.br/onto/user/hasFacebookSynchronizedPeople"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
@@ -425,10 +425,10 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/user/hasStepMother -->
+    <!-- http://linkn.com.br/onto/user/hasStepMother -->
 
-    <owl:ObjectProperty rdf:about="http://nees.com.br/linkn/onto/user/hasStepMother">
-        <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronizedPeople"/>
+    <owl:ObjectProperty rdf:about="http://linkn.com.br/onto/user/hasStepMother">
+        <rdfs:subPropertyOf rdf:resource="http://linkn.com.br/onto/user/hasFacebookSynchronizedPeople"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
@@ -436,27 +436,27 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/user/hasUncle -->
+    <!-- http://linkn.com.br/onto/user/hasUncle -->
 
-    <owl:ObjectProperty rdf:about="http://nees.com.br/linkn/onto/user/hasUncle">
-        <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronizedPeople"/>
+    <owl:ObjectProperty rdf:about="http://linkn.com.br/onto/user/hasUncle">
+        <rdfs:subPropertyOf rdf:resource="http://linkn.com.br/onto/user/hasFacebookSynchronizedPeople"/>
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasBrother"/>
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasUncle"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasBrother"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasUncle"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasFather"/>
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasBrother"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasFather"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasBrother"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasMother"/>
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasBrother"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasMother"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasBrother"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasSister"/>
-            <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasUncle"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasSister"/>
+            <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasUncle"/>
         </owl:propertyChainAxiom>
     </owl:ObjectProperty>
     
@@ -473,51 +473,51 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/user/hasActivities -->
+    <!-- http://linkn.com.br/onto/user/hasActivities -->
 
-    <owl:DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/user/hasActivities">
-        <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronized"/>
+    <owl:DatatypeProperty rdf:about="http://linkn.com.br/onto/user/hasActivities">
+        <rdfs:subPropertyOf rdf:resource="http://linkn.com.br/onto/user/hasFacebookSynchronized"/>
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://nees.com.br/linkn/onto/user/hasAdAccounts -->
+    <!-- http://linkn.com.br/onto/user/hasAdAccounts -->
 
-    <owl:DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/user/hasAdAccounts">
-        <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronized"/>
+    <owl:DatatypeProperty rdf:about="http://linkn.com.br/onto/user/hasAdAccounts">
+        <rdfs:subPropertyOf rdf:resource="http://linkn.com.br/onto/user/hasFacebookSynchronized"/>
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://nees.com.br/linkn/onto/user/hasCheckins -->
+    <!-- http://linkn.com.br/onto/user/hasCheckins -->
 
-    <owl:DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/user/hasCheckins">
-        <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFoursquareSynchronized"/>
+    <owl:DatatypeProperty rdf:about="http://linkn.com.br/onto/user/hasCheckins">
+        <rdfs:subPropertyOf rdf:resource="http://linkn.com.br/onto/user/hasFoursquareSynchronized"/>
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://nees.com.br/linkn/onto/user/hasDateOfBirth -->
+    <!-- http://linkn.com.br/onto/user/hasDateOfBirth -->
 
-    <owl:DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/user/hasDateOfBirth">
+    <owl:DatatypeProperty rdf:about="http://linkn.com.br/onto/user/hasDateOfBirth">
         <owl:equivalentProperty rdf:resource="http://xmlns.com/foaf/0.1/birthday"/>
-        <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasLinkedInSynchronized"/>
+        <rdfs:subPropertyOf rdf:resource="http://linkn.com.br/onto/user/hasLinkedInSynchronized"/>
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://nees.com.br/linkn/onto/user/hasEmail -->
+    <!-- http://linkn.com.br/onto/user/hasEmail -->
 
-    <owl:DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/user/hasEmail">
-        <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasLinkedInSynchronized"/>
+    <owl:DatatypeProperty rdf:about="http://linkn.com.br/onto/user/hasEmail">
+        <rdfs:subPropertyOf rdf:resource="http://linkn.com.br/onto/user/hasLinkedInSynchronized"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -525,30 +525,30 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/user/hasFacebookFriends -->
+    <!-- http://linkn.com.br/onto/user/hasFacebookFriends -->
 
-    <owl:DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/user/hasFacebookFriends">
-        <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronized"/>
+    <owl:DatatypeProperty rdf:about="http://linkn.com.br/onto/user/hasFacebookFriends">
+        <rdfs:subPropertyOf rdf:resource="http://linkn.com.br/onto/user/hasFacebookSynchronized"/>
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://nees.com.br/linkn/onto/user/hasFacebookSynchronized -->
+    <!-- http://linkn.com.br/onto/user/hasFacebookSynchronized -->
 
-    <owl:DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/user/hasFacebookSynchronized">
+    <owl:DatatypeProperty rdf:about="http://linkn.com.br/onto/user/hasFacebookSynchronized">
         <rdfs:domain rdf:resource="http://schema.org/Person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://nees.com.br/linkn/onto/user/hasFirstName -->
+    <!-- http://linkn.com.br/onto/user/hasFirstName -->
 
-    <owl:DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/user/hasFirstName">
+    <owl:DatatypeProperty rdf:about="http://linkn.com.br/onto/user/hasFirstName">
         <owl:equivalentProperty rdf:resource="http://xmlns.com/foaf/0.1/firstName"/>
-        <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasLinkedInSynchronized"/>
+        <rdfs:subPropertyOf rdf:resource="http://linkn.com.br/onto/user/hasLinkedInSynchronized"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -556,130 +556,130 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/user/hasFoursquareFriends -->
+    <!-- http://linkn.com.br/onto/user/hasFoursquareFriends -->
 
-    <owl:DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/user/hasFoursquareFriends">
-        <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFoursquareSynchronized"/>
+    <owl:DatatypeProperty rdf:about="http://linkn.com.br/onto/user/hasFoursquareFriends">
+        <rdfs:subPropertyOf rdf:resource="http://linkn.com.br/onto/user/hasFoursquareSynchronized"/>
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://nees.com.br/linkn/onto/user/hasFoursquareSynchronized -->
+    <!-- http://linkn.com.br/onto/user/hasFoursquareSynchronized -->
 
-    <owl:DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/user/hasFoursquareSynchronized">
+    <owl:DatatypeProperty rdf:about="http://linkn.com.br/onto/user/hasFoursquareSynchronized">
         <rdfs:domain rdf:resource="http://schema.org/Person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://nees.com.br/linkn/onto/user/hasHeadline -->
+    <!-- http://linkn.com.br/onto/user/hasHeadline -->
 
-    <owl:DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/user/hasHeadline">
-        <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasLinkedInSynchronized"/>
+    <owl:DatatypeProperty rdf:about="http://linkn.com.br/onto/user/hasHeadline">
+        <rdfs:subPropertyOf rdf:resource="http://linkn.com.br/onto/user/hasLinkedInSynchronized"/>
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://nees.com.br/linkn/onto/user/hasInterests -->
+    <!-- http://linkn.com.br/onto/user/hasInterests -->
 
-    <owl:DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/user/hasInterests">
-        <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronized"/>
+    <owl:DatatypeProperty rdf:about="http://linkn.com.br/onto/user/hasInterests">
+        <rdfs:subPropertyOf rdf:resource="http://linkn.com.br/onto/user/hasFacebookSynchronized"/>
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://nees.com.br/linkn/onto/user/hasLanguages -->
+    <!-- http://linkn.com.br/onto/user/hasLanguages -->
 
-    <owl:DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/user/hasLanguages">
-        <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasLinkedInSynchronized"/>
+    <owl:DatatypeProperty rdf:about="http://linkn.com.br/onto/user/hasLanguages">
+        <rdfs:subPropertyOf rdf:resource="http://linkn.com.br/onto/user/hasLinkedInSynchronized"/>
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://nees.com.br/linkn/onto/user/hasLastName -->
+    <!-- http://linkn.com.br/onto/user/hasLastName -->
 
-    <owl:DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/user/hasLastName">
+    <owl:DatatypeProperty rdf:about="http://linkn.com.br/onto/user/hasLastName">
         <owl:equivalentProperty rdf:resource="http://xmlns.com/foaf/0.1/familyName"/>
         <owl:equivalentProperty rdf:resource="http://xmlns.com/foaf/0.1/family_name"/>
         <owl:equivalentProperty rdf:resource="http://xmlns.com/foaf/0.1/surname"/>
-        <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasLinkedInSynchronized"/>
+        <rdfs:subPropertyOf rdf:resource="http://linkn.com.br/onto/user/hasLinkedInSynchronized"/>
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://nees.com.br/linkn/onto/user/hasLikes -->
+    <!-- http://linkn.com.br/onto/user/hasLikes -->
 
-    <owl:DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/user/hasLikes">
-        <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronized"/>
+    <owl:DatatypeProperty rdf:about="http://linkn.com.br/onto/user/hasLikes">
+        <rdfs:subPropertyOf rdf:resource="http://linkn.com.br/onto/user/hasFacebookSynchronized"/>
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://nees.com.br/linkn/onto/user/hasLinkedInSynchronized -->
+    <!-- http://linkn.com.br/onto/user/hasLinkedInSynchronized -->
 
-    <owl:DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/user/hasLinkedInSynchronized">
+    <owl:DatatypeProperty rdf:about="http://linkn.com.br/onto/user/hasLinkedInSynchronized">
         <rdfs:domain rdf:resource="http://schema.org/Person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://nees.com.br/linkn/onto/user/hasLocationCountryCode -->
+    <!-- http://linkn.com.br/onto/user/hasLocationCountryCode -->
 
-    <owl:DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/user/hasLocationCountryCode">
-        <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasLinkedInSynchronized"/>
+    <owl:DatatypeProperty rdf:about="http://linkn.com.br/onto/user/hasLocationCountryCode">
+        <rdfs:subPropertyOf rdf:resource="http://linkn.com.br/onto/user/hasLinkedInSynchronized"/>
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://nees.com.br/linkn/onto/user/hasLocationName -->
+    <!-- http://linkn.com.br/onto/user/hasLocationName -->
 
-    <owl:DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/user/hasLocationName">
-        <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasLinkedInSynchronized"/>
+    <owl:DatatypeProperty rdf:about="http://linkn.com.br/onto/user/hasLocationName">
+        <rdfs:subPropertyOf rdf:resource="http://linkn.com.br/onto/user/hasLinkedInSynchronized"/>
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://nees.com.br/linkn/onto/user/hasMaidenName -->
+    <!-- http://linkn.com.br/onto/user/hasMaidenName -->
 
-    <owl:DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/user/hasMaidenName">
-        <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasLinkedInSynchronized"/>
+    <owl:DatatypeProperty rdf:about="http://linkn.com.br/onto/user/hasMaidenName">
+        <rdfs:subPropertyOf rdf:resource="http://linkn.com.br/onto/user/hasLinkedInSynchronized"/>
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://nees.com.br/linkn/onto/user/hasMayorships -->
+    <!-- http://linkn.com.br/onto/user/hasMayorships -->
 
-    <owl:DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/user/hasMayorships">
-        <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFoursquareSynchronized"/>
+    <owl:DatatypeProperty rdf:about="http://linkn.com.br/onto/user/hasMayorships">
+        <rdfs:subPropertyOf rdf:resource="http://linkn.com.br/onto/user/hasFoursquareSynchronized"/>
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://nees.com.br/linkn/onto/user/hasPassword -->
+    <!-- http://linkn.com.br/onto/user/hasPassword -->
 
-    <owl:DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/user/hasPassword">
+    <owl:DatatypeProperty rdf:about="http://linkn.com.br/onto/user/hasPassword">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -687,70 +687,70 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/user/hasPermissions -->
+    <!-- http://linkn.com.br/onto/user/hasPermissions -->
 
-    <owl:DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/user/hasPermissions">
-        <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronized"/>
+    <owl:DatatypeProperty rdf:about="http://linkn.com.br/onto/user/hasPermissions">
+        <rdfs:subPropertyOf rdf:resource="http://linkn.com.br/onto/user/hasFacebookSynchronized"/>
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://nees.com.br/linkn/onto/user/hasPicture -->
+    <!-- http://linkn.com.br/onto/user/hasPicture -->
 
-    <owl:DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/user/hasPicture">
-        <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronized"/>
+    <owl:DatatypeProperty rdf:about="http://linkn.com.br/onto/user/hasPicture">
+        <rdfs:subPropertyOf rdf:resource="http://linkn.com.br/onto/user/hasFacebookSynchronized"/>
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://nees.com.br/linkn/onto/user/hasTaggableFriends -->
+    <!-- http://linkn.com.br/onto/user/hasTaggableFriends -->
 
-    <owl:DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/user/hasTaggableFriends">
-        <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronized"/>
+    <owl:DatatypeProperty rdf:about="http://linkn.com.br/onto/user/hasTaggableFriends">
+        <rdfs:subPropertyOf rdf:resource="http://linkn.com.br/onto/user/hasFacebookSynchronized"/>
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://nees.com.br/linkn/onto/user/hasTaggedPlaces -->
+    <!-- http://linkn.com.br/onto/user/hasTaggedPlaces -->
 
-    <owl:DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/user/hasTaggedPlaces">
-        <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFacebookSynchronized"/>
+    <owl:DatatypeProperty rdf:about="http://linkn.com.br/onto/user/hasTaggedPlaces">
+        <rdfs:subPropertyOf rdf:resource="http://linkn.com.br/onto/user/hasFacebookSynchronized"/>
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://nees.com.br/linkn/onto/user/hasTips -->
+    <!-- http://linkn.com.br/onto/user/hasTips -->
 
-    <owl:DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/user/hasTips">
-        <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFoursquareSynchronized"/>
+    <owl:DatatypeProperty rdf:about="http://linkn.com.br/onto/user/hasTips">
+        <rdfs:subPropertyOf rdf:resource="http://linkn.com.br/onto/user/hasFoursquareSynchronized"/>
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://nees.com.br/linkn/onto/user/hasVenuesHistory -->
+    <!-- http://linkn.com.br/onto/user/hasVenuesHistory -->
 
-    <owl:DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/user/hasVenuesHistory">
-        <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFoursquareSynchronized"/>
+    <owl:DatatypeProperty rdf:about="http://linkn.com.br/onto/user/hasVenuesHistory">
+        <rdfs:subPropertyOf rdf:resource="http://linkn.com.br/onto/user/hasFoursquareSynchronized"/>
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://nees.com.br/linkn/onto/user/hasVenuesLikes -->
+    <!-- http://linkn.com.br/onto/user/hasVenuesLikes -->
 
-    <owl:DatatypeProperty rdf:about="http://nees.com.br/linkn/onto/user/hasVenuesLikes">
-        <rdfs:subPropertyOf rdf:resource="http://nees.com.br/linkn/onto/user/hasFoursquareSynchronized"/>
+    <owl:DatatypeProperty rdf:about="http://linkn.com.br/onto/user/hasVenuesLikes">
+        <rdfs:subPropertyOf rdf:resource="http://linkn.com.br/onto/user/hasFoursquareSynchronized"/>
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
@@ -840,102 +840,102 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/user/Arnaldo -->
+    <!-- http://linkn.com.br/onto/user/Arnaldo -->
 
-    <owl:NamedIndividual rdf:about="http://nees.com.br/linkn/onto/user/Arnaldo">
+    <owl:NamedIndividual rdf:about="http://linkn.com.br/onto/user/Arnaldo">
         <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
-        <hasDaughter rdf:resource="http://nees.com.br/linkn/onto/user/Celia"/>
-        <hasSon rdf:resource="http://nees.com.br/linkn/onto/user/Dermeval"/>
-        <hasSon rdf:resource="http://nees.com.br/linkn/onto/user/Matheus"/>
+        <hasDaughter rdf:resource="http://linkn.com.br/onto/user/Celia"/>
+        <hasSon rdf:resource="http://linkn.com.br/onto/user/Dermeval"/>
+        <hasSon rdf:resource="http://linkn.com.br/onto/user/Matheus"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://nees.com.br/linkn/onto/user/Celia -->
+    <!-- http://linkn.com.br/onto/user/Celia -->
 
-    <owl:NamedIndividual rdf:about="http://nees.com.br/linkn/onto/user/Celia">
+    <owl:NamedIndividual rdf:about="http://linkn.com.br/onto/user/Celia">
         <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
-        <hasBrother rdf:resource="http://nees.com.br/linkn/onto/user/Dermeval"/>
-        <hasDaughter rdf:resource="http://nees.com.br/linkn/onto/user/Gabriela"/>
+        <hasBrother rdf:resource="http://linkn.com.br/onto/user/Dermeval"/>
+        <hasDaughter rdf:resource="http://linkn.com.br/onto/user/Gabriela"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://nees.com.br/linkn/onto/user/Dermeval -->
+    <!-- http://linkn.com.br/onto/user/Dermeval -->
 
-    <owl:NamedIndividual rdf:about="http://nees.com.br/linkn/onto/user/Dermeval">
+    <owl:NamedIndividual rdf:about="http://linkn.com.br/onto/user/Dermeval">
         <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
-        <hasBrother rdf:resource="http://nees.com.br/linkn/onto/user/Matheus"/>
-        <hasSon rdf:resource="http://nees.com.br/linkn/onto/user/Paulo"/>
+        <hasBrother rdf:resource="http://linkn.com.br/onto/user/Matheus"/>
+        <hasSon rdf:resource="http://linkn.com.br/onto/user/Paulo"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://nees.com.br/linkn/onto/user/Gabriela -->
+    <!-- http://linkn.com.br/onto/user/Gabriela -->
 
-    <owl:NamedIndividual rdf:about="http://nees.com.br/linkn/onto/user/Gabriela">
-        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://nees.com.br/linkn/onto/user/Maria -->
-
-    <owl:NamedIndividual rdf:about="http://nees.com.br/linkn/onto/user/Maria">
-        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
-        <hasMother rdf:resource="http://nees.com.br/linkn/onto/user/Celia"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://nees.com.br/linkn/onto/user/Mariana -->
-
-    <owl:NamedIndividual rdf:about="http://nees.com.br/linkn/onto/user/Mariana">
-        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
-        <hasFather rdf:resource="http://nees.com.br/linkn/onto/user/Dermeval"/>
-        <hasSister rdf:resource="http://nees.com.br/linkn/onto/user/Paula"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://nees.com.br/linkn/onto/user/Matheus -->
-
-    <owl:NamedIndividual rdf:about="http://nees.com.br/linkn/onto/user/Matheus">
-        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
-        <hasSon rdf:resource="http://nees.com.br/linkn/onto/user/William"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://nees.com.br/linkn/onto/user/Paula -->
-
-    <owl:NamedIndividual rdf:about="http://nees.com.br/linkn/onto/user/Paula">
+    <owl:NamedIndividual rdf:about="http://linkn.com.br/onto/user/Gabriela">
         <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://nees.com.br/linkn/onto/user/Paulo -->
+    <!-- http://linkn.com.br/onto/user/Maria -->
 
-    <owl:NamedIndividual rdf:about="http://nees.com.br/linkn/onto/user/Paulo">
+    <owl:NamedIndividual rdf:about="http://linkn.com.br/onto/user/Maria">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <hasMother rdf:resource="http://linkn.com.br/onto/user/Celia"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://linkn.com.br/onto/user/Mariana -->
+
+    <owl:NamedIndividual rdf:about="http://linkn.com.br/onto/user/Mariana">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <hasFather rdf:resource="http://linkn.com.br/onto/user/Dermeval"/>
+        <hasSister rdf:resource="http://linkn.com.br/onto/user/Paula"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://linkn.com.br/onto/user/Matheus -->
+
+    <owl:NamedIndividual rdf:about="http://linkn.com.br/onto/user/Matheus">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <hasSon rdf:resource="http://linkn.com.br/onto/user/William"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://linkn.com.br/onto/user/Paula -->
+
+    <owl:NamedIndividual rdf:about="http://linkn.com.br/onto/user/Paula">
         <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://nees.com.br/linkn/onto/user/Pedro -->
+    <!-- http://linkn.com.br/onto/user/Paulo -->
 
-    <owl:NamedIndividual rdf:about="http://nees.com.br/linkn/onto/user/Pedro">
+    <owl:NamedIndividual rdf:about="http://linkn.com.br/onto/user/Paulo">
         <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://nees.com.br/linkn/onto/user/William -->
+    <!-- http://linkn.com.br/onto/user/Pedro -->
 
-    <owl:NamedIndividual rdf:about="http://nees.com.br/linkn/onto/user/William">
+    <owl:NamedIndividual rdf:about="http://linkn.com.br/onto/user/Pedro">
         <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
-        <hasSon rdf:resource="http://nees.com.br/linkn/onto/user/Pedro"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://linkn.com.br/onto/user/William -->
+
+    <owl:NamedIndividual rdf:about="http://linkn.com.br/onto/user/William">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <hasSon rdf:resource="http://linkn.com.br/onto/user/Pedro"/>
     </owl:NamedIndividual>
     
 
@@ -982,7 +982,7 @@
                                 <rdf:first>
                                     <rdf:Description>
                                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasAunt"/>
+                                        <swrl:propertyPredicate rdf:resource="http://linkn.com.br/onto/user/hasAunt"/>
                                         <swrl:argument1 rdf:resource="urn:swrl#a"/>
                                         <swrl:argument2 rdf:resource="urn:swrl#b"/>
                                     </rdf:Description>
@@ -1013,7 +1013,7 @@
                 <rdf:first>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasNephew"/>
+                        <swrl:propertyPredicate rdf:resource="http://linkn.com.br/onto/user/hasNephew"/>
                         <swrl:argument1 rdf:resource="urn:swrl#b"/>
                         <swrl:argument2 rdf:resource="urn:swrl#a"/>
                     </rdf:Description>
@@ -1050,7 +1050,7 @@
                                 <rdf:first>
                                     <rdf:Description>
                                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasGrandDaughter"/>
+                                        <swrl:propertyPredicate rdf:resource="http://linkn.com.br/onto/user/hasGrandDaughter"/>
                                         <swrl:argument1 rdf:resource="urn:swrl#b"/>
                                         <swrl:argument2 rdf:resource="urn:swrl#a"/>
                                     </rdf:Description>
@@ -1081,7 +1081,7 @@
                 <rdf:first>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasGrandMother"/>
+                        <swrl:propertyPredicate rdf:resource="http://linkn.com.br/onto/user/hasGrandMother"/>
                         <swrl:argument1 rdf:resource="urn:swrl#a"/>
                         <swrl:argument2 rdf:resource="urn:swrl#b"/>
                     </rdf:Description>
@@ -1118,7 +1118,7 @@
                                 <rdf:first>
                                     <rdf:Description>
                                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasGrandDaughter"/>
+                                        <swrl:propertyPredicate rdf:resource="http://linkn.com.br/onto/user/hasGrandDaughter"/>
                                         <swrl:argument1 rdf:resource="urn:swrl#b"/>
                                         <swrl:argument2 rdf:resource="urn:swrl#a"/>
                                     </rdf:Description>
@@ -1149,7 +1149,7 @@
                 <rdf:first>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasGrandFather"/>
+                        <swrl:propertyPredicate rdf:resource="http://linkn.com.br/onto/user/hasGrandFather"/>
                         <swrl:argument1 rdf:resource="urn:swrl#a"/>
                         <swrl:argument2 rdf:resource="urn:swrl#b"/>
                     </rdf:Description>
@@ -1186,7 +1186,7 @@
                                 <rdf:first>
                                     <rdf:Description>
                                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasGrandFather"/>
+                                        <swrl:propertyPredicate rdf:resource="http://linkn.com.br/onto/user/hasGrandFather"/>
                                         <swrl:argument1 rdf:resource="urn:swrl#a"/>
                                         <swrl:argument2 rdf:resource="urn:swrl#b"/>
                                     </rdf:Description>
@@ -1217,7 +1217,7 @@
                 <rdf:first>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasGrandDaughter"/>
+                        <swrl:propertyPredicate rdf:resource="http://linkn.com.br/onto/user/hasGrandDaughter"/>
                         <swrl:argument1 rdf:resource="urn:swrl#b"/>
                         <swrl:argument2 rdf:resource="urn:swrl#a"/>
                     </rdf:Description>
@@ -1254,7 +1254,7 @@
                                 <rdf:first>
                                     <rdf:Description>
                                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasGrandFather"/>
+                                        <swrl:propertyPredicate rdf:resource="http://linkn.com.br/onto/user/hasGrandFather"/>
                                         <swrl:argument1 rdf:resource="urn:swrl#a"/>
                                         <swrl:argument2 rdf:resource="urn:swrl#b"/>
                                     </rdf:Description>
@@ -1285,7 +1285,7 @@
                 <rdf:first>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasGrandSon"/>
+                        <swrl:propertyPredicate rdf:resource="http://linkn.com.br/onto/user/hasGrandSon"/>
                         <swrl:argument1 rdf:resource="urn:swrl#b"/>
                         <swrl:argument2 rdf:resource="urn:swrl#a"/>
                     </rdf:Description>
@@ -1322,7 +1322,7 @@
                                 <rdf:first>
                                     <rdf:Description>
                                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasGrandMother"/>
+                                        <swrl:propertyPredicate rdf:resource="http://linkn.com.br/onto/user/hasGrandMother"/>
                                         <swrl:argument1 rdf:resource="urn:swrl#a"/>
                                         <swrl:argument2 rdf:resource="urn:swrl#b"/>
                                     </rdf:Description>
@@ -1353,7 +1353,7 @@
                 <rdf:first>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasGrandDaughter"/>
+                        <swrl:propertyPredicate rdf:resource="http://linkn.com.br/onto/user/hasGrandDaughter"/>
                         <swrl:argument1 rdf:resource="urn:swrl#b"/>
                         <swrl:argument2 rdf:resource="urn:swrl#a"/>
                     </rdf:Description>
@@ -1390,7 +1390,7 @@
                                 <rdf:first>
                                     <rdf:Description>
                                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasGrandMother"/>
+                                        <swrl:propertyPredicate rdf:resource="http://linkn.com.br/onto/user/hasGrandMother"/>
                                         <swrl:argument1 rdf:resource="urn:swrl#a"/>
                                         <swrl:argument2 rdf:resource="urn:swrl#b"/>
                                     </rdf:Description>
@@ -1421,7 +1421,7 @@
                 <rdf:first>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasGrandSon"/>
+                        <swrl:propertyPredicate rdf:resource="http://linkn.com.br/onto/user/hasGrandSon"/>
                         <swrl:argument1 rdf:resource="urn:swrl#b"/>
                         <swrl:argument2 rdf:resource="urn:swrl#a"/>
                     </rdf:Description>
@@ -1458,7 +1458,7 @@
                                 <rdf:first>
                                     <rdf:Description>
                                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasGrandSon"/>
+                                        <swrl:propertyPredicate rdf:resource="http://linkn.com.br/onto/user/hasGrandSon"/>
                                         <swrl:argument1 rdf:resource="urn:swrl#b"/>
                                         <swrl:argument2 rdf:resource="urn:swrl#a"/>
                                     </rdf:Description>
@@ -1489,7 +1489,7 @@
                 <rdf:first>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasGrandMother"/>
+                        <swrl:propertyPredicate rdf:resource="http://linkn.com.br/onto/user/hasGrandMother"/>
                         <swrl:argument1 rdf:resource="urn:swrl#a"/>
                         <swrl:argument2 rdf:resource="urn:swrl#b"/>
                     </rdf:Description>
@@ -1526,7 +1526,7 @@
                                 <rdf:first>
                                     <rdf:Description>
                                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasGrandSon"/>
+                                        <swrl:propertyPredicate rdf:resource="http://linkn.com.br/onto/user/hasGrandSon"/>
                                         <swrl:argument1 rdf:resource="urn:swrl#b"/>
                                         <swrl:argument2 rdf:resource="urn:swrl#a"/>
                                     </rdf:Description>
@@ -1557,7 +1557,7 @@
                 <rdf:first>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasGrandFather"/>
+                        <swrl:propertyPredicate rdf:resource="http://linkn.com.br/onto/user/hasGrandFather"/>
                         <swrl:argument1 rdf:resource="urn:swrl#a"/>
                         <swrl:argument2 rdf:resource="urn:swrl#b"/>
                     </rdf:Description>
@@ -1594,7 +1594,7 @@
                                 <rdf:first>
                                     <rdf:Description>
                                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasNephew"/>
+                                        <swrl:propertyPredicate rdf:resource="http://linkn.com.br/onto/user/hasNephew"/>
                                         <swrl:argument1 rdf:resource="urn:swrl#b"/>
                                         <swrl:argument2 rdf:resource="urn:swrl#a"/>
                                     </rdf:Description>
@@ -1625,7 +1625,7 @@
                 <rdf:first>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasAunt"/>
+                        <swrl:propertyPredicate rdf:resource="http://linkn.com.br/onto/user/hasAunt"/>
                         <swrl:argument1 rdf:resource="urn:swrl#a"/>
                         <swrl:argument2 rdf:resource="urn:swrl#b"/>
                     </rdf:Description>
@@ -1662,7 +1662,7 @@
                                 <rdf:first>
                                     <rdf:Description>
                                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasNephew"/>
+                                        <swrl:propertyPredicate rdf:resource="http://linkn.com.br/onto/user/hasNephew"/>
                                         <swrl:argument1 rdf:resource="urn:swrl#b"/>
                                         <swrl:argument2 rdf:resource="urn:swrl#a"/>
                                     </rdf:Description>
@@ -1693,7 +1693,7 @@
                 <rdf:first>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasUncle"/>
+                        <swrl:propertyPredicate rdf:resource="http://linkn.com.br/onto/user/hasUncle"/>
                         <swrl:argument1 rdf:resource="urn:swrl#a"/>
                         <swrl:argument2 rdf:resource="urn:swrl#b"/>
                     </rdf:Description>
@@ -1730,7 +1730,7 @@
                                 <rdf:first>
                                     <rdf:Description>
                                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasNice"/>
+                                        <swrl:propertyPredicate rdf:resource="http://linkn.com.br/onto/user/hasNice"/>
                                         <swrl:argument1 rdf:resource="urn:swrl#b"/>
                                         <swrl:argument2 rdf:resource="urn:swrl#a"/>
                                     </rdf:Description>
@@ -1761,7 +1761,7 @@
                 <rdf:first>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasAunt"/>
+                        <swrl:propertyPredicate rdf:resource="http://linkn.com.br/onto/user/hasAunt"/>
                         <swrl:argument1 rdf:resource="urn:swrl#a"/>
                         <swrl:argument2 rdf:resource="urn:swrl#b"/>
                     </rdf:Description>
@@ -1798,7 +1798,7 @@
                                 <rdf:first>
                                     <rdf:Description>
                                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasNice"/>
+                                        <swrl:propertyPredicate rdf:resource="http://linkn.com.br/onto/user/hasNice"/>
                                         <swrl:argument1 rdf:resource="urn:swrl#b"/>
                                         <swrl:argument2 rdf:resource="urn:swrl#a"/>
                                     </rdf:Description>
@@ -1829,7 +1829,7 @@
                 <rdf:first>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasUncle"/>
+                        <swrl:propertyPredicate rdf:resource="http://linkn.com.br/onto/user/hasUncle"/>
                         <swrl:argument1 rdf:resource="urn:swrl#a"/>
                         <swrl:argument2 rdf:resource="urn:swrl#b"/>
                     </rdf:Description>
@@ -1866,7 +1866,7 @@
                                 <rdf:first>
                                     <rdf:Description>
                                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasUncle"/>
+                                        <swrl:propertyPredicate rdf:resource="http://linkn.com.br/onto/user/hasUncle"/>
                                         <swrl:argument1 rdf:resource="urn:swrl#a"/>
                                         <swrl:argument2 rdf:resource="urn:swrl#b"/>
                                     </rdf:Description>
@@ -1897,7 +1897,7 @@
                 <rdf:first>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasNice"/>
+                        <swrl:propertyPredicate rdf:resource="http://linkn.com.br/onto/user/hasNice"/>
                         <swrl:argument1 rdf:resource="urn:swrl#b"/>
                         <swrl:argument2 rdf:resource="urn:swrl#a"/>
                     </rdf:Description>
@@ -1934,7 +1934,7 @@
                                 <rdf:first>
                                     <rdf:Description>
                                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasAunt"/>
+                                        <swrl:propertyPredicate rdf:resource="http://linkn.com.br/onto/user/hasAunt"/>
                                         <swrl:argument1 rdf:resource="urn:swrl#a"/>
                                         <swrl:argument2 rdf:resource="urn:swrl#b"/>
                                     </rdf:Description>
@@ -1965,7 +1965,7 @@
                 <rdf:first>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="http://nees.com.br/linkn/onto/user/hasNice"/>
+                        <swrl:propertyPredicate rdf:resource="http://linkn.com.br/onto/user/hasNice"/>
                         <swrl:argument1 rdf:resource="urn:swrl#b"/>
                         <swrl:argument2 rdf:resource="urn:swrl#a"/>
                     </rdf:Description>

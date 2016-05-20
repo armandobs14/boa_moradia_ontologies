@@ -9,11 +9,11 @@
     <!ENTITY swrlb "http://www.w3.org/2003/11/swrlb#" >
     <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY osm "http://nees.com.br/linkn/onto/osm/" >
+    <!ENTITY osm "http://linkn.com.br/onto/osm/" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
-    <!ENTITY building "http://nees.com.br/linkn/onto/building/" >
-    <!ENTITY locality "http://nees.com.br/linkn/onto/locality/" >
-    <!ENTITY boa_moradia "http://nees.com.br/linkn/onto/boa_moradia/" >
+    <!ENTITY building "http://linkn.com.br/onto/building/" >
+    <!ENTITY locality "http://linkn.com.br/onto/locality/" >
+    <!ENTITY boa_moradia "http://linkn.com.br/onto/boa_moradia/" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
     <!ENTITY ns "http://www.w3.org/2003/06/sw-vocab-status/ns#" >
 ]>
@@ -23,21 +23,21 @@
      xml:base="http://www.w3.org/2002/07/owl"
      xmlns:ns="http://www.w3.org/2003/06/sw-vocab-status/ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:boa_moradia="http://nees.com.br/linkn/onto/boa_moradia/"
-     xmlns:osm="http://nees.com.br/linkn/onto/osm/"
+     xmlns:boa_moradia="http://linkn.com.br/onto/boa_moradia/"
+     xmlns:osm="http://linkn.com.br/onto/osm/"
      xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
-     xmlns:locality="http://nees.com.br/linkn/onto/locality/"
+     xmlns:locality="http://linkn.com.br/onto/locality/"
      xmlns:swrl="http://www.w3.org/2003/11/swrl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:building="http://nees.com.br/linkn/onto/building/"
+     xmlns:building="http://linkn.com.br/onto/building/"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:wot="http://xmlns.com/wot/0.1/"
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:dc="http://purl.org/dc/elements/1.1/">
-    <Ontology rdf:about="http://nees.com.br/linkn/onto/boa_moradia/">
-        <imports rdf:resource="http://nees.com.br/linkn/onto/building/"/>
-        <imports rdf:resource="http://nees.com.br/linkn/onto/osm/"/>
+    <Ontology rdf:about="http://linkn.com.br/onto/boa_moradia/">
+        <imports rdf:resource="http://linkn.com.br/onto/building/"/>
+        <imports rdf:resource="http://linkn.com.br/onto/osm/"/>
     </Ontology>
     
 
@@ -53,31 +53,31 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/boa_moradia/hasPhone -->
+    <!-- http://linkn.com.br/onto/boa_moradia/hasPhone -->
 
     <AnnotationProperty rdf:about="&boa_moradia;hasPhone"/>
     
 
 
-    <!-- http://nees.com.br/linkn/onto/boa_moradia/isCategory -->
+    <!-- http://linkn.com.br/onto/boa_moradia/isCategory -->
 
     <AnnotationProperty rdf:about="&boa_moradia;isCategory"/>
     
 
 
-    <!-- http://nees.com.br/linkn/onto/boa_moradia/onDataRange -->
+    <!-- http://linkn.com.br/onto/boa_moradia/onDataRange -->
 
     <AnnotationProperty rdf:about="&boa_moradia;onDataRange"/>
     
 
 
-    <!-- http://nees.com.br/linkn/onto/boa_moradia/relevantCountry -->
+    <!-- http://linkn.com.br/onto/boa_moradia/relevantCountry -->
 
     <AnnotationProperty rdf:about="&boa_moradia;relevantCountry"/>
     
 
 
-    <!-- http://nees.com.br/linkn/onto/boa_moradia/synonymous -->
+    <!-- http://linkn.com.br/onto/boa_moradia/synonymous -->
 
     <AnnotationProperty rdf:about="&boa_moradia;synonymous"/>
     
@@ -94,7 +94,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/boa_moradia/happenedIn -->
+    <!-- http://linkn.com.br/onto/boa_moradia/happenedIn -->
 
     <ObjectProperty rdf:about="&boa_moradia;happenedIn">
         <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
@@ -108,7 +108,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/boa_moradia/hasAlert -->
+    <!-- http://linkn.com.br/onto/boa_moradia/hasAlert -->
 
     <ObjectProperty rdf:about="&boa_moradia;hasAlert">
         <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
@@ -119,7 +119,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/boa_moradia/hasAnnouncement -->
+    <!-- http://linkn.com.br/onto/boa_moradia/hasAnnouncement -->
 
     <ObjectProperty rdf:about="&boa_moradia;hasAnnouncement">
         <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
@@ -135,7 +135,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/boa_moradia/hasBMAccount -->
+    <!-- http://linkn.com.br/onto/boa_moradia/hasBMAccount -->
 
     <ObjectProperty rdf:about="&boa_moradia;hasBMAccount">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -148,7 +148,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/boa_moradia/hasComment -->
+    <!-- http://linkn.com.br/onto/boa_moradia/hasComment -->
 
     <ObjectProperty rdf:about="&boa_moradia;hasComment">
         <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
@@ -162,7 +162,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/boa_moradia/hasOffer -->
+    <!-- http://linkn.com.br/onto/boa_moradia/hasOffer -->
 
     <ObjectProperty rdf:about="&boa_moradia;hasOffer">
         <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
@@ -174,7 +174,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/boa_moradia/hasPaymentPlan -->
+    <!-- http://linkn.com.br/onto/boa_moradia/hasPaymentPlan -->
 
     <ObjectProperty rdf:about="&boa_moradia;hasPaymentPlan">
         <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
@@ -189,7 +189,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/boa_moradia/hasQualityIndex -->
+    <!-- http://linkn.com.br/onto/boa_moradia/hasQualityIndex -->
 
     <ObjectProperty rdf:about="&boa_moradia;hasQualityIndex">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -210,7 +210,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/boa_moradia/isAlertOf -->
+    <!-- http://linkn.com.br/onto/boa_moradia/isAlertOf -->
 
     <ObjectProperty rdf:about="&boa_moradia;isAlertOf">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -227,7 +227,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/boa_moradia/isAnnouncementOf -->
+    <!-- http://linkn.com.br/onto/boa_moradia/isAnnouncementOf -->
 
     <ObjectProperty rdf:about="&boa_moradia;isAnnouncementOf">
         <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
@@ -242,7 +242,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/boa_moradia/isAssociatedTo -->
+    <!-- http://linkn.com.br/onto/boa_moradia/isAssociatedTo -->
 
     <ObjectProperty rdf:about="&boa_moradia;isAssociatedTo">
         <rdf:type rdf:resource="&owl;IrreflexiveProperty"/>
@@ -269,7 +269,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/boa_moradia/isBMAccountOf -->
+    <!-- http://linkn.com.br/onto/boa_moradia/isBMAccountOf -->
 
     <ObjectProperty rdf:about="&boa_moradia;isBMAccountOf">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -281,7 +281,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/boa_moradia/isCommentOf -->
+    <!-- http://linkn.com.br/onto/boa_moradia/isCommentOf -->
 
     <ObjectProperty rdf:about="&boa_moradia;isCommentOf">
         <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
@@ -295,7 +295,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/boa_moradia/isOfferOf -->
+    <!-- http://linkn.com.br/onto/boa_moradia/isOfferOf -->
 
     <ObjectProperty rdf:about="&boa_moradia;isOfferOf">
         <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
@@ -307,7 +307,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/boa_moradia/isPaymentPlanOf -->
+    <!-- http://linkn.com.br/onto/boa_moradia/isPaymentPlanOf -->
 
     <ObjectProperty rdf:about="&boa_moradia;isPaymentPlanOf">
         <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
@@ -321,7 +321,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/boa_moradia/near -->
+    <!-- http://linkn.com.br/onto/boa_moradia/near -->
 
     <ObjectProperty rdf:about="&boa_moradia;near">
         <rdfs:range rdf:resource="&boa_moradia;Near"/>
@@ -330,19 +330,19 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/building/educationCharacteristics -->
+    <!-- http://linkn.com.br/onto/building/educationCharacteristics -->
 
     <ObjectProperty rdf:about="&building;educationCharacteristics"/>
     
 
 
-    <!-- http://nees.com.br/linkn/onto/building/healthCharacteristics -->
+    <!-- http://linkn.com.br/onto/building/healthCharacteristics -->
 
     <ObjectProperty rdf:about="&building;healthCharacteristics"/>
     
 
 
-    <!-- http://nees.com.br/linkn/onto/building/safetyCharacteristics -->
+    <!-- http://linkn.com.br/onto/building/safetyCharacteristics -->
 
     <ObjectProperty rdf:about="&building;safetyCharacteristics"/>
     
@@ -359,7 +359,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/boa_moradia/hasAlertType -->
+    <!-- http://linkn.com.br/onto/boa_moradia/hasAlertType -->
 
     <DatatypeProperty rdf:about="&boa_moradia;hasAlertType">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -370,7 +370,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/boa_moradia/hasCategoryName -->
+    <!-- http://linkn.com.br/onto/boa_moradia/hasCategoryName -->
 
     <DatatypeProperty rdf:about="&boa_moradia;hasCategoryName">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -378,7 +378,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/boa_moradia/hasDatePublished -->
+    <!-- http://linkn.com.br/onto/boa_moradia/hasDatePublished -->
 
     <DatatypeProperty rdf:about="&boa_moradia;hasDatePublished">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -395,7 +395,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/boa_moradia/hasEducationQualityIndex -->
+    <!-- http://linkn.com.br/onto/boa_moradia/hasEducationQualityIndex -->
 
     <DatatypeProperty rdf:about="&boa_moradia;hasEducationQualityIndex">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -405,7 +405,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/boa_moradia/hasEducationQuantityIndex -->
+    <!-- http://linkn.com.br/onto/boa_moradia/hasEducationQuantityIndex -->
 
     <DatatypeProperty rdf:about="&boa_moradia;hasEducationQuantityIndex">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -415,15 +415,15 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/boa_moradia/hasEmail -->
+    <!-- http://linkn.com.br/onto/boa_moradia/hasEmail -->
 
     <DatatypeProperty rdf:about="&boa_moradia;hasEmail">
-        <equivalentProperty rdf:resource="http://nees.com.br/linkn/onto/user/hasEmail"/>
+        <equivalentProperty rdf:resource="http://linkn.com.br/onto/user/hasEmail"/>
     </DatatypeProperty>
     
 
 
-    <!-- http://nees.com.br/linkn/onto/boa_moradia/hasHealthQualityIndex -->
+    <!-- http://linkn.com.br/onto/boa_moradia/hasHealthQualityIndex -->
 
     <DatatypeProperty rdf:about="&boa_moradia;hasHealthQualityIndex">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -433,7 +433,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/boa_moradia/hasHealthQuantityIndex -->
+    <!-- http://linkn.com.br/onto/boa_moradia/hasHealthQuantityIndex -->
 
     <DatatypeProperty rdf:about="&boa_moradia;hasHealthQuantityIndex">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -443,7 +443,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/boa_moradia/hasLabel -->
+    <!-- http://linkn.com.br/onto/boa_moradia/hasLabel -->
 
     <DatatypeProperty rdf:about="&boa_moradia;hasLabel">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -453,7 +453,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/boa_moradia/hasLikes -->
+    <!-- http://linkn.com.br/onto/boa_moradia/hasLikes -->
 
     <DatatypeProperty rdf:about="&boa_moradia;hasLikes">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -465,7 +465,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/boa_moradia/hasLogin -->
+    <!-- http://linkn.com.br/onto/boa_moradia/hasLogin -->
 
     <DatatypeProperty rdf:about="&boa_moradia;hasLogin">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -475,7 +475,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/boa_moradia/hasName -->
+    <!-- http://linkn.com.br/onto/boa_moradia/hasName -->
 
     <DatatypeProperty rdf:about="&boa_moradia;hasName">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -483,13 +483,13 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/boa_moradia/hasNameOfOfferType -->
+    <!-- http://linkn.com.br/onto/boa_moradia/hasNameOfOfferType -->
 
     <DatatypeProperty rdf:about="&boa_moradia;hasNameOfOfferType"/>
     
 
 
-    <!-- http://nees.com.br/linkn/onto/boa_moradia/hasPassword -->
+    <!-- http://linkn.com.br/onto/boa_moradia/hasPassword -->
 
     <DatatypeProperty rdf:about="&boa_moradia;hasPassword">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -499,7 +499,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/boa_moradia/hasPaymentMethod -->
+    <!-- http://linkn.com.br/onto/boa_moradia/hasPaymentMethod -->
 
     <DatatypeProperty rdf:about="&boa_moradia;hasPaymentMethod">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -509,13 +509,13 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/boa_moradia/hasPhone -->
+    <!-- http://linkn.com.br/onto/boa_moradia/hasPhone -->
 
     <DatatypeProperty rdf:about="&boa_moradia;hasPhone"/>
     
 
 
-    <!-- http://nees.com.br/linkn/onto/boa_moradia/hasPrice -->
+    <!-- http://linkn.com.br/onto/boa_moradia/hasPrice -->
 
     <DatatypeProperty rdf:about="&boa_moradia;hasPrice">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -534,7 +534,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/boa_moradia/hasQualityIndex -->
+    <!-- http://linkn.com.br/onto/boa_moradia/hasQualityIndex -->
 
     <DatatypeProperty rdf:about="&boa_moradia;hasQualityIndex">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -543,7 +543,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/boa_moradia/hasSafetyQualityIndex -->
+    <!-- http://linkn.com.br/onto/boa_moradia/hasSafetyQualityIndex -->
 
     <DatatypeProperty rdf:about="&boa_moradia;hasSafetyQualityIndex">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -553,7 +553,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/boa_moradia/hasSafetyQuantityIndex -->
+    <!-- http://linkn.com.br/onto/boa_moradia/hasSafetyQuantityIndex -->
 
     <DatatypeProperty rdf:about="&boa_moradia;hasSafetyQuantityIndex">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -563,7 +563,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/boa_moradia/hasSquareMeterPrice -->
+    <!-- http://linkn.com.br/onto/boa_moradia/hasSquareMeterPrice -->
 
     <DatatypeProperty rdf:about="&boa_moradia;hasSquareMeterPrice">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -580,7 +580,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/boa_moradia/hasTitle -->
+    <!-- http://linkn.com.br/onto/boa_moradia/hasTitle -->
 
     <DatatypeProperty rdf:about="&boa_moradia;hasTitle">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -589,7 +589,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/boa_moradia/hasURL -->
+    <!-- http://linkn.com.br/onto/boa_moradia/hasURL -->
 
     <DatatypeProperty rdf:about="&boa_moradia;hasURL">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -600,7 +600,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/boa_moradia/hasValidAccount -->
+    <!-- http://linkn.com.br/onto/boa_moradia/hasValidAccount -->
 
     <DatatypeProperty rdf:about="&boa_moradia;hasValidAccount">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -610,7 +610,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/boa_moradia/hasValidationHash -->
+    <!-- http://linkn.com.br/onto/boa_moradia/hasValidationHash -->
 
     <DatatypeProperty rdf:about="&boa_moradia;hasValidationHash">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -621,7 +621,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/boa_moradia/preference -->
+    <!-- http://linkn.com.br/onto/boa_moradia/preference -->
 
     <DatatypeProperty rdf:about="&boa_moradia;preference">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -631,7 +631,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/boa_moradia/quantity -->
+    <!-- http://linkn.com.br/onto/boa_moradia/quantity -->
 
     <DatatypeProperty rdf:about="&boa_moradia;quantity">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -641,7 +641,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/boa_moradia/radius -->
+    <!-- http://linkn.com.br/onto/boa_moradia/radius -->
 
     <DatatypeProperty rdf:about="&boa_moradia;radius">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -651,15 +651,15 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/building/hasPhoto -->
+    <!-- http://linkn.com.br/onto/building/hasPhoto -->
 
     <DatatypeProperty rdf:about="&building;hasPhoto"/>
     
 
 
-    <!-- http://nees.com.br/linkn/onto/user/hasEmail -->
+    <!-- http://linkn.com.br/onto/user/hasEmail -->
 
-    <rdf:Description rdf:about="http://nees.com.br/linkn/onto/user/hasEmail"/>
+    <rdf:Description rdf:about="http://linkn.com.br/onto/user/hasEmail"/>
     
 
 
@@ -674,7 +674,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/boa_moradia/Alert -->
+    <!-- http://linkn.com.br/onto/boa_moradia/Alert -->
 
     <Class rdf:about="&boa_moradia;Alert">
         <rdfs:subClassOf>
@@ -689,7 +689,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/boa_moradia/Announcement -->
+    <!-- http://linkn.com.br/onto/boa_moradia/Announcement -->
 
     <Class rdf:about="&boa_moradia;Announcement">
         <rdfs:label xml:lang="en">Announcement</rdfs:label>
@@ -734,7 +734,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/boa_moradia/BMAccount -->
+    <!-- http://linkn.com.br/onto/boa_moradia/BMAccount -->
 
     <Class rdf:about="&boa_moradia;BMAccount">
         <equivalentClass rdf:resource="&foaf;OnlineAccount"/>
@@ -757,7 +757,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/boa_moradia/Comment -->
+    <!-- http://linkn.com.br/onto/boa_moradia/Comment -->
 
     <Class rdf:about="&boa_moradia;Comment">
         <rdfs:comment xml:lang="en">In boa moradia system, a person can comment about a neighborhood for other person to see. A person can also likes a comment</rdfs:comment>
@@ -766,19 +766,19 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/boa_moradia/Near -->
+    <!-- http://linkn.com.br/onto/boa_moradia/Near -->
 
     <Class rdf:about="&boa_moradia;Near"/>
     
 
 
-    <!-- http://nees.com.br/linkn/onto/boa_moradia/Offer -->
+    <!-- http://linkn.com.br/onto/boa_moradia/Offer -->
 
     <Class rdf:about="&boa_moradia;Offer"/>
     
 
 
-    <!-- http://nees.com.br/linkn/onto/boa_moradia/PaymentPlan -->
+    <!-- http://linkn.com.br/onto/boa_moradia/PaymentPlan -->
 
     <Class rdf:about="&boa_moradia;PaymentPlan">
         <rdfs:comment xml:lang="en">In boa moradia system, a person pays for real estate&apos;s announcement. There are several plans and payment methods</rdfs:comment>
@@ -787,7 +787,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/osm/Hospital -->
+    <!-- http://linkn.com.br/onto/osm/Hospital -->
 
     <rdf:Description rdf:about="&osm;Hospital">
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
@@ -795,7 +795,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/osm/School -->
+    <!-- http://linkn.com.br/onto/osm/School -->
 
     <rdf:Description rdf:about="&osm;School">
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
@@ -820,7 +820,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/boa_moradia/Rent -->
+    <!-- http://linkn.com.br/onto/boa_moradia/Rent -->
 
     <NamedIndividual rdf:about="&boa_moradia;Rent">
         <rdf:type rdf:resource="&boa_moradia;Offer"/>
@@ -834,7 +834,7 @@
     
 
 
-    <!-- http://nees.com.br/linkn/onto/boa_moradia/Sale -->
+    <!-- http://linkn.com.br/onto/boa_moradia/Sale -->
 
     <NamedIndividual rdf:about="&boa_moradia;Sale">
         <rdf:type rdf:resource="&boa_moradia;Offer"/>
