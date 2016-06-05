@@ -2,9 +2,9 @@
 
 
 <!DOCTYPE rdf:RDF [
+    <!ENTITY osm "http://linkn.com.br/onto/osm/" >
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY osm "http://linkn.com.br/onto/osm/" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
 ]>
@@ -193,8 +193,8 @@
     <Class rdf:about="&osm;Accommodation">
         <rdfs:subClassOf rdf:resource="&osm;Building"/>
         <rdfs:subClassOf rdf:resource="&osm;Tourism"/>
-        <rdfs:comment xml:lang="en">Accommodation</rdfs:comment>
         <osm:osmLabel>accommodation</osm:osmLabel>
+        <rdfs:comment xml:lang="en">Accommodation</rdfs:comment>
         <rdfs:comment xml:lang="pt">Alojamento</rdfs:comment>
     </Class>
     
@@ -3049,8 +3049,7 @@
     <!-- http://linkn.com.br/onto/osm/Doctors -->
 
     <Class rdf:about="&osm;Doctors">
-        <rdfs:label xml:lang="pt">Doctors</rdfs:label>
-        <rdfs:label xml:lang="pt">Doutores</rdfs:label>
+        <rdfs:label xml:lang="en">Doctors</rdfs:label>
         <rdfs:label xml:lang="pt">Médicos</rdfs:label>
         <rdfs:subClassOf rdf:resource="&osm;Healthcare"/>
         <osm:osmLabel>doctors</osm:osmLabel>
@@ -9135,9 +9134,9 @@
 
     <Class rdf:about="&osm;Tourism">
         <rdfs:subClassOf rdf:resource="&osm;PrimaryFeatures"/>
-        <osm:osmLabel>tourism</osm:osmLabel>
         <rdfs:comment xml:lang="en">Tourism</rdfs:comment>
         <rdfs:comment xml:lang="pt">Turismo</rdfs:comment>
+        <osm:osmLabel>tourism</osm:osmLabel>
     </Class>
     
 
