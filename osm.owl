@@ -5244,6 +5244,7 @@
     <!-- http://linkn.com.br/onto/osm/Leisure -->
 
     <Class rdf:about="&osm;Leisure">
+        <rdfs:label xml:lang="pt">Lazer</rdfs:label>
         <rdfs:subClassOf rdf:resource="&osm;PrimaryFeatures"/>
         <osm:osmLabel>leisure</osm:osmLabel>
     </Class>
@@ -8271,10 +8272,10 @@
     <!-- http://linkn.com.br/onto/osm/Sport -->
 
     <Class rdf:about="&osm;Sport">
+        <rdfs:label xml:lang="en">Sport</rdfs:label>
+        <rdfs:label xml:lang="pt">Esporte</rdfs:label>
         <rdfs:subClassOf rdf:resource="&osm;PrimaryFeatures"/>
         <osm:osmLabel>sport</osm:osmLabel>
-        <rdfs:comment xml:lang="en">Sport</rdfs:comment>
-        <rdfs:comment xml:lang="pt">Esporte</rdfs:comment>
     </Class>
     
 
@@ -8282,8 +8283,6 @@
     <!-- http://linkn.com.br/onto/osm/Sports -->
 
     <Class rdf:about="&osm;Sports">
-        <rdfs:label xml:lang="en">Sports</rdfs:label>
-        <rdfs:label xml:lang="pt">Esportes</rdfs:label>
         <rdfs:subClassOf rdf:resource="&osm;Leisure"/>
         <rdfs:subClassOf rdf:resource="&osm;OutdoorsAndSportVehicles"/>
         <osm:osmLabel>sports</osm:osmLabel>
