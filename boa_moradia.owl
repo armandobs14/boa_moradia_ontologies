@@ -7,13 +7,13 @@
     <!ENTITY osm "http://linkn.com.br/onto/osm/" >
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
     <!ENTITY swrl "http://www.w3.org/2003/11/swrl#" >
-    <!ENTITY swrlb "http://www.w3.org/2003/11/swrlb#" >
     <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY swrlb "http://www.w3.org/2003/11/swrlb#" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
     <!ENTITY building "http://linkn.com.br/onto/building/" >
     <!ENTITY locality "http://linkn.com.br/onto/locality/" >
-    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY boa_moradia "http://linkn.com.br/onto/boa_moradia/" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
     <!ENTITY ns "http://www.w3.org/2003/06/sw-vocab-status/ns#" >
 ]>
@@ -21,20 +21,20 @@
 
 <rdf:RDF xmlns="http://www.w3.org/2002/07/owl#"
      xml:base="http://www.w3.org/2002/07/owl"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:ns="http://www.w3.org/2003/06/sw-vocab-status/ns#"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:boa_moradia="http://linkn.com.br/onto/boa_moradia/"
-     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
-     xmlns:osm="http://linkn.com.br/onto/osm/"
-     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
-     xmlns:locality="http://linkn.com.br/onto/locality/"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:building="http://linkn.com.br/onto/building/"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:wot="http://xmlns.com/wot/0.1/"
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
-     xmlns:dc="http://purl.org/dc/elements/1.1/">
+     xmlns:wot="http://xmlns.com/wot/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:locality="http://linkn.com.br/onto/locality/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:osm="http://linkn.com.br/onto/osm/"
+     xmlns:boa_moradia="http://linkn.com.br/onto/boa_moradia/">
     <Ontology rdf:about="http://linkn.com.br/onto/boa_moradia/">
         <imports rdf:resource="http://linkn.com.br/onto/building/"/>
         <imports rdf:resource="http://linkn.com.br/onto/osm/"/>
@@ -702,9 +702,15 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <Restriction>
-                <onProperty rdf:resource="&building;hasPhoto"/>
-                <maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</maxQualifiedCardinality>
-                <onDataRange rdf:resource="&xsd;anyURI"/>
+                <onProperty rdf:resource="&boa_moradia;hasTitle"/>
+                <allValuesFrom rdf:resource="&xsd;string"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&boa_moradia;hasPrice"/>
+                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                <onDataRange rdf:resource="&xsd;float"/>
             </Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -716,15 +722,9 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <Restriction>
-                <onProperty rdf:resource="&boa_moradia;hasTitle"/>
-                <allValuesFrom rdf:resource="&xsd;string"/>
-            </Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <Restriction>
-                <onProperty rdf:resource="&boa_moradia;hasPrice"/>
-                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
-                <onDataRange rdf:resource="&xsd;float"/>
+                <onProperty rdf:resource="&building;hasPhoto"/>
+                <maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</maxQualifiedCardinality>
+                <onDataRange rdf:resource="&xsd;anyURI"/>
             </Restriction>
         </rdfs:subClassOf>
         <disjointWith rdf:resource="&boa_moradia;Offer"/>
@@ -866,405 +866,663 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    <rdf:Description rdf:about="&osm;Accountant">
+    <rdf:Description rdf:about="&osm;Stripclub">
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
-    <rdf:Description rdf:about="&osm;StopArea">
+    <rdf:Description rdf:about="&osm;AdultGaming">
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
-    <rdf:Description rdf:about="&osm;Supermarket">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Darts">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Aikido">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Coastline">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Telephone">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Cinema">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Stadium">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Winery">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;SportsCentre">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;ThemePark">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Bakery">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Theatre">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;AttentionCenterHemotherapyAndOrHematologic">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Park">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Pastry">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Motel">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Rowing">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;HospitalDayIsolated">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Tennis">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Table">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;FireStation">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Architect">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Fuel">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Sports">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Accommodation">
-        <boa_moradia:isCategory rdf:datatype="&xsd;boolean">true</boa_moradia:isCategory>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Gym">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Taekwondo">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Healthcare">
-        <boa_moradia:isCategory rdf:datatype="&xsd;boolean">true</boa_moradia:isCategory>
+    <rdf:Description rdf:about="&osm;Collective_Sports">
+        <boa_moradia:isCategory>true</boa_moradia:isCategory>
     </rdf:Description>
     <rdf:Description rdf:about="&osm;Bowls">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;AmericanFootball">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Marketplace">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Pasta">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Garden">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Subway">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;TableSoccer">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Nightclub">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Basketball">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;ClinicCenterSpecialty">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Handicraft">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Games">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Seafood">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Chess">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;BusStop">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Library">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Mosque">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Kindergarten">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Bar">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;UniversityCenter">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;DiagnosisSupportUnitAndTherapy">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Ski">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Tourism">
-        <boa_moradia:isCategory rdf:datatype="&xsd;boolean">true</boa_moradia:isCategory>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Surfing">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Hotel">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;EntertainmentArtSculture">
-        <boa_moradia:isCategory rdf:datatype="&xsd;boolean">true</boa_moradia:isCategory>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Cathedral">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Gallery">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Greengrocer">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Baseball">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Policlinic">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;CarRepair">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Pharmacy">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Cafe">
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="&osm;Hackerspace">
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
-    <rdf:Description rdf:about="&osm;Pub">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Zoo">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Carpenter">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Sustenance">
-        <boa_moradia:isCategory rdf:datatype="&xsd;boolean">true</boa_moradia:isCategory>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;AmusementArcade">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;University">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Brothel">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Gambling">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Dentist">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Orthopedics">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Art">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Athletics">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Transportation">
-        <boa_moradia:isCategory rdf:datatype="&xsd;boolean">true</boa_moradia:isCategory>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Hostel">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
     <rdf:Description rdf:about="&osm;Beauty">
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
-    <rdf:Description rdf:about="&osm;Silo">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Beachvolleyball">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Bank">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Beverages">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Brewery">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;CarWash">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Football">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;FastFood">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Education">
-        <boa_moradia:isCategory rdf:datatype="&xsd;boolean">true</boa_moradia:isCategory>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;TreeRow">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Boutique">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;TableTennis">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Beach">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Karting">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;HealthCenter">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Veterinary">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Hairdresser">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Track">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;IsolatedConsultory">
+    <rdf:Description rdf:about="&osm;Grass">
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="&osm;Handball">
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
-    <rdf:Description rdf:about="&osm;HealthCentreBasicUnit">
+    <rdf:Description rdf:about="&osm;SocialCentre">
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
-    <rdf:Description rdf:about="&osm;Warehouse">
+    <rdf:Description rdf:about="&osm;Mosque">
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
-    <rdf:Description rdf:about="&osm;Restaurant">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Coffee">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Church">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Sailing">
+    <rdf:Description rdf:about="&osm;College">
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="&osm;Music">
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
-    <rdf:Description rdf:about="&osm;Rugby">
+    <rdf:Description rdf:about="&osm;Marina">
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
-    <rdf:Description rdf:about="&osm;Judo">
+    <rdf:Description rdf:about="&osm;Billiards">
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
-    <rdf:Description rdf:about="&osm;Mall">
+    <rdf:Description rdf:about="&osm;Cathedral">
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
-    <rdf:Description rdf:about="&osm;Clinic">
+    <rdf:Description rdf:about="&osm;Seafood">
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
-    <rdf:Description rdf:about="&osm;Sport">
-        <boa_moradia:isCategory rdf:datatype="&xsd;boolean">true</boa_moradia:isCategory>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Atm">
+    <rdf:Description rdf:about="&osm;Motel">
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
-    <rdf:Description rdf:about="&osm;Soccer">
+    <rdf:Description rdf:about="&osm;Zoo">
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
-    <rdf:Description rdf:about="&osm;Taxi">
+    <rdf:Description rdf:about="&osm;Bobsleigh">
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
-    <rdf:Description rdf:about="&osm;Barbecue">
+    <rdf:Description rdf:about="&osm;TableTennis">
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
-    <rdf:Description rdf:about="&osm;Swimming">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Financial">
-        <boa_moradia:isCategory rdf:datatype="&xsd;boolean">true</boa_moradia:isCategory>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;College">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;Optician">
-        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
-    </rdf:Description>
-    <rdf:Description rdf:about="&osm;BusStation">
+    <rdf:Description rdf:about="&osm;Golf">
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="&osm;CanadianFootball">
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
-    <rdf:Description rdf:about="&osm;ArtsCentre">
+    <rdf:Description rdf:about="&osm;Soccer">
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
-    <rdf:Description rdf:about="&osm;Gymnastics">
+    <rdf:Description rdf:about="&osm;Athletics">
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
-    <rdf:Description rdf:about="&osm;Books">
+    <rdf:Description rdf:about="&osm;RcCar">
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
-    <rdf:Description rdf:about="&osm;Museum">
+    <rdf:Description rdf:about="&osm;Sport">
+        <boa_moradia:isCategory rdf:datatype="&xsd;boolean">true</boa_moradia:isCategory>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Cricket">
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
-    <rdf:Description rdf:about="&osm;Doctors">
+    <rdf:Description rdf:about="&osm;Aikido">
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
-    <rdf:Description rdf:about="&osm;Delegacy">
+    <rdf:Description rdf:about="&osm;Gambling">
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
-    <rdf:Description rdf:about="&osm;Footway">
+    <rdf:Description rdf:about="&osm;Telephone">
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
-    <rdf:Description rdf:about="&osm;It">
+    <rdf:Description rdf:about="&osm;Baseball">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Hapkido">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Bath">
+        <boa_moradia:isCategory>true</boa_moradia:isCategory>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Beverages">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;BusStation">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Hockey">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Financial">
+        <boa_moradia:isCategory rdf:datatype="&xsd;boolean">true</boa_moradia:isCategory>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Racing_Sports">
+        <boa_moradia:isCategory>true</boa_moradia:isCategory>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Carpenter">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Ice_Sports">
+        <boa_moradia:isCategory>true</boa_moradia:isCategory>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Theatre">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Basketball">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;WaterPolo">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Meadow">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;IceSkating">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;WaterSki">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Orthopedics">
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="&osm;Jewelry">
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
+    <rdf:Description rdf:about="&osm;Sustenance">
+        <boa_moradia:isCategory rdf:datatype="&xsd;boolean">true</boa_moradia:isCategory>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Kindergarten">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Forest">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Football">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Taekwondo">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Greengrocer">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;TreeRow">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Track">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Boutique">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;9pin">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;SwimmingPool">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Korfball">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Gym">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;AmericanFootball">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;FireStation">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Bar">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Stadium">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Silo">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Surfing">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;DogPark">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Art">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;AmusementArcade">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Brewery">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Delegacy">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;PeatCutting">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Greenfield">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Winery">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Mall">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;PicnicTable">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Accommodation">
+        <boa_moradia:isCategory rdf:datatype="&xsd;boolean">true</boa_moradia:isCategory>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Croquet">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Education">
+        <boa_moradia:isCategory rdf:datatype="&xsd;boolean">true</boa_moradia:isCategory>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Rugby">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Orchard">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Allotments">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Architect">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Beachvolleyball">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Hairdresser">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Archery">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Volleyball">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;StreetHockey">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Chess">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Motocross">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Clinic">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Diving">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Veterinary">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Atm">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Footway">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Barbecue">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Karting">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Supermarket">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Policlinic">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Hostel">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Aquatic_Leisure">
+        <boa_moradia:isCategory>true</boa_moradia:isCategory>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;IsolatedConsultory">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Camp">
+        <boa_moradia:isCategory>true</boa_moradia:isCategory>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Handicraft">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Plants_Cultivation">
+        <boa_moradia:isCategory>true</boa_moradia:isCategory>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Church">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;University">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;HospitalDayIsolated">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Ground">
+        <boa_moradia:isCategory>true</boa_moradia:isCategory>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Coastline">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Judo">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;FieldHockey">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Curling">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Bank">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Subway">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;PaddleTennis">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Beach">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Nightclub">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;MiniatureGolf">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;MartialArts">
+        <boa_moradia:isCategory>true</boa_moradia:isCategory>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Pasta">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;FastFood">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Brothel">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Pastry">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;WaterPark">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Transportation">
+        <boa_moradia:isCategory rdf:datatype="&xsd;boolean">true</boa_moradia:isCategory>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Taxi">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;EntertainmentArtSculture">
+        <boa_moradia:isCategory rdf:datatype="&xsd;boolean">true</boa_moradia:isCategory>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Restaurant">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Optician">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;ClinicCenterSpecialty">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;BeachResort">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Tourism">
+        <boa_moradia:isCategory rdf:datatype="&xsd;boolean">true</boa_moradia:isCategory>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Marketplace">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Tennis">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Planetarium">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Farmland">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;DogRacing">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Studio">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;HealthCenter">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Net_Sports">
+        <boa_moradia:isCategory>true</boa_moradia:isCategory>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Motor">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Wrestling">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Bakery">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Pasture">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Darts">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;NatureReserve">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
     <rdf:Description rdf:about="&osm;Boxing">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Aquatic_Sports">
+        <boa_moradia:isCategory>true</boa_moradia:isCategory>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;CarWash">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Pub">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Hotel">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Park">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;BusStop">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;10pin">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;HorseRacing">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Cycling">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;UniversityCenter">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Shooting">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Swimming">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Gallery">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;ScubaDiving">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Books">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Doctors">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;StopArea">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;RollerHockey">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Table">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Rowing">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;SportsCentre">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;GolfCourse">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Landfill">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Sports">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;IceHockey">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Cinema">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;It">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Warehouse">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Kitesurfing">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Slipway">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Entertainment">
+        <boa_moradia:isCategory>true</boa_moradia:isCategory>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;TableSoccer">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Museum">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;CommunityCentre">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Playground">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;AustralianFootball">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Library">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Arts">
+        <boa_moradia:isCategory>true</boa_moradia:isCategory>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;GreenhouseHorticulture">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Coffee">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Games">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Dentist">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Garden">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;AttentionCenterHemotherapyAndOrHematologic">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Pitch">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Sailing">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;AdultGamingCentre">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Boules">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Fuel">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Healthcare">
+        <boa_moradia:isCategory rdf:datatype="&xsd;boolean">true</boa_moradia:isCategory>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;ThemePark">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Cafe">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Accountant">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;BirdHide">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Target_Sports">
+        <boa_moradia:isCategory>true</boa_moradia:isCategory>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Swingerclub">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Pharmacy">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Gymnastics">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Conservation">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Fishing">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Social_Culture">
+        <boa_moradia:isCategory>true</boa_moradia:isCategory>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;CarRepair">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Ski">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;DiagnosisSupportUnitAndTherapy">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Games_Leisure">
+        <boa_moradia:isCategory>true</boa_moradia:isCategory>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;ArtsCentre">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Bmx">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Fountain">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;HealthCentreBasicUnit">
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
 </rdf:RDF>
 
 
 
-<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
 

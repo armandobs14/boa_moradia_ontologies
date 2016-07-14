@@ -12,11 +12,11 @@
 
 <rdf:RDF xmlns="http://www.w3.org/2002/07/owl#"
      xml:base="http://www.w3.org/2002/07/owl"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:osm="http://linkn.com.br/onto/osm/"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:osm="http://linkn.com.br/onto/osm/">
     <Ontology rdf:about="http://linkn.com.br/onto/osm/">
         <versionIRI rdf:resource="&osm;0.1"/>
     </Ontology>
@@ -157,6 +157,32 @@
     
 
 
+    <!-- http://linkn.com.br/onto/osm/10pin -->
+
+    <Class rdf:about="&osm;10pin">
+        <rdfs:label xml:lang="en">10pin bowling</rdfs:label>
+        <rdfs:label xml:lang="en">Bowling</rdfs:label>
+        <rdfs:label xml:lang="pt">Boliche</rdfs:label>
+        <rdfs:label xml:lang="pt">Boliche de 10 pinos</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&osm;Target_Sports"/>
+        <osm:osmLabel>10pin</osm:osmLabel>
+    </Class>
+    
+
+
+    <!-- http://linkn.com.br/onto/osm/9pin -->
+
+    <Class rdf:about="&osm;9pin">
+        <rdfs:label xml:lang="en">9pin bowling</rdfs:label>
+        <rdfs:label xml:lang="en">Bowling</rdfs:label>
+        <rdfs:label xml:lang="pt">Boliche</rdfs:label>
+        <rdfs:label xml:lang="pt">Boliche de 9 pinos</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&osm;Target_Sports"/>
+        <osm:osmLabel>9pin</osm:osmLabel>
+    </Class>
+    
+
+
     <!-- http://linkn.com.br/onto/osm/Abandoned -->
 
     <Class rdf:about="&osm;Abandoned">
@@ -246,7 +272,7 @@
     <Class rdf:about="&osm;AdultGaming">
         <rdfs:label xml:lang="en">Adult gaming</rdfs:label>
         <rdfs:label xml:lang="pt">Jogos para adultos</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Leisure"/>
+        <rdfs:subClassOf rdf:resource="&osm;Games_Leisure"/>
         <osm:osmLabel>adult_gaming</osm:osmLabel>
     </Class>
     
@@ -257,7 +283,7 @@
     <Class rdf:about="&osm;AdultGamingCentre">
         <rdfs:label xml:lang="en">Adult gaming centre</rdfs:label>
         <rdfs:label xml:lang="pt">Centro de jogos para adultos</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Leisure"/>
+        <rdfs:subClassOf rdf:resource="&osm;Games_Leisure"/>
         <osm:osmLabel>adult_gaming_centre</osm:osmLabel>
     </Class>
     
@@ -320,7 +346,7 @@
     <Class rdf:about="&osm;Aikido">
         <rdfs:label xml:lang="en">Aikido</rdfs:label>
         <rdfs:label xml:lang="pt">Aikidô</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:subClassOf rdf:resource="&osm;MartialArts"/>
         <osm:osmLabel>aikido</osm:osmLabel>
     </Class>
     
@@ -364,7 +390,7 @@
     <Class rdf:about="&osm;Allotments">
         <rdfs:label xml:lang="en">Allotments</rdfs:label>
         <rdfs:label xml:lang="pt">Loteamento</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Landuse"/>
+        <rdfs:subClassOf rdf:resource="&osm;Ground"/>
         <rdfs:subClassOf rdf:resource="&osm;PopulatedSettlementsUrbanAndRural"/>
         <osm:osmLabel>allotments</osm:osmLabel>
     </Class>
@@ -407,7 +433,7 @@
 
     <Class rdf:about="&osm;American">
         <rdfs:subClassOf rdf:resource="&osm;Sport"/>
-        <osm:osmLabel>american</osm:osmLabel>
+        <osm:osmLabel>American</osm:osmLabel>
     </Class>
     
 
@@ -417,7 +443,7 @@
     <Class rdf:about="&osm;AmericanFootball">
         <rdfs:label xml:lang="en">American football</rdfs:label>
         <rdfs:label xml:lang="pt">Futebol americano</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:subClassOf rdf:resource="&osm;Collective_Sports"/>
         <osm:osmLabel>american_football</osm:osmLabel>
     </Class>
     
@@ -428,7 +454,7 @@
     <Class rdf:about="&osm;AmusementArcade">
         <rdfs:label xml:lang="en">Amusement arcade</rdfs:label>
         <rdfs:label xml:lang="pt">Salão de jogos</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Leisure"/>
+        <rdfs:subClassOf rdf:resource="&osm;Games_Leisure"/>
         <osm:osmLabel>amusement_arcade</osm:osmLabel>
     </Class>
     
@@ -510,6 +536,24 @@
     
 
 
+    <!-- http://linkn.com.br/onto/osm/Aquatic_Leisure -->
+
+    <Class rdf:about="&osm;Aquatic_Leisure">
+        <rdfs:label xml:lang="pt">Lazer Aquático</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&osm;Leisure"/>
+    </Class>
+    
+
+
+    <!-- http://linkn.com.br/onto/osm/Aquatic_Sports -->
+
+    <Class rdf:about="&osm;Aquatic_Sports">
+        <rdfs:label xml:lang="pt">Esportes Aquáticos</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+    </Class>
+    
+
+
     <!-- http://linkn.com.br/onto/osm/ArchaeologicalSite -->
 
     <Class rdf:about="&osm;ArchaeologicalSite">
@@ -526,7 +570,7 @@
     <Class rdf:about="&osm;Archery">
         <rdfs:label xml:lang="en">Archery</rdfs:label>
         <rdfs:label xml:lang="pt">Tiro com arco</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:subClassOf rdf:resource="&osm;Target_Sports"/>
         <osm:osmLabel>archery</osm:osmLabel>
     </Class>
     
@@ -595,13 +639,22 @@
     
 
 
+    <!-- http://linkn.com.br/onto/osm/Arts -->
+
+    <Class rdf:about="&osm;Arts">
+        <rdfs:label xml:lang="pt">Artes</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&osm;EntertainmentArtSculture"/>
+    </Class>
+    
+
+
     <!-- http://linkn.com.br/onto/osm/ArtsCentre -->
 
     <Class rdf:about="&osm;ArtsCentre">
         <rdfs:label xml:lang="en">Arts centre</rdfs:label>
         <rdfs:label xml:lang="pt">Artes</rdfs:label>
         <rdfs:label xml:lang="pt">Centro de artes</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;EntertainmentArtSculture"/>
+        <rdfs:subClassOf rdf:resource="&osm;Arts"/>
         <osm:osmLabel>arts_centre</osm:osmLabel>
     </Class>
     
@@ -645,7 +698,7 @@
     <Class rdf:about="&osm;Athletics">
         <rdfs:label xml:lang="en">Athletics</rdfs:label>
         <rdfs:label xml:lang="pt">Atletismo</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:subClassOf rdf:resource="&osm;Collective_Sports"/>
         <osm:osmLabel>athletics</osm:osmLabel>
     </Class>
     
@@ -698,7 +751,7 @@
     <Class rdf:about="&osm;AustralianFootball">
         <rdfs:label xml:lang="en">Australian football</rdfs:label>
         <rdfs:label xml:lang="pt">Futebol australiano</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:subClassOf rdf:resource="&osm;Collective_Sports"/>
         <osm:osmLabel>australian_football</osm:osmLabel>
     </Class>
     
@@ -777,7 +830,7 @@
     <Class rdf:about="&osm;Bandy">
         <rdfs:label xml:lang="en">Bandy</rdfs:label>
         <rdfs:label xml:lang="pt">Hóquei</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:subClassOf rdf:resource="&osm;Collective_Sports"/>
         <osm:osmLabel>bandy</osm:osmLabel>
     </Class>
     
@@ -890,7 +943,7 @@
     <Class rdf:about="&osm;Baseball">
         <rdfs:label xml:lang="en">Baseball</rdfs:label>
         <rdfs:label xml:lang="pt">Beisebol</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:subClassOf rdf:resource="&osm;Collective_Sports"/>
         <osm:osmLabel>baseball</osm:osmLabel>
     </Class>
     
@@ -939,8 +992,17 @@
     <Class rdf:about="&osm;Basketball">
         <rdfs:label xml:lang="en">Basketball</rdfs:label>
         <rdfs:label xml:lang="pt">Basquetebol</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:subClassOf rdf:resource="&osm;Collective_Sports"/>
         <osm:osmLabel>basketball</osm:osmLabel>
+    </Class>
+    
+
+
+    <!-- http://linkn.com.br/onto/osm/Bath -->
+
+    <Class rdf:about="&osm;Bath">
+        <rdfs:label xml:lang="pt">Banho</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&osm;Leisure"/>
     </Class>
     
 
@@ -983,6 +1045,7 @@
     <Class rdf:about="&osm;Beach">
         <rdfs:label xml:lang="en">Beach</rdfs:label>
         <rdfs:label xml:lang="pt">Praia</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&osm;Bath"/>
         <rdfs:subClassOf rdf:resource="&osm;VegetationOrSurfaceRelated"/>
         <rdfs:subClassOf rdf:resource="&osm;WaterRelated"/>
         <osm:osmLabel>beach</osm:osmLabel>
@@ -995,7 +1058,7 @@
     <Class rdf:about="&osm;BeachResort">
         <rdfs:label xml:lang="en">Beach resort</rdfs:label>
         <rdfs:label xml:lang="pt">Resort</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Leisure"/>
+        <rdfs:subClassOf rdf:resource="&osm;Bath"/>
         <osm:osmLabel>beach_resort</osm:osmLabel>
     </Class>
     
@@ -1006,7 +1069,8 @@
     <Class rdf:about="&osm;Beachvolleyball">
         <rdfs:label xml:lang="en">Beachvolleyball</rdfs:label>
         <rdfs:label xml:lang="pt">Vôlei de praia</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:subClassOf rdf:resource="&osm;Collective_Sports"/>
+        <rdfs:subClassOf rdf:resource="&osm;Net_Sports"/>
         <osm:osmLabel>beachvolleyball</osm:osmLabel>
     </Class>
     
@@ -1139,8 +1203,8 @@
 
     <Class rdf:about="&osm;Billiards">
         <rdfs:label xml:lang="en">Billiards</rdfs:label>
-        <rdfs:label xml:lang="pt">Bilhar</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:label xml:lang="pt">Sinuca</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&osm;Target_Sports"/>
         <osm:osmLabel>billiards</osm:osmLabel>
     </Class>
     
@@ -1150,8 +1214,8 @@
 
     <Class rdf:about="&osm;BirdHide">
         <rdfs:label xml:lang="en">Bird hide</rdfs:label>
-        <rdfs:label xml:lang="pt">Ver pássaros</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Leisure"/>
+        <rdfs:label xml:lang="pt">Observatório de pássaros</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&osm;Camp"/>
         <osm:osmLabel>bird_hide</osm:osmLabel>
     </Class>
     
@@ -1162,7 +1226,7 @@
     <Class rdf:about="&osm;Blacksmith">
         <rdfs:label xml:lang="en">Blacksmith</rdfs:label>
         <rdfs:label xml:lang="pt">Ferreiro</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Craft"/>
+        <rdfs:subClassOf rdf:resource="&osm;General_Services"/>
         <osm:osmLabel>blacksmith</osm:osmLabel>
     </Class>
     
@@ -1184,7 +1248,7 @@
     <Class rdf:about="&osm;Bmx">
         <rdfs:label xml:lang="en">BMX</rdfs:label>
         <rdfs:label xml:lang="pt">BMX</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:subClassOf rdf:resource="&osm;Racing_Sports"/>
         <osm:osmLabel>bmx</osm:osmLabel>
     </Class>
     
@@ -1206,7 +1270,7 @@
     <Class rdf:about="&osm;Boatbuilder">
         <rdfs:label xml:lang="en">Boatbuilder</rdfs:label>
         <rdfs:label xml:lang="pt">Construtor de barcos</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Craft"/>
+        <rdfs:subClassOf rdf:resource="&osm;General_Services"/>
         <osm:osmLabel>boatbuilder</osm:osmLabel>
     </Class>
     
@@ -1228,7 +1292,7 @@
     <Class rdf:about="&osm;Bobsleigh">
         <rdfs:label xml:lang="en">Bobsleigh</rdfs:label>
         <rdfs:label xml:lang="pt">Bobsleigh</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:subClassOf rdf:resource="&osm;Ice_Sports"/>
         <osm:osmLabel>bobsleigh</osm:osmLabel>
     </Class>
     
@@ -1293,7 +1357,7 @@
     <Class rdf:about="&osm;Boules">
         <rdfs:label xml:lang="en">Boules</rdfs:label>
         <rdfs:label xml:lang="pt">Bocha</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:subClassOf rdf:resource="&osm;Target_Sports"/>
         <osm:osmLabel>boules</osm:osmLabel>
     </Class>
     
@@ -1335,7 +1399,7 @@
     <Class rdf:about="&osm;BowlingAlley">
         <rdfs:label xml:lang="en">Bowling alley</rdfs:label>
         <rdfs:label xml:lang="pt">Boliche</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Leisure"/>
+        <rdfs:subClassOf rdf:resource="&osm;Sports"/>
         <osm:osmLabel>bowling_alley</osm:osmLabel>
     </Class>
     
@@ -1346,7 +1410,7 @@
     <Class rdf:about="&osm;Bowls">
         <rdfs:label xml:lang="en">Bowl</rdfs:label>
         <rdfs:label xml:lang="pt">Boliche</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:subClassOf rdf:resource="&osm;Target_Sports"/>
         <osm:osmLabel>bowls</osm:osmLabel>
     </Class>
     
@@ -1357,7 +1421,7 @@
     <Class rdf:about="&osm;Boxing">
         <rdfs:label xml:lang="en">Boxing</rdfs:label>
         <rdfs:label xml:lang="pt">Boxe</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:subClassOf rdf:resource="&osm;MartialArts"/>
         <osm:osmLabel>boxing</osm:osmLabel>
     </Class>
     
@@ -1413,7 +1477,7 @@
     <Class rdf:about="&osm;Brothel">
         <rdfs:label xml:lang="en">Brothel</rdfs:label>
         <rdfs:label xml:lang="pt">Bordel</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;EntertainmentArtSculture"/>
+        <rdfs:subClassOf rdf:resource="&osm;Entertainment"/>
         <osm:osmLabel>brothel</osm:osmLabel>
     </Class>
     
@@ -1424,7 +1488,7 @@
     <Class rdf:about="&osm;Brownfield">
         <rdfs:label xml:lang="en">Brownfield</rdfs:label>
         <rdfs:label xml:lang="pt">Terreno para construção</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Landuse"/>
+        <rdfs:subClassOf rdf:resource="&osm;Ground"/>
         <osm:osmLabel>brownfield</osm:osmLabel>
     </Class>
     
@@ -1644,6 +1708,15 @@
     
 
 
+    <!-- http://linkn.com.br/onto/osm/Camp -->
+
+    <Class rdf:about="&osm;Camp">
+        <rdfs:label xml:lang="pt">Lazer No Campo</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&osm;Leisure"/>
+    </Class>
+    
+
+
     <!-- http://linkn.com.br/onto/osm/CampSite -->
 
     <Class rdf:about="&osm;CampSite">
@@ -1680,7 +1753,7 @@
     <Class rdf:about="&osm;CanadianFootball">
         <rdfs:label xml:lang="en">Canadian football</rdfs:label>
         <rdfs:label xml:lang="pt">Futebol canadense</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:subClassOf rdf:resource="&osm;Collective_Sports"/>
         <osm:osmLabel>canadian_football</osm:osmLabel>
     </Class>
     
@@ -1725,8 +1798,8 @@
         <rdfs:label xml:lang="en">Canoe route</rdfs:label>
         <rdfs:label xml:lang="pt">Canoa</rdfs:label>
         <rdfs:label xml:lang="pt">Rota de canoa</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&osm;Aquatic_Sports"/>
         <rdfs:subClassOf rdf:resource="&osm;Route"/>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
         <osm:osmLabel>canoe</osm:osmLabel>
     </Class>
     
@@ -1816,8 +1889,17 @@
     <Class rdf:about="&osm;Carpenter">
         <rdfs:label xml:lang="en">Carpenter</rdfs:label>
         <rdfs:label xml:lang="pt">Carpinteiro</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Craft"/>
+        <rdfs:subClassOf rdf:resource="&osm;Carpentry"/>
         <osm:osmLabel>carpenter</osm:osmLabel>
+    </Class>
+    
+
+
+    <!-- http://linkn.com.br/onto/osm/Carpentry -->
+
+    <Class rdf:about="&osm;Carpentry">
+        <rdfs:label xml:lang="pt">Carpintaria</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&osm;Craft"/>
     </Class>
     
 
@@ -1837,7 +1919,7 @@
 
     <Class rdf:about="&osm;CarpetLayer">
         <rdfs:label xml:lang="pt">Colocação de tapete</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Craft"/>
+        <rdfs:subClassOf rdf:resource="&osm;General_Services"/>
         <osm:osmLabel>carpet_layer</osm:osmLabel>
     </Class>
     
@@ -1848,7 +1930,7 @@
     <Class rdf:about="&osm;Casino">
         <rdfs:label xml:lang="en">Casino</rdfs:label>
         <rdfs:label xml:lang="pt">Cassino</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;EntertainmentArtSculture"/>
+        <rdfs:subClassOf rdf:resource="&osm;Entertainment"/>
         <osm:osmLabel>casino</osm:osmLabel>
     </Class>
     
@@ -1914,7 +1996,7 @@
     <Class rdf:about="&osm;Cemetery">
         <rdfs:label xml:lang="en">Cemetery</rdfs:label>
         <rdfs:label xml:lang="pt">Cemitério</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Landuse"/>
+        <rdfs:subClassOf rdf:resource="&osm;Ground"/>
         <osm:osmLabel>cemetery</osm:osmLabel>
     </Class>
     
@@ -2169,7 +2251,7 @@
     <Class rdf:about="&osm;Cinema">
         <rdfs:label xml:lang="en">Cinema</rdfs:label>
         <rdfs:label xml:lang="pt">Cinema</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;EntertainmentArtSculture"/>
+        <rdfs:subClassOf rdf:resource="&osm;Arts"/>
         <osm:osmLabel>cinema</osm:osmLabel>
     </Class>
     
@@ -2394,6 +2476,15 @@
     
 
 
+    <!-- http://linkn.com.br/onto/osm/Collective_Sports -->
+
+    <Class rdf:about="&osm;Collective_Sports">
+        <rdfs:label xml:lang="pt">Esportes Coletivos</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+    </Class>
+    
+
+
     <!-- http://linkn.com.br/onto/osm/College -->
 
     <Class rdf:about="&osm;College">
@@ -2431,7 +2522,7 @@
     <Class rdf:about="&osm;CommunityCentre">
         <rdfs:label xml:lang="en">Community centre</rdfs:label>
         <rdfs:label xml:lang="pt">Centro comunitário</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;EntertainmentArtSculture"/>
+        <rdfs:subClassOf rdf:resource="&osm;Social_Culture"/>
         <osm:osmLabel>community_centre</osm:osmLabel>
     </Class>
     
@@ -2479,7 +2570,7 @@
     <Class rdf:about="&osm;Conservation">
         <rdfs:label xml:lang="en">Conservation</rdfs:label>
         <rdfs:label xml:lang="pt">Área de conservação</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Landuse"/>
+        <rdfs:subClassOf rdf:resource="&osm;Plants_Cultivation"/>
         <osm:osmLabel>conservation</osm:osmLabel>
     </Class>
     
@@ -2662,7 +2753,7 @@
     <Class rdf:about="&osm;Cricket">
         <rdfs:label xml:lang="en">Cricket</rdfs:label>
         <rdfs:label xml:lang="pt">Críquete</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:subClassOf rdf:resource="&osm;Collective_Sports"/>
         <osm:osmLabel>cricket</osm:osmLabel>
     </Class>
     
@@ -2673,7 +2764,7 @@
     <Class rdf:about="&osm;CricketNets">
         <rdfs:label xml:lang="en">Cricket nets</rdfs:label>
         <rdfs:label xml:lang="pt">Redes de críquete</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:subClassOf rdf:resource="&osm;Net_Sports"/>
         <osm:osmLabel>cricket_nets</osm:osmLabel>
     </Class>
     
@@ -2684,7 +2775,7 @@
     <Class rdf:about="&osm;Croquet">
         <rdfs:label xml:lang="en">Croquet</rdfs:label>
         <rdfs:label xml:lang="pt">Cróquete</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:subClassOf rdf:resource="&osm;Target_Sports"/>
         <osm:osmLabel>croquet</osm:osmLabel>
     </Class>
     
@@ -2729,7 +2820,7 @@
     <Class rdf:about="&osm;Curling">
         <rdfs:label xml:lang="en">Curling</rdfs:label>
         <rdfs:label xml:lang="pt">Curling</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:subClassOf rdf:resource="&osm;Collective_Sports"/>
         <osm:osmLabel>curling</osm:osmLabel>
     </Class>
     
@@ -2793,7 +2884,7 @@
     <Class rdf:about="&osm;Cycling">
         <rdfs:label xml:lang="en">Cycling</rdfs:label>
         <rdfs:label xml:lang="pt">Ciclismo</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:subClassOf rdf:resource="&osm;Racing_Sports"/>
         <osm:osmLabel>cycling</osm:osmLabel>
     </Class>
     
@@ -2827,7 +2918,7 @@
     <Class rdf:about="&osm;Dance">
         <rdfs:label xml:lang="en">Dance</rdfs:label>
         <rdfs:label xml:lang="pt">Dança</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Leisure"/>
+        <rdfs:subClassOf rdf:resource="&osm;Sports"/>
         <osm:osmLabel>dance</osm:osmLabel>
     </Class>
     
@@ -2849,7 +2940,7 @@
     <Class rdf:about="&osm;Darts">
         <rdfs:label xml:lang="en">Darts</rdfs:label>
         <rdfs:label xml:lang="pt">Dardos</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:subClassOf rdf:resource="&osm;Target_Sports"/>
         <osm:osmLabel>darts</osm:osmLabel>
     </Class>
     
@@ -3020,7 +3111,7 @@
     <Class rdf:about="&osm;Diving">
         <rdfs:label xml:lang="en">Diving</rdfs:label>
         <rdfs:label xml:lang="pt">Mergulho</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:subClassOf rdf:resource="&osm;Aquatic_Sports"/>
         <osm:osmLabel>diving</osm:osmLabel>
     </Class>
     
@@ -3062,7 +3153,7 @@
     <Class rdf:about="&osm;DogPark">
         <rdfs:label xml:lang="en">Dog park</rdfs:label>
         <rdfs:label xml:lang="pt">Parque para cães</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Leisure"/>
+        <rdfs:subClassOf rdf:resource="&osm;Camp"/>
         <osm:osmLabel>dog_park</osm:osmLabel>
     </Class>
     
@@ -3073,7 +3164,7 @@
     <Class rdf:about="&osm;DogRacing">
         <rdfs:label xml:lang="en">Dog racing</rdfs:label>
         <rdfs:label xml:lang="pt">Corrida de cães</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:subClassOf rdf:resource="&osm;Racing_Sports"/>
         <osm:osmLabel>dog_racing</osm:osmLabel>
     </Class>
     
@@ -3138,7 +3229,7 @@
     <Class rdf:about="&osm;Dressmaker">
         <rdfs:label xml:lang="en">Dressmaker</rdfs:label>
         <rdfs:label xml:lang="pt">Costureira de vestido</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Craft"/>
+        <rdfs:subClassOf rdf:resource="&osm;General_Services_For_Clothes_And_Acessories"/>
         <osm:osmLabel>dressmaker</osm:osmLabel>
     </Class>
     
@@ -3205,7 +3296,7 @@
     <Class rdf:about="&osm;Electrician">
         <rdfs:label xml:lang="en">Electrician</rdfs:label>
         <rdfs:label xml:lang="pt">Eletricista</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Craft"/>
+        <rdfs:subClassOf rdf:resource="&osm;General_Services"/>
         <osm:osmLabel>electrician</osm:osmLabel>
     </Class>
     
@@ -3284,11 +3375,20 @@
     
 
 
+    <!-- http://linkn.com.br/onto/osm/Entertainment -->
+
+    <Class rdf:about="&osm;Entertainment">
+        <rdfs:label xml:lang="pt">Entretenimento</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&osm;EntertainmentArtSculture"/>
+    </Class>
+    
+
+
     <!-- http://linkn.com.br/onto/osm/EntertainmentArtSculture -->
 
     <Class rdf:about="&osm;EntertainmentArtSculture">
         <rdfs:label xml:lang="en">Entertainment, art and sculture</rdfs:label>
-        <rdfs:label xml:lang="pt">Entretenimento, arte e escultura</rdfs:label>
+        <rdfs:label xml:lang="pt">Entretenimento, arte e cultura social</rdfs:label>
         <rdfs:subClassOf rdf:resource="&osm;Amenity"/>
         <osm:osmLabel>entertainment_art_sculture</osm:osmLabel>
     </Class>
@@ -3406,7 +3506,7 @@
     <Class rdf:about="&osm;Farmland">
         <rdfs:label xml:lang="en">Farmland</rdfs:label>
         <rdfs:label xml:lang="pt">Plantação</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Landuse"/>
+        <rdfs:subClassOf rdf:resource="&osm;Plants_Cultivation"/>
         <osm:osmLabel>farmland</osm:osmLabel>
     </Class>
     
@@ -3515,7 +3615,7 @@
     <Class rdf:about="&osm;FieldHockey">
         <rdfs:label xml:lang="en">Field hockey</rdfs:label>
         <rdfs:label xml:lang="pt">Hóquei de campo</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:subClassOf rdf:resource="&osm;Collective_Sports"/>
         <osm:osmLabel>field_hockey</osm:osmLabel>
     </Class>
     
@@ -3525,7 +3625,7 @@
 
     <Class rdf:about="&osm;Financial">
         <rdfs:label xml:lang="en">Financial</rdfs:label>
-        <rdfs:label xml:lang="pt">Financeiro</rdfs:label>
+        <rdfs:label xml:lang="pt">Finanças</rdfs:label>
         <rdfs:subClassOf rdf:resource="&osm;Amenity"/>
         <osm:osmLabel>financial</osm:osmLabel>
     </Class>
@@ -3604,7 +3704,7 @@
     <Class rdf:about="&osm;Fishing">
         <rdfs:label xml:lang="en">Fishing</rdfs:label>
         <rdfs:label xml:lang="pt">Pesca</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Leisure"/>
+        <rdfs:subClassOf rdf:resource="&osm;Aquatic_Leisure"/>
         <rdfs:subClassOf rdf:resource="&osm;OutdoorsAndSportVehicles"/>
         <osm:osmLabel>fishing</osm:osmLabel>
     </Class>
@@ -3679,7 +3779,8 @@
     <Class rdf:about="&osm;Football">
         <rdfs:label xml:lang="en">Football</rdfs:label>
         <rdfs:label xml:lang="pt">Futebol</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <equivalentClass rdf:resource="&osm;Soccer"/>
+        <rdfs:subClassOf rdf:resource="&osm;Collective_Sports"/>
         <osm:osmLabel>football</osm:osmLabel>
     </Class>
     
@@ -3701,7 +3802,7 @@
     <Class rdf:about="&osm;Forest">
         <rdfs:label xml:lang="en">Forest</rdfs:label>
         <rdfs:label xml:lang="pt">Floresta</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Landuse"/>
+        <rdfs:subClassOf rdf:resource="&osm;Plants_Cultivation"/>
         <osm:osmLabel>forest</osm:osmLabel>
     </Class>
     
@@ -3745,7 +3846,7 @@
     <Class rdf:about="&osm;Fountain">
         <rdfs:label xml:lang="en">Fountain</rdfs:label>
         <rdfs:label xml:lang="pt">Fonte</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;EntertainmentArtSculture"/>
+        <rdfs:subClassOf rdf:resource="&osm;Entertainment"/>
         <osm:osmLabel>fountain</osm:osmLabel>
     </Class>
     
@@ -3877,7 +3978,7 @@
     <Class rdf:about="&osm;Gambling">
         <rdfs:label xml:lang="en">Gambling</rdfs:label>
         <rdfs:label xml:lang="pt">Jogos de azar</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;EntertainmentArtSculture"/>
+        <rdfs:subClassOf rdf:resource="&osm;Entertainment"/>
         <osm:osmLabel>gambling</osm:osmLabel>
     </Class>
     
@@ -3901,6 +4002,15 @@
         <rdfs:label xml:lang="pt">Jogos</rdfs:label>
         <rdfs:subClassOf rdf:resource="&osm;ArtMusicHobbies"/>
         <osm:osmLabel>games</osm:osmLabel>
+    </Class>
+    
+
+
+    <!-- http://linkn.com.br/onto/osm/Games_Leisure -->
+
+    <Class rdf:about="&osm;Games_Leisure">
+        <rdfs:label xml:lang="pt">Jogos</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&osm;Leisure"/>
     </Class>
     
 
@@ -3933,7 +4043,7 @@
     <Class rdf:about="&osm;Garden">
         <rdfs:label xml:lang="en">Garden</rdfs:label>
         <rdfs:label xml:lang="pt">Jardim</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Leisure"/>
+        <rdfs:subClassOf rdf:resource="&osm;Camp"/>
         <osm:osmLabel>garden</osm:osmLabel>
     </Class>
     
@@ -4037,6 +4147,24 @@
     
 
 
+    <!-- http://linkn.com.br/onto/osm/General_Services -->
+
+    <Class rdf:about="&osm;General_Services">
+        <rdfs:label xml:lang="pt">Serviços Gerais</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&osm;Craft"/>
+    </Class>
+    
+
+
+    <!-- http://linkn.com.br/onto/osm/General_Services_For_Clothes_And_Acessories -->
+
+    <Class rdf:about="&osm;General_Services_For_Clothes_And_Acessories">
+        <rdfs:label xml:lang="pt">Serviços Gerais para Roupas e Acessórios</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&osm;Craft"/>
+    </Class>
+    
+
+
     <!-- http://linkn.com.br/onto/osm/Generator -->
 
     <Class rdf:about="&osm;Generator">
@@ -4095,8 +4223,8 @@
     <Class rdf:about="&osm;Glaziery">
         <rdfs:label xml:lang="en">Glaziery</rdfs:label>
         <rdfs:label xml:lang="pt">Vidraçaria</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Craft"/>
         <rdfs:subClassOf rdf:resource="&osm;Do-It-YourselfHouseholdBuildingMaterialsGardening"/>
+        <rdfs:subClassOf rdf:resource="&osm;General_Services"/>
         <osm:osmLabel>glaziery</osm:osmLabel>
     </Class>
     
@@ -4107,7 +4235,7 @@
     <Class rdf:about="&osm;Golf">
         <rdfs:label xml:lang="en">Golf</rdfs:label>
         <rdfs:label xml:lang="pt">Golfe</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:subClassOf rdf:resource="&osm;Target_Sports"/>
         <osm:osmLabel>golf</osm:osmLabel>
     </Class>
     
@@ -4119,7 +4247,7 @@
         <rdfs:label xml:lang="en">Golf course</rdfs:label>
         <rdfs:label xml:lang="pt">Campo de golfe</rdfs:label>
         <rdfs:label xml:lang="pt">Golfe</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Leisure"/>
+        <rdfs:subClassOf rdf:resource="&osm;Camp"/>
         <osm:osmLabel>golf_course</osm:osmLabel>
     </Class>
     
@@ -4163,7 +4291,7 @@
     <Class rdf:about="&osm;Grass">
         <rdfs:label xml:lang="en">Grass</rdfs:label>
         <rdfs:label xml:lang="pt">Grama</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Landuse"/>
+        <rdfs:subClassOf rdf:resource="&osm;Plants_Cultivation"/>
         <osm:osmLabel>grass</osm:osmLabel>
     </Class>
     
@@ -4196,7 +4324,7 @@
     <Class rdf:about="&osm;Greenfield">
         <rdfs:label xml:lang="en">Greenfield</rdfs:label>
         <rdfs:label xml:lang="pt">Campo</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Landuse"/>
+        <rdfs:subClassOf rdf:resource="&osm;Ground"/>
         <osm:osmLabel>greenfield</osm:osmLabel>
     </Class>
     
@@ -4230,7 +4358,7 @@
     <Class rdf:about="&osm;GreenhouseHorticulture">
         <rdfs:label xml:lang="en">Green house horticulture</rdfs:label>
         <rdfs:label xml:lang="pt">Horticultura</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Landuse"/>
+        <rdfs:subClassOf rdf:resource="&osm;Plants_Cultivation"/>
         <osm:osmLabel>greenhouse_horticulture</osm:osmLabel>
     </Class>
     
@@ -4243,6 +4371,15 @@
         <rdfs:label xml:lang="pt">Container de lixo</rdfs:label>
         <rdfs:subClassOf rdf:resource="&osm;Transportation"/>
         <osm:osmLabel>grit_bin</osm:osmLabel>
+    </Class>
+    
+
+
+    <!-- http://linkn.com.br/onto/osm/Ground -->
+
+    <Class rdf:about="&osm;Ground">
+        <rdfs:label xml:lang="pt">Terreno</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&osm;Landuse"/>
     </Class>
     
 
@@ -4309,7 +4446,7 @@
     <Class rdf:about="&osm;Gymnastics">
         <rdfs:label xml:lang="en">Gymnastics</rdfs:label>
         <rdfs:label xml:lang="pt">Ginástica</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:subClassOf rdf:resource="&osm;Collective_Sports"/>
         <osm:osmLabel>gymnastics</osm:osmLabel>
     </Class>
     
@@ -4373,8 +4510,8 @@
 
     <Class rdf:about="&osm;Handball">
         <rdfs:label xml:lang="en">handball</rdfs:label>
-        <rdfs:label xml:lang="pt">Handball</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:label xml:lang="pt">Handebal</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&osm;Collective_Sports"/>
         <osm:osmLabel>handball</osm:osmLabel>
     </Class>
     
@@ -4418,8 +4555,8 @@
 
     <Class rdf:about="&osm;Hapkido">
         <rdfs:label xml:lang="en">Hapkido</rdfs:label>
-        <rdfs:label xml:lang="pt">Hapkido</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:label xml:lang="pt">Hapkidô</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&osm;MartialArts"/>
         <osm:osmLabel>hapkido</osm:osmLabel>
     </Class>
     
@@ -4630,7 +4767,7 @@
     <Class rdf:about="&osm;Hockey">
         <rdfs:label xml:lang="en">Hóquei</rdfs:label>
         <rdfs:label xml:lang="pt">Hóquei</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:subClassOf rdf:resource="&osm;Collective_Sports"/>
         <osm:osmLabel>hockey</osm:osmLabel>
     </Class>
     
@@ -4662,7 +4799,7 @@
     <Class rdf:about="&osm;HorseRacing">
         <rdfs:label xml:lang="en">Horse racing</rdfs:label>
         <rdfs:label xml:lang="pt">Corrida de cavalos</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:subClassOf rdf:resource="&osm;Racing_Sports"/>
         <osm:osmLabel>horse_racing</osm:osmLabel>
     </Class>
     
@@ -4830,8 +4967,8 @@
 
     <Class rdf:about="&osm;IceCream">
         <rdfs:subClassOf rdf:resource="&osm;Sustenance"/>
-        <osm:osmLabel>ice_cream</osm:osmLabel>
         <osm:isRelatedTo xml:lang="en">Ice cream</osm:isRelatedTo>
+        <osm:osmLabel>ice_cream</osm:osmLabel>
         <osm:isRelatedTo xml:lang="pt">Sorveteria</osm:isRelatedTo>
     </Class>
     
@@ -4842,7 +4979,8 @@
     <Class rdf:about="&osm;IceHockey">
         <rdfs:label xml:lang="en">Ice Hockey</rdfs:label>
         <rdfs:label xml:lang="pt">Hóquei no gelo</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:subClassOf rdf:resource="&osm;Collective_Sports"/>
+        <rdfs:subClassOf rdf:resource="&osm;Ice_Sports"/>
         <osm:osmLabel>ice_hockey</osm:osmLabel>
     </Class>
     
@@ -4853,7 +4991,7 @@
     <Class rdf:about="&osm;IceRink">
         <rdfs:label xml:lang="en">Ice rink</rdfs:label>
         <rdfs:label xml:lang="pt">Pista de gelo</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Leisure"/>
+        <rdfs:subClassOf rdf:resource="&osm;Sports"/>
         <osm:osmLabel>ice_rink</osm:osmLabel>
     </Class>
     
@@ -4864,7 +5002,8 @@
     <Class rdf:about="&osm;IceSkating">
         <rdfs:label xml:lang="en">Ice skating</rdfs:label>
         <rdfs:label xml:lang="pt">Patinação no gelo</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:subClassOf rdf:resource="&osm;Collective_Sports"/>
+        <rdfs:subClassOf rdf:resource="&osm;Ice_Sports"/>
         <osm:osmLabel>ice_skating</osm:osmLabel>
     </Class>
     
@@ -4875,8 +5014,17 @@
     <Class rdf:about="&osm;IceStock">
         <rdfs:label xml:lang="en">Ice stock</rdfs:label>
         <rdfs:label xml:lang="pt">Ice stock</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:subClassOf rdf:resource="&osm;Ice_Sports"/>
         <osm:osmLabel>ice_stock</osm:osmLabel>
+    </Class>
+    
+
+
+    <!-- http://linkn.com.br/onto/osm/Ice_Sports -->
+
+    <Class rdf:about="&osm;Ice_Sports">
+        <rdfs:label xml:lang="pt">Esportes No Gelo</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
     </Class>
     
 
@@ -4920,7 +5068,7 @@
 
     <Class rdf:about="&osm;Insulation">
         <rdfs:label xml:lang="en">Insulation</rdfs:label>
-        <rdfs:label xml:lang="pt">Isolamento térmico (edifícil)</rdfs:label>
+        <rdfs:label xml:lang="pt">Isolamento térmico (edifício)</rdfs:label>
         <rdfs:subClassOf rdf:resource="&osm;Craft"/>
         <osm:osmLabel>insulation</osm:osmLabel>
     </Class>
@@ -5029,7 +5177,7 @@
     <Class rdf:about="&osm;Jeweller">
         <rdfs:label xml:lang="en">Jeweller</rdfs:label>
         <rdfs:label xml:lang="pt">Joalheiro</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Craft"/>
+        <rdfs:subClassOf rdf:resource="&osm;General_Services_For_Clothes_And_Acessories"/>
         <osm:osmLabel>jeweller</osm:osmLabel>
     </Class>
     
@@ -5051,7 +5199,7 @@
     <Class rdf:about="&osm;Judo">
         <rdfs:label xml:lang="en">Judo</rdfs:label>
         <rdfs:label xml:lang="pt">Judô</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:subClassOf rdf:resource="&osm;MartialArts"/>
         <osm:osmLabel>judo</osm:osmLabel>
     </Class>
     
@@ -5062,7 +5210,7 @@
     <Class rdf:about="&osm;Karting">
         <rdfs:label xml:lang="en">Karting</rdfs:label>
         <rdfs:label xml:lang="pt">Kart</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:subClassOf rdf:resource="&osm;Racing_Sports"/>
         <osm:osmLabel>karting</osm:osmLabel>
     </Class>
     
@@ -5095,7 +5243,7 @@
     <Class rdf:about="&osm;KeyCutter">
         <rdfs:label xml:lang="en">Key cutter</rdfs:label>
         <rdfs:label xml:lang="pt">Cópia de chave</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Craft"/>
+        <rdfs:subClassOf rdf:resource="&osm;General_Services"/>
         <osm:osmLabel>key_cutter</osm:osmLabel>
     </Class>
     
@@ -5162,7 +5310,7 @@
     <Class rdf:about="&osm;Kitesurfing">
         <rdfs:label xml:lang="en">Kitesurfing</rdfs:label>
         <rdfs:label xml:lang="pt">Kitesurfing</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:subClassOf rdf:resource="&osm;Aquatic_Sports"/>
         <osm:osmLabel>kitesurfing</osm:osmLabel>
     </Class>
     
@@ -5173,7 +5321,7 @@
     <Class rdf:about="&osm;Korfball">
         <rdfs:label xml:lang="en">Korfball</rdfs:label>
         <rdfs:label xml:lang="pt">Corfebol</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:subClassOf rdf:resource="&osm;Collective_Sports"/>
         <osm:osmLabel>korfball</osm:osmLabel>
     </Class>
     
@@ -5184,7 +5332,7 @@
     <Class rdf:about="&osm;Landfill">
         <rdfs:label xml:lang="en">Landfill</rdfs:label>
         <rdfs:label xml:lang="pt">Aterro</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Landuse"/>
+        <rdfs:subClassOf rdf:resource="&osm;Ground"/>
         <osm:osmLabel>landfill</osm:osmLabel>
     </Class>
     
@@ -5370,8 +5518,8 @@
     <Class rdf:about="&osm;Locksmith">
         <rdfs:label xml:lang="en">Locksmith</rdfs:label>
         <rdfs:label xml:lang="pt">Chaveiro</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Craft"/>
         <rdfs:subClassOf rdf:resource="&osm;Do-It-YourselfHouseholdBuildingMaterialsGardening"/>
+        <rdfs:subClassOf rdf:resource="&osm;General_Services"/>
         <osm:osmLabel>locksmith</osm:osmLabel>
     </Class>
     
@@ -5445,7 +5593,7 @@
     <Class rdf:about="&osm;Marina">
         <rdfs:label xml:lang="en">Marina</rdfs:label>
         <rdfs:label xml:lang="pt">Marina</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Leisure"/>
+        <rdfs:subClassOf rdf:resource="&osm;Bath"/>
         <osm:osmLabel>marina</osm:osmLabel>
     </Class>
     
@@ -5469,6 +5617,15 @@
         <rdfs:label xml:lang="pt">Feira livre</rdfs:label>
         <rdfs:subClassOf rdf:resource="&osm;OtherAmanities"/>
         <osm:osmLabel>marketplace</osm:osmLabel>
+    </Class>
+    
+
+
+    <!-- http://linkn.com.br/onto/osm/MartialArts -->
+
+    <Class rdf:about="&osm;MartialArts">
+        <rdfs:label xml:lang="pt">Artes Marciais</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
     </Class>
     
 
@@ -5500,7 +5657,7 @@
     <Class rdf:about="&osm;Meadow">
         <rdfs:label xml:lang="en">Meadow</rdfs:label>
         <rdfs:label xml:lang="pt">Pasto</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Landuse"/>
+        <rdfs:subClassOf rdf:resource="&osm;Ground"/>
         <osm:osmLabel>meadow</osm:osmLabel>
     </Class>
     
@@ -5533,7 +5690,7 @@
     <Class rdf:about="&osm;MetalConstruction">
         <rdfs:label xml:lang="en">Metal construction</rdfs:label>
         <rdfs:label xml:lang="pt">Construção, comércio, reparação de metais</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Craft"/>
+        <rdfs:subClassOf rdf:resource="&osm;General_Services"/>
         <osm:osmLabel>metal_construction</osm:osmLabel>
     </Class>
     
@@ -5553,7 +5710,7 @@
     <Class rdf:about="&osm;MilitaryLanduse">
         <rdfs:label xml:lang="en">Military Landuse</rdfs:label>
         <rdfs:label xml:lang="pt">Uso de terra militar</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Landuse"/>
+        <rdfs:subClassOf rdf:resource="&osm;Ground"/>
         <osm:osmLabel>military</osm:osmLabel>
     </Class>
     
@@ -5597,7 +5754,7 @@
     <Class rdf:about="&osm;MiniatureGolf">
         <rdfs:label xml:lang="en">Miniature golf</rdfs:label>
         <rdfs:label xml:lang="pt">Golfe miniatura</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Leisure"/>
+        <rdfs:subClassOf rdf:resource="&osm;Camp"/>
         <osm:osmLabel>miniature_golf</osm:osmLabel>
     </Class>
     
@@ -5769,7 +5926,7 @@
     <Class rdf:about="&osm;Motocross">
         <rdfs:label xml:lang="en">Motocross</rdfs:label>
         <rdfs:label xml:lang="pt">Motocross</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:subClassOf rdf:resource="&osm;Racing_Sports"/>
         <osm:osmLabel>motocross</osm:osmLabel>
     </Class>
     
@@ -5780,7 +5937,7 @@
     <Class rdf:about="&osm;Motor">
         <rdfs:label xml:lang="en">Motor</rdfs:label>
         <rdfs:label xml:lang="pt">Motor</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:subClassOf rdf:resource="&osm;Racing_Sports"/>
         <osm:osmLabel>motor</osm:osmLabel>
     </Class>
     
@@ -5961,7 +6118,7 @@
     <Class rdf:about="&osm;NatureReserve">
         <rdfs:label xml:lang="en">Nature reserve</rdfs:label>
         <rdfs:label xml:lang="pt">Reserva natural</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Leisure"/>
+        <rdfs:subClassOf rdf:resource="&osm;Camp"/>
         <osm:osmLabel>nature_reserve</osm:osmLabel>
     </Class>
     
@@ -5995,6 +6152,15 @@
         <rdfs:subClassOf rdf:resource="&osm;PopulatedSettlementsUrban"/>
         <rdfs:subClassOf rdf:resource="&osm;PopulatedSettlementsUrbanAndRural"/>
         <osm:osmLabel>neighbourhood</osm:osmLabel>
+    </Class>
+    
+
+
+    <!-- http://linkn.com.br/onto/osm/Net_Sports -->
+
+    <Class rdf:about="&osm;Net_Sports">
+        <rdfs:label xml:lang="pt">Esportes De Rede</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
     </Class>
     
 
@@ -6039,7 +6205,7 @@
         <rdfs:label xml:lang="en">Nichtclub</rdfs:label>
         <rdfs:label xml:lang="pt">Balada</rdfs:label>
         <rdfs:label xml:lang="pt">Boate</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;EntertainmentArtSculture"/>
+        <rdfs:subClassOf rdf:resource="&osm;Entertainment"/>
     </Class>
     
 
@@ -6150,7 +6316,7 @@
     <Class rdf:about="&osm;Orchard">
         <rdfs:label xml:lang="en">Orchard</rdfs:label>
         <rdfs:label xml:lang="pt">Pomar</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Landuse"/>
+        <rdfs:subClassOf rdf:resource="&osm;Plants_Cultivation"/>
         <osm:osmLabel>orchard</osm:osmLabel>
     </Class>
     
@@ -6287,7 +6453,8 @@
     <Class rdf:about="&osm;PaddleTennis">
         <rdfs:label xml:lang="en">Paddle tennis</rdfs:label>
         <rdfs:label xml:lang="pt">Padel</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:subClassOf rdf:resource="&osm;Collective_Sports"/>
+        <rdfs:subClassOf rdf:resource="&osm;Net_Sports"/>
         <osm:osmLabel>paddle_tennis</osm:osmLabel>
     </Class>
     
@@ -6309,7 +6476,7 @@
     <Class rdf:about="&osm;Painter">
         <rdfs:label xml:lang="en">Painter</rdfs:label>
         <rdfs:label xml:lang="pt">Pintor</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Craft"/>
+        <rdfs:subClassOf rdf:resource="&osm;Carpentry"/>
         <osm:osmLabel>painter</osm:osmLabel>
     </Class>
     
@@ -6342,7 +6509,7 @@
     <Class rdf:about="&osm;Park">
         <rdfs:label xml:lang="en">Park</rdfs:label>
         <rdfs:label xml:lang="pt">Parque</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Leisure"/>
+        <rdfs:subClassOf rdf:resource="&osm;Camp"/>
         <osm:osmLabel>park</osm:osmLabel>
     </Class>
     
@@ -6386,7 +6553,7 @@
     <Class rdf:about="&osm;ParquetLayer">
         <rdfs:label xml:lang="en">Parquet layer</rdfs:label>
         <rdfs:label xml:lang="pt">Colocador de piso</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Craft"/>
+        <rdfs:subClassOf rdf:resource="&osm;General_Services"/>
         <osm:osmLabel>parquet_layer</osm:osmLabel>
     </Class>
     
@@ -6431,7 +6598,7 @@
         <rdfs:label xml:lang="en">Pasture</rdfs:label>
         <rdfs:label xml:lang="pt">Pastagem</rdfs:label>
         <rdfs:label xml:lang="pt">Pasto</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Landuse"/>
+        <rdfs:subClassOf rdf:resource="&osm;Ground"/>
         <osm:osmLabel>pasture</osm:osmLabel>
     </Class>
     
@@ -6484,7 +6651,7 @@
     <Class rdf:about="&osm;PeatCutting">
         <rdfs:label xml:lang="en">Peat cutting</rdfs:label>
         <rdfs:label xml:lang="pt">Corte de turfa</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Landuse"/>
+        <rdfs:subClassOf rdf:resource="&osm;Plants_Cultivation"/>
         <osm:osmLabel>peat_cutting</osm:osmLabel>
     </Class>
     
@@ -6615,7 +6782,7 @@
     <Class rdf:about="&osm;PicnicTable">
         <rdfs:label xml:lang="en">Picnic table</rdfs:label>
         <rdfs:label xml:lang="pt">Mesa de piquenique</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Leisure"/>
+        <rdfs:subClassOf rdf:resource="&osm;Camp"/>
         <osm:osmLabel>picnic_table</osm:osmLabel>
     </Class>
     
@@ -6660,7 +6827,7 @@
     <Class rdf:about="&osm;Pitch">
         <rdfs:label xml:lang="en">Pitch</rdfs:label>
         <rdfs:label xml:lang="pt">Quadra</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Leisure"/>
+        <rdfs:subClassOf rdf:resource="&osm;Sports"/>
         <osm:osmLabel>pitch</osm:osmLabel>
     </Class>
     
@@ -6692,7 +6859,7 @@
     <Class rdf:about="&osm;Planetarium">
         <rdfs:label xml:lang="en">Planetarium</rdfs:label>
         <rdfs:label xml:lang="pt">Planetário</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;EntertainmentArtSculture"/>
+        <rdfs:subClassOf rdf:resource="&osm;Arts"/>
         <osm:osmLabel>planetarium</osm:osmLabel>
     </Class>
     
@@ -6714,8 +6881,17 @@
     <Class rdf:about="&osm;PlantNursery">
         <rdfs:label xml:lang="en">Plant nursery</rdfs:label>
         <rdfs:label xml:lang="pt">Planta medicinal</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Landuse"/>
+        <rdfs:subClassOf rdf:resource="&osm;Plants_Cultivation"/>
         <osm:osmLabel>plant_nursery</osm:osmLabel>
+    </Class>
+    
+
+
+    <!-- http://linkn.com.br/onto/osm/Plants_Cultivation -->
+
+    <Class rdf:about="&osm;Plants_Cultivation">
+        <rdfs:label xml:lang="pt">Cultivo De Plantas</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&osm;Landuse"/>
     </Class>
     
 
@@ -6758,7 +6934,7 @@
     <Class rdf:about="&osm;Playground">
         <rdfs:label xml:lang="en">Playground</rdfs:label>
         <rdfs:label xml:lang="pt">Playground</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Leisure"/>
+        <rdfs:subClassOf rdf:resource="&osm;Games_Leisure"/>
         <osm:osmLabel>playground</osm:osmLabel>
     </Class>
     
@@ -6769,7 +6945,7 @@
     <Class rdf:about="&osm;Plumber">
         <rdfs:label xml:lang="en">Plumber</rdfs:label>
         <rdfs:label xml:lang="pt">Encanador</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Craft"/>
+        <rdfs:subClassOf rdf:resource="&osm;General_Services"/>
         <osm:osmLabel>plumber</osm:osmLabel>
     </Class>
     
@@ -7144,12 +7320,21 @@
     
 
 
+    <!-- http://linkn.com.br/onto/osm/Racing_Sports -->
+
+    <Class rdf:about="&osm;Racing_Sports">
+        <rdfs:label xml:lang="pt">Esportes De Corrida</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+    </Class>
+    
+
+
     <!-- http://linkn.com.br/onto/osm/Racquet -->
 
     <Class rdf:about="&osm;Racquet">
         <rdfs:label xml:lang="en">Racquet</rdfs:label>
         <rdfs:label xml:lang="pt">Raquete</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:subClassOf rdf:resource="&osm;Racquet"/>
         <osm:osmLabel>racquet</osm:osmLabel>
     </Class>
     
@@ -7246,7 +7431,7 @@
     <Class rdf:about="&osm;RcCar">
         <rdfs:label xml:lang="en">Racing car</rdfs:label>
         <rdfs:label xml:lang="pt">Racing car</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:subClassOf rdf:resource="&osm;Racing_Sports"/>
         <osm:osmLabel>rc_car</osm:osmLabel>
     </Class>
     
@@ -7289,7 +7474,7 @@
     <Class rdf:about="&osm;RecreationGround">
         <rdfs:label xml:lang="en">Recreation ground</rdfs:label>
         <rdfs:label xml:lang="pt">Terreno para recreação</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Landuse"/>
+        <rdfs:subClassOf rdf:resource="&osm;Ground"/>
         <osm:osmLabel>recreation_ground</osm:osmLabel>
     </Class>
     
@@ -7556,7 +7741,7 @@
     <Class rdf:about="&osm;RollerHockey">
         <rdfs:label xml:lang="en">Roller hockey</rdfs:label>
         <rdfs:label xml:lang="pt">Hóquei em patins</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:subClassOf rdf:resource="&osm;Collective_Sports"/>
         <osm:osmLabel>roller_hockey</osm:osmLabel>
     </Class>
     
@@ -7589,7 +7774,7 @@
     <Class rdf:about="&osm;Roofer">
         <rdfs:label xml:lang="en">Roofer</rdfs:label>
         <rdfs:label xml:lang="pt">Construção de telhado</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Craft"/>
+        <rdfs:subClassOf rdf:resource="&osm;General_Services"/>
         <osm:osmLabel>roofer</osm:osmLabel>
     </Class>
     
@@ -7642,7 +7827,7 @@
     <Class rdf:about="&osm;Rowing">
         <rdfs:label xml:lang="en">Rowing</rdfs:label>
         <rdfs:label xml:lang="pt">Remo</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:subClassOf rdf:resource="&osm;Aquatic_Sports"/>
         <osm:osmLabel>rowing</osm:osmLabel>
     </Class>
     
@@ -7653,7 +7838,7 @@
     <Class rdf:about="&osm;Rugby">
         <rdfs:label xml:lang="en">Rugby</rdfs:label>
         <rdfs:label xml:lang="pt">Rugby</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:subClassOf rdf:resource="&osm;Collective_Sports"/>
         <osm:osmLabel>rugby</osm:osmLabel>
     </Class>
     
@@ -7664,7 +7849,7 @@
     <Class rdf:about="&osm;RugbyLeague">
         <rdfs:label xml:lang="en">Rubgy league</rdfs:label>
         <rdfs:label xml:lang="pt">Liga de rugby</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:subClassOf rdf:resource="&osm;Collective_Sports"/>
         <osm:osmLabel>rugby_league</osm:osmLabel>
     </Class>
     
@@ -7674,7 +7859,7 @@
 
     <Class rdf:about="&osm;RugbyUnion">
         <rdfs:label xml:lang="pt">União do rugby</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:subClassOf rdf:resource="&osm;Collective_Sports"/>
         <osm:osmLabel>rugby_union</osm:osmLabel>
     </Class>
     
@@ -7719,8 +7904,7 @@
     <Class rdf:about="&osm;Running">
         <rdfs:label xml:lang="en">Running</rdfs:label>
         <rdfs:label xml:lang="en">Running route</rdfs:label>
-        <rdfs:label xml:lang="pt">Corrida</rdfs:label>
-        <rdfs:label xml:lang="pt">Rota de corrida</rdfs:label>
+        <rdfs:label xml:lang="pt">Rota em execução</rdfs:label>
         <rdfs:subClassOf rdf:resource="&osm;Route"/>
         <rdfs:subClassOf rdf:resource="&osm;Sport"/>
         <osm:osmLabel>running</osm:osmLabel>
@@ -7777,7 +7961,7 @@
     <Class rdf:about="&osm;Sailing">
         <rdfs:label xml:lang="en">Sailing</rdfs:label>
         <rdfs:label xml:lang="pt">Vela (esporte)</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:subClassOf rdf:resource="&osm;Aquatic_Sports"/>
         <osm:osmLabel>sailing</osm:osmLabel>
     </Class>
     
@@ -7902,8 +8086,8 @@
     <Class rdf:about="&osm;ScubaDiving">
         <rdfs:label xml:lang="en">Scuba diving</rdfs:label>
         <rdfs:label xml:lang="pt">Mergulho scuba</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&osm;Aquatic_Sports"/>
         <rdfs:subClassOf rdf:resource="&osm;OutdoorsAndSportVehicles"/>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
         <osm:osmLabel>scuba_diving</osm:osmLabel>
     </Class>
     
@@ -8037,7 +8221,7 @@
         <rdfs:label xml:lang="en">Shoemaker</rdfs:label>
         <rdfs:label xml:lang="pt">Fabricante de sapatos</rdfs:label>
         <rdfs:label xml:lang="pt">Sapateiro</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Craft"/>
+        <rdfs:subClassOf rdf:resource="&osm;General_Services_For_Clothes_And_Acessories"/>
         <osm:osmLabel>shoemaker</osm:osmLabel>
     </Class>
     
@@ -8059,7 +8243,7 @@
     <Class rdf:about="&osm;Shooting">
         <rdfs:label xml:lang="en">Shooting</rdfs:label>
         <rdfs:label xml:lang="pt">Tiro (esporte)</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:subClassOf rdf:resource="&osm;Target_Sports"/>
         <osm:osmLabel>shooting</osm:osmLabel>
     </Class>
     
@@ -8144,7 +8328,7 @@
 
     <Class rdf:about="&osm;Skating">
         <rdfs:label xml:lang="en">Skating</rdfs:label>
-        <rdfs:label xml:lang="pt">Pantinação</rdfs:label>
+        <rdfs:label xml:lang="pt">Patinação</rdfs:label>
         <rdfs:subClassOf rdf:resource="&osm;Sport"/>
         <osm:osmLabel>skating</osm:osmLabel>
     </Class>
@@ -8168,7 +8352,7 @@
     <Class rdf:about="&osm;Slipway">
         <rdfs:label xml:lang="en">Slipway</rdfs:label>
         <rdfs:label xml:lang="pt">Balsa</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Leisure"/>
+        <rdfs:subClassOf rdf:resource="&osm;Aquatic_Leisure"/>
         <osm:osmLabel>slipway</osm:osmLabel>
     </Class>
     
@@ -8190,7 +8374,7 @@
     <Class rdf:about="&osm;Soccer">
         <rdfs:label xml:lang="en">Soccer</rdfs:label>
         <rdfs:label xml:lang="pt">Futebol</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:subClassOf rdf:resource="&osm;Collective_Sports"/>
         <osm:osmLabel>soccer</osm:osmLabel>
     </Class>
     
@@ -8201,7 +8385,7 @@
     <Class rdf:about="&osm;SocialCentre">
         <rdfs:label xml:lang="en">Social centre</rdfs:label>
         <rdfs:label xml:lang="pt">Centro social</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;EntertainmentArtSculture"/>
+        <rdfs:subClassOf rdf:resource="&osm;Social_Culture"/>
         <osm:osmLabel>social_centre</osm:osmLabel>
     </Class>
     
@@ -8214,6 +8398,15 @@
         <rdfs:label xml:lang="pt">Equipamentos sociais</rdfs:label>
         <rdfs:subClassOf rdf:resource="&osm;Healthcare"/>
         <osm:osmLabel>social_facility</osm:osmLabel>
+    </Class>
+    
+
+
+    <!-- http://linkn.com.br/onto/osm/Social_Culture -->
+
+    <Class rdf:about="&osm;Social_Culture">
+        <rdfs:label xml:lang="pt">Cultura Social</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&osm;EntertainmentArtSculture"/>
     </Class>
     
 
@@ -8284,7 +8477,6 @@
 
     <Class rdf:about="&osm;Sports">
         <rdfs:subClassOf rdf:resource="&osm;Leisure"/>
-        <rdfs:subClassOf rdf:resource="&osm;OutdoorsAndSportVehicles"/>
         <osm:osmLabel>sports</osm:osmLabel>
     </Class>
     
@@ -8294,7 +8486,7 @@
 
     <Class rdf:about="&osm;SportsCentre">
         <rdfs:label xml:lang="pt">Centro de esportes</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Leisure"/>
+        <rdfs:subClassOf rdf:resource="&osm;Sports"/>
         <osm:osmLabel>sports_centre</osm:osmLabel>
     </Class>
     
@@ -8328,7 +8520,7 @@
         <rdfs:label xml:lang="en">Stadium</rdfs:label>
         <rdfs:label xml:lang="pt">Estádio</rdfs:label>
         <rdfs:subClassOf rdf:resource="&osm;Civic"/>
-        <rdfs:subClassOf rdf:resource="&osm;Leisure"/>
+        <rdfs:subClassOf rdf:resource="&osm;Sports"/>
         <osm:osmLabel>stadium</osm:osmLabel>
     </Class>
     
@@ -8339,7 +8531,7 @@
     <Class rdf:about="&osm;StandBuilder">
         <rdfs:label xml:lang="en">Stand builder</rdfs:label>
         <rdfs:label xml:lang="pt">Construção de carrinhos e estandes</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Craft"/>
+        <rdfs:subClassOf rdf:resource="&osm;General_Services"/>
         <osm:osmLabel>stand_builder</osm:osmLabel>
     </Class>
     
@@ -8445,7 +8637,7 @@
     <Class rdf:about="&osm;Stonemason">
         <rdfs:label xml:lang="en">Stonemason</rdfs:label>
         <rdfs:label xml:lang="pt">Pedreiro</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Craft"/>
+        <rdfs:subClassOf rdf:resource="&osm;General_Services"/>
         <osm:osmLabel>stonemason</osm:osmLabel>
     </Class>
     
@@ -8522,7 +8714,7 @@
     <Class rdf:about="&osm;StreetHockey">
         <rdfs:label xml:lang="en">Street hockey</rdfs:label>
         <rdfs:label xml:lang="pt">Hóquei na rua</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:subClassOf rdf:resource="&osm;Collective_Sports"/>
         <osm:osmLabel>street_hockey</osm:osmLabel>
     </Class>
     
@@ -8545,7 +8737,7 @@
         <rdfs:label xml:lang="en">Strip club</rdfs:label>
         <rdfs:label xml:lang="pt">Clube de strip</rdfs:label>
         <rdfs:label xml:lang="pt">Strip</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;EntertainmentArtSculture"/>
+        <rdfs:subClassOf rdf:resource="&osm;Entertainment"/>
         <osm:osmLabel>stripclub</osm:osmLabel>
     </Class>
     
@@ -8557,7 +8749,7 @@
         <rdfs:label xml:lang="en">Studio</rdfs:label>
         <rdfs:label xml:lang="pt">Estúdio</rdfs:label>
         <rdfs:label xml:lang="pt">Studio</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;EntertainmentArtSculture"/>
+        <rdfs:subClassOf rdf:resource="&osm;Arts"/>
         <osm:osmLabel>studio</osm:osmLabel>
     </Class>
     
@@ -8644,7 +8836,7 @@
     <Class rdf:about="&osm;SunProtection">
         <rdfs:label xml:lang="en">Sun protection</rdfs:label>
         <rdfs:label xml:lang="pt">Fabricação de protetor solar (toldos, persianas)</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Craft"/>
+        <rdfs:subClassOf rdf:resource="&osm;General_Services"/>
         <osm:osmLabel>sun_protection</osm:osmLabel>
     </Class>
     
@@ -8666,7 +8858,7 @@
     <Class rdf:about="&osm;Surfing">
         <rdfs:label xml:lang="en">Surfing</rdfs:label>
         <rdfs:label xml:lang="pt">Surfe</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:subClassOf rdf:resource="&osm;Aquatic_Sports"/>
         <osm:osmLabel>surfing</osm:osmLabel>
     </Class>
     
@@ -8710,7 +8902,7 @@
     <Class rdf:about="&osm;Swimming">
         <rdfs:label xml:lang="en">Swimming</rdfs:label>
         <rdfs:label xml:lang="pt">Natação</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:subClassOf rdf:resource="&osm;Aquatic_Sports"/>
         <osm:osmLabel>swimming</osm:osmLabel>
     </Class>
     
@@ -8721,7 +8913,7 @@
     <Class rdf:about="&osm;SwimmingPool">
         <rdfs:label xml:lang="en">Swimming pool</rdfs:label>
         <rdfs:label xml:lang="pt">Piscina</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Leisure"/>
+        <rdfs:subClassOf rdf:resource="&osm;Bath"/>
         <osm:osmLabel>swimming_pool</osm:osmLabel>
     </Class>
     
@@ -8744,7 +8936,7 @@
         <rdfs:label xml:lang="en">Swingerclub</rdfs:label>
         <rdfs:label xml:lang="pt">Clube de swing</rdfs:label>
         <rdfs:label xml:lang="pt">Swing</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;EntertainmentArtSculture"/>
+        <rdfs:subClassOf rdf:resource="&osm;Entertainment"/>
         <osm:osmLabel>swingerclub</osm:osmLabel>
     </Class>
     
@@ -8778,7 +8970,7 @@
     <Class rdf:about="&osm;Table">
         <rdfs:label xml:lang="en">Table</rdfs:label>
         <rdfs:label xml:lang="pt">Sinuca</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:subClassOf rdf:resource="&osm;Target_Sports"/>
         <rdfs:subClassOf rdf:resource="&osm;TrafficCalming"/>
         <osm:osmLabel>table</osm:osmLabel>
     </Class>
@@ -8791,7 +8983,7 @@
         <rdfs:label xml:lang="en">Table soccer</rdfs:label>
         <rdfs:label xml:lang="pt">Pebolim</rdfs:label>
         <rdfs:label xml:lang="pt">Totó</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:subClassOf rdf:resource="&osm;Target_Sports"/>
         <osm:osmLabel>table_soccer</osm:osmLabel>
     </Class>
     
@@ -8803,7 +8995,7 @@
         <rdfs:label xml:lang="en">Table tennis</rdfs:label>
         <rdfs:label xml:lang="pt">Ping pong</rdfs:label>
         <rdfs:label xml:lang="pt">Tênis de mesa</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:subClassOf rdf:resource="&osm;Net_Sports"/>
         <osm:osmLabel>table_tennis</osm:osmLabel>
     </Class>
     
@@ -8813,8 +9005,8 @@
 
     <Class rdf:about="&osm;Taekwondo">
         <rdfs:label xml:lang="en">Taekwondo</rdfs:label>
-        <rdfs:label xml:lang="pt">Taekwondo</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:label xml:lang="pt">Taekwondô</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&osm;MartialArts"/>
         <osm:osmLabel>taekwondo</osm:osmLabel>
     </Class>
     
@@ -8827,8 +9019,17 @@
         <rdfs:label xml:lang="pt">Alfaiate</rdfs:label>
         <rdfs:label xml:lang="pt">Costuteiro(a)</rdfs:label>
         <rdfs:subClassOf rdf:resource="&osm;ClothingShoesAccessories"/>
-        <rdfs:subClassOf rdf:resource="&osm;Craft"/>
+        <rdfs:subClassOf rdf:resource="&osm;General_Services_For_Clothes_And_Acessories"/>
         <osm:osmLabel>tailor</osm:osmLabel>
+    </Class>
+    
+
+
+    <!-- http://linkn.com.br/onto/osm/Target_Sports -->
+
+    <Class rdf:about="&osm;Target_Sports">
+        <rdfs:label xml:lang="pt">Esportes De Acerto Ao Alvo</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
     </Class>
     
 
@@ -8905,7 +9106,7 @@
         <rdfs:label xml:lang="en">Team Handball</rdfs:label>
         <rdfs:label xml:lang="pt">Time de handball
 </rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:subClassOf rdf:resource="&osm;Collective_Sports"/>
         <osm:osmLabel>team_handball</osm:osmLabel>
     </Class>
     
@@ -8959,7 +9160,7 @@
     <Class rdf:about="&osm;Tennis">
         <rdfs:label xml:lang="en">Tennis</rdfs:label>
         <rdfs:label xml:lang="pt">Tênis (esporte)</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:subClassOf rdf:resource="&osm;Net_Sports"/>
         <osm:osmLabel>tennis</osm:osmLabel>
     </Class>
     
@@ -9023,7 +9224,7 @@
     <Class rdf:about="&osm;Theatre">
         <rdfs:label xml:lang="en">Theatre</rdfs:label>
         <rdfs:label xml:lang="pt">Teatro</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;EntertainmentArtSculture"/>
+        <rdfs:subClassOf rdf:resource="&osm;Arts"/>
         <osm:osmLabel>theatre</osm:osmLabel>
     </Class>
     
@@ -9056,7 +9257,7 @@
     <Class rdf:about="&osm;Tiler">
         <rdfs:label xml:lang="en">Tiler</rdfs:label>
         <rdfs:label xml:lang="pt">Colocação de telhados</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Craft"/>
+        <rdfs:subClassOf rdf:resource="&osm;General_Services"/>
         <osm:osmLabel>tiler</osm:osmLabel>
     </Class>
     
@@ -9090,7 +9291,7 @@
     <Class rdf:about="&osm;Toboggan">
         <rdfs:label xml:lang="en">Toboggan</rdfs:label>
         <rdfs:label xml:lang="pt">Tobogan</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:subClassOf rdf:resource="&osm;Ice_Sports"/>
         <osm:osmLabel>toboggan</osm:osmLabel>
     </Class>
     
@@ -9133,9 +9334,9 @@
 
     <Class rdf:about="&osm;Tourism">
         <rdfs:subClassOf rdf:resource="&osm;PrimaryFeatures"/>
+        <osm:osmLabel>tourism</osm:osmLabel>
         <rdfs:comment xml:lang="en">Tourism</rdfs:comment>
         <rdfs:comment xml:lang="pt">Turismo</rdfs:comment>
-        <osm:osmLabel>tourism</osm:osmLabel>
     </Class>
     
 
@@ -9189,9 +9390,9 @@
     <Class rdf:about="&osm;Track">
         <rdfs:label xml:lang="en">Track</rdfs:label>
         <rdfs:label xml:lang="pt">Pista de atletismo</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Leisure"/>
         <rdfs:subClassOf rdf:resource="&osm;Paths"/>
         <rdfs:subClassOf rdf:resource="&osm;SpecialRoadTypes"/>
+        <rdfs:subClassOf rdf:resource="&osm;Sports"/>
         <osm:osmLabel>track</osm:osmLabel>
     </Class>
     
@@ -9494,7 +9695,7 @@
     <Class rdf:about="&osm;Upholsterer">
         <rdfs:label xml:lang="en">Upholsterer</rdfs:label>
         <rdfs:label xml:lang="pt">Estofador</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Craft"/>
+        <rdfs:subClassOf rdf:resource="&osm;General_Services"/>
         <osm:osmLabel>upholsterer</osm:osmLabel>
     </Class>
     
@@ -9646,7 +9847,8 @@
     <Class rdf:about="&osm;Volleyball">
         <rdfs:label xml:lang="en">Volleyball</rdfs:label>
         <rdfs:label xml:lang="pt">Vôlei</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:subClassOf rdf:resource="&osm;Collective_Sports"/>
+        <rdfs:subClassOf rdf:resource="&osm;Net_Sports"/>
         <osm:osmLabel>volleyball</osm:osmLabel>
     </Class>
     
@@ -9767,7 +9969,7 @@
     <Class rdf:about="&osm;WaterPark">
         <rdfs:label xml:lang="en">Water park</rdfs:label>
         <rdfs:label xml:lang="pt">Parque aquático</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Leisure"/>
+        <rdfs:subClassOf rdf:resource="&osm;Aquatic_Leisure"/>
         <osm:osmLabel>water_park</osm:osmLabel>
     </Class>
     
@@ -9790,7 +9992,7 @@
     <Class rdf:about="&osm;WaterPolo">
         <rdfs:label xml:lang="en">Water Polo</rdfs:label>
         <rdfs:label xml:lang="pt">Polo aquático</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:subClassOf rdf:resource="&osm;Collective_Sports"/>
         <osm:osmLabel>water_polo</osm:osmLabel>
     </Class>
     
@@ -9810,7 +10012,7 @@
     <Class rdf:about="&osm;WaterSki">
         <rdfs:label xml:lang="en">Water ski</rdfs:label>
         <rdfs:label xml:lang="pt">Ski na água</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:subClassOf rdf:resource="&osm;Aquatic_Sports"/>
         <osm:osmLabel>water_ski</osm:osmLabel>
     </Class>
     
@@ -10006,7 +10208,7 @@
     <Class rdf:about="&osm;WildlifeHide">
         <rdfs:label xml:lang="en">Wildlife hide</rdfs:label>
         <rdfs:label xml:lang="pt">Vida na selva</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Leisure"/>
+        <rdfs:subClassOf rdf:resource="&osm;Camp"/>
         <osm:osmLabel>wildlife_hide</osm:osmLabel>
     </Class>
     
@@ -10038,7 +10240,7 @@
     <Class rdf:about="&osm;WindowConstruction">
         <rdfs:label xml:lang="en">Window construction</rdfs:label>
         <rdfs:label xml:lang="pt">Fabricante de janela</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Craft"/>
+        <rdfs:subClassOf rdf:resource="&osm;General_Services"/>
         <osm:osmLabel>window_construction</osm:osmLabel>
     </Class>
     
@@ -10115,7 +10317,7 @@
     <Class rdf:about="&osm;Wrestling">
         <rdfs:label xml:lang="en">Wrestling</rdfs:label>
         <rdfs:label xml:lang="pt">Wrestling</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
+        <rdfs:subClassOf rdf:resource="&osm;MartialArts"/>
         <osm:osmLabel>wrestling</osm:osmLabel>
     </Class>
     
@@ -10162,35 +10364,9 @@
         <rdfs:subClassOf rdf:resource="&osm;Aerialway"/>
         <osm:osmLabel>t-bar</osm:osmLabel>
     </Class>
-    
-
-
-    <!-- http://linkn.com.br/onto/osm/10pin -->
-
-    <Class rdf:about="&osm;10pin">
-        <rdfs:label xml:lang="en">10pin bowling</rdfs:label>
-        <rdfs:label xml:lang="en">Bowling</rdfs:label>
-        <rdfs:label xml:lang="pt">Boliche</rdfs:label>
-        <rdfs:label xml:lang="pt">Boliche de 10 pinos</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
-        <osm:osmLabel>10pin</osm:osmLabel>
-    </Class>
-    
-
-
-    <!-- http://linkn.com.br/onto/osm/9pin -->
-
-    <Class rdf:about="&osm;9pin">
-        <rdfs:label xml:lang="en">9pin bowling</rdfs:label>
-        <rdfs:label xml:lang="en">Bowling</rdfs:label>
-        <rdfs:label xml:lang="pt">Boliche</rdfs:label>
-        <rdfs:label xml:lang="pt">Boliche de 9 pinos</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Sport"/>
-        <osm:osmLabel>9pin</osm:osmLabel>
-    </Class>
 </rdf:RDF>
 
 
 
-<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
 
