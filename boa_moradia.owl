@@ -875,7 +875,7 @@
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="&osm;Collective_Sports">
-        <boa_moradia:isCategory>true</boa_moradia:isCategory>
+        <boa_moradia:isCategory rdf:datatype="&xsd;boolean">true</boa_moradia:isCategory>
     </rdf:Description>
     <rdf:Description rdf:about="&osm;Bowls">
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
@@ -965,7 +965,7 @@
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="&osm;Bath">
-        <boa_moradia:isCategory>true</boa_moradia:isCategory>
+        <boa_moradia:isCategory rdf:datatype="&xsd;boolean">true</boa_moradia:isCategory>
     </rdf:Description>
     <rdf:Description rdf:about="&osm;Beverages">
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
@@ -980,13 +980,13 @@
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="&osm;Racing_Sports">
-        <boa_moradia:isCategory>true</boa_moradia:isCategory>
+        <boa_moradia:isCategory rdf:datatype="&xsd;boolean">true</boa_moradia:isCategory>
     </rdf:Description>
     <rdf:Description rdf:about="&osm;Carpenter">
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="&osm;Ice_Sports">
-        <boa_moradia:isCategory>true</boa_moradia:isCategory>
+        <boa_moradia:isCategory rdf:datatype="&xsd;boolean">true</boa_moradia:isCategory>
     </rdf:Description>
     <rdf:Description rdf:about="&osm;Theatre">
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
@@ -1172,19 +1172,19 @@
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="&osm;Aquatic_Leisure">
-        <boa_moradia:isCategory>true</boa_moradia:isCategory>
+        <boa_moradia:isCategory rdf:datatype="&xsd;boolean">true</boa_moradia:isCategory>
     </rdf:Description>
     <rdf:Description rdf:about="&osm;IsolatedConsultory">
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="&osm;Camp">
-        <boa_moradia:isCategory>true</boa_moradia:isCategory>
+        <boa_moradia:isCategory rdf:datatype="&xsd;boolean">true</boa_moradia:isCategory>
     </rdf:Description>
     <rdf:Description rdf:about="&osm;Handicraft">
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="&osm;Plants_Cultivation">
-        <boa_moradia:isCategory>true</boa_moradia:isCategory>
+        <boa_moradia:isCategory rdf:datatype="&xsd;boolean">true</boa_moradia:isCategory>
     </rdf:Description>
     <rdf:Description rdf:about="&osm;Church">
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
@@ -1196,7 +1196,7 @@
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="&osm;Ground">
-        <boa_moradia:isCategory>true</boa_moradia:isCategory>
+        <boa_moradia:isCategory rdf:datatype="&xsd;boolean">true</boa_moradia:isCategory>
     </rdf:Description>
     <rdf:Description rdf:about="&osm;Coastline">
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
@@ -1292,7 +1292,7 @@
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="&osm;Net_Sports">
-        <boa_moradia:isCategory>true</boa_moradia:isCategory>
+        <boa_moradia:isCategory rdf:datatype="&xsd;boolean">true</boa_moradia:isCategory>
     </rdf:Description>
     <rdf:Description rdf:about="&osm;Motor">
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
@@ -1316,7 +1316,7 @@
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="&osm;Aquatic_Sports">
-        <boa_moradia:isCategory>true</boa_moradia:isCategory>
+        <boa_moradia:isCategory rdf:datatype="&xsd;boolean">true</boa_moradia:isCategory>
     </rdf:Description>
     <rdf:Description rdf:about="&osm;CarWash">
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
@@ -1406,7 +1406,7 @@
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="&osm;Entertainment">
-        <boa_moradia:isCategory>true</boa_moradia:isCategory>
+        <boa_moradia:isCategory rdf:datatype="&xsd;boolean">true</boa_moradia:isCategory>
     </rdf:Description>
     <rdf:Description rdf:about="&osm;TableSoccer">
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
@@ -1427,7 +1427,7 @@
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="&osm;Arts">
-        <boa_moradia:isCategory>true</boa_moradia:isCategory>
+        <boa_moradia:isCategory rdf:datatype="&xsd;boolean">true</boa_moradia:isCategory>
     </rdf:Description>
     <rdf:Description rdf:about="&osm;GreenhouseHorticulture">
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
@@ -1478,7 +1478,7 @@
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="&osm;Target_Sports">
-        <boa_moradia:isCategory>true</boa_moradia:isCategory>
+        <boa_moradia:isCategory rdf:datatype="&xsd;boolean">true</boa_moradia:isCategory>
     </rdf:Description>
     <rdf:Description rdf:about="&osm;Swingerclub">
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
@@ -1496,7 +1496,7 @@
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="&osm;Social_Culture">
-        <boa_moradia:isCategory>true</boa_moradia:isCategory>
+        <boa_moradia:isCategory rdf:datatype="&xsd;boolean">true</boa_moradia:isCategory>
     </rdf:Description>
     <rdf:Description rdf:about="&osm;CarRepair">
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
@@ -1508,7 +1508,7 @@
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="&osm;Games_Leisure">
-        <boa_moradia:isCategory>true</boa_moradia:isCategory>
+        <boa_moradia:isCategory rdf:datatype="&xsd;boolean">true</boa_moradia:isCategory>
     </rdf:Description>
     <rdf:Description rdf:about="&osm;ArtsCentre">
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
