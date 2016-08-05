@@ -799,8 +799,7 @@
 
     <!-- http://linkn.com.br/onto/osm/Police -->
 
-    <rdf:Description rdf:about="&osm;Police">
-        <boa_moradia:isCategory rdf:datatype="&xsd;boolean">true</boa_moradia:isCategory>
+    <rdf:Description rdf:about="&osm;Police">        
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     
@@ -1412,6 +1411,9 @@
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="&osm;Education">
+        <boa_moradia:isCategory rdf:datatype="&xsd;boolean">true</boa_moradia:isCategory>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Safety">
         <boa_moradia:isCategory rdf:datatype="&xsd;boolean">true</boa_moradia:isCategory>
     </rdf:Description>
     <rdf:Description rdf:about="&osm;TreeRow">

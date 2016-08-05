@@ -2948,6 +2948,7 @@
         <rdfs:label xml:lang="en">Delegacy</rdfs:label>
         <rdfs:label xml:lang="pt">Delegacia</rdfs:label>
         <rdfs:subClassOf rdf:resource="&osm;OtherAmanities"/>
+        <rdfs:subClassOf rdf:resource="&osm;Safety"/>
     </Class>
     
 
@@ -6942,9 +6943,9 @@
 
     <Class rdf:about="&osm;Police">
         <rdfs:label xml:lang="en">Police</rdfs:label>
-        <rdfs:label xml:lang="pt">Polícia</rdfs:label>
         <rdfs:label xml:lang="pt">Posto policial</rdfs:label>
         <rdfs:subClassOf rdf:resource="&osm;OtherAmanities"/>
+        <rdfs:subClassOf rdf:resource="&osm;Safety"/>
         <osm:osmLabel>police</osm:osmLabel>
     </Class>
     
@@ -7916,6 +7917,15 @@
         <rdfs:label xml:lang="pt">Seleiro</rdfs:label>
         <rdfs:subClassOf rdf:resource="&osm;Craft"/>
         <osm:osmLabel>saddler</osm:osmLabel>
+    </Class>
+    
+
+
+    <!-- http://linkn.com.br/onto/osm/Safety -->
+
+    <Class rdf:about="&osm;Safety">
+        <rdfs:label xml:lang="pt">Segurança</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&osm;Amenity"/>
     </Class>
     
 
