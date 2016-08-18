@@ -4533,6 +4533,7 @@
         <osm:osmLabel>healthcare</osm:osmLabel>
         <rdfs:label xml:lang="en">Healthcare</rdfs:label>
         <rdfs:label xml:lang="pt">Saúde</rdfs:label>
+        <rdfs:label xml:lang="pt">Assistência Médica</rdfs:label>
     </Class>
     
 
@@ -7837,6 +7838,7 @@
 
     <Class rdf:about="http://linkn.com.br/onto/osm/Safety">
         <rdfs:subClassOf rdf:resource="http://linkn.com.br/onto/osm/Amenity"/>
+        <osm:osmLabel>safety</osm:osmLabel>
         <rdfs:label xml:lang="pt">Segurança</rdfs:label>
     </Class>
     
