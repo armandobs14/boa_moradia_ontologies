@@ -1902,6 +1902,7 @@
         <rdfs:label xml:lang="en">Cathedral</rdfs:label>
         <rdfs:label xml:lang="pt">Catedral</rdfs:label>
         <rdfs:subClassOf rdf:resource="&osm;Civic"/>
+        <rdfs:subClassOf rdf:resource="&osm;Religion"/>
         <osm:osmLabel>cathedral</osm:osmLabel>
     </Class>
     
@@ -2047,6 +2048,7 @@
         <rdfs:label xml:lang="en">Chapel</rdfs:label>
         <rdfs:label xml:lang="pt">Capela</rdfs:label>
         <rdfs:subClassOf rdf:resource="&osm;Civic"/>
+        <rdfs:subClassOf rdf:resource="&osm;Religion"/>
         <osm:osmLabel>chapel</osm:osmLabel>
     </Class>
     
@@ -2179,6 +2181,7 @@
         <rdfs:label xml:lang="en">Church</rdfs:label>
         <rdfs:label xml:lang="pt">Igreja</rdfs:label>
         <rdfs:subClassOf rdf:resource="&osm;Civic"/>
+        <rdfs:subClassOf rdf:resource="&osm;Religion"/>
         <osm:osmLabel>church</osm:osmLabel>
     </Class>
     
@@ -5818,6 +5821,7 @@
         <rdfs:label xml:lang="en">Mosque</rdfs:label>
         <rdfs:label xml:lang="pt">Mesquita</rdfs:label>
         <rdfs:subClassOf rdf:resource="&osm;Civic"/>
+        <rdfs:subClassOf rdf:resource="&osm;Religion"/>
         <osm:osmLabel>mosque</osm:osmLabel>
     </Class>
     
@@ -6182,7 +6186,7 @@
 
     <Class rdf:about="&osm;Office">
         <rdfs:label xml:lang="en">Office</rdfs:label>
-        <rdfs:label xml:lang="pt">Escritório</rdfs:label>
+        <rdfs:label xml:lang="pt">Serviços</rdfs:label>
         <rdfs:subClassOf rdf:resource="&osm;PrimaryFeatures"/>
         <osm:osmLabel>office</osm:osmLabel>
     </Class>
@@ -8188,6 +8192,7 @@
         <rdfs:label xml:lang="en">Shrine</rdfs:label>
         <rdfs:label xml:lang="pt">Santuário</rdfs:label>
         <rdfs:subClassOf rdf:resource="&osm;Civic"/>
+        <rdfs:subClassOf rdf:resource="&osm;Religion"/>
         <osm:osmLabel>shrine</osm:osmLabel>
     </Class>
     
@@ -8869,6 +8874,7 @@
         <rdfs:label xml:lang="en">Synagogue</rdfs:label>
         <rdfs:label xml:lang="pt">Sinagoga</rdfs:label>
         <rdfs:subClassOf rdf:resource="&osm;Civic"/>
+        <rdfs:subClassOf rdf:resource="&osm;Religion"/>
         <osm:osmLabel>synagogue</osm:osmLabel>
     </Class>
     
@@ -9058,6 +9064,7 @@
         <rdfs:label xml:lang="en">Temple</rdfs:label>
         <rdfs:label xml:lang="pt">Templo</rdfs:label>
         <rdfs:subClassOf rdf:resource="&osm;Civic"/>
+        <rdfs:subClassOf rdf:resource="&osm;Religion"/>
         <osm:osmLabel>temple</osm:osmLabel>
     </Class>
     
@@ -9360,7 +9367,7 @@
     <Class rdf:about="&osm;TrainStation">
         <rdfs:label xml:lang="en">Train station</rdfs:label>
         <rdfs:label xml:lang="pt">Estação de trem</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&osm;Civic"/>
+        <rdfs:subClassOf rdf:resource="&osm;Transportation"/>
         <osm:osmLabel>train_station</osm:osmLabel>
     </Class>
     

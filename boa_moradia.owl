@@ -707,21 +707,8 @@
         <rdfs:label xml:lang="pt">Anúncio</rdfs:label>
         <rdfs:subClassOf>
             <Restriction>
-                <onProperty rdf:resource="&boa_moradia;hasPrice"/>
+                <onProperty rdf:resource="&boa_moradia;hasURL"/>
                 <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
-                <onDataRange rdf:resource="&xsd;float"/>
-            </Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <Restriction>
-                <onProperty rdf:resource="&boa_moradia;hasTitle"/>
-                <allValuesFrom rdf:resource="&xsd;string"/>
-            </Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <Restriction>
-                <onProperty rdf:resource="&building;hasPhoto"/>
-                <maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</maxQualifiedCardinality>
                 <onDataRange rdf:resource="&xsd;anyURI"/>
             </Restriction>
         </rdfs:subClassOf>
@@ -733,9 +720,22 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <Restriction>
-                <onProperty rdf:resource="&boa_moradia;hasURL"/>
+                <onProperty rdf:resource="&boa_moradia;hasPrice"/>
                 <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                <onDataRange rdf:resource="&xsd;float"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&building;hasPhoto"/>
+                <maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</maxQualifiedCardinality>
                 <onDataRange rdf:resource="&xsd;anyURI"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&boa_moradia;hasTitle"/>
+                <allValuesFrom rdf:resource="&xsd;string"/>
             </Restriction>
         </rdfs:subClassOf>
         <disjointWith rdf:resource="&boa_moradia;Offer"/>
@@ -751,15 +751,15 @@
         <equivalentClass rdf:resource="&foaf;OnlineAccount"/>
         <rdfs:subClassOf>
             <Restriction>
-                <onProperty rdf:resource="&building;hasPhoto"/>
-                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
-                <onDataRange rdf:resource="&xsd;anyURI"/>
+                <onProperty rdf:resource="&boa_moradia;isAssociatedTo"/>
+                <allValuesFrom rdf:resource="&boa_moradia;Announcement"/>
             </Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <Restriction>
-                <onProperty rdf:resource="&boa_moradia;isAssociatedTo"/>
-                <allValuesFrom rdf:resource="&boa_moradia;Announcement"/>
+                <onProperty rdf:resource="&building;hasPhoto"/>
+                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                <onDataRange rdf:resource="&xsd;anyURI"/>
             </Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">In boa moradia system, a person can to create an account</rdfs:comment>
@@ -951,9 +951,6 @@
     <rdf:Description rdf:about="&osm;Park">
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
-    <rdf:Description rdf:about="&osm;Civic">
-        <boa_moradia:isCategory rdf:datatype="&xsd;boolean">true</boa_moradia:isCategory>
-    </rdf:Description>
     <rdf:Description rdf:about="&osm;Pastry">
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
@@ -1092,6 +1089,9 @@
     <rdf:Description rdf:about="&osm;BeachResort">
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
+    <rdf:Description rdf:about="&osm;Synagogue">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
     <rdf:Description rdf:about="&osm;Ice_Sports">
         <boa_moradia:isCategory rdf:datatype="&xsd;boolean">true</boa_moradia:isCategory>
     </rdf:Description>
@@ -1148,6 +1148,9 @@
     </rdf:Description>
     <rdf:Description rdf:about="&osm;IceHockey">
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Religion">
+        <boa_moradia:isCategory rdf:datatype="&xsd;boolean">true</boa_moradia:isCategory>
     </rdf:Description>
     <rdf:Description rdf:about="&osm;HorseRacing">
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
@@ -1368,6 +1371,9 @@
     <rdf:Description rdf:about="&osm;PeatCutting">
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
+    <rdf:Description rdf:about="&osm;Shrine">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
     <rdf:Description rdf:about="&osm;Orchard">
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
@@ -1443,9 +1449,6 @@
     <rdf:Description rdf:about="&osm;Conservation">
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
-    <rdf:Description rdf:about="&osm;Office">
-        <boa_moradia:isCategory rdf:datatype="&xsd;boolean">true</boa_moradia:isCategory>
-    </rdf:Description>
     <rdf:Description rdf:about="&osm;Beachvolleyball">
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
@@ -1461,11 +1464,11 @@
     <rdf:Description rdf:about="&osm;Public">
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
-    <rdf:Description rdf:about="&osm;Education">
-        <boa_moradia:isCategory rdf:datatype="&xsd;boolean">true</boa_moradia:isCategory>
-    </rdf:Description>
     <rdf:Description rdf:about="&osm;TreeRow">
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Education">
+        <boa_moradia:isCategory rdf:datatype="&xsd;boolean">true</boa_moradia:isCategory>
     </rdf:Description>
     <rdf:Description rdf:about="&osm;Boutique">
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
@@ -1498,6 +1501,9 @@
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="&osm;PaddleTennis">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Temple">
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="&osm;PicnicTable">
@@ -1561,6 +1567,9 @@
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="&osm;ArtsCentre">
+        <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
+    </rdf:Description>
+    <rdf:Description rdf:about="&osm;Chapel">
         <boa_moradia:relevantCountry>br</boa_moradia:relevantCountry>
     </rdf:Description>
     <rdf:Description rdf:about="&osm;Gymnastics">
