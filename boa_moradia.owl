@@ -638,6 +638,16 @@
     
 
 
+    <!-- http://linkn.com.br/onto/boa_moradia/isAvailableAt -->
+
+    <DatatypeProperty rdf:about="&boa_moradia;isAvailableAt">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&boa_moradia;Announcement"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </DatatypeProperty>
+    
+
+
     <!-- http://linkn.com.br/onto/boa_moradia/preference -->
 
     <DatatypeProperty rdf:about="&boa_moradia;preference">
@@ -714,8 +724,15 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <Restriction>
-                <onProperty rdf:resource="&boa_moradia;hasOffer"/>
-                <allValuesFrom rdf:resource="&boa_moradia;Offer"/>
+                <onProperty rdf:resource="&building;hasPhoto"/>
+                <maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</maxQualifiedCardinality>
+                <onDataRange rdf:resource="&xsd;anyURI"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&boa_moradia;hasTitle"/>
+                <allValuesFrom rdf:resource="&xsd;string"/>
             </Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -727,15 +744,8 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <Restriction>
-                <onProperty rdf:resource="&building;hasPhoto"/>
-                <maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</maxQualifiedCardinality>
-                <onDataRange rdf:resource="&xsd;anyURI"/>
-            </Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <Restriction>
-                <onProperty rdf:resource="&boa_moradia;hasTitle"/>
-                <allValuesFrom rdf:resource="&xsd;string"/>
+                <onProperty rdf:resource="&boa_moradia;hasOffer"/>
+                <allValuesFrom rdf:resource="&boa_moradia;Offer"/>
             </Restriction>
         </rdfs:subClassOf>
         <disjointWith rdf:resource="&boa_moradia;Offer"/>
@@ -751,15 +761,15 @@
         <equivalentClass rdf:resource="&foaf;OnlineAccount"/>
         <rdfs:subClassOf>
             <Restriction>
-                <onProperty rdf:resource="&boa_moradia;isAssociatedTo"/>
-                <allValuesFrom rdf:resource="&boa_moradia;Announcement"/>
+                <onProperty rdf:resource="&building;hasPhoto"/>
+                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                <onDataRange rdf:resource="&xsd;anyURI"/>
             </Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <Restriction>
-                <onProperty rdf:resource="&building;hasPhoto"/>
-                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
-                <onDataRange rdf:resource="&xsd;anyURI"/>
+                <onProperty rdf:resource="&boa_moradia;isAssociatedTo"/>
+                <allValuesFrom rdf:resource="&boa_moradia;Announcement"/>
             </Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">In boa moradia system, a person can to create an account</rdfs:comment>
